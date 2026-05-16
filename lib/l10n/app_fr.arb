@@ -1,0 +1,14 @@
+{
+  "appTitle": "Référence de Loi Islamique",
+  "searchHint": "Rechercher une loi...",
+  "noResults": "Aucun résultat trouvé.",
+  "sources": "Sources et Références :",
+  "comments": "Commentaires d'érudits :",
+  "school": "École juridique :",
+  "personalNotes": "Mes Notes Personnelles :",
+  "addNoteHint": "Ajouter une note...",
+  "saveNote": "Sauvegarder la note",
+  "noteSaved": "Note sauvegardée !",
+  "noLaws": "Aucune loi trouvée.",
+  "noSources": "Aucune source disponible."
+}

@@ -1,0 +1,14 @@
+{
+  "appTitle": "Islamic Law Reference",
+  "searchHint": "Search for a law...",
+  "noResults": "No results found.",
+  "sources": "Sources and References:",
+  "comments": "Scholar Comments:",
+  "school": "Legal School:",
+  "personalNotes": "My Personal Notes:",
+  "addNoteHint": "Add a note...",
+  "saveNote": "Save Note",
+  "noteSaved": "Note saved!",
+  "noLaws": "No laws found.",
+  "noSources": "No sources available."
+}
