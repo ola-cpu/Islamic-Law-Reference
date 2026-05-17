@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/law.dart';
+import '../models/topic.dart';
 import '../services/database_helper.dart';
 import 'detail_screen.dart';
 import '../l10n/app_localizations.dart';
@@ -13,7 +13,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _controller = TextEditingController();
-  List<Law> _searchResults = [];
+  List<Topic> _searchResults = [];
   bool _isSearching = false;
 
   Future<void> _performSearch(String query) async {
@@ -29,7 +29,7 @@ class _SearchScreenState extends State<SearchScreen> {
       _isSearching = true;
     });
 
-    final results = await DatabaseHelper().searchLaws(query);
+    final results = await DatabaseHelper().searchTopics(query);
 
     setState(() {
       _searchResults = results;
@@ -48,9 +48,8 @@ class _SearchScreenState extends State<SearchScreen> {
           decoration: InputDecoration(
             hintText: l10n.searchHint,
             border: InputBorder.none,
-            hintStyle: const TextStyle(color: Colors.white70),
+            hintStyle: const TextStyle(color: Colors.grey),
           ),
-          style: const TextStyle(color: Colors.white),
           onChanged: _performSearch,
         ),
       ),
@@ -61,14 +60,14 @@ class _SearchScreenState extends State<SearchScreen> {
               : ListView.builder(
                   itemCount: _searchResults.length,
                   itemBuilder: (context, index) {
-                    final law = _searchResults[index];
+                    final topic = _searchResults[index];
                     return ListTile(
-                      title: Text(law.title),
-                      subtitle: Text(law.school),
+                      title: Text(topic.title),
+                      subtitle: Text(topic.description),
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => DetailScreen(law: law)),
+                          MaterialPageRoute(builder: (context) => DetailScreen(topic: topic)),
                         );
                       },
                     );

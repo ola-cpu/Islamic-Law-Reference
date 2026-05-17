@@ -1,11 +1,16 @@
 enum SourceType { quran, hadith, fiqhBook }
 
+enum Authenticity { sahih, hasan, daif, mawdu, none }
+
 class Source {
   final int? id;
   final int lawId;
   final SourceType type;
-  final String reference; // e.g., "Sourate 2, Verset 183" or "Sahih Bukhari, Hadith 1"
+  final String reference;
   final String text;
+  final String? textAr;
+  final Authenticity authenticity;
+  final String? citation;
 
   Source({
     this.id,
@@ -13,6 +18,9 @@ class Source {
     required this.type,
     required this.reference,
     required this.text,
+    this.textAr,
+    this.authenticity = Authenticity.none,
+    this.citation,
   });
 
   Map<String, dynamic> toMap() {
@@ -22,6 +30,9 @@ class Source {
       'type': type.index,
       'reference': reference,
       'text': text,
+      'text_ar': textAr,
+      'authenticity': authenticity.index,
+      'citation': citation,
     };
   }
 
@@ -32,6 +43,9 @@ class Source {
       type: SourceType.values[map['type']],
       reference: map['reference'],
       text: map['text'],
+      textAr: map['text_ar'],
+      authenticity: Authenticity.values[map['authenticity'] ?? Authenticity.none.index],
+      citation: map['citation'],
     );
   }
 }

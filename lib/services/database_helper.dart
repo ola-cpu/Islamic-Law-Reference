@@ -1,8 +1,10 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import '../models/category.dart';
+import '../models/topic.dart';
 import '../models/law.dart';
 import '../models/source.dart';
+import '../models/school.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
@@ -22,28 +24,63 @@ class DatabaseHelper {
     String path = join(await getDatabasesPath(), 'islamic_law.db');
     return await openDatabase(
       path,
-      version: 1,
+      version: 2,
       onCreate: _onCreate,
+      onUpgrade: (db, oldVersion, newVersion) async {
+         // Simplified for this task: recreate tables if upgrading
+         await _dropTables(db);
+         await _onCreate(db, newVersion);
+      },
     );
+  }
+
+  Future<void> _dropTables(Database db) async {
+    await db.execute('DROP TABLE IF EXISTS sources');
+    await db.execute('DROP TABLE IF EXISTS favorites');
+    await db.execute('DROP TABLE IF EXISTS notes');
+    await db.execute('DROP TABLE IF EXISTS laws');
+    await db.execute('DROP TABLE IF EXISTS topics');
+    await db.execute('DROP TABLE IF EXISTS categories');
+    await db.execute('DROP TABLE IF EXISTS schools');
   }
 
   Future _onCreate(Database db, int version) async {
     await db.execute('''
       CREATE TABLE categories(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        parent_id INTEGER,
         name TEXT,
-        icon TEXT
+        icon TEXT,
+        FOREIGN KEY (parent_id) REFERENCES categories (id)
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE schools(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        description TEXT
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE topics(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        category_id INTEGER,
+        title TEXT,
+        description TEXT,
+        FOREIGN KEY (category_id) REFERENCES categories (id)
       )
     ''');
     await db.execute('''
       CREATE TABLE laws(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        category_id INTEGER,
+        topic_id INTEGER,
         title TEXT,
         content TEXT,
+        content_ar TEXT,
         scholar_comments TEXT,
-        school TEXT,
-        FOREIGN KEY (category_id) REFERENCES categories (id)
+        school_id INTEGER,
+        FOREIGN KEY (topic_id) REFERENCES topics (id),
+        FOREIGN KEY (school_id) REFERENCES schools (id)
       )
     ''');
     await db.execute('''
@@ -53,22 +90,25 @@ class DatabaseHelper {
         type INTEGER,
         reference TEXT,
         text TEXT,
+        text_ar TEXT,
+        authenticity INTEGER,
+        citation TEXT,
         FOREIGN KEY (law_id) REFERENCES laws (id)
       )
     ''');
     await db.execute('''
       CREATE TABLE favorites(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        law_id INTEGER UNIQUE,
-        FOREIGN KEY (law_id) REFERENCES laws (id)
+        topic_id INTEGER UNIQUE,
+        FOREIGN KEY (topic_id) REFERENCES topics (id)
       )
     ''');
     await db.execute('''
       CREATE TABLE notes(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        law_id INTEGER UNIQUE,
+        topic_id INTEGER UNIQUE,
         content TEXT,
-        FOREIGN KEY (law_id) REFERENCES laws (id)
+        FOREIGN KEY (topic_id) REFERENCES topics (id)
       )
     ''');
 
@@ -76,66 +116,81 @@ class DatabaseHelper {
   }
 
   Future _seedDatabase(Database db) async {
+    // Schools
+    int shHanafi = await db.insert('schools', {'name': 'Hanafi', 'description': 'L\'école de l\'Imam Abu Hanifa.'});
+    int shMaliki = await db.insert('schools', {'name': 'Maliki', 'description': 'L\'école de l\'Imam Malik.'});
+    int shShafii = await db.insert('schools', {'name': 'Shafi\'i', 'description': 'L\'école de l\'Imam Al-Shafi\'i.'});
+    int shHanbali = await db.insert('schools', {'name': 'Hanbali', 'description': 'L\'école de l\'Imam Ahmad ibn Hanbal.'});
+
     // Categories
-    int catCulte = await db.insert('categories', {'name': 'Prière et Culte', 'icon': 'mosque'});
-    int catCommerce = await db.insert('categories', {'name': 'Économie et Commerce', 'icon': 'business'});
-    int catFamille = await db.insert('categories', {'name': 'Famille et Mariage', 'icon': 'family_restroom'});
+    int catCulte = await db.insert('categories', {'name': 'Culte (Ibadat)', 'icon': 'mosque', 'parent_id': null});
+    int catPriere = await db.insert('categories', {'name': 'Prière (Salat)', 'icon': 'church', 'parent_id': catCulte});
 
-    // Law 1: Prière (Culte)
-    int law1 = await db.insert('laws', {
-      'category_id': catCulte,
-      'title': 'L’obligation de la prière',
-      'content': 'La prière est une obligation pour tout musulman pubère et doué de raison.',
-      'scholar_comments': 'C\'est le deuxième pilier de l\'islam.',
-      'school': 'Toutes'
-    });
-    await db.insert('sources', {
-      'law_id': law1,
-      'type': 0, // Quran
-      'reference': 'Sourate 2, Verset 43',
-      'text': 'Et accomplissez la Salat, et acquittez la Zakat, et inclinez-vous avec ceux qui s’inclinent.'
+    // Topic: Lever les mains dans la prière
+    int topHands = await db.insert('topics', {
+      'category_id': catPriere,
+      'title': 'Lever les mains dans la prière',
+      'description': 'Les règles concernant le fait de lever les mains à différents moments de la prière.'
     });
 
-    // Law 2: Riba (Économie)
-    int law2 = await db.insert('laws', {
-      'category_id': catCommerce,
-      'title': 'Interdiction de l’usure (Riba)',
-      'content': 'L\'islam interdit formellement toute forme d\'usure ou d\'intérêt dans les transactions financières.',
-      'scholar_comments': 'Le Riba est considéré comme un péché majeur.',
-      'school': 'Toutes'
+    // Law Hanafi
+    int lawHanafi = await db.insert('laws', {
+      'topic_id': topHands,
+      'title': 'Position Hanafi',
+      'content': 'On lève les mains seulement au début de la prière (Takbir d\'ouverture).',
+      'content_ar': 'يرفع يديه في التكبيرة الأولى فقط',
+      'scholar_comments': 'Basé sur la pratique des gens de Koufa.',
+      'school_id': shHanafi
     });
     await db.insert('sources', {
-      'law_id': law2,
-      'type': 0, // Quran
-      'reference': 'Sourate 2, Verset 275',
-      'text': 'Alors qu’Allah a rendu licite le commerce, et illicite l’intérêt.'
+      'law_id': lawHanafi,
+      'type': 1, // Hadith
+      'reference': 'Sunan Abi Dawood, Hadith 748',
+      'text': 'Ibn Mas\'ud a dit : "Ne vais-je pas vous montrer la prière du Messager d\'Allah ?" Il a alors prié et n\'a levé les mains qu\'une seule fois.',
+      'text_ar': 'عن ابن مسعود قال: ألا أصلي بكم صلاة رسول الله صلى الله عليه وسلم؟ فصلى فلم يرفع يديه إلا في أول مرة',
+      'authenticity': 1, // Hasan
+      'citation': 'Abu Dawood, Kitab al-Salat'
     });
 
-    // Law 3: Mariage (Famille)
-    int law3 = await db.insert('laws', {
-      'category_id': catFamille,
-      'title': 'La dot (Mahr)',
-      'content': 'Le mari doit verser une dot à son épouse lors du contrat de mariage.',
-      'scholar_comments': 'La dot appartient exclusivement à la femme.',
-      'school': 'Maliki'
+    // Law Shafii
+    int lawShafii = await db.insert('laws', {
+      'topic_id': topHands,
+      'title': 'Position Shafi\'i',
+      'content': 'On lève les mains au début, avant l\'inclinaison (ruku\'), et en se relevant de l\'inclinaison.',
+      'content_ar': 'يرفع يديه عند الافتتاح، وعند الركوع، وعند الرفع منه',
+      'scholar_comments': 'Considéré comme Sunnah fortement recommandée.',
+      'school_id': shShafii
     });
     await db.insert('sources', {
-      'law_id': law3,
-      'type': 0, // Quran
-      'reference': 'Sourate 4, Verset 4',
-      'text': 'Et donnez aux épouses leur mahr, de bonne grâce.'
+      'law_id': lawShafii,
+      'type': 1, // Hadith
+      'reference': 'Sahih Bukhari, Hadith 735',
+      'text': 'Abdullah ibn Umar a rapporté que le Messager d\'Allah levait ses mains au niveau de ses épaules lorsqu\'il commençait la prière, lorsqu\'il disait le Takbir pour l\'inclinaison, et lorsqu\'il relevait sa tête de l\'inclinaison.',
+      'text_ar': 'عن عبد الله بن عمر رضي الله عنهما أن رسول الله صلى الله عليه وسلم كان يرفع يديه حذو منكبيه إذا افتتح الصلاة، وإذا كبر للركوع، وإذا رفع رأسه من الركوع',
+      'authenticity': 0, // Sahih
+      'citation': 'Bukhari, Kitab Adhan'
     });
   }
 
-  Future<List<Category>> getCategories() async {
+  Future<List<Category>> getCategories({int? parentId}) async {
     Database db = await database;
-    var categories = await db.query('categories');
+    var categories = await db.query(
+      'categories',
+      where: parentId == null ? 'parent_id IS NULL' : 'parent_id = ?',
+      whereArgs: parentId == null ? [] : [parentId]
+    );
     return categories.map((c) => Category.fromMap(c)).toList();
   }
 
-  Future<List<Law>> getLawsByCategory(int categoryId) async {
+  Future<List<Topic>> getTopicsByCategory(int categoryId) async {
     Database db = await database;
-    var laws = await db.query('laws', where: 'category_id = ?', whereArgs: [categoryId]);
+    var topics = await db.query('topics', where: 'category_id = ?', whereArgs: [categoryId]);
+    return topics.map((t) => Topic.fromMap(t)).toList();
+  }
+
+  Future<List<Law>> getLawsByTopic(int topicId) async {
+    Database db = await database;
+    var laws = await db.query('laws', where: 'topic_id = ?', whereArgs: [topicId]);
     return laws.map((l) => Law.fromMap(l)).toList();
   }
 
@@ -145,42 +200,51 @@ class DatabaseHelper {
     return sources.map((s) => Source.fromMap(s)).toList();
   }
 
-  Future<List<Law>> searchLaws(String query) async {
+  Future<School?> getSchoolById(int schoolId) async {
     Database db = await database;
-    var laws = await db.query('laws', where: 'title LIKE ? OR content LIKE ?', whereArgs: ['%$query%', '%$query%']);
-    return laws.map((l) => Law.fromMap(l)).toList();
+    var schools = await db.query('schools', where: 'id = ?', whereArgs: [schoolId]);
+    if (schools.isNotEmpty) {
+      return School.fromMap(schools.first);
+    }
+    return null;
   }
 
-  // Favorites
-  Future<void> addFavorite(int lawId) async {
+  Future<List<Topic>> searchTopics(String query) async {
     Database db = await database;
-    await db.insert('favorites', {'law_id': lawId}, conflictAlgorithm: ConflictAlgorithm.ignore);
+    var topics = await db.query('topics', where: 'title LIKE ? OR description LIKE ?', whereArgs: ['%$query%', '%$query%']);
+    return topics.map((t) => Topic.fromMap(t)).toList();
   }
 
-  Future<void> removeFavorite(int lawId) async {
+  // Favorites (linked to Topics now)
+  Future<void> addFavorite(int topicId) async {
     Database db = await database;
-    await db.delete('favorites', where: 'law_id = ?', whereArgs: [lawId]);
+    await db.insert('favorites', {'topic_id': topicId}, conflictAlgorithm: ConflictAlgorithm.ignore);
+  }
+
+  Future<void> removeFavorite(int topicId) async {
+    Database db = await database;
+    await db.delete('favorites', where: 'topic_id = ?', whereArgs: [topicId]);
   }
 
   Future<List<int>> getFavorites() async {
     Database db = await database;
     var results = await db.query('favorites');
-    return results.map((r) => r['law_id'] as int).toList();
+    return results.map((r) => r['topic_id'] as int).toList();
   }
 
-  // Notes
-  Future<void> saveNote(int lawId, String content) async {
+  // Notes (linked to Topics)
+  Future<void> saveNote(int topicId, String content) async {
     Database db = await database;
     await db.insert(
       'notes',
-      {'law_id': lawId, 'content': content},
+      {'topic_id': topicId, 'content': content},
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
 
-  Future<String?> getNote(int lawId) async {
+  Future<String?> getNote(int topicId) async {
     Database db = await database;
-    var results = await db.query('notes', where: 'law_id = ?', whereArgs: [lawId]);
+    var results = await db.query('notes', where: 'topic_id = ?', whereArgs: [topicId]);
     if (results.isNotEmpty) {
       return results.first['content'] as String;
     }
@@ -190,6 +254,6 @@ class DatabaseHelper {
   Future<Map<int, String>> getAllNotes() async {
     Database db = await database;
     var results = await db.query('notes');
-    return { for (var r in results) r['law_id'] as int : r['content'] as String };
+    return { for (var r in results) r['topic_id'] as int : r['content'] as String };
   }
 }
