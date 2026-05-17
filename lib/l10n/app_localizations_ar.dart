@@ -43,4 +43,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noSources => 'لا توجد مصادر متاحة.';
+
+  @override
+  String get schoolHanafi => 'حنفي';
+
+  @override
+  String get schoolMaliki => 'مالكي';
+
+  @override
+  String get schoolShafii => 'شافعي';
+
+  @override
+  String get schoolHanbali => 'حنبلي';
+
+  @override
+  String get schoolJafari => 'جعفري';
 }

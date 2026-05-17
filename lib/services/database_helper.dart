@@ -121,6 +121,7 @@ class DatabaseHelper {
     int shMaliki = await db.insert('schools', {'name': 'Maliki', 'description': 'L\'école de l\'Imam Malik.'});
     int shShafii = await db.insert('schools', {'name': 'Shafi\'i', 'description': 'L\'école de l\'Imam Al-Shafi\'i.'});
     int shHanbali = await db.insert('schools', {'name': 'Hanbali', 'description': 'L\'école de l\'Imam Ahmad ibn Hanbal.'});
+    int shJafari = await db.insert('schools', {'name': 'Ja\'fari', 'description': 'L\'école de l\'Imam Ja\'far al-Sadiq.'});
 
     // Categories
     int catCulte = await db.insert('categories', {'name': 'Culte (Ibadat)', 'icon': 'mosque', 'parent_id': null});
@@ -169,6 +170,63 @@ class DatabaseHelper {
       'text_ar': 'عن عبد الله بن عمر رضي الله عنهما أن رسول الله صلى الله عليه وسلم كان يرفع يديه حذو منكبيه إذا افتتح الصلاة، وإذا كبر للركوع، وإذا رفع رأسه من الركوع',
       'authenticity': 0, // Sahih
       'citation': 'Bukhari, Kitab Adhan'
+    });
+
+    // Law Maliki
+    int lawMaliki = await db.insert('laws', {
+      'topic_id': topHands,
+      'title': 'Position Maliki',
+      'content': 'L\'avis célèbre dans l\'école Maliki (notamment dans la Mudawwana) est que l\'on ne lève les mains que pour le Takbir initial.',
+      'content_ar': 'المشهور في المذهب المالكي رفع اليدين عند تكبيرة الإحرام فقط',
+      'scholar_comments': 'C\'est l\'avis privilégié par l\'Imam Malik dans sa pratique ultérieure.',
+      'school_id': shMaliki
+    });
+    await db.insert('sources', {
+      'law_id': lawMaliki,
+      'type': 2, // Fiqh Book
+      'reference': 'Al-Mudawwana',
+      'text': 'L\'Imam Malik a dit qu\'il ne connaissait pas le fait de lever les mains dans une autre position que le premier Takbir.',
+      'text_ar': 'قال مالك: لا أعرف رفع اليدين في شيء من صلاة المصلي، إلا في افتتاح الصلاة',
+      'authenticity': 4, // None
+      'citation': 'Al-Mudawwana al-Kubra'
+    });
+
+    // Law Hanbali
+    int lawHanbali = await db.insert('laws', {
+      'topic_id': topHands,
+      'title': 'Position Hanbali',
+      'content': 'On lève les mains au Takbir initial, au moment de s\'incliner, en se redressant, et selon l\'avis prépondérant, en se levant pour la 3ème rak\'ah.',
+      'content_ar': 'يرفع يديه عند الإحرام، والركوع، والرفع منه، وعند القيام إلى الثالثة',
+      'scholar_comments': 'L\'école Hanbali suit strictement les hadiths authentiques sur ce point.',
+      'school_id': shHanbali
+    });
+    await db.insert('sources', {
+      'law_id': lawHanbali,
+      'type': 1, // Hadith
+      'reference': 'Sahih Bukhari, Hadith 739',
+      'text': 'Nafi\' a rapporté qu\'Ibn Umar levait les mains lorsqu\'il se levait après deux rak\'ahs et il attribuait cela au Prophète.',
+      'text_ar': 'عن نافع أن ابن عمر كان إذا قام من الركعتين رفع يديه، ورفع ذلك ابن عمر إلى نبي الله صلى الله عليه وسلم',
+      'authenticity': 0, // Sahih
+      'citation': 'Bukhari, Kitab al-Adhan'
+    });
+
+    // Law Jafari
+    int lawJafari = await db.insert('laws', {
+      'topic_id': topHands,
+      'title': 'Position Ja\'fari',
+      'content': 'Il est recommandé de lever les mains à chaque Takbir (Takbirat al-Intiqal), et trois fois au début (Takbirat al-Ihram).',
+      'content_ar': 'يستحب رفع اليدين عند كل تكبيرة، خاصة في افتتاح الصلاة ثلاثا',
+      'scholar_comments': 'Le lever de mains est considéré comme un embellissement de la prière.',
+      'school_id': shJafari
+    });
+    await db.insert('sources', {
+      'law_id': lawJafari,
+      'type': 1, // Hadith
+      'reference': 'Wasa\'il al-Shia, Vol 6, p. 28',
+      'text': 'L\'Imam al-Sadiq a dit : "Levez vos mains lors de chaque Takbir."',
+      'text_ar': 'عن أبي عبد الله عليه السلام قال: ارفع يديك في كل تكبيرة',
+      'authenticity': 1, // Hasan (contextual)
+      'citation': 'Wasa\'il al-Shia, Kitab al-Salat'
     });
   }
 

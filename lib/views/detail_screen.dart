@@ -109,13 +109,43 @@ class _DetailScreenState extends State<DetailScreen> {
     );
   }
 
+  Color _getSchoolColor(String? schoolName) {
+    switch (schoolName) {
+      case 'Hanafi': return Colors.blue;
+      case 'Maliki': return Colors.green;
+      case 'Shafi\'i': return Colors.teal;
+      case 'Hanbali': return Colors.amber;
+      case 'Ja\'fari': return Colors.deepPurple;
+      default: return Colors.blueGrey;
+    }
+  }
+
+  String _getLocalizedSchoolName(String? schoolName, AppLocalizations l10n) {
+    switch (schoolName) {
+      case 'Hanafi': return l10n.schoolHanafi;
+      case 'Maliki': return l10n.schoolMaliki;
+      case 'Shafi\'i': return l10n.schoolShafii;
+      case 'Hanbali': return l10n.schoolHanbali;
+      case 'Ja\'fari': return l10n.schoolJafari;
+      default: return schoolName ?? "...";
+    }
+  }
+
   Widget _buildLawCard(Law law, AppLocalizations l10n) {
     return FutureBuilder<School?>(
       future: DatabaseHelper().getSchoolById(law.schoolId),
       builder: (context, schoolSnapshot) {
-        final schoolName = schoolSnapshot.data?.name ?? "...";
+        final schoolName = schoolSnapshot.data?.name;
+        final localizedSchoolName = _getLocalizedSchoolName(schoolName, l10n);
+        final schoolColor = _getSchoolColor(schoolName);
+
         return Card(
           margin: const EdgeInsets.symmetric(vertical: 12),
+          elevation: 4,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(color: schoolColor.withOpacity(0.5), width: 1),
+          ),
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
@@ -124,11 +154,17 @@ class _DetailScreenState extends State<DetailScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      schoolName,
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.green),
+                    Chip(
+                      label: Text(
+                        localizedSchoolName,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      backgroundColor: schoolColor,
                     ),
-                    const Icon(Icons.gavel, color: Colors.green),
+                    Icon(Icons.gavel, color: schoolColor),
                   ],
                 ),
                 const Divider(),

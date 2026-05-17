@@ -43,4 +43,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noSources => 'No sources available.';
+
+  @override
+  String get schoolHanafi => 'Hanafi';
+
+  @override
+  String get schoolMaliki => 'Maliki';
+
+  @override
+  String get schoolShafii => 'Shafi\'i';
+
+  @override
+  String get schoolHanbali => 'Hanbali';
+
+  @override
+  String get schoolJafari => 'Ja\'fari';
 }
