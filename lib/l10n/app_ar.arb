@@ -10,5 +10,10 @@
   "saveNote": "حفظ الملاحظة",
   "noteSaved": "تم حفظ الملاحظة!",
   "noLaws": "لم يتم العثور على قوانين.",
-  "noSources": "لا توجد مصادر متاحة."
+  "noSources": "لا توجد مصادر متاحة.",
+  "schoolHanafi": "حنفي",
+  "schoolMaliki": "مالكي",
+  "schoolShafii": "شافعي",
+  "schoolHanbali": "حنبلي",
+  "schoolJafari": "جعفري"
 }

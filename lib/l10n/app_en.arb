@@ -10,5 +10,10 @@
   "saveNote": "Save Note",
   "noteSaved": "Note saved!",
   "noLaws": "No laws found.",
-  "noSources": "No sources available."
+  "noSources": "No sources available.",
+  "schoolHanafi": "Hanafi",
+  "schoolMaliki": "Maliki",
+  "schoolShafii": "Shafi'i",
+  "schoolHanbali": "Hanbali",
+  "schoolJafari": "Ja'fari"
 }

@@ -171,6 +171,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No sources available.'**
   String get noSources;
+
+  /// No description provided for @schoolHanafi.
+  ///
+  /// In en, this message translates to:
+  /// **'Hanafi'**
+  String get schoolHanafi;
+
+  /// No description provided for @schoolMaliki.
+  ///
+  /// In en, this message translates to:
+  /// **'Maliki'**
+  String get schoolMaliki;
+
+  /// No description provided for @schoolShafii.
+  ///
+  /// In en, this message translates to:
+  /// **'Shafi\'i'**
+  String get schoolShafii;
+
+  /// No description provided for @schoolHanbali.
+  ///
+  /// In en, this message translates to:
+  /// **'Hanbali'**
+  String get schoolHanbali;
+
+  /// No description provided for @schoolJafari.
+  ///
+  /// In en, this message translates to:
+  /// **'Ja\'fari'**
+  String get schoolJafari;
 }
 
 class _AppLocalizationsDelegate
