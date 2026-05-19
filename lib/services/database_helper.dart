@@ -140,6 +140,8 @@ class DatabaseHelper {
     // Subcategories
     int catMariage = await db.insert('categories', {'name': 'Mariage (Nikah)', 'icon': 'people', 'parent_id': catFamille});
     int catCommerce = await db.insert('categories', {'name': 'Transactions (Muamalat)', 'icon': 'monetization_on', 'parent_id': catEconomie});
+    int catQada = await db.insert('categories', {'name': 'Jugements (Qada)', 'icon': 'gavel', 'parent_id': catJustice});
+    int catIkhlas = await db.insert('categories', {'name': 'Sincérité (Ikhlas)', 'icon': 'favorite', 'parent_id': catEthique});
 
     // Topic: Lever les mains dans la prière
     int topHands = await db.insert('topics', {
@@ -311,6 +313,56 @@ class DatabaseHelper {
       'text_ar': 'لعن رسول الله صلى الله عليه وسلم آكل الربا وموكله وكاتبه وشاهديه',
       'authenticity': 0, // Sahih
       'citation': 'Muslim, Kitab al-Musaqat'
+    });
+
+    // Topic: Le Témoignage
+    int topWitness = await db.insert('topics', {
+      'category_id': catQada,
+      'title': 'Le Témoignage (Shahada)',
+      'description': 'Les conditions pour qu\'un témoignage soit accepté devant un juge.'
+    });
+
+    int lawWitnessMaliki = await db.insert('laws', {
+      'topic_id': topWitness,
+      'title': 'Position Maliki sur le Témoignage',
+      'content': 'Le témoin doit être juste (\'Adl), pubère, et ne pas avoir de lien de parenté direct ou d\'intérêt avec l\'une des parties.',
+      'content_ar': 'يشترط في الشاهد العدالة والحرية والبلوغ',
+      'scholar_comments': 'La justice du témoin est au cœur de la procédure judiciaire Maliki.',
+      'school_id': shMaliki
+    });
+    await db.insert('sources', {
+      'law_id': lawWitnessMaliki,
+      'type': 0, // Quran
+      'reference': 'Sourate Al-Baqarah (2), Verset 282',
+      'text': 'Et faites-en témoigner par deux témoins d\'entre vos hommes.',
+      'text_ar': 'وَاسْتَشْهِدُوا شَهِيدَيْنِ مِنْ رِجَالِكُمْ',
+      'authenticity': 4,
+      'citation': 'Le Saint Coran'
+    });
+
+    // Topic: La Sincérité
+    int topSincerity = await db.insert('topics', {
+      'category_id': catIkhlas,
+      'title': 'L\'Importance de l\'Intention',
+      'description': 'La place de l\'intention (Niyya) dans les actes d\'adoration.'
+    });
+
+    int lawSincerityHanafi = await db.insert('laws', {
+      'topic_id': topSincerity,
+      'title': 'Position Hanafi sur l\'Intention',
+      'content': 'L\'intention est nécessaire pour distinguer l\'adoration de l\'habitude, mais elle n\'est pas toujours une condition de validité pour certains actes comme le remboursement d\'une dette.',
+      'content_ar': 'النية شرط في العبادات لتمييزها عن العادات',
+      'scholar_comments': 'L\'école Hanafi met l\'accent sur la finalité de l\'acte.',
+      'school_id': shHanafi
+    });
+    await db.insert('sources', {
+      'law_id': lawSincerityHanafi,
+      'type': 1, // Hadith
+      'reference': 'Sahih Bukhari, Hadith 1',
+      'text': 'Les actions ne valent que par les intentions.',
+      'text_ar': 'إنما الأعمال بالنيات',
+      'authenticity': 0, // Sahih
+      'citation': 'Bukhari, Bad\' al-Wahy'
     });
   }
 
