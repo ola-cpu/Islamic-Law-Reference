@@ -124,4 +124,13 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get hajjStep7Desc => 'Жертвоприношение и завершение обрядов Хаджа.';
+
+  @override
+  String get relatedTopics => 'Связанные темы';
+
+  @override
+  String get filterBySchool => 'Фильтровать по школе';
+
+  @override
+  String get filterByCategory => 'Фильтровать по категории';
 }
