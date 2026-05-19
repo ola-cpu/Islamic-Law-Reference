@@ -58,4 +58,70 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get schoolJafari => 'Ja\'fari';
+
+  @override
+  String get mediaLibrary => 'Bibliothèque Média';
+
+  @override
+  String get comparisonTable => 'Tableau comparatif des écoles';
+
+  @override
+  String get schoolTitle => 'École';
+
+  @override
+  String get legalOpinion => 'Avis Juridique';
+
+  @override
+  String get mediaSectionTitle => 'Médias et Illustrations';
+
+  @override
+  String get illustration => 'Illustration';
+
+  @override
+  String get comingSoon => 'Bientôt disponible';
+
+  @override
+  String get close => 'Fermer';
+
+  @override
+  String get hajjSteps => 'Étapes du Pèlerinage (Hajj)';
+
+  @override
+  String get noMediaFound => 'Aucun média trouvé.';
+
+  @override
+  String get languageEn => 'Anglais';
+
+  @override
+  String get languageFr => 'Français';
+
+  @override
+  String get languageAr => 'Arabe';
+
+  @override
+  String get languageRu => 'Russe';
+
+  @override
+  String get languageZh => 'Chinois';
+
+  @override
+  String get hajjStep1Desc => 'Entrée en état de sacralisation.';
+
+  @override
+  String get hajjStep2Desc => 'Départ pour Mina le 8 Dhul-Hijjah.';
+
+  @override
+  String get hajjStep3Desc => 'Le jour d\'Arafat (le point culminant).';
+
+  @override
+  String get hajjStep4Desc => 'Ramassage des cailloux.';
+
+  @override
+  String get hajjStep5Desc => 'Lapidation des stèles à Mina.';
+
+  @override
+  String get hajjStep6Desc => 'Circumambulation de la Kaaba.';
+
+  @override
+  String get hajjStep7Desc => 'Offrande et fin du Hajj.';
 }

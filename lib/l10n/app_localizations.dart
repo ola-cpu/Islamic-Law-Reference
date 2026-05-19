@@ -8,6 +8,8 @@ import 'package:intl/intl.dart' as intl;
 import 'app_localizations_ar.dart';
 import 'app_localizations_en.dart';
 import 'app_localizations_fr.dart';
+import 'app_localizations_ru.dart';
+import 'app_localizations_zh.dart';
 
 // ignore_for_file: type=lint
 
@@ -98,6 +100,8 @@ abstract class AppLocalizations {
     Locale('ar'),
     Locale('en'),
     Locale('fr'),
+    Locale('ru'),
+    Locale('zh'),
   ];
 
   /// No description provided for @appTitle.
@@ -201,6 +205,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ja\'fari'**
   String get schoolJafari;
+
+  /// No description provided for @mediaLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Media Library'**
+  String get mediaLibrary;
+
+  /// No description provided for @comparisonTable.
+  ///
+  /// In en, this message translates to:
+  /// **'Comparative table of schools'**
+  String get comparisonTable;
+
+  /// No description provided for @schoolTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'School'**
+  String get schoolTitle;
+
+  /// No description provided for @legalOpinion.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal Opinion'**
+  String get legalOpinion;
+
+  /// No description provided for @mediaSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Media and Illustrations'**
+  String get mediaSectionTitle;
+
+  /// No description provided for @illustration.
+  ///
+  /// In en, this message translates to:
+  /// **'Illustration'**
+  String get illustration;
+
+  /// No description provided for @comingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get comingSoon;
+
+  /// No description provided for @close.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
+
+  /// No description provided for @hajjSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'Steps of the Pilgrimage (Hajj)'**
+  String get hajjSteps;
+
+  /// No description provided for @noMediaFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No media found.'**
+  String get noMediaFound;
+
+  /// No description provided for @languageEn.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get languageEn;
+
+  /// No description provided for @languageFr.
+  ///
+  /// In en, this message translates to:
+  /// **'French'**
+  String get languageFr;
+
+  /// No description provided for @languageAr.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic'**
+  String get languageAr;
+
+  /// No description provided for @languageRu.
+  ///
+  /// In en, this message translates to:
+  /// **'Russian'**
+  String get languageRu;
+
+  /// No description provided for @languageZh.
+  ///
+  /// In en, this message translates to:
+  /// **'Chinese'**
+  String get languageZh;
+
+  /// No description provided for @hajjStep1Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Entering the state of Ihram.'**
+  String get hajjStep1Desc;
+
+  /// No description provided for @hajjStep2Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Departure for Mina on the 8th of Dhul-Hijjah.'**
+  String get hajjStep2Desc;
+
+  /// No description provided for @hajjStep3Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Day of Arafat (The climax of Hajj).'**
+  String get hajjStep3Desc;
+
+  /// No description provided for @hajjStep4Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Collecting pebbles at Muzdalifah.'**
+  String get hajjStep4Desc;
+
+  /// No description provided for @hajjStep5Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Stoning the pillars at Mina.'**
+  String get hajjStep5Desc;
+
+  /// No description provided for @hajjStep6Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Tawaf and Sa\'y at Mecca.'**
+  String get hajjStep6Desc;
+
+  /// No description provided for @hajjStep7Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Sacrifice and end of Hajj rituals.'**
+  String get hajjStep7Desc;
 }
 
 class _AppLocalizationsDelegate
@@ -214,7 +350,7 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) =>
-      <String>['ar', 'en', 'fr'].contains(locale.languageCode);
+      <String>['ar', 'en', 'fr', 'ru', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -229,6 +365,10 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsEn();
     case 'fr':
       return AppLocalizationsFr();
+    case 'ru':
+      return AppLocalizationsRu();
+    case 'zh':
+      return AppLocalizationsZh();
   }
 
   throw FlutterError(

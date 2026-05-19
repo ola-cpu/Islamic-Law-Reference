@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -31,12 +32,17 @@ class DatabaseHelper {
     }
     return await openDatabase(
       path,
-      version: 4,
+      version: 8, // Bumped to 8 to add localized sample data
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
-         // Simplified for this task: recreate tables if upgrading
-         await _dropTables(db);
-         await _onCreate(db, newVersion);
+        if (oldVersion < 8) {
+          // Destructive upgrade for major translation schema change
+          await _dropTables(db);
+          await _onCreate(db, newVersion);
+        } else {
+          // Future migrations should be non-destructive
+          // Example: await db.execute('ALTER TABLE ... ADD COLUMN ...');
+        }
       },
     );
   }
@@ -58,6 +64,10 @@ class DatabaseHelper {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         parent_id INTEGER,
         name TEXT,
+        name_en TEXT,
+        name_ar TEXT,
+        name_ru TEXT,
+        name_zh TEXT,
         icon TEXT,
         image_url TEXT,
         FOREIGN KEY (parent_id) REFERENCES categories (id)
@@ -67,7 +77,15 @@ class DatabaseHelper {
       CREATE TABLE schools(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
-        description TEXT
+        name_en TEXT,
+        name_ar TEXT,
+        name_ru TEXT,
+        name_zh TEXT,
+        description TEXT,
+        description_en TEXT,
+        description_ar TEXT,
+        description_ru TEXT,
+        description_zh TEXT
       )
     ''');
     await db.execute('''
@@ -75,7 +93,15 @@ class DatabaseHelper {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         category_id INTEGER,
         title TEXT,
+        title_en TEXT,
+        title_ar TEXT,
+        title_ru TEXT,
+        title_zh TEXT,
         description TEXT,
+        description_en TEXT,
+        description_ar TEXT,
+        description_ru TEXT,
+        description_zh TEXT,
         FOREIGN KEY (category_id) REFERENCES categories (id)
       )
     ''');
@@ -84,9 +110,20 @@ class DatabaseHelper {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         topic_id INTEGER,
         title TEXT,
+        title_en TEXT,
+        title_ar TEXT,
+        title_ru TEXT,
+        title_zh TEXT,
         content TEXT,
+        content_en TEXT,
         content_ar TEXT,
+        content_ru TEXT,
+        content_zh TEXT,
         scholar_comments TEXT,
+        scholar_comments_en TEXT,
+        scholar_comments_ar TEXT,
+        scholar_comments_ru TEXT,
+        scholar_comments_zh TEXT,
         school_id INTEGER,
         FOREIGN KEY (topic_id) REFERENCES topics (id),
         FOREIGN KEY (school_id) REFERENCES schools (id)
@@ -98,10 +135,21 @@ class DatabaseHelper {
         law_id INTEGER,
         type INTEGER,
         reference TEXT,
+        reference_en TEXT,
+        reference_ar TEXT,
+        reference_ru TEXT,
+        reference_zh TEXT,
         text TEXT,
+        text_en TEXT,
         text_ar TEXT,
+        text_ru TEXT,
+        text_zh TEXT,
         authenticity INTEGER,
         citation TEXT,
+        citation_en TEXT,
+        citation_ar TEXT,
+        citation_ru TEXT,
+        citation_zh TEXT,
         FOREIGN KEY (law_id) REFERENCES laws (id)
       )
     ''');
@@ -136,493 +184,280 @@ class DatabaseHelper {
   }
 
   Future _seedDatabase(Database db) async {
+    // Reliable images
+    const String imgPrayer = 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80&w=1000';
+    const String imgFasting = 'https://images.unsplash.com/photo-1564121211835-e88c852648ab?auto=format&fit=crop&q=80&w=1000';
+    const String imgFamily = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1000';
+    const String imgMarriage = 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=1000';
+    const String imgEconomy = 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=1000';
+    const String imgJustice = 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1000';
+    const String imgEthics = 'https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&q=80&w=1000';
+    const String imgFood = 'https://images.unsplash.com/photo-1547573854-74d2a71d0826?auto=format&fit=crop&q=80&w=1000';
+    const String imgContracts = 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1000';
+    const String imgRights = 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000';
+    const String imgInheritance = 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000';
+
     // Schools
-    int shHanafi = await db.insert('schools', {'name': 'Hanafi', 'description': 'L\'école de l\'Imam Abu Hanifa.'});
-    int shMaliki = await db.insert('schools', {'name': 'Maliki', 'description': 'L\'école de l\'Imam Malik.'});
-    int shShafii = await db.insert('schools', {'name': 'Shafi\'i', 'description': 'L\'école de l\'Imam Al-Shafi\'i.'});
-    int shHanbali = await db.insert('schools', {'name': 'Hanbali', 'description': 'L\'école de l\'Imam Ahmad ibn Hanbal.'});
-    int shJafari = await db.insert('schools', {'name': 'Ja\'fari', 'description': 'L\'école de l\'Imam Ja\'far al-Sadiq.'});
+    int shHanafi = await db.insert('schools', {
+      'name': 'Hanafi', 'name_en': 'Hanafi', 'name_ar': 'حنفي', 'name_ru': 'Ханафитский', 'name_zh': '哈乃斐',
+      'description': 'L\'école de l\'Imam Abu Hanifa.', 'description_en': 'The school of Imam Abu Hanifa.'
+    });
+    int shMaliki = await db.insert('schools', {
+      'name': 'Maliki', 'name_en': 'Maliki', 'name_ar': 'مالكي', 'name_ru': 'Маликитский', 'name_zh': '马立克',
+      'description': 'L\'école de l\'Imam Malik.', 'description_en': 'The school of Imam Malik.'
+    });
+    int shShafii = await db.insert('schools', {
+      'name': 'Shafi\'i', 'name_en': 'Shafi\'i', 'name_ar': 'شافعي', 'name_ru': 'Шафиитский', 'name_zh': '沙斐仪',
+      'description': 'L\'école de l\'Imam Al-Shafi\'i.', 'description_en': 'The school of Imam Al-Shafi\'i.'
+    });
+    int shHanbali = await db.insert('schools', {
+      'name': 'Hanbali', 'name_en': 'Hanbali', 'name_ar': 'حنبلي', 'name_ru': 'Ханбалитский', 'name_zh': '罕百里',
+      'description': 'L\'école de l\'Imam Ahmad ibn Hanbal.', 'description_en': 'The school of Imam Ahmad ibn Hanbal.'
+    });
+    int shJafari = await db.insert('schools', {
+      'name': 'Ja\'fari', 'name_en': 'Ja\'fari', 'name_ar': 'جعفري', 'name_ru': 'Джафаритский', 'name_zh': '贾法里',
+      'description': 'L\'école de l\'Imam Ja\'far al-Sadiq.', 'description_en': 'The school of Imam Ja\'far al-Sadiq.'
+    });
 
     // Categories
     int catCulte = await db.insert('categories', {
-      'name': 'Prière et culte',
+      'name': 'Prière et culte', 'name_en': 'Prayer and Worship', 'name_ar': 'الصلاة والعبادة', 'name_ru': 'Молитва и поклонение', 'name_zh': '祈祷与崇拜',
       'icon': 'mosque',
-      'image_url': 'https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgPrayer,
       'parent_id': null
     });
     int catJeune = await db.insert('categories', {
-      'name': 'Jeûne, zakât et pèlerinage',
+      'name': 'Jeûne, zakât et pèlerinage', 'name_en': 'Fasting, Zakat and Pilgrimage', 'name_ar': 'الصوم والزكاة والحج', 'name_ru': 'Пост, закят и паломничество', 'name_zh': '禁食、天课和朝觐',
       'icon': 'volunteer_activism',
-      'image_url': 'https://images.unsplash.com/photo-1564121211835-e88c852648ab?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgFasting,
       'parent_id': null
     });
     int catFamille = await db.insert('categories', {
-      'name': 'Relations sociales et familiales',
+      'name': 'Relations sociales et familiales', 'name_en': 'Social and Family Relations', 'name_ar': 'العلاقات الاجتماعية والأسرية', 'name_ru': 'Социальные и семейные отношения', 'name_zh': '社会与家庭关系',
       'icon': 'people',
-      'image_url': 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgFamily,
       'parent_id': null
     });
     int catMariage = await db.insert('categories', {
-      'name': 'Mariage, divorce et garde des enfants',
+      'name': 'Mariage, divorce et garde des enfants', 'name_en': 'Marriage, Divorce and Child Custody', 'name_ar': 'الزواج والطلاق وحضانة الأطفال', 'name_ru': 'Брак, развод и опека над детьми', 'name_zh': '婚姻、离婚和子女抚养',
       'icon': 'family_restroom',
-      'image_url': 'https://images.unsplash.com/photo-1581333100576-b73bbe92c2cb?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgMarriage,
       'parent_id': null
     });
     int catEconomie = await db.insert('categories', {
-      'name': 'Économie, finance et commerce',
+      'name': 'Économie, finance et commerce', 'name_en': 'Economy, Finance and Trade', 'name_ar': 'الاقتصاد والمالية والتجارة', 'name_ru': 'Экономика, финансы и торговля', 'name_zh': '经济、金融与贸易',
       'icon': 'monetization_on',
-      'image_url': 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgEconomy,
       'parent_id': null
     });
     int catJustice = await db.insert('categories', {
-      'name': 'Justice et gouvernance',
+      'name': 'Justice et gouvernance', 'name_en': 'Justice and Governance', 'name_ar': 'العدل والحكم', 'name_ru': 'Правосудие и управление', 'name_zh': '司法与治理',
       'icon': 'gavel',
-      'image_url': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgJustice,
       'parent_id': null
     });
     int catEthique = await db.insert('categories', {
-      'name': 'Éthique et spiritualité',
+      'name': 'Éthique et spiritualité', 'name_en': 'Ethics and Spirituality', 'name_ar': 'الأخلاق والروحانية', 'name_ru': 'Этика и духовность', 'name_zh': '伦理与灵性',
       'icon': 'favorite',
-      'image_url': 'https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgEthics,
       'parent_id': null
     });
     int catAlimentation = await db.insert('categories', {
-      'name': 'Alimentation et règles de pureté',
+      'name': 'Alimentation et règles de pureté', 'name_en': 'Food and Purity Rules', 'name_ar': 'الغذاء وقواعد الطهارة', 'name_ru': 'Питание и правила чистоты', 'name_zh': '饮食与纯净规则',
       'icon': 'restaurant',
-      'image_url': 'https://images.unsplash.com/photo-1547573854-74d2a71d0826?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgFood,
       'parent_id': null
     });
     int catContrats = await db.insert('categories', {
-      'name': 'Les contrats et engagements',
+      'name': 'Les contrats et engagements', 'name_en': 'Contracts and Commitments', 'name_ar': 'العقود والالتزامات', 'name_ru': 'Контракты и обязательства', 'name_zh': '合同与承诺',
       'icon': 'description',
-      'image_url': 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgContracts,
       'parent_id': null
     });
     int catDroits = await db.insert('categories', {
-      'name': 'Les droits et devoirs individuels',
+      'name': 'Les droits et devoirs individuels', 'name_en': 'Individual Rights and Duties', 'name_ar': 'الحقوق والواجبات الفردية', 'name_ru': 'Индивидуальные права и обязанности', 'name_zh': '个人权利与义务',
       'icon': 'accessibility',
-      'image_url': 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgRights,
       'parent_id': null
     });
     int catHeritage = await db.insert('categories', {
-      'name': 'Héritage et succession (Farāʾiḍ)',
+      'name': 'Héritage et succession (Farāʾiḍ)', 'name_en': 'Inheritance and Succession', 'name_ar': 'الميراث والوصية', 'name_ru': 'Наследование и преемственность', 'name_zh': '继承与继承',
       'icon': 'account_balance',
-      'image_url': 'https://images.unsplash.com/photo-14539414037aa4-944c883e585e?auto=format&fit=crop&q=80&w=1000',
+      'image_url': imgInheritance,
       'parent_id': null
     });
 
-    // Category 1: Prière et culte
+    // Topics
     int topHands = await db.insert('topics', {
       'category_id': catCulte,
-      'title': 'Lever les mains dans la prière',
-      'description': 'Les règles concernant le fait de lever les mains à différents moments de la prière.'
+      'title': 'Lever les mains dans la prière', 'title_en': 'Raising hands in prayer', 'title_ar': 'رفع اليدين في الصلاة', 'title_ru': 'Поднятие рук в молитве', 'title_zh': '祈祷时举手',
+      'description': 'Les règles concernant le fait de lever les mains à différents moments de la prière.', 'description_en': 'Rules concerning raising hands at different moments of prayer.'
     });
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Les conditions de la prière', 'description': 'Les prérequis nécessaires pour la validité de la prière.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Les horaires des prières', 'description': 'Les temps prescrits pour chacune des cinq prières obligatoires.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Les ablutions (wuḍū’)', 'description': 'La purification mineure avant la prière.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Le ghusl (grande purification)', 'description': 'Le bain rituel obligatoire dans certaines situations.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Le tayammum', 'description': 'La purification sèche en l\'absence d\'eau.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Les piliers et obligations de la prière', 'description': 'Les éléments essentiels qui constituent la prière.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Les prières surérogatoires (Nawāfil)', 'description': 'Les prières volontaires recommandées.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'La prière du vendredi (Jumu\'ah)', 'description': 'Les règles spécifiques à la prière collective du vendredi.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'La prière en voyage', 'description': 'Les allègements accordés au voyageur.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Les prières des fêtes (ʿĪd)', 'description': 'Les règles des prières de l\'Aïd al-Fitr et de l\'Aïd al-Adha.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'La prière funéraire (Janāzah)', 'description': 'La prière sur le défunt musulman.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Les invocations et adhkār', 'description': 'Les rappels et supplications liés à la prière.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Les règles de la mosquée', 'description': 'L\'étiquette et les dispositions légales liées au lieu de culte.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Les annulations et erreurs (Sujūd al-Sahw)', 'description': 'Comment corriger les oublis ou erreurs pendant la prière.'});
-    await db.insert('topics', {'category_id': catCulte, 'title': 'Divergences entre écoles (Prière)', 'description': 'Les principaux points de désaccord sur les actes d\'adoration.'});
-
-    // Category 2: Jeûne, Zakât et pèlerinage
-    int subCatJeune = await db.insert('categories', {'name': 'Jeûne (Ṣawm)', 'icon': 'self_improvement', 'parent_id': catJeune});
-    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Conditions du jeûne', 'description': 'Les prérequis pour l\'obligation du jeûne.'});
-    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Invalidations du jeûne', 'description': 'Les actes qui rompent le jeûne.'});
-    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Jeûne de Ramadan', 'description': 'Les règles spécifiques au mois béni.'});
-    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Jeûnes volontaires', 'description': 'Les jours recommandés pour le jeûne surérogatoire.'});
-    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Rattrapage et expiation (Kaffārah)', 'description': 'Comment compenser les jours manqués.'});
-    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Jeûne du voyageur et du malade', 'description': 'Les dispenses accordées par la charia.'});
-    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Iʿtikāf', 'description': 'La retraite spirituelle à la mosquée.'});
-
-    int subCatZakat = await db.insert('categories', {'name': 'Zakât', 'icon': 'volunteer_activism', 'parent_id': catJeune});
-    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Calcul de la zakât', 'description': 'Comment déterminer le montant dû.'});
-    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Le Nisāb', 'description': 'Le seuil de richesse au-delà duquel la zakât devient obligatoire.'});
-    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Catégories de biens concernés', 'description': 'Or, argent, bétail, récoltes et commerce.'});
-    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Bénéficiaires de la zakât', 'description': 'Les huit catégories de personnes pouvant recevoir la zakât.'});
-    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Zakāt al-fiṭr', 'description': 'L\'aumône obligatoire à la fin du Ramadan.'});
-    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Zakât commerciale et agricole', 'description': 'Règles spécifiques pour les commerçants et agriculteurs.'});
-
-    int subCatHajj = await db.insert('categories', {'name': 'Pèlerinage (Ḥajj et ʿUmrah)', 'icon': 'mosque', 'parent_id': catJeune});
-    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Conditions du pèlerinage', 'description': 'Qui doit effectuer le Hajj.'});
-    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Rites du ḥajj', 'description': 'Le déroulement étape par étape.'});
-    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Iḥrām', 'description': 'L\'état de sacralisation et ses interdits.'});
-    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Tawāf et Saʿy', 'description': 'Les circumambulations et la marche entre Safa et Marwa.'});
-    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Sacrifices (Hady)', 'description': 'L\'offrande rituelles lors du pèlerinage.'});
-    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Erreurs et compensations (Fidyah)', 'description': 'Comment réparer les manquements aux rites.'});
-    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Différences entre ḥajj et ʿumrah', 'description': 'Comparaison des deux types de pèlerinage.'});
-
-    // Category 3: Relations sociales et familiales
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Respect des parents', 'description': 'Le devoir de piété filiale en Islam.'});
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Droits des voisins', 'description': 'L\'importance du bon voisinage.'});
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Relations entre musulmans', 'description': 'Les bases de la fraternité islamique.'});
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Fraternité et solidarité', 'description': 'L\'entraide au sein de la communauté.'});
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Comportement en société (Adab)', 'description': 'L\'étiquette sociale et le savoir-vivre.'});
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Éducation des enfants', 'description': 'Les responsabilités des parents envers leur progéniture.'});
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Gestion des conflits', 'description': 'La médiation et la réconciliation.'});
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Droits des invités', 'description': 'Les règles de l\'hospitalité.'});
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Relations avec les non-musulmans', 'description': 'La coexistence et le respect mutuel.'});
-    await db.insert('topics', {'category_id': catFamille, 'title': 'Visites et salutations', 'description': 'Les règles du Salam et des visites.'});
-
-    // Category 4: Mariage, divorce et garde des enfants
-    int topMahr = await db.insert('topics', {
-      'category_id': catMariage,
-      'title': 'La Dot (Mahr)',
-      'description': 'Les règles concernant le don obligatoire du mari à son épouse lors du mariage.'
-    });
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Conditions du mariage (Nikāḥ)', 'description': 'Les éléments requis pour la validité du contrat.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Contrat de mariage', 'description': 'La rédaction et les clauses du contrat.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Droits et devoirs des époux', 'description': 'Les obligations mutuelles dans le couple.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Polygamie', 'description': 'Les règles et conditions de la polygamie.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Causes de divorce', 'description': 'Quand le divorce devient une nécessité.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Le ṭalāq', 'description': 'La répudiation par le mari.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Le khulʿ', 'description': 'Le divorce à l\'initiative de l\'épouse.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Période de viduité (ʿiddah)', 'description': 'Le temps d\'attente après une séparation.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Pension et entretien (Nafaqah)', 'description': 'La prise en charge financière de la famille.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Garde des enfants (Ḥaḍānah)', 'description': 'À qui revient la garde en cas de divorce.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Filiation et Adoption (Kafālah)', 'description': 'La reconnaissance de l\'enfant et la prise en charge d\'orphelins.'});
-    await db.insert('topics', {'category_id': catMariage, 'title': 'Médiation familiale', 'description': 'Chercher la conciliation avant la rupture.'});
-
-    // Category 5: Économie, finance et commerce
-    int topRiba = await db.insert('topics', {
-      'category_id': catEconomie,
-      'title': 'Le Riba (Intérêt)',
-      'description': 'L\'interdiction de l\'usure et de l\'intérêt dans les transactions financières.'
-    });
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Commerce Halal', 'description': 'Les principes de base des échanges licites.'});
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Contrats commerciaux', 'description': 'Les différents types de contrats en Islam.'});
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Partenariats (Mushārakah)', 'description': 'Le partage des profits et des pertes.'});
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Investissements et ventes interdites', 'description': 'Ce qu\'il n\'est pas permis de commercialiser.'});
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Dette et crédit', 'description': 'L\'éthique de l\'emprunt et du remboursement.'});
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Finance et Banques Islamiques', 'description': 'Le fonctionnement du système bancaire sans Riba.'});
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Assurances Islamiques (Takāful)', 'description': 'Le concept d\'assurance mutuelle.'});
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Commerce électronique', 'description': 'Les règles modernes de la vente en ligne.'});
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Fraude et tromperie', 'description': 'L\'interdiction de la triche dans les transactions.'});
-    await db.insert('topics', {'category_id': catEconomie, 'title': 'Monnaies numériques', 'description': 'Le statut juridique des cryptomonnaies.'});
 
     // Law Hanafi
     int lawHanafi = await db.insert('laws', {
       'topic_id': topHands,
-      'title': 'Position Hanafi',
+      'title': 'Position Hanafi', 'title_en': 'Hanafi Position', 'title_ar': 'موقف الحنفية', 'title_ru': 'Позиция Ханафи', 'title_zh': '哈乃斐立场',
       'content': 'On lève les mains seulement au début de la prière (Takbir d\'ouverture).',
+      'content_en': 'The hands are raised only at the beginning of the prayer (Opening Takbir).',
       'content_ar': 'يرفع يديه في التكبيرة الأولى فقط',
+      'content_ru': 'Руки поднимаются только в начале молитвы (вступительный такбир).',
+      'content_zh': '仅在祈祷开始时（开端大赞）举手。',
       'scholar_comments': 'Basé sur la pratique des gens de Koufa.',
+      'scholar_comments_en': 'Based on the practice of the people of Kufa.',
+      'scholar_comments_ru': 'Основано на практике жителей Куфы.',
+      'scholar_comments_zh': '基于库法人的实践。',
       'school_id': shHanafi
     });
     await db.insert('sources', {
       'law_id': lawHanafi,
       'type': 1, // Hadith
       'reference': 'Sunan Abi Dawood, Hadith 748',
+      'reference_en': 'Sunan Abi Dawood, Hadith 748',
+      'reference_ru': 'Сунан Аби Давуд, Хадис 748',
+      'reference_zh': '苏南·阿布·达乌德，圣训 748',
       'text': 'Ibn Mas\'ud a dit : "Ne vais-je pas vous montrer la prière du Messager d\'Allah ?" Il a alors prié et n\'a levé les mains qu\'une seule fois.',
+      'text_en': 'Ibn Mas\'ud said: "Shall I not show you the prayer of the Messenger of Allah?" He then prayed and only raised his hands once.',
       'text_ar': 'عن ابن مسعود قال: ألا أصلي بكم صلاة رسول الله صلى الله عليه وسلم؟ فصلى فلم يرفع يديه إلا في أول مرة',
+      'text_ru': 'Ибн Масуд сказал: «Не показать ли мне вам, как молился Посланник Аллаха?» Затем он совершил молитву и поднял руки только один раз.',
+      'text_zh': '伊本·马苏德说：“我难道不向你们展示安拉使者的祈祷吗？”然后他祈祷了，只举了一次手。',
       'authenticity': 1, // Hasan
       'citation': 'Abu Dawood, Kitab al-Salat'
     });
 
-    // Law Shafii
-    int lawShafii = await db.insert('laws', {
-      'topic_id': topHands,
-      'title': 'Position Shafi\'i',
-      'content': 'On lève les mains au début, avant l\'inclinaison (ruku\'), et en se relevant de l\'inclinaison.',
-      'content_ar': 'يرفع يديه عند الافتتاح، وعند الركوع، وعند الرفع منه',
-      'scholar_comments': 'Considéré comme Sunnah fortement recommandée.',
+    // --- More Sample Data ---
+    // Fasting Category
+    int topRamadan = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'Intention du jeûne', 'title_en': 'Intention for Fasting', 'title_ar': 'نية الصيام', 'title_ru': 'Намерение для поста', 'title_zh': '禁食的意图',
+      'description': 'L\'obligation de l\'intention avant le début du jeûne de Ramadan.', 'description_en': 'The obligation of intention before the start of the Ramadan fast.'
+    });
+
+    int lawShafiiRamadan = await db.insert('laws', {
+      'topic_id': topRamadan,
+      'title': 'Position Shafi\'i', 'title_en': 'Shafi\'i Position', 'title_ar': 'موقف الشافعية', 'title_ru': 'Позиция Шафии', 'title_zh': '沙斐仪立场',
+      'content': 'L\'intention doit être formulée chaque nuit avant l\'aube pour chaque jour de Ramadan.',
+      'content_en': 'The intention must be made every night before dawn for each day of Ramadan.',
+      'content_ar': 'يجب تبييت النية كل ليلة لكل يوم من رمضان',
+      'content_ru': 'Намерение должно быть сформулировано каждую ночь перед рассветом для каждого дня Рамадана.',
+      'content_zh': '在拉马丹月的每一天，必须在黎明前的每个晚上表达意图。',
       'school_id': shShafii
     });
-    await db.insert('sources', {
-      'law_id': lawShafii,
-      'type': 1, // Hadith
-      'reference': 'Sahih Bukhari, Hadith 735',
-      'text': 'Abdullah ibn Umar a rapporté que le Messager d\'Allah levait ses mains au niveau de ses épaules lorsqu\'il commençait la prière, lorsqu\'il disait le Takbir pour l\'inclinaison, et lorsqu\'il relevait sa tête de l\'inclinaison.',
-      'text_ar': 'عن عبد الله بن عمر رضي الله عنهما أن رسول الله صلى الله عليه وسلم كان يرفع يديه حذو منكبيه إذا افتتح الصلاة، وإذا كبر للركوع، وإذا رفع رأسه من الركوع',
-      'authenticity': 0, // Sahih
-      'citation': 'Bukhari, Kitab Adhan'
+
+    // Marriage Category
+    int topWali = await db.insert('topics', {
+      'category_id': catMariage,
+      'title': 'Présence du tuteur (Wali)', 'title_en': 'Presence of the Guardian (Wali)', 'title_ar': 'وجود الولي في النكاح', 'title_ru': 'Присутствие опекуна (Вали)', 'title_zh': '监护人 (Wali) 的出席',
+      'description': 'La nécessité du tuteur pour la validité du mariage.', 'description_en': 'The necessity of a guardian for the validity of marriage.'
     });
 
-    // Law Maliki
-    int lawMaliki = await db.insert('laws', {
-      'topic_id': topHands,
-      'title': 'Position Maliki',
-      'content': 'L\'avis célèbre dans l\'école Maliki (notamment dans la Mudawwana) est que l\'on ne lève les mains que pour le Takbir initial.',
-      'content_ar': 'المشهور في المذهب المالكي رفع اليدين عند تكبيرة الإحرام فقط',
-      'scholar_comments': 'C\'est l\'avis privilégié par l\'Imam Malik dans sa pratique ultérieure.',
+    int lawMalikiWali = await db.insert('laws', {
+      'topic_id': topWali,
+      'title': 'Position Maliki', 'title_en': 'Maliki Position', 'title_ar': 'موقف المالكية', 'title_ru': 'Позиция Малики', 'title_zh': '马立克立场',
+      'content': 'Le mariage n\'est pas valide sans la présence et l\'accord d\'un tuteur (Wali).',
+      'content_en': 'Marriage is not valid without the presence and consent of a guardian (Wali).',
+      'content_ar': 'لا يصح النكاح إلا بولي',
+      'content_ru': 'Брак недействителен без присутствия и согласия опекуна (Вали).',
+      'content_zh': '没有监护人（Wali）的出席和同意，婚姻是无效的。',
       'school_id': shMaliki
-    });
-    await db.insert('sources', {
-      'law_id': lawMaliki,
-      'type': 2, // Fiqh Book
-      'reference': 'Al-Mudawwana',
-      'text': 'L\'Imam Malik a dit qu\'il ne connaissait pas le fait de lever les mains dans une autre position que le premier Takbir.',
-      'text_ar': 'قال مالك: لا أعرف رفع اليدين في شيء من صلاة المصلي، إلا في افتتاح الصلاة',
-      'authenticity': 4, // None
-      'citation': 'Al-Mudawwana al-Kubra'
-    });
-
-    // Law Hanbali
-    int lawHanbali = await db.insert('laws', {
-      'topic_id': topHands,
-      'title': 'Position Hanbali',
-      'content': 'On lève les mains au Takbir initial, au moment de s\'incliner, en se redressant, et selon l\'avis prépondérant, en se levant pour la 3ème rak\'ah.',
-      'content_ar': 'يرفع يديه عند الإحرام، والركوع، والرفع منه، وعند القيام إلى الثالثة',
-      'scholar_comments': 'L\'école Hanbali suit strictement les hadiths authentiques sur ce point.',
-      'school_id': shHanbali
-    });
-    await db.insert('sources', {
-      'law_id': lawHanbali,
-      'type': 1, // Hadith
-      'reference': 'Sahih Bukhari, Hadith 739',
-      'text': 'Nafi\' a rapporté qu\'Ibn Umar levait les mains lorsqu\'il se levait après deux rak\'ahs et il attribuait cela au Prophète.',
-      'text_ar': 'عن نافع أن ابن عمر كان إذا قام من الركعتين رفع يديه، ورفع ذلك ابن عمر إلى نبي الله صلى الله عليه وسلم',
-      'authenticity': 0, // Sahih
-      'citation': 'Bukhari, Kitab al-Adhan'
-    });
-
-    // Law Jafari
-    int lawJafari = await db.insert('laws', {
-      'topic_id': topHands,
-      'title': 'Position Ja\'fari',
-      'content': 'Il est recommandé de lever les mains à chaque Takbir (Takbirat al-Intiqal), et trois fois au début (Takbirat al-Ihram).',
-      'content_ar': 'يستحب رفع اليدين عند كل تكبيرة، خاصة في افتتاح الصلاة ثلاثا',
-      'scholar_comments': 'Le lever de mains est considéré comme un embellissement de la prière.',
-      'school_id': shJafari
-    });
-    await db.insert('sources', {
-      'law_id': lawJafari,
-      'type': 1, // Hadith
-      'reference': 'Wasa\'il al-Shia, Vol 6, p. 28',
-      'text': 'L\'Imam al-Sadiq a dit : "Levez vos mains lors de chaque Takbir."',
-      'text_ar': 'عن أبي عبد الله عليه السلام قال: ارفع يديك في كل تكبيرة',
-      'authenticity': 1, // Hasan (contextual)
-      'citation': 'Wasa\'il al-Shia, Kitab al-Salat'
-    });
-
-    // Seed Media for 'Lever les mains'
-    await db.insert('media', {
-      'topic_id': topHands,
-      'type': 0, // Image
-      'url': 'https://images.unsplash.com/photo-1597933971247-a95054881729?auto=format&fit=crop&q=80&w=1000',
-      'title': 'Positions des mains',
-      'description': 'Illustration des différentes positions des mains selon les écoles.'
-    });
-
-    // Mahr (Dot) - Maliki Example
-    int lawMahrMaliki = await db.insert('laws', {
-      'topic_id': topMahr,
-      'title': 'Position Maliki sur la Dot',
-      'content': 'La dot est une condition essentielle du mariage. Elle ne peut être inférieure à un quart de dinar d\'or ou trois dirhams d\'argent.',
-      'content_ar': 'الصداق شرط في صحة النكاح، وأقله ربع دينار أو ثلاثة دراهم',
-      'scholar_comments': 'La dot doit avoir une valeur minimale pour garantir la dignité du contrat.',
-      'school_id': shMaliki
-    });
-    await db.insert('sources', {
-      'law_id': lawMahrMaliki,
-      'type': 0, // Quran
-      'reference': 'Sourate An-Nisa (4), Verset 4',
-      'text': 'Et donnez aux épouses leur dot, de bonne grâce.',
-      'text_ar': 'وَآتُوا النِّسَاءَ صَدُقَاتِهِنَّ نِحْلَةً',
-      'authenticity': 4,
-      'citation': 'Le Saint Coran'
-    });
-    await db.insert('sources', {
-      'law_id': lawMahrMaliki,
-      'type': 2, // Fiqh Book
-      'reference': 'Mukhtasar Khalil, Chapitre du Mariage',
-      'text': 'Le minimum de la dot est de trois dirhams purs ou un quart de dinar.',
-      'text_ar': 'أقل الصداق ثلاثة دراهم خالصة أو ربع دينار',
-      'authenticity': 4,
-      'citation': 'Mukhtasar Khalil, p. 95'
-    });
-
-    // Riba - General Prohibiton
-    int lawRibaShafii = await db.insert('laws', {
-      'topic_id': topRiba,
-      'title': 'Position Shafi\'i sur le Riba',
-      'content': 'Le Riba est strictement interdit dans l\'Islam. Il concerne l\'intérêt sur les prêts et l\'inégalité dans l\'échange de certains biens.',
-      'content_ar': 'الربا محرم شرعا وهو من الكبائر',
-      'scholar_comments': 'L\'interdiction est absolue selon le consensus des savants.',
-      'school_id': shShafii
-    });
-    await db.insert('sources', {
-      'law_id': lawRibaShafii,
-      'type': 0, // Quran
-      'reference': 'Sourate Al-Baqarah (2), Verset 275',
-      'text': 'Alors qu\'Allah a rendu licite le commerce, et illicite l\'intérêt (le Riba).',
-      'text_ar': 'وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا',
-      'authenticity': 4,
-      'citation': 'Le Saint Coran'
-    });
-    await db.insert('sources', {
-      'law_id': lawRibaShafii,
-      'type': 1, // Hadith
-      'reference': 'Sahih Muslim, Hadith 1598',
-      'text': 'Le Messager d\'Allah a maudit celui qui consomme le Riba, celui qui le donne, celui qui l\'écrit et les deux témoins.',
-      'text_ar': 'لعن رسول الله صلى الله عليه وسلم آكل الربا وموكله وكاتبه وشاهديه',
-      'authenticity': 0, // Sahih
-      'citation': 'Muslim, Kitab al-Musaqat'
-    });
-
-    // Category 6: Justice et gouvernance
-    int topWitness = await db.insert('topics', {
-      'category_id': catJustice,
-      'title': 'Le Témoignage (Shahada)',
-      'description': 'Les conditions pour qu\'un témoignage soit accepté devant un juge.'
-    });
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Justice Islamique', 'description': 'Les principes fondamentaux de l\'équité.'});
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Preuves et procédures', 'description': 'Le déroulement d\'un procès en Islam.'});
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Droits des citoyens', 'description': 'Les garanties individuelles face à l\'État.'});
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Responsabilités des gouvernants', 'description': 'Les devoirs de ceux qui détiennent l\'autorité.'});
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Consultation (Shūrā)', 'description': 'Le principe de participation politique.'});
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Arbitrage et médiation', 'description': 'Le règlement amiable des litiges.'});
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Sanctions et peines (Hudūd et Ta\'zīr)', 'description': 'Le système pénal islamique.'});
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Protection des biens et des personnes', 'description': 'La sécurité publique en Islam.'});
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Équité sociale', 'description': 'La justice distributive.'});
-    await db.insert('topics', {'category_id': catJustice, 'title': 'Gouvernance éthique', 'description': 'La morale dans l\'exercice du pouvoir.'});
-
-    // Category 7: Éthique et spiritualité
-    int topSincerity = await db.insert('topics', {
-      'category_id': catEthique,
-      'title': 'L\'Importance de l\'Intention',
-      'description': 'La place de l\'intention (Niyya) dans les actes d\'adoration.'
-    });
-    await db.insert('topics', {'category_id': catEthique, 'title': 'La Sincérité (Ikhlāṣ)', 'description': 'Agir uniquement pour l\'agrément d\'Allah.'});
-    await db.insert('topics', {'category_id': catEthique, 'title': 'Patience et Gratitude', 'description': 'Les deux piliers de la foi.'});
-    await db.insert('topics', {'category_id': catEthique, 'title': 'Confiance en Allah (Tawakkul)', 'description': 'S\'en remettre à Dieu après avoir agi.'});
-    await db.insert('topics', {'category_id': catEthique, 'title': 'Repentance (Tawbah)', 'description': 'Le retour vers Allah après une faute.'});
-    await db.insert('topics', {'category_id': catEthique, 'title': 'Modestie et humilité', 'description': 'La vertu de se rabaisser devant Dieu.'});
-    await db.insert('topics', {'category_id': catEthique, 'title': 'Purification du cœur', 'description': 'Lutter contre l\'orgueil, la jalousie et la colère.'});
-    await db.insert('topics', {'category_id': catEthique, 'title': 'Bonnes manières (Husn al-Khuluq)', 'description': 'L\'excellence du comportement.'});
-    await db.insert('topics', {'category_id': catEthique, 'title': 'Développement personnel islamique', 'description': 'S\'améliorer en tant que croyant.'});
-    await db.insert('topics', {'category_id': catEthique, 'title': 'Spiritualité quotidienne', 'description': 'Vivre sa foi à chaque instant.'});
-
-    // Category 8: Alimentation et règles de pureté
-    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Aliments Halal et Haram', 'description': 'Ce qui est licite et illicite à consommer.'});
-    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Abattage rituel (Dhabīḥah)', 'description': 'Les règles pour rendre la viande licite.'});
-    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Boissons interdites', 'description': 'L\'interdiction de l\'alcool et des stupéfiants.'});
-    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Impuretés (Najāsāt)', 'description': 'Identifier et nettoyer les substances impures.'});
-    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Purification des vêtements et lieux', 'description': 'Comment rendre son environnement pur.'});
-    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Hygiène personnelle', 'description': 'Les règles de la Fitrah et de la propreté.'});
-    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Règles liées aux animaux', 'description': 'Pureté et licéité des animaux.'});
-    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Ustensiles et récipients', 'description': 'Ce qu\'il est permis d\'utiliser pour manger et boire.'});
-
-    // Category 9: Contrats et engagements
-    await db.insert('topics', {'category_id': catContrats, 'title': 'Promesses et engagements', 'description': 'L\'obligation de respecter sa parole.'});
-    await db.insert('topics', {'category_id': catContrats, 'title': 'Location (Ijārah)', 'description': 'Les règles du louage de services ou de biens.'});
-    await db.insert('topics', {'category_id': catContrats, 'title': 'Prêts et Garanties', 'description': 'Sécuriser les transactions financières.'});
-    await db.insert('topics', {'category_id': catContrats, 'title': 'Contrats de travail', 'description': 'Les droits des employeurs et des salariés.'});
-    await db.insert('topics', {'category_id': catContrats, 'title': 'Donations et Testaments (Waṣiyyah)', 'description': 'Disposer de ses biens de son vivant ou pour après sa mort.'});
-    await db.insert('topics', {'category_id': catContrats, 'title': 'Responsabilité contractuelle', 'description': 'Les conséquences du non-respect des engagements.'});
-    await db.insert('topics', {'category_id': catContrats, 'title': 'Conditions de validité des contrats', 'description': 'Les éléments essentiels de tout accord.'});
-    await db.insert('topics', {'category_id': catContrats, 'title': 'Annulation et litiges', 'description': 'Comment mettre fin à un contrat.'});
-
-    // Category 10: Droits et devoirs individuels
-    await db.insert('topics', {'category_id': catDroits, 'title': 'Droits fondamentaux', 'description': 'La protection de la vie, des biens et de l\'honneur.'});
-    await db.insert('topics', {'category_id': catDroits, 'title': 'Liberté et responsabilité', 'description': 'Le libre arbitre au sein de la loi divine.'});
-    await db.insert('topics', {'category_id': catDroits, 'title': 'Droit à l\'éducation', 'description': 'L\'obligation de rechercher la science.'});
-    await db.insert('topics', {'category_id': catDroits, 'title': 'Droit au travail', 'description': 'Gagner sa vie honnêtement.'});
-    await db.insert('topics', {'category_id': catDroits, 'title': 'Droits des femmes', 'description': 'Le statut et les garanties accordés aux femmes.'});
-    await db.insert('topics', {'category_id': catDroits, 'title': 'Droits des enfants', 'description': 'La protection et l\'éducation de la jeunesse.'});
-    await db.insert('topics', {'category_id': catDroits, 'title': 'Comportement civique', 'description': 'Les devoirs envers la société.'});
-    await db.insert('topics', {'category_id': catDroits, 'title': 'Responsabilité morale', 'description': 'Répondre de ses actes devant Dieu et les hommes.'});
-
-    // Category 11: Héritage et succession (Farāʾiḍ)
-    await db.insert('topics', {'category_id': catHeritage, 'title': 'Parts d\'héritage', 'description': 'Les quotités fixées par le Coran.'});
-    await db.insert('topics', {'category_id': catHeritage, 'title': 'Héritiers prioritaires', 'description': 'Ceux qui ne peuvent être exclus de la succession.'});
-    await db.insert('topics', {'category_id': catHeritage, 'title': 'Héritage des époux et enfants', 'description': 'Les règles spécifiques pour le noyau familial.'});
-    await db.insert('topics', {'category_id': catHeritage, 'title': 'Héritage des parents, frères et sœurs', 'description': 'Le partage entre les ascendants et collatéraux.'});
-    await db.insert('topics', {'category_id': catHeritage, 'title': 'Empêchements à l\'héritage', 'description': 'Les causes qui privent d\'une part successorale.'});
-    await db.insert('topics', {'category_id': catHeritage, 'title': 'Calcul des parts', 'description': 'La méthodologie pratique de partage.'});
-    await db.insert('topics', {'category_id': catHeritage, 'title': 'Dettes et testaments dans la succession', 'description': 'Ce qui doit être prélevé avant le partage.'});
-    await db.insert('topics', {'category_id': catHeritage, 'title': 'Divergences entre écoles sur la succession', 'description': 'Les points de désaccord entre les madhahib.'});
-    await db.insert('topics', {'category_id': catHeritage, 'title': 'Calculateur d\'héritage', 'description': 'Outil d\'aide au calcul des parts successorales.'});
-
-    int lawWitnessMaliki = await db.insert('laws', {
-      'topic_id': topWitness,
-      'title': 'Position Maliki sur le Témoignage',
-      'content': 'Le témoin doit être juste (\'Adl), pubère, et ne pas avoir de lien de parenté direct ou d\'intérêt avec l\'une des parties.',
-      'content_ar': 'يشترط في الشاهد العدالة والحرية والبلوغ',
-      'scholar_comments': 'La justice du témoin est au cœur de la procédure judiciaire Maliki.',
-      'school_id': shMaliki
-    });
-    await db.insert('sources', {
-      'law_id': lawWitnessMaliki,
-      'type': 0, // Quran
-      'reference': 'Sourate Al-Baqarah (2), Verset 282',
-      'text': 'Et faites-en témoigner par deux témoins d\'entre vos hommes.',
-      'text_ar': 'وَاسْتَشْهِدُوا شَهِيدَيْنِ مِنْ رِجَالِكُمْ',
-      'authenticity': 4,
-      'citation': 'Le Saint Coran'
-    });
-
-    int lawSincerityHanafi = await db.insert('laws', {
-      'topic_id': topSincerity,
-      'title': 'Position Hanafi sur l\'Intention',
-      'content': 'L\'intention est nécessaire pour distinguer l\'adoration de l\'habitude, mais elle n\'est pas toujours une condition de validité pour certains actes comme le remboursement d\'une dette.',
-      'content_ar': 'النية شرط في العبادات لتمييزها عن العادات',
-      'scholar_comments': 'L\'école Hanafi met l\'accent sur la finalité de l\'acte.',
-      'school_id': shHanafi
-    });
-    await db.insert('sources', {
-      'law_id': lawSincerityHanafi,
-      'type': 1, // Hadith
-      'reference': 'Sahih Bukhari, Hadith 1',
-      'text': 'Les actions ne valent que par les intentions.',
-      'text_ar': 'إنما الأعمال بالنيات',
-      'authenticity': 0, // Sahih
-      'citation': 'Bukhari, Bad\' al-Wahy'
     });
   }
 
-  Future<List<Category>> getCategories({int? parentId}) async {
+  Future<List<Category>> getCategories({int? parentId, Locale? locale}) async {
     Database db = await database;
-    var categories = await db.query(
+    var results = await db.query(
       'categories',
       where: parentId == null ? 'parent_id IS NULL' : 'parent_id = ?',
       whereArgs: parentId == null ? [] : [parentId]
     );
-    return categories.map((c) => Category.fromMap(c)).toList();
+
+    return results.map((c) {
+      Map<String, dynamic> map = Map.from(c);
+      if (locale != null) {
+        String lang = locale.languageCode;
+        if (map['name_$lang'] != null) map['name'] = map['name_$lang'];
+      }
+      return Category.fromMap(map);
+    }).toList();
   }
 
-  Future<List<Topic>> getTopicsByCategory(int categoryId) async {
+  Future<List<Topic>> getTopicsByCategory(int categoryId, {Locale? locale}) async {
     Database db = await database;
-    var topics = await db.query('topics', where: 'category_id = ?', whereArgs: [categoryId]);
-    return topics.map((t) => Topic.fromMap(t)).toList();
+    var results = await db.query('topics', where: 'category_id = ?', whereArgs: [categoryId]);
+    return results.map((t) {
+      Map<String, dynamic> map = Map.from(t);
+      if (locale != null) {
+        String lang = locale.languageCode;
+        if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+        if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+      }
+      return Topic.fromMap(map);
+    }).toList();
   }
 
-  Future<List<Law>> getLawsByTopic(int topicId) async {
+  Future<List<Law>> getLawsByTopic(int topicId, {Locale? locale}) async {
     Database db = await database;
-    var laws = await db.query('laws', where: 'topic_id = ?', whereArgs: [topicId]);
-    return laws.map((l) => Law.fromMap(l)).toList();
+    var results = await db.query('laws', where: 'topic_id = ?', whereArgs: [topicId]);
+    return results.map((l) {
+      Map<String, dynamic> map = Map.from(l);
+      if (locale != null) {
+        String lang = locale.languageCode;
+        if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+        if (map['content_$lang'] != null) map['content'] = map['content_$lang'];
+        if (map['scholar_comments_$lang'] != null) map['scholar_comments'] = map['scholar_comments_$lang'];
+      }
+      return Law.fromMap(map);
+    }).toList();
   }
 
-  Future<List<Source>> getSourcesByLaw(int lawId) async {
+  Future<List<Source>> getSourcesByLaw(int lawId, {Locale? locale}) async {
     Database db = await database;
-    var sources = await db.query('sources', where: 'law_id = ?', whereArgs: [lawId]);
-    return sources.map((s) => Source.fromMap(s)).toList();
+    var results = await db.query('sources', where: 'law_id = ?', whereArgs: [lawId]);
+    return results.map((s) {
+      Map<String, dynamic> map = Map.from(s);
+      if (locale != null) {
+        String lang = locale.languageCode;
+        if (map['reference_$lang'] != null) map['reference'] = map['reference_$lang'];
+        if (map['text_$lang'] != null) map['text'] = map['text_$lang'];
+        if (map['citation_$lang'] != null) map['citation'] = map['citation_$lang'];
+      }
+      return Source.fromMap(map);
+    }).toList();
   }
 
-  Future<School?> getSchoolById(int schoolId) async {
+  Future<School?> getSchoolById(int schoolId, {Locale? locale}) async {
     Database db = await database;
-    var schools = await db.query('schools', where: 'id = ?', whereArgs: [schoolId]);
-    if (schools.isNotEmpty) {
-      return School.fromMap(schools.first);
+    var results = await db.query('schools', where: 'id = ?', whereArgs: [schoolId]);
+    if (results.isNotEmpty) {
+      Map<String, dynamic> map = Map.from(results.first);
+      if (locale != null) {
+        String lang = locale.languageCode;
+        if (map['name_$lang'] != null) map['name'] = map['name_$lang'];
+        if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+      }
+      return School.fromMap(map);
     }
     return null;
   }
 
-  Future<List<Topic>> searchTopics(String query) async {
+  Future<List<Topic>> searchTopics(String query, {Locale? locale}) async {
     Database db = await database;
-    var topics = await db.query('topics', where: 'title LIKE ? OR description LIKE ?', whereArgs: ['%$query%', '%$query%']);
-    return topics.map((t) => Topic.fromMap(t)).toList();
+    var results = await db.query('topics',
+      where: 'title LIKE ? OR description LIKE ? OR title_en LIKE ? OR description_en LIKE ? OR title_ar LIKE ? OR description_ar LIKE ? OR title_ru LIKE ? OR description_ru LIKE ? OR title_zh LIKE ? OR description_zh LIKE ?',
+      whereArgs: ['%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%']
+    );
+    return results.map((t) {
+      Map<String, dynamic> map = Map.from(t);
+      if (locale != null) {
+        String lang = locale.languageCode;
+        if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+        if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+      }
+      return Topic.fromMap(map);
+    }).toList();
   }
 
-  // Favorites (linked to Topics now)
+  // Favorites
   Future<void> addFavorite(int topicId) async {
     Database db = await database;
     await db.insert('favorites', {'topic_id': topicId}, conflictAlgorithm: ConflictAlgorithm.ignore);
@@ -639,7 +474,7 @@ class DatabaseHelper {
     return results.map((r) => r['topic_id'] as int).toList();
   }
 
-  // Notes (linked to Topics)
+  // Notes
   Future<void> saveNote(int topicId, String content) async {
     Database db = await database;
     await db.insert(

@@ -29,7 +29,7 @@ class _DetailScreenState extends State<DetailScreen> {
     super.initState();
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     _noteController.text = userProvider.getNote(widget.topic.id!) ?? '';
-    _lawsFuture = DatabaseHelper().getLawsByTopic(widget.topic.id!);
+    _lawsFuture = DatabaseHelper().getLawsByTopic(widget.topic.id!, locale: userProvider.locale);
     _mediaFuture = DatabaseHelper().getMediaForTopic(widget.topic.id!);
   }
 
@@ -72,8 +72,12 @@ class _DetailScreenState extends State<DetailScreen> {
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
                   widget.topic.description,
+                  textAlign: userProvider.locale.languageCode == 'ar' ? TextAlign.right : TextAlign.left,
+                  textDirection: userProvider.locale.languageCode == 'ar' ? TextDirection.rtl : TextDirection.ltr,
                   style: theme.textTheme.bodyLarge?.copyWith(
-                    fontStyle: FontStyle.italic,
+                    fontStyle: userProvider.locale.languageCode == 'ar' ? FontStyle.normal : FontStyle.italic,
+                    fontFamily: userProvider.locale.languageCode == 'ar' ? 'Amiri' : null,
+                    fontSize: userProvider.locale.languageCode == 'ar' ? 18 : null,
                   ),
                 ),
               ),
@@ -81,7 +85,7 @@ class _DetailScreenState extends State<DetailScreen> {
             const SizedBox(height: 20),
             _buildMediaSection(l10n),
             const SizedBox(height: 20),
-            if (widget.topic.title.toLowerCase().contains('hajj') || widget.topic.title.toLowerCase().contains('pèlerinage')) ...[
+            if (widget.topic.title.toLowerCase().contains('hajj') || widget.topic.title.toLowerCase().contains('pèlerinage') || widget.topic.title.toLowerCase().contains('pilgrimage')) ...[
                const HajjTimeline(),
                const SizedBox(height: 20),
             ],
@@ -104,12 +108,18 @@ class _DetailScreenState extends State<DetailScreen> {
             const SizedBox(height: 20),
             Text(
               l10n.personalNotes,
-              style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+              textAlign: userProvider.locale.languageCode == 'ar' ? TextAlign.right : TextAlign.left,
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+                fontFamily: userProvider.locale.languageCode == 'ar' ? 'Amiri' : null,
+              ),
             ),
             const Divider(),
             TextField(
               controller: _noteController,
               maxLines: 3,
+              textAlign: userProvider.locale.languageCode == 'ar' ? TextAlign.right : TextAlign.left,
+              textDirection: userProvider.locale.languageCode == 'ar' ? TextDirection.rtl : TextDirection.ltr,
               decoration: InputDecoration(
                 hintText: l10n.addNoteHint,
                 filled: true,
@@ -149,8 +159,8 @@ class _DetailScreenState extends State<DetailScreen> {
           color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.5),
           child: ListTile(
             leading: const Icon(Icons.compare_arrows),
-            title: const Text("Tableau comparatif des écoles"),
-            subtitle: const Text("Comparer les avis juridiques en un coup d'œil"),
+            title: Text(l10n.comparisonTable),
+            subtitle: Text(l10n.legalOpinion),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => _showComparisonDialog(context, snapshot.data!, l10n),
           ),
@@ -180,7 +190,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   decoration: BoxDecoration(color: Colors.grey[300], borderRadius: BorderRadius.circular(2)),
                 ),
                 Text(
-                  "Comparaison des Écoles",
+                  l10n.comparisonTable,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 16),
@@ -198,8 +208,8 @@ class _DetailScreenState extends State<DetailScreen> {
                           return DataTable(
                             columnSpacing: 24,
                             columns: [
-                              const DataColumn(label: Text("École")),
-                              const DataColumn(label: Text("Avis Juridique")),
+                              DataColumn(label: Text(l10n.schoolTitle)),
+                              DataColumn(label: Text(l10n.legalOpinion)),
                             ],
                             rows: laws.map((law) {
                               final school = schools[law.schoolId];
@@ -268,8 +278,8 @@ class _DetailScreenState extends State<DetailScreen> {
       builder: (context, snapshot) {
         if (!snapshot.hasData || snapshot.data!.isEmpty) {
           // If no specific media for topic, show a placeholder diagram for certain categories
-          if (widget.topic.title.contains('Héritage') || widget.topic.title.contains('succession')) {
-             return _buildPlaceholderDiagram("Diagramme d'Héritage", Icons.account_tree);
+          if (widget.topic.title.contains('Héritage') || widget.topic.title.contains('succession') || widget.topic.title.contains('Inheritance')) {
+             return _buildPlaceholderDiagram(l10n.illustration, Icons.account_tree, l10n);
           }
           return const SizedBox.shrink();
         }
@@ -277,18 +287,18 @@ class _DetailScreenState extends State<DetailScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Médias et Illustrations",
+              l10n.mediaSectionTitle,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            ...snapshot.data!.map((media) => _buildMediaWidget(media)).toList(),
+            ...snapshot.data!.map((media) => _buildMediaWidget(media, l10n)).toList(),
           ],
         );
       },
     );
   }
 
-  Widget _buildMediaWidget(MediaItem media) {
+  Widget _buildMediaWidget(MediaItem media, AppLocalizations l10n) {
      return Card(
        clipBehavior: Clip.antiAlias,
        child: Column(
@@ -296,7 +306,7 @@ class _DetailScreenState extends State<DetailScreen> {
            if (media.type == MediaType.image || media.type == MediaType.infographic)
              Image.network(media.url, fit: BoxFit.cover, errorBuilder: (c, e, s) => const Icon(Icons.broken_image, size: 50)),
            ListTile(
-             title: Text(media.title ?? "Illustration"),
+             title: Text(media.title ?? l10n.illustration),
              subtitle: media.description != null ? Text(media.description!) : null,
              leading: Icon(_getMediaIcon(media.type)),
            ),
@@ -314,7 +324,7 @@ class _DetailScreenState extends State<DetailScreen> {
     }
   }
 
-  Widget _buildPlaceholderDiagram(String title, IconData icon) {
+  Widget _buildPlaceholderDiagram(String title, IconData icon, AppLocalizations l10n) {
     return Card(
       elevation: 0,
       color: Colors.blueGrey.withOpacity(0.1),
@@ -322,7 +332,7 @@ class _DetailScreenState extends State<DetailScreen> {
         borderRadius: BorderRadius.circular(12),
         side: BorderSide(color: Colors.blueGrey.withOpacity(0.2)),
       ),
-      child: Container(
+      child: SizedBox(
         height: 150,
         width: double.infinity,
         child: Column(
@@ -331,7 +341,7 @@ class _DetailScreenState extends State<DetailScreen> {
             Icon(icon, size: 48, color: Colors.blueGrey),
             const SizedBox(height: 8),
             Text(title, style: const TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold)),
-            const Text("(Bientôt disponible)", style: TextStyle(color: Colors.blueGrey, fontSize: 12)),
+            Text("(${l10n.comingSoon})", style: const TextStyle(color: Colors.blueGrey, fontSize: 12)),
           ],
         ),
       ),

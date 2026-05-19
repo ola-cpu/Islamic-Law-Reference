@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/topic.dart';
 import '../services/database_helper.dart';
 import 'detail_screen.dart';
 import '../l10n/app_localizations.dart';
+import '../providers/user_provider.dart';
 
 class TopicListScreen extends StatelessWidget {
   final int categoryId;
@@ -13,8 +15,9 @@ class TopicListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final userProvider = Provider.of<UserProvider>(context);
     return FutureBuilder<List<Topic>>(
-      future: DatabaseHelper().getTopicsByCategory(categoryId),
+      future: DatabaseHelper().getTopicsByCategory(categoryId, locale: userProvider.locale),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

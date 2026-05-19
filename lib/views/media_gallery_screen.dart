@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/media_item.dart';
 import '../services/database_helper.dart';
+import '../l10n/app_localizations.dart';
 
 class MediaGalleryScreen extends StatefulWidget {
   const MediaGalleryScreen({super.key});
@@ -20,9 +21,10 @@ class _MediaGalleryScreenState extends State<MediaGalleryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Bibliothèque Média"),
+        title: Text(l10n.mediaLibrary),
       ),
       body: FutureBuilder<List<MediaItem>>(
         future: _mediaFuture,
@@ -31,7 +33,7 @@ class _MediaGalleryScreenState extends State<MediaGalleryScreen> {
             return const Center(child: CircularProgressIndicator());
           }
           if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text("Aucun média trouvé."));
+            return Center(child: Text(l10n.noMediaFound));
           }
 
           return GridView.builder(
@@ -45,7 +47,7 @@ class _MediaGalleryScreenState extends State<MediaGalleryScreen> {
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
               final media = snapshot.data![index];
-              return _buildMediaCard(context, media);
+              return _buildMediaCard(context, media, l10n);
             },
           );
         },
@@ -53,12 +55,12 @@ class _MediaGalleryScreenState extends State<MediaGalleryScreen> {
     );
   }
 
-  Widget _buildMediaCard(BuildContext context, MediaItem media) {
+  Widget _buildMediaCard(BuildContext context, MediaItem media, AppLocalizations l10n) {
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
-        onTap: () => _showMediaDetails(context, media),
+        onTap: () => _showMediaDetails(context, media, l10n),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -94,7 +96,7 @@ class _MediaGalleryScreenState extends State<MediaGalleryScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    media.title ?? "Sans titre",
+                    media.title ?? l10n.illustration,
                     style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -124,7 +126,7 @@ class _MediaGalleryScreenState extends State<MediaGalleryScreen> {
     }
   }
 
-  void _showMediaDetails(BuildContext context, MediaItem media) {
+  void _showMediaDetails(BuildContext context, MediaItem media, AppLocalizations l10n) {
     showDialog(
       context: context,
       builder: (context) => Dialog(
@@ -144,13 +146,13 @@ class _MediaGalleryScreenState extends State<MediaGalleryScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(media.title ?? "Sans titre", style: Theme.of(context).textTheme.titleLarge),
+                  Text(media.title ?? l10n.illustration, style: Theme.of(context).textTheme.titleLarge),
                   const SizedBox(height: 8),
                   if (media.description != null) Text(media.description!),
                 ],
               ),
             ),
-            TextButton(onPressed: () => Navigator.pop(context), child: const Text("Fermer")),
+            TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.close)),
           ],
         ),
       ),
