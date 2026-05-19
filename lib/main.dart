@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'init/db_stub.dart'
+    if (dart.library.js_interop) 'init/db_web.dart'
+    if (dart.library.io) 'init/db_native.dart';
 import 'views/home_screen.dart';
 import 'providers/user_provider.dart';
 import 'l10n/app_localizations.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await initializeDatabaseFactory();
+
   runApp(
     MultiProvider(
       providers: [
