@@ -34,6 +34,19 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  IconData _getIconData(String iconName) {
+    switch (iconName) {
+      case 'mosque': return Icons.mosque;
+      case 'people': return Icons.people;
+      case 'monetization_on': return Icons.monetization_on;
+      case 'gavel': return Icons.gavel;
+      case 'favorite': return Icons.favorite;
+      case 'self_improvement': return Icons.self_improvement;
+      case 'business': return Icons.business;
+      default: return Icons.category;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -84,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(Icons.category, size: 48, color: Colors.green),
+                            Icon(_getIconData(category.icon), size: 48, color: Colors.green),
                             const SizedBox(height: 8),
                             Text(
                               category.name,
