@@ -131,13 +131,35 @@ class DatabaseHelper {
 
     // Categories
     int catCulte = await db.insert('categories', {'name': 'Culte (Ibadat)', 'icon': 'mosque', 'parent_id': null});
-    int catPriere = await db.insert('categories', {'name': 'Prière (Salat)', 'icon': 'church', 'parent_id': catCulte});
+    int catPriere = await db.insert('categories', {'name': 'Prière (Salat)', 'icon': 'mosque', 'parent_id': catCulte});
+    int catFamille = await db.insert('categories', {'name': 'Relations sociales et familiales', 'icon': 'people', 'parent_id': null});
+    int catEconomie = await db.insert('categories', {'name': 'Économie et commerce', 'icon': 'monetization_on', 'parent_id': null});
+    int catJustice = await db.insert('categories', {'name': 'Justice et gouvernance', 'icon': 'gavel', 'parent_id': null});
+    int catEthique = await db.insert('categories', {'name': 'Éthique et spiritualité', 'icon': 'favorite', 'parent_id': null});
+
+    // Subcategories
+    int catMariage = await db.insert('categories', {'name': 'Mariage (Nikah)', 'icon': 'people', 'parent_id': catFamille});
+    int catCommerce = await db.insert('categories', {'name': 'Transactions (Muamalat)', 'icon': 'monetization_on', 'parent_id': catEconomie});
 
     // Topic: Lever les mains dans la prière
     int topHands = await db.insert('topics', {
       'category_id': catPriere,
       'title': 'Lever les mains dans la prière',
       'description': 'Les règles concernant le fait de lever les mains à différents moments de la prière.'
+    });
+
+    // Topic: La Dot (Mahr)
+    int topMahr = await db.insert('topics', {
+      'category_id': catMariage,
+      'title': 'La Dot (Mahr)',
+      'description': 'Les règles concernant le don obligatoire du mari à son épouse lors du mariage.'
+    });
+
+    // Topic: Le Riba (Intérêt)
+    int topRiba = await db.insert('topics', {
+      'category_id': catCommerce,
+      'title': 'Le Riba (Intérêt)',
+      'description': 'L\'interdiction de l\'usure et de l\'intérêt dans les transactions financières.'
     });
 
     // Law Hanafi
@@ -233,6 +255,62 @@ class DatabaseHelper {
       'text_ar': 'عن أبي عبد الله عليه السلام قال: ارفع يديك في كل تكبيرة',
       'authenticity': 1, // Hasan (contextual)
       'citation': 'Wasa\'il al-Shia, Kitab al-Salat'
+    });
+
+    // Mahr (Dot) - Maliki Example
+    int lawMahrMaliki = await db.insert('laws', {
+      'topic_id': topMahr,
+      'title': 'Position Maliki sur la Dot',
+      'content': 'La dot est une condition essentielle du mariage. Elle ne peut être inférieure à un quart de dinar d\'or ou trois dirhams d\'argent.',
+      'content_ar': 'الصداق شرط في صحة النكاح، وأقله ربع دينار أو ثلاثة دراهم',
+      'scholar_comments': 'La dot doit avoir une valeur minimale pour garantir la dignité du contrat.',
+      'school_id': shMaliki
+    });
+    await db.insert('sources', {
+      'law_id': lawMahrMaliki,
+      'type': 0, // Quran
+      'reference': 'Sourate An-Nisa (4), Verset 4',
+      'text': 'Et donnez aux épouses leur dot, de bonne grâce.',
+      'text_ar': 'وَآتُوا النِّسَاءَ صَدُقَاتِهِنَّ نِحْلَةً',
+      'authenticity': 4,
+      'citation': 'Le Saint Coran'
+    });
+    await db.insert('sources', {
+      'law_id': lawMahrMaliki,
+      'type': 2, // Fiqh Book
+      'reference': 'Mukhtasar Khalil, Chapitre du Mariage',
+      'text': 'Le minimum de la dot est de trois dirhams purs ou un quart de dinar.',
+      'text_ar': 'أقل الصداق ثلاثة دراهم خالصة أو ربع دينار',
+      'authenticity': 4,
+      'citation': 'Mukhtasar Khalil, p. 95'
+    });
+
+    // Riba - General Prohibiton
+    int lawRibaShafii = await db.insert('laws', {
+      'topic_id': topRiba,
+      'title': 'Position Shafi\'i sur le Riba',
+      'content': 'Le Riba est strictement interdit dans l\'Islam. Il concerne l\'intérêt sur les prêts et l\'inégalité dans l\'échange de certains biens.',
+      'content_ar': 'الربا محرم شرعا وهو من الكبائر',
+      'scholar_comments': 'L\'interdiction est absolue selon le consensus des savants.',
+      'school_id': shShafii
+    });
+    await db.insert('sources', {
+      'law_id': lawRibaShafii,
+      'type': 0, // Quran
+      'reference': 'Sourate Al-Baqarah (2), Verset 275',
+      'text': 'Alors qu\'Allah a rendu licite le commerce, et illicite l\'intérêt (le Riba).',
+      'text_ar': 'وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا',
+      'authenticity': 4,
+      'citation': 'Le Saint Coran'
+    });
+    await db.insert('sources', {
+      'law_id': lawRibaShafii,
+      'type': 1, // Hadith
+      'reference': 'Sahih Muslim, Hadith 1598',
+      'text': 'Le Messager d\'Allah a maudit celui qui consomme le Riba, celui qui le donne, celui qui l\'écrit et les deux témoins.',
+      'text_ar': 'لعن رسول الله صلى الله عليه وسلم آكل الربا وموكله وكاتبه وشاهديه',
+      'authenticity': 0, // Sahih
+      'citation': 'Muslim, Kitab al-Musaqat'
     });
   }
 
