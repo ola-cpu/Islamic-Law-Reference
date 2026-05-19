@@ -43,6 +43,12 @@ class _HomeScreenState extends State<HomeScreen> {
       case 'favorite': return Icons.favorite;
       case 'self_improvement': return Icons.self_improvement;
       case 'business': return Icons.business;
+      case 'volunteer_activism': return Icons.volunteer_activism;
+      case 'family_restroom': return Icons.family_restroom;
+      case 'restaurant': return Icons.restaurant;
+      case 'description': return Icons.description;
+      case 'accessibility': return Icons.accessibility;
+      case 'account_balance': return Icons.account_balance;
       default: return Icons.category;
     }
   }
