@@ -23,6 +23,7 @@ class _DetailScreenState extends State<DetailScreen> {
   final TextEditingController _noteController = TextEditingController();
   late Future<List<Law>> _lawsFuture;
   late Future<List<MediaItem>> _mediaFuture;
+  late Future<List<Topic>> _relatedTopicsFuture;
 
   @override
   void initState() {
@@ -31,6 +32,7 @@ class _DetailScreenState extends State<DetailScreen> {
     _noteController.text = userProvider.getNote(widget.topic.id!) ?? '';
     _lawsFuture = DatabaseHelper().getLawsByTopic(widget.topic.id!, locale: userProvider.locale);
     _mediaFuture = DatabaseHelper().getMediaForTopic(widget.topic.id!);
+    _relatedTopicsFuture = DatabaseHelper().getRelatedTopics(widget.topic.id!, locale: userProvider.locale);
   }
 
   @override
@@ -65,6 +67,16 @@ class _DetailScreenState extends State<DetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            if (widget.topic.tags.isNotEmpty) ...[
+              Wrap(
+                spacing: 8,
+                children: widget.topic.tags.map((tag) => Chip(
+                  label: Text(tag, style: const TextStyle(fontSize: 12)),
+                  backgroundColor: theme.colorScheme.primaryContainer.withOpacity(0.3),
+                )).toList(),
+              ),
+              const SizedBox(height: 12),
+            ],
             Card(
               color: theme.colorScheme.secondaryContainer.withOpacity(0.3),
               elevation: 0,
@@ -106,6 +118,8 @@ class _DetailScreenState extends State<DetailScreen> {
               },
             ),
             const SizedBox(height: 20),
+            _buildRelatedTopicsSection(l10n),
+            const SizedBox(height: 20),
             Text(
               l10n.personalNotes,
               textAlign: userProvider.locale.languageCode == 'ar' ? TextAlign.right : TextAlign.left,
@@ -146,6 +160,35 @@ class _DetailScreenState extends State<DetailScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildRelatedTopicsSection(AppLocalizations l10n) {
+    return FutureBuilder<List<Topic>>(
+      future: _relatedTopicsFuture,
+      builder: (context, snapshot) {
+        if (!snapshot.hasData || snapshot.data!.isEmpty) return const SizedBox.shrink();
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              l10n.relatedTopics,
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const Divider(),
+            ...snapshot.data!.map((topic) => ListTile(
+              title: Text(topic.title),
+              leading: const Icon(Icons.link),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DetailScreen(topic: topic)),
+                );
+              },
+            )),
+          ],
+        );
+      },
     );
   }
 

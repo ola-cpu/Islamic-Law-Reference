@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/topic.dart';
+import '../models/school.dart';
+import '../models/category.dart';
 import '../services/database_helper.dart';
 import 'detail_screen.dart';
 import '../l10n/app_localizations.dart';
@@ -17,9 +19,29 @@ class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _controller = TextEditingController();
   List<Topic> _searchResults = [];
   bool _isSearching = false;
+  int? _selectedSchoolId;
+  int? _selectedCategoryId;
+  List<School> _schools = [];
+  List<Category> _categories = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadFilters();
+  }
+
+  Future<void> _loadFilters() async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final schools = await DatabaseHelper().getAllSchools(locale: userProvider.locale);
+    final categories = await DatabaseHelper().getCategories(locale: userProvider.locale);
+    setState(() {
+      _schools = schools;
+      _categories = categories;
+    });
+  }
 
   Future<void> _performSearch(String query) async {
-    if (query.isEmpty) {
+    if (query.isEmpty && _selectedSchoolId == null && _selectedCategoryId == null) {
       setState(() {
         _searchResults = [];
         _isSearching = false;
@@ -32,12 +54,72 @@ class _SearchScreenState extends State<SearchScreen> {
     });
 
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-    final results = await DatabaseHelper().searchTopics(query, locale: userProvider.locale);
+    final results = await DatabaseHelper().searchTopics(
+      query,
+      locale: userProvider.locale,
+      schoolId: _selectedSchoolId,
+      categoryId: _selectedCategoryId,
+    );
 
     setState(() {
       _searchResults = results;
       _isSearching = false;
     });
+  }
+
+  void _showFilterDialog() {
+    final l10n = AppLocalizations.of(context)!;
+    showDialog(
+      context: context,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setDialogState) {
+            return AlertDialog(
+              title: Text(l10n.filterBySchool),
+              content: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    DropdownButtonFormField<int>(
+                      value: _selectedSchoolId,
+                      decoration: InputDecoration(labelText: l10n.school),
+                      items: [
+                        const DropdownMenuItem(value: null, child: Text("All Schools")),
+                        ..._schools.map((s) => DropdownMenuItem(value: s.id, child: Text(s.name))),
+                      ],
+                      onChanged: (val) {
+                        setDialogState(() => _selectedSchoolId = val);
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                    DropdownButtonFormField<int>(
+                      value: _selectedCategoryId,
+                      decoration: InputDecoration(labelText: l10n.filterByCategory),
+                      items: [
+                        const DropdownMenuItem(value: null, child: Text("All Categories")),
+                        ..._categories.map((c) => DropdownMenuItem(value: c.id, child: Text(c.name))),
+                      ],
+                      onChanged: (val) {
+                        setDialogState(() => _selectedCategoryId = val);
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    _performSearch(_controller.text);
+                  },
+                  child: Text(l10n.close),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
   }
 
   @override
@@ -61,6 +143,12 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
           onChanged: _performSearch,
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.filter_list, color: (_selectedSchoolId != null || _selectedCategoryId != null) ? Colors.blue : null),
+            onPressed: _showFilterDialog,
+          ),
+        ],
       ),
       body: _isSearching
           ? const Center(child: CircularProgressIndicator())

@@ -11,6 +11,8 @@ class Topic {
   final String? descriptionAr;
   final String? descriptionRu;
   final String? descriptionZh;
+  final List<String> tags;
+  final List<int> relatedTopicIds;
 
   Topic({
     this.id,
@@ -25,6 +27,8 @@ class Topic {
     this.descriptionAr,
     this.descriptionRu,
     this.descriptionZh,
+    this.tags = const [],
+    this.relatedTopicIds = const [],
   });
 
   Map<String, dynamic> toMap() {
@@ -44,7 +48,7 @@ class Topic {
     };
   }
 
-  factory Topic.fromMap(Map<String, dynamic> map) {
+  factory Topic.fromMap(Map<String, dynamic> map, {List<String> tags = const [], List<int> relatedTopicIds = const []}) {
     return Topic(
       id: map['id'],
       categoryId: map['category_id'],
@@ -58,6 +62,8 @@ class Topic {
       descriptionAr: map['description_ar'],
       descriptionRu: map['description_ru'],
       descriptionZh: map['description_zh'],
+      tags: tags,
+      relatedTopicIds: relatedTopicIds,
     );
   }
 }

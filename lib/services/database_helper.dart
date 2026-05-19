@@ -32,10 +32,10 @@ class DatabaseHelper {
     }
     return await openDatabase(
       path,
-      version: 9, // Bumped to 9 for enriched content
+      version: 10, // Bumped to 10 for tags and related topics
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
-        if (oldVersion < 9) {
+        if (oldVersion < 10) {
           // Destructive upgrade to re-seed enriched content
           await _dropTables(db);
           await _onCreate(db, newVersion);
@@ -46,6 +46,9 @@ class DatabaseHelper {
 
   Future<void> _dropTables(Database db, {bool dropUserData = false}) async {
     await db.execute('DROP TABLE IF EXISTS media');
+    await db.execute('DROP TABLE IF EXISTS related_topics');
+    await db.execute('DROP TABLE IF EXISTS topic_tags');
+    await db.execute('DROP TABLE IF EXISTS tags');
     await db.execute('DROP TABLE IF EXISTS sources');
     await db.execute('DROP TABLE IF EXISTS laws');
     await db.execute('DROP TABLE IF EXISTS topics');
@@ -178,6 +181,30 @@ class DatabaseHelper {
         FOREIGN KEY (topic_id) REFERENCES topics (id)
       )
     ''');
+    await db.execute('''
+      CREATE TABLE tags(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT UNIQUE
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE topic_tags(
+        topic_id INTEGER,
+        tag_id INTEGER,
+        FOREIGN KEY (topic_id) REFERENCES topics (id),
+        FOREIGN KEY (tag_id) REFERENCES tags (id),
+        PRIMARY KEY (topic_id, tag_id)
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE related_topics(
+        topic_id INTEGER,
+        related_id INTEGER,
+        FOREIGN KEY (topic_id) REFERENCES topics (id),
+        FOREIGN KEY (related_id) REFERENCES topics (id),
+        PRIMARY KEY (topic_id, related_id)
+      )
+    ''');
 
     await _seedDatabase(db);
   }
@@ -286,121 +313,191 @@ class DatabaseHelper {
       'parent_id': null
     });
 
-    // Topics
-    int topHands = await db.insert('topics', {
-      'category_id': catCulte,
-      'title': 'Lever les mains dans la prière', 'title_en': 'Raising hands in prayer', 'title_ar': 'رفع اليدين في الصلاة', 'title_ru': 'Поднятие рук в молитве', 'title_zh': '祈祷时举手',
-      'description': 'Les règles concernant le fait de lever les mains à différents moments de la prière.', 'description_en': 'Rules concerning raising hands at different moments of prayer.'
+    // Sub-categories for Prayer
+    int subAblutions = await db.insert('categories', {
+      'name': 'Ablutions (Wudu\')', 'name_en': 'Ablutions (Wudu\')', 'name_ar': 'الوضوء', 'icon': 'water_drop', 'parent_id': catCulte
+    });
+    int subGhusl = await db.insert('categories', {
+      'name': 'Grandes ablutions (Ghusl)', 'name_en': 'Full Ablution (Ghusl)', 'name_ar': 'الغسل', 'icon': 'shower', 'parent_id': catCulte
+    });
+    int subTayammum = await db.insert('categories', {
+      'name': 'Ablution sèche (Tayammum)', 'name_en': 'Dry Ablution (Tayammum)', 'name_ar': 'التيمم', 'icon': 'landscape', 'parent_id': catCulte
+    });
+    int subPriereObligatoire = await db.insert('categories', {
+      'name': 'Prières obligatoires', 'name_en': 'Obligatory Prayers', 'name_ar': 'الصلوات المفروضة', 'icon': 'mosque', 'parent_id': catCulte
+    });
+    int subPriereVoyageur = await db.insert('categories', {
+      'name': 'Prière du voyageur', 'name_en': 'Traveler\'s Prayer', 'name_ar': 'صلاة المسافر', 'icon': 'flight', 'parent_id': catCulte
     });
 
-    // Law Hanafi
-    int lawHanafi = await db.insert('laws', {
-      'topic_id': topHands,
-      'title': 'Position Hanafi', 'title_en': 'Hanafi Position', 'title_ar': 'موقف الحنفية', 'title_ru': 'Позиция Ханафи', 'title_zh': '哈乃斐立场',
-      'content': 'On lève les mains seulement au début de la prière (Takbir d\'ouverture).',
-      'content_en': 'The hands are raised only at the beginning of the prayer (Opening Takbir).',
-      'content_ar': 'يرفع يديه في التكبيرة الأولى فقط',
-      'content_ru': 'Руки поднимаются только в начале молитвы (вступительный такбир).',
-      'content_zh': '仅在祈祷开始时（开端大赞）举手。',
-      'scholar_comments': 'Basé sur la pratique des gens de Koufa.',
-      'scholar_comments_en': 'Based on the practice of the people of Kufa.',
-      'scholar_comments_ru': 'Основано на практике жителей Куфы.',
-      'scholar_comments_zh': '基于库法人的实践。',
-      'school_id': shHanafi
+    // Sub-categories for Marriage
+    int subContratMariage = await db.insert('categories', {
+      'name': 'Contrat de mariage', 'name_en': 'Marriage Contract', 'name_ar': 'عقد النكاح', 'icon': 'description', 'parent_id': catMariage
+    });
+    int subMahr = await db.insert('categories', {
+      'name': 'La dot (Mahr)', 'name_en': 'Dowry (Mahr)', 'name_ar': 'المهر', 'icon': 'payments', 'parent_id': catMariage
+    });
+    int subDivorce = await db.insert('categories', {
+      'name': 'Divorce (Talaq)', 'name_en': 'Divorce (Talaq)', 'name_ar': 'الطلاق', 'icon': 'unfold_less', 'parent_id': catMariage
+    });
+
+    // Sub-categories for Economy
+    int subZakat = await db.insert('categories', {
+      'name': 'Zakat', 'name_en': 'Zakat', 'name_ar': 'الزكاة', 'icon': 'volunteer_activism', 'parent_id': catJeune
+    });
+    int subFinance = await db.insert('categories', {
+      'name': 'Finance et Intérêts', 'name_en': 'Finance and Interest', 'name_ar': 'المالية والربا', 'icon': 'trending_up', 'parent_id': catEconomie
+    });
+
+    // --- PRAYER AND WORSHIP ---
+    // Tags
+    int tagPurity = await db.insert('tags', {'name': 'Pureté'});
+    int tagPrayer = await db.insert('tags', {'name': 'Prière'});
+    int tagObligation = await db.insert('tags', {'name': 'Obligation'});
+
+    // Ablutions (Wudu)
+    int topWuduConditions = await db.insert('topics', {
+      'category_id': subAblutions,
+      'title': 'Conditions de validité du wuḍū’', 'title_en': 'Conditions of validity of Wuḍū’', 'title_ar': 'شروط صحة الوضوء',
+      'description': 'Les prérequis nécessaires pour que les ablutions soient acceptées en Islam.',
+    });
+    await db.insert('topic_tags', {'topic_id': topWuduConditions, 'tag_id': tagPurity});
+
+    // Hanafi Position on Wudu
+    int lawWuduHanafi = await db.insert('laws', {
+      'topic_id': topWuduConditions, 'school_id': shHanafi,
+      'title': 'Position Hanafi', 'content': 'Quatre obligations : laver le visage, les bras jusqu\'aux coudes, passer les mains mouillées sur le quart de la tête, et laver les pieds jusqu\'aux chevilles.',
+      'content_ar': 'فروض الوضوء أربعة: غسل الوجه، وغسل اليدين مع المرفقين، ومسح ربع الرأس، وغسل الرجلين مع الكعبين.',
     });
     await db.insert('sources', {
-      'law_id': lawHanafi,
-      'type': 1, // Hadith
-      'reference': 'Sunan Abi Dawood, Hadith 748',
-      'reference_en': 'Sunan Abi Dawood, Hadith 748',
-      'reference_ru': 'Сунан Аби Давуд, Хадис 748',
-      'reference_zh': '苏南·阿布·达乌德，圣训 748',
-      'text': 'Ibn Mas\'ud a dit : "Ne vais-je pas vous montrer la prière du Messager d\'Allah ?" Il a alors prié et n\'a levé les mains qu\'une seule fois.',
-      'text_en': 'Ibn Mas\'ud said: "Shall I not show you the prayer of the Messenger of Allah?" He then prayed and only raised his hands once.',
-      'text_ar': 'عن ابن مسعود قال: ألا أصلي بكم صلاة رسول الله صلى الله عليه وسلم؟ فصلى فلم يرفع يديه إلا في أول مرة',
-      'text_ru': 'Ибн Масуд сказал: «Не показать ли мне вам, как молился Посланник Аллаха?» Затем он совершил молитву и поднял руки только один раз.',
-      'text_zh': '伊本·马苏德说：“我难道不向你们展示安拉使者的祈祷吗？”然后他祈祷了，只举了一次手。',
-      'authenticity': 1, // Hasan
-      'citation': 'Abu Dawood, Kitab al-Salat'
+      'law_id': lawWuduHanafi, 'type': 0, 'reference': 'Coran 5:6',
+      'text': 'Ô les croyants ! Lorsque vous vous levez pour la Salat, lavez vos visages et vos mains jusqu\'aux coudes; passez les mains mouillées sur vos têtes; et lavez-vous les pieds jusqu\'aux chevilles.',
+      'text_ar': 'يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا قُمْتُمْ إِلَى الصَّلَاةِ فَاغْسِلُوا وُجُوهَكُمْ وَأَيْدِيَكُمْ إِلَى الْمَرَافِقِ وَامْسَحُوا بِرُءُوسِكُمْ وَأَرْجُلَكُمْ إِلَى الْكَعْبَيْنِ',
+      'authenticity': 0
     });
 
-    // --- More Sample Data ---
-    // Fasting Category
-    int topRamadan = await db.insert('topics', {
+    // Shafi'i Position on Wudu (adds Intention and Order)
+    await db.insert('laws', {
+      'topic_id': topWuduConditions, 'school_id': shShafii,
+      'title': 'Position Shafi\'i', 'content': 'Six obligations : l\'intention, laver le visage, les bras, passer les mains sur une partie de la tête, les pieds, et respecter l\'ordre.',
+      'content_ar': 'فروض الوضوء ستة: النية، وغسل الوجه، وغسل اليدين، ومسح شيء من الرأس، وغسل الرجلين، والترتيب.',
+    });
+
+    // Nullifiers of Wudu
+    int topWuduNullifiers = await db.insert('topics', {
+      'category_id': subAblutions,
+      'title': 'Annulations du wuḍū’', 'title_en': 'Nullifiers of Wuḍū’', 'title_ar': 'نواقض الوضوء',
+      'description': 'Les actes et situations qui invalident les ablutions.',
+    });
+    await db.insert('related_topics', {'topic_id': topWuduConditions, 'related_id': topWuduNullifiers});
+
+    // Ghusl
+    int topGhuslObligations = await db.insert('topics', {
+      'category_id': subGhusl,
+      'title': 'Obligations du Ghusl', 'title_en': 'Obligations of Ghusl', 'title_ar': 'فرائض الغسل',
+      'description': 'Les piliers essentiels pour que le bain rituel soit valide.',
+    });
+    await db.insert('laws', {
+      'topic_id': topGhuslObligations, 'school_id': shShafii,
+      'title': 'Position Shafi\'i', 'content': 'Deux obligations : l\'intention et laver tout le corps (y compris les cheveux et la peau).',
+      'content_ar': 'فروض الغسل اثنان: النية، وتعميم البدن بالماء.',
+    });
+
+    // Traveler's Prayer
+    int topTravelPrayer = await db.insert('topics', {
+      'category_id': subPriereVoyageur,
+      'title': 'Le raccourcissement de la prière (Qasr)', 'title_en': 'Shortening of Prayer (Qasr)', 'title_ar': 'قصر الصلاة',
+      'description': 'La permission de raccourcir les prières de quatre rak\'ats à deux pendant un voyage.',
+    });
+    await db.insert('laws', {
+      'topic_id': topTravelPrayer, 'school_id': shHanafi,
+      'title': 'Position Hanafi', 'content': 'Le raccourcissement est une obligation (Wajib) pour le voyageur.',
+      'content_ar': 'القصر واجب على المسافر، ولا يجوز له الإتمام.',
+    });
+    await db.insert('laws', {
+      'topic_id': topTravelPrayer, 'school_id': shShafii,
+      'title': 'Position Shafi\'i', 'content': 'Le raccourcissement est une permission (Rukhsa), l\'individu a le choix.',
+      'content_ar': 'القصر رخصة للمسافر، والإتمام جائز.',
+    });
+
+    // --- FASTING AND ZAKAT ---
+    // Zakat
+    int topZakatNisab = await db.insert('topics', {
+      'category_id': subZakat,
+      'title': 'Le Nisab de la Zakat', 'title_en': 'Nisab of Zakat', 'title_ar': 'نصاب الزكاة',
+      'description': 'Le seuil minimal de richesse à partir duquel la Zakat devient obligatoire.',
+    });
+    int lawZakatHanafi = await db.insert('laws', {
+      'topic_id': topZakatNisab, 'school_id': shHanafi,
+      'title': 'Nisab de l\'or et de l\'argent', 'content': 'Le Nisab est de 85g d\'or ou 595g d\'argent. La Zakat est de 2,5% après un an de possession.',
+      'content_ar': 'نصاب الذهب 85 جراماً، والفضة 595 جراماً، والقدر الواجب 2.5%.',
+    });
+
+    // Fasting Intention
+    int topRamadanIntention = await db.insert('topics', {
       'category_id': catJeune,
-      'title': 'Intention du jeûne', 'title_en': 'Intention for Fasting', 'title_ar': 'نية الصيام', 'title_ru': 'Намерение для поста', 'title_zh': '禁食的意图',
-      'description': 'L\'obligation de l\'intention avant le début du jeûne de Ramadan.', 'description_en': 'The obligation of intention before the start of the Ramadan fast.'
-    });
-
-    int lawShafiiRamadan = await db.insert('laws', {
-      'topic_id': topRamadan,
-      'title': 'Position Shafi\'i', 'title_en': 'Shafi\'i Position', 'title_ar': 'موقف الشافعية', 'title_ru': 'Позиция Шафии', 'title_zh': '沙斐仪立场',
-      'content': 'L\'intention doit être formulée chaque nuit avant l\'aube pour chaque jour de Ramadan.',
-      'content_en': 'The intention must be made every night before dawn for each day of Ramadan.',
-      'content_ar': 'يجب تبييت النية كل ليلة لكل يوم من رمضان',
-      'content_ru': 'Намерение должно быть сформулировано каждую ночь перед рассветом для каждого дня Рамадана.',
-      'content_zh': '在拉马丹月的每一天，必须在黎明前的每个晚上表达意图。',
-      'school_id': shShafii
-    });
-
-    // Marriage Category
-    int topWali = await db.insert('topics', {
-      'category_id': catMariage,
-      'title': 'Présence du tuteur (Wali)', 'title_en': 'Presence of the Guardian (Wali)', 'title_ar': 'وجود الولي في النكاح', 'title_ru': 'Присутствие опекуна (Вали)', 'title_zh': '监护人 (Wali) 的出席',
-      'description': 'La nécessité du tuteur pour la validité du mariage.', 'description_en': 'The necessity of a guardian for the validity of marriage.'
-    });
-
-    int lawMalikiWali = await db.insert('laws', {
-      'topic_id': topWali,
-      'title': 'Position Maliki', 'title_en': 'Maliki Position', 'title_ar': 'موقف المالكية', 'title_ru': 'Позиция Малики', 'title_zh': '马立克立场',
-      'content': 'Le mariage n\'est pas valide sans la présence et l\'accord d\'un tuteur (Wali).',
-      'content_en': 'Marriage is not valid without the presence and consent of a guardian (Wali).',
-      'content_ar': 'لا يصح النكاح إلا بولي',
-      'content_ru': 'Брак недействителен без присутствия и согласия опекуна (Вали).',
-      'content_zh': '没有监护人（Wali）的出席和同意，婚姻 est 无效的。',
-      'school_id': shMaliki
-    });
-
-    // Marriage: Mahr
-    int topMahr = await db.insert('topics', {
-      'category_id': catMariage,
-      'title': 'La dot (Mahr)', 'title_en': 'Dowry (Mahr)', 'title_ar': 'المهر',
-      'description': 'Le droit de l\'épouse à recevoir une dot lors du mariage.',
+      'title': 'Intention du jeûne', 'title_en': 'Intention for Fasting', 'title_ar': 'نية الصيام',
+      'description': 'L\'obligation de formuler l\'intention pour le jeûne de Ramadan.',
     });
     await db.insert('laws', {
-      'topic_id': topMahr,
-      'title': 'Obligation', 'title_en': 'Obligation', 'title_ar': 'الوجوب',
-      'content': 'Le Mahr est un droit obligatoire de l\'épouse. Il peut être de l\'argent, des biens ou même un service.',
-      'content_ar': 'المهر حق واجب للمرأة على زوجها بالعقد عليها.',
-      'school_id': shShafii
-    });
-
-    // Fasting: Breaking fast out of forgetfulness
-    int topForget = await db.insert('topics', {
-      'category_id': catJeune,
-      'title': 'Manger par oubli', 'title_en': 'Eating out of forgetfulness', 'title_ar': 'الأكل ناسياً في الصيام',
-      'description': 'Le jugement sur celui qui mange ou boit par oubli pendant le jeûne.',
+      'topic_id': topRamadanIntention, 'school_id': shShafii,
+      'title': 'Position Shafi\'i', 'content': 'L\'intention doit être renouvelée chaque nuit avant l\'aube.',
+      'content_ar': 'يجب تبييت النية كل ليلة في صوم الفرض.',
     });
     await db.insert('laws', {
-      'topic_id': topForget,
-      'title': 'Consensus Sunnite', 'title_en': 'Sunni Consensus', 'title_ar': 'جمهور العلماء',
-      'content': 'Le jeûne n\'est pas rompu si l\'on mange ou boit par oubli. Il faut s\'arrêter dès que l\'on s\'en rappelle.',
-      'content_ar': 'من أكل أو شرب ناسياً فليتم صومه، فإنما أطعمه الله وسقاه.',
-      'school_id': shHanafi
+      'topic_id': topRamadanIntention, 'school_id': shMaliki,
+      'title': 'Position Maliki', 'content': 'Une seule intention au début du mois de Ramadan suffit pour tout le mois.',
+      'content_ar': 'تكفي نية واحدة في أول شهر رمضان لصوم الشهر كله.',
     });
 
-    // Prayer: Prostration (Sujud)
-    int topSujud = await db.insert('topics', {
-      'category_id': catCulte,
-      'title': 'Les membres de la prosternation', 'title_en': 'Members of Prostration', 'title_ar': 'أعضاء السجود',
-      'description': 'Les parties du corps qui doivent toucher le sol pendant le Sujud.',
+    // --- MARRIAGE AND FAMILY ---
+    // Marriage Contract
+    int topNikahConditions = await db.insert('topics', {
+      'category_id': subContratMariage,
+      'title': 'Piliers du contrat de mariage', 'title_en': 'Pillars of Marriage Contract', 'title_ar': 'أركان عقد النكاح',
+      'description': 'Les éléments essentiels sans lesquels le mariage est nul.',
     });
     await db.insert('laws', {
-      'topic_id': topSujud,
-      'title': 'Position Majoritaire', 'title_en': 'Majority Position', 'title_ar': 'قول الجمهور',
-      'content': 'La prosternation doit se faire sur sept membres : le front (avec le nez), les deux mains, les deux genoux et les deux pieds.',
-      'content_ar': 'أمرت أن أسجد على سبعة أعظم: الجبهة، واليدين، والركبتين، وأطراف القدمين.',
-      'school_id': shShafii
+      'topic_id': topNikahConditions, 'school_id': shShafii,
+      'title': 'Position Shafi\'i', 'content': 'Cinq piliers : l\'époux, l\'épouse, le tuteur (Wali), deux témoins et la formule (Ijab et Qabul).',
+      'content_ar': 'أركان النكاح خمسة: زوج، وزوجة، وولي، وشاهدان، وصيغة.',
+    });
+    await db.insert('laws', {
+      'topic_id': topNikahConditions, 'school_id': shHanafi,
+      'title': 'Position Hanafi', 'content': 'Le pilier principal est la formule (Ijab et Qabul). La présence du tuteur n\'est pas une condition de validité pour une femme majeure et saine d\'esprit.',
+      'content_ar': 'الركن هو الإيجاب والقبول. والولي ليس شرطاً لصحة نكاح الحرة العاقلة البالغة.',
+    });
+
+    // Mahr
+    int topMahrRules = await db.insert('topics', {
+      'category_id': subMahr,
+      'title': 'Règles de la dot (Mahr)', 'title_en': 'Rules of Mahr', 'title_ar': 'أحكام المهر',
+      'description': 'Le Mahr est un don obligatoire du mari à son épouse.',
+    });
+    await db.insert('laws', {
+      'topic_id': topMahrRules, 'school_id': shShafii,
+      'title': 'Obligation', 'content': 'Le Mahr est obligatoire par le simple fait du contrat, même s\'il n\'est pas mentionné.',
+      'content_ar': 'المهر واجب بالعقد، ويستقر بالدخول.',
+    });
+    await db.insert('topic_tags', {'topic_id': topMahrRules, 'tag_id': tagObligation});
+    await db.insert('related_topics', {'topic_id': topNikahConditions, 'related_id': topMahrRules});
+
+    // --- ECONOMY AND FINANCE ---
+    // Riba
+    int topRibaDetailed = await db.insert('topics', {
+      'category_id': subFinance,
+      'title': 'Les types de Riba', 'title_en': 'Types of Riba', 'title_ar': 'أنواع الربا',
+      'description': 'Distinction entre Riba al-Fadl et Riba al-Nasi\'ah.',
+    });
+    await db.insert('laws', {
+      'topic_id': topRibaDetailed, 'school_id': shHanafi,
+      'title': 'Riba al-Nasi\'ah', 'content': 'C\'est l\'intérêt stipulé sur un prêt ou un délai de paiement. Il est strictement interdit.',
+      'content_ar': 'ربا النسيئة هو الزيادة المشروطة مقابل الأجل.',
+    });
+    await db.insert('sources', {
+      'law_id': (await db.query('laws', where: 'topic_id = ?', whereArgs: [topRibaDetailed])).first['id'] as int,
+      'type': 0, 'reference': 'Coran 2:275', 'text': 'Allah a rendu licite le commerce, et illicite l\'intérêt (Riba).',
+      'text_ar': 'وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا', 'authenticity': 0
     });
 
     // --- Enriched Content (v9) ---
@@ -551,7 +648,7 @@ class DatabaseHelper {
     });
     await db.insert('sources', {
       'law_id': lawRights,
-      'type': 0, 'reference': 'Coran, 5:32', 'text': '...quiconque tue une personne... c\'est comme s\'il avait tué tous les hommes.',
+      'type': 0, 'reference': 'Coran, 5:32', 'text': '...quiconque tue une person... c\'est comme s\'il avait tué tous les hommes.',
       'text_ar': 'مَن قَتَلَ نَفْسًا بِغَيْرِ نَفْسٍ أَوْ فَسَادٍ فِي الْأَرْضِ فَكَأَنَّمَا قَتَلَ النَّاسَ جَمِيعًا', 'authenticity': 0
     });
 
@@ -576,6 +673,47 @@ class DatabaseHelper {
       'content_ar': 'للبنت المنفردة النصف فرضاً، والباقي رداً.',
       'school_id': shJafari
     });
+
+    // Food & Purity: Halal Meat
+    int topHalalMeat = await db.insert('topics', {
+      'category_id': catAlimentation,
+      'title': 'Conditions de la viande Halal', 'title_en': 'Conditions of Halal Meat', 'title_ar': 'شروط اللحم الحلال',
+      'description': 'Les critères pour qu\'un animal soit licite à la consommation.',
+    });
+    await db.insert('laws', {
+      'topic_id': topHalalMeat, 'school_id': shShafii,
+      'title': 'Position Shafi\'i', 'content': 'L\'animal doit être égorgé par un musulman ou une personne du Livre, en coupant la trachée et l\'œsophage.',
+      'content_ar': 'يشترط ذكاة المسلم أو الكتابي بقطع الحلقوم والمريء.',
+    });
+
+    // Ethics: Truthfulness
+    int topTruthfulness = await db.insert('topics', {
+      'category_id': catEthique,
+      'title': 'La sincérité (Ikhlas)', 'title_en': 'Sincerity (Ikhlas)', 'title_ar': 'الإخلاص',
+      'description': 'L\'importance de l\'intention pure dans tous les actes d\'adoration.',
+    });
+    await db.insert('laws', {
+      'topic_id': topTruthfulness, 'school_id': shShafii,
+      'title': 'Consensus', 'content': 'Tout acte d\'adoration sans intention sincère pour Allah est nul ou sans récompense.',
+      'content_ar': 'الإخلاص شرط لقبول الأعمال عند الله.',
+    });
+
+    // Rights: Neighbors
+    int topNeighborRights = await db.insert('topics', {
+      'category_id': catDroits,
+      'title': 'Droits des voisins', 'title_en': 'Rights of Neighbors', 'title_ar': 'حقوق الجار',
+      'description': 'Les obligations morales et sociales envers son voisinage.',
+    });
+    await db.insert('laws', {
+      'topic_id': topNeighborRights, 'school_id': shMaliki,
+      'title': 'Consensus', 'content': 'Il est interdit de nuire à son voisin, et recommandé de lui être bienfaisant.',
+      'content_ar': 'حرمة أذية الجار ووجوب الإحسان إليه.',
+    });
+    await db.insert('sources', {
+      'law_id': (await db.query('laws', where: 'topic_id = ?', whereArgs: [topNeighborRights])).first['id'] as int,
+      'type': 1, 'reference': 'Bukhari 6016', 'text': 'Celui qui croit en Allah et au Jour dernier, qu\'il ne nuise pas à son voisin.',
+      'text_ar': 'مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلا يُؤْذِ جَارَهُ', 'authenticity': 0
+    });
   }
 
   Future<List<Category>> getCategories({int? parentId, Locale? locale}) async {
@@ -599,15 +737,20 @@ class DatabaseHelper {
   Future<List<Topic>> getTopicsByCategory(int categoryId, {Locale? locale}) async {
     Database db = await database;
     var results = await db.query('topics', where: 'category_id = ?', whereArgs: [categoryId]);
-    return results.map((t) {
-      Map<String, dynamic> map = Map.from(t);
+    List<Topic> topics = [];
+    for (var r in results) {
+      Map<String, dynamic> map = Map.from(r);
       if (locale != null) {
         String lang = locale.languageCode;
         if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
         if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
       }
-      return Topic.fromMap(map);
-    }).toList();
+      int topicId = map['id'];
+      List<String> tags = await getTagsForTopic(topicId);
+      List<int> related = await _getRelatedTopicIds(topicId);
+      topics.add(Topic.fromMap(map, tags: tags, relatedTopicIds: related));
+    }
+    return topics;
   }
 
   Future<List<Law>> getLawsByTopic(int topicId, {Locale? locale}) async {
@@ -655,21 +798,39 @@ class DatabaseHelper {
     return null;
   }
 
-  Future<List<Topic>> searchTopics(String query, {Locale? locale}) async {
+  Future<List<Topic>> searchTopics(String query, {Locale? locale, int? schoolId, int? categoryId}) async {
     Database db = await database;
+    String whereClause = '(title LIKE ? OR description LIKE ? OR title_en LIKE ? OR description_en LIKE ? OR title_ar LIKE ? OR description_ar LIKE ? OR title_ru LIKE ? OR description_ru LIKE ? OR title_zh LIKE ? OR description_zh LIKE ?)';
+    List<dynamic> whereArgs = List.filled(10, '%$query%');
+
+    if (schoolId != null) {
+      whereClause += ' AND id IN (SELECT topic_id FROM laws WHERE school_id = ?)';
+      whereArgs.add(schoolId);
+    }
+    if (categoryId != null) {
+      whereClause += ' AND category_id = ?';
+      whereArgs.add(categoryId);
+    }
+
     var results = await db.query('topics',
-      where: 'title LIKE ? OR description LIKE ? OR title_en LIKE ? OR description_en LIKE ? OR title_ar LIKE ? OR description_ar LIKE ? OR title_ru LIKE ? OR description_ru LIKE ? OR title_zh LIKE ? OR description_zh LIKE ?',
-      whereArgs: ['%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%', '%$query%']
+      where: whereClause,
+      whereArgs: whereArgs
     );
-    return results.map((t) {
-      Map<String, dynamic> map = Map.from(t);
+
+    List<Topic> topics = [];
+    for (var r in results) {
+      Map<String, dynamic> map = Map.from(r);
       if (locale != null) {
         String lang = locale.languageCode;
         if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
         if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
       }
-      return Topic.fromMap(map);
-    }).toList();
+      int topicId = map['id'];
+      List<String> tags = await getTagsForTopic(topicId);
+      List<int> related = await _getRelatedTopicIds(topicId);
+      topics.add(Topic.fromMap(map, tags: tags, relatedTopicIds: related));
+    }
+    return topics;
   }
 
   // Favorites
@@ -725,5 +886,87 @@ class DatabaseHelper {
     Database db = await database;
     var results = await db.query('media');
     return results.map((m) => MediaItem.fromMap(m)).toList();
+  }
+
+  // Tags and Related Topics
+  Future<List<String>> getTagsForTopic(int topicId) async {
+    Database db = await database;
+    var results = await db.rawQuery('''
+      SELECT t.name FROM tags t
+      JOIN topic_tags tt ON t.id = tt.tag_id
+      WHERE tt.topic_id = ?
+    ''', [topicId]);
+    return results.map((r) => r['name'] as String).toList();
+  }
+
+  Future<List<int>> _getRelatedTopicIds(int topicId) async {
+    Database db = await database;
+    var results = await db.query('related_topics', where: 'topic_id = ?', columns: ['related_id']);
+    return results.map((r) => r['related_id'] as int).toList();
+  }
+
+  Future<Topic?> getTopicById(int topicId, {Locale? locale}) async {
+    Database db = await database;
+    var results = await db.query('topics', where: 'id = ?', whereArgs: [topicId]);
+    if (results.isNotEmpty) {
+      Map<String, dynamic> map = Map.from(results.first);
+      if (locale != null) {
+        String lang = locale.languageCode;
+        if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+        if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+      }
+      List<String> tags = await getTagsForTopic(topicId);
+      List<int> related = await _getRelatedTopicIds(topicId);
+      return Topic.fromMap(map, tags: tags, relatedTopicIds: related);
+    }
+    return null;
+  }
+
+  Future<List<Topic>> getRelatedTopics(int topicId, {Locale? locale}) async {
+    List<int> ids = await _getRelatedTopicIds(topicId);
+    List<Topic> topics = [];
+    for (var id in ids) {
+      var t = await getTopicById(id, locale: locale);
+      if (t != null) topics.add(t);
+    }
+    return topics;
+  }
+
+  Future<List<Topic>> getTopicsByTag(String tagName, {Locale? locale}) async {
+    Database db = await database;
+    var results = await db.rawQuery('''
+      SELECT t.* FROM topics t
+      JOIN topic_tags tt ON t.id = tt.topic_id
+      JOIN tags tag ON tag.id = tt.tag_id
+      WHERE tag.name = ?
+    ''', [tagName]);
+
+    List<Topic> topics = [];
+    for (var r in results) {
+      Map<String, dynamic> map = Map.from(r);
+      if (locale != null) {
+        String lang = locale.languageCode;
+        if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+        if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+      }
+      int topicId = map['id'];
+      List<String> tags = await getTagsForTopic(topicId);
+      List<int> related = await _getRelatedTopicIds(topicId);
+      topics.add(Topic.fromMap(map, tags: tags, relatedTopicIds: related));
+    }
+    return topics;
+  }
+
+  Future<List<School>> getAllSchools({Locale? locale}) async {
+    Database db = await database;
+    var results = await db.query('schools');
+    return results.map((s) {
+      Map<String, dynamic> map = Map.from(s);
+      if (locale != null) {
+        String lang = locale.languageCode;
+        if (map['name_$lang'] != null) map['name'] = map['name_$lang'];
+      }
+      return School.fromMap(map);
+    }).toList();
   }
 }

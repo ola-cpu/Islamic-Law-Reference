@@ -37,5 +37,8 @@
   "hajjStep4Desc": "在穆兹代里法 (Muzdalifah) 收集石子。",
   "hajjStep5Desc": "在米纳投石。",
   "hajjStep6Desc": "在麦加进行环游 (Tawaf) 和奔跑 (Sa'y)。",
-  "hajjStep7Desc": "宰牲并结束朝觐仪式。"
+  "hajjStep7Desc": "宰牲并结束朝觐仪式。",
+  "relatedTopics": "相关话题",
+  "filterBySchool": "按流派筛选",
+  "filterByCategory": "按类别筛选"
 }
