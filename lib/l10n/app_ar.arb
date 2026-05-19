@@ -37,5 +37,8 @@
   "hajjStep4Desc": "جمع الحصى",
   "hajjStep5Desc": "رمي الجمرات في منى",
   "hajjStep6Desc": "الطواف حول الكعبة والسعي",
-  "hajjStep7Desc": "النحر وانتهاء الحج"
+  "hajjStep7Desc": "النحر وانتهاء الحج",
+  "relatedTopics": "المواضيع ذات الصلة",
+  "filterBySchool": "تصفية حسب المذهب",
+  "filterByCategory": "تصفية حسب الفئة"
 }

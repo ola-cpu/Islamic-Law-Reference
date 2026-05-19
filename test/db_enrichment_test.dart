@@ -9,31 +9,27 @@ void main() {
     databaseFactory = databaseFactoryFfi;
   });
 
-  test('Database Enrichment Verification v9', () async {
+  test('Database Enrichment Verification v10', () async {
     final dbHelper = DatabaseHelper();
     final db = await dbHelper.database;
 
     // Check version
     int version = await db.getVersion();
-    expect(version, 9);
+    expect(version, 10);
 
-    // Check categories
+    // Check categories (Main categories + Subcategories)
     final categories = await db.query('categories');
-    expect(categories.length, greaterThanOrEqualTo(11));
+    expect(categories.length, greaterThan(11));
 
     // Check for enriched topics
     final enrichedTopics = [
-      'Le respect des parents (Birr al-Walidayn)',
-      'Prohibition de l\'usure (Riba)',
-      'Le témoignage véridique',
-      'La véracité (As-Sidq)',
-      'L\'abattage rituel (Dhabihah)',
-      'Le contrat de vente (Al-Bay\')',
-      'Le droit à la vie',
-      'Part de la fille unique',
-      'La dot (Mahr)',
-      'Manger par oubli',
-      'Les membres de la prosternation'
+      'Conditions de validité du wuḍū’',
+      'Annulations du wuḍū’',
+      'Le Nisab de la Zakat',
+      'Intention du jeûne',
+      'Piliers du contrat de mariage',
+      'Règles de la dot (Mahr)',
+      'Les types de Riba',
     ];
 
     for (var title in enrichedTopics) {
@@ -42,11 +38,9 @@ void main() {
     }
 
     // Verify preservation of user data (Simulated)
-    await db.insert('favorites', {'topic_id': 999});
+    await db.insert('favorites', {'topic_id': 999}, conflictAlgorithm: ConflictAlgorithm.replace);
     await dbHelper.saveNote(999, 'Test Note');
 
-    // Trigger "upgrade" by calling onUpgrade manually or just checking logic
-    // Since we are in tests, we can just verify the tables are there.
     final favorites = await db.query('favorites', where: 'topic_id = ?', whereArgs: [999]);
     expect(favorites.length, 1);
 
