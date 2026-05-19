@@ -32,12 +32,12 @@ class DatabaseHelper {
     }
     return await openDatabase(
       path,
-      version: 10, // Bumped to 10 for tags and related topics
+      version: 11, // Bumped to 11 for improved content and book references
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
-        if (oldVersion < 10) {
-          // Destructive upgrade to re-seed enriched content
-          await _dropTables(db);
+        if (oldVersion < 11) {
+          // Upgrade to re-seed enriched content while preserving user data
+          await _dropTables(db, dropUserData: false);
           await _onCreate(db, newVersion);
         }
       },
@@ -62,7 +62,7 @@ class DatabaseHelper {
 
   Future _onCreate(Database db, int version) async {
     await db.execute('''
-      CREATE TABLE categories(
+      CREATE TABLE IF NOT EXISTS categories(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         parent_id INTEGER,
         name TEXT,
@@ -76,7 +76,7 @@ class DatabaseHelper {
       )
     ''');
     await db.execute('''
-      CREATE TABLE schools(
+      CREATE TABLE IF NOT EXISTS schools(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
         name_en TEXT,
@@ -91,7 +91,7 @@ class DatabaseHelper {
       )
     ''');
     await db.execute('''
-      CREATE TABLE topics(
+      CREATE TABLE IF NOT EXISTS topics(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         category_id INTEGER,
         title TEXT,
@@ -108,7 +108,7 @@ class DatabaseHelper {
       )
     ''');
     await db.execute('''
-      CREATE TABLE laws(
+      CREATE TABLE IF NOT EXISTS laws(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         topic_id INTEGER,
         title TEXT,
@@ -132,7 +132,7 @@ class DatabaseHelper {
       )
     ''');
     await db.execute('''
-      CREATE TABLE sources(
+      CREATE TABLE IF NOT EXISTS sources(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         law_id INTEGER,
         type INTEGER,
@@ -156,14 +156,14 @@ class DatabaseHelper {
       )
     ''');
     await db.execute('''
-      CREATE TABLE favorites(
+      CREATE TABLE IF NOT EXISTS favorites(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         topic_id INTEGER UNIQUE,
         FOREIGN KEY (topic_id) REFERENCES topics (id)
       )
     ''');
     await db.execute('''
-      CREATE TABLE notes(
+      CREATE TABLE IF NOT EXISTS notes(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         topic_id INTEGER UNIQUE,
         content TEXT,
@@ -171,7 +171,7 @@ class DatabaseHelper {
       )
     ''');
     await db.execute('''
-      CREATE TABLE media(
+      CREATE TABLE IF NOT EXISTS media(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         topic_id INTEGER,
         type INTEGER,
@@ -182,13 +182,13 @@ class DatabaseHelper {
       )
     ''');
     await db.execute('''
-      CREATE TABLE tags(
+      CREATE TABLE IF NOT EXISTS tags(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT UNIQUE
       )
     ''');
     await db.execute('''
-      CREATE TABLE topic_tags(
+      CREATE TABLE IF NOT EXISTS topic_tags(
         topic_id INTEGER,
         tag_id INTEGER,
         FOREIGN KEY (topic_id) REFERENCES topics (id),
@@ -197,7 +197,7 @@ class DatabaseHelper {
       )
     ''');
     await db.execute('''
-      CREATE TABLE related_topics(
+      CREATE TABLE IF NOT EXISTS related_topics(
         topic_id INTEGER,
         related_id INTEGER,
         FOREIGN KEY (topic_id) REFERENCES topics (id),
@@ -713,6 +713,72 @@ class DatabaseHelper {
       'law_id': (await db.query('laws', where: 'topic_id = ?', whereArgs: [topNeighborRights])).first['id'] as int,
       'type': 1, 'reference': 'Bukhari 6016', 'text': 'Celui qui croit en Allah et au Jour dernier, qu\'il ne nuise pas à son voisin.',
       'text_ar': 'مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلا يُؤْذِ جَارَهُ', 'authenticity': 0
+    });
+
+    // --- TAYAMMUM ---
+    int topTayammum = await db.insert('topics', {
+      'category_id': subTayammum,
+      'title': 'Conditions du Tayammum', 'title_en': 'Conditions of Tayammum', 'title_ar': 'شروط التيمم',
+      'description': 'L\'ablution sèche en cas d\'absence d\'eau ou d\'impossibilité de l\'utiliser.',
+    });
+    int lawTayammumHanafi = await db.insert('laws', {
+      'topic_id': topTayammum, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'Le Tayammum est permis si l\'eau est à plus d\'un mille (env. 1.8km). On peut utiliser tout ce qui fait partie de la terre (sable, pierre, poussière).',
+      'content_ar': 'يجوز التيمم إذا كان الماء بعيداً بمقدار ميل، ويجوز بكل ما كان من جنس الأرض.',
+    });
+    await db.insert('sources', {
+      'law_id': lawTayammumHanafi, 'type': 2, 'reference': 'Al-Bahr al-Ra\'iq', 'text': 'La terre pure comprend tout ce qui ne brûle pas et ne fond pas.', 'citation': 'Ibn Nujaym, Vol 1, p. 150', 'authenticity': 4
+    });
+
+    // --- PRAYER PILLARS ---
+    int topSalatPillars = await db.insert('topics', {
+      'category_id': subPriereObligatoire,
+      'title': 'Les piliers de la Salat', 'title_en': 'Pillars of Salat', 'title_ar': 'أركان الصلاة',
+      'description': 'Les actes essentiels dont l\'omission invalide la prière.',
+    });
+    int lawSalatShafii = await db.insert('laws', {
+      'topic_id': topSalatPillars, 'school_id': shShafii,
+      'title': 'Position Shafi\'i', 'content': 'Treize piliers, incluant l\'intention, le Takbir, la Fatiha, l\'inclinaison, la prosternation et le salut final.',
+      'content_ar': 'أركان الصلاة ثلاثة عشر: النية، وتكبيرة الإحرام، وقراءة الفاتحة...',
+    });
+    await db.insert('sources', {
+      'law_id': lawSalatShafii, 'type': 2, 'reference': 'Minhaj al-Talibin', 'text': 'Le premier pilier est l\'intention liée au Takbir.', 'citation': 'Al-Nawawi, p. 25', 'authenticity': 4
+    });
+
+    // --- ZAKAT LIVESTOCK ---
+    int topZakatLivestock = await db.insert('topics', {
+      'category_id': subZakat,
+      'title': 'Zakat sur le bétail', 'title_en': 'Zakat on Livestock', 'title_ar': 'زكاة الأنعام',
+      'description': 'Règles concernant les bovins, ovins et camélidés.',
+    });
+    await db.insert('laws', {
+      'topic_id': topZakatLivestock, 'school_id': shMaliki,
+      'title': 'Maliki', 'content': 'La Zakat est due même sur les bêtes qui travaillent (labour, transport).',
+      'content_ar': 'تجب الزكاة في الأنعام وإن كانت عوامل.',
+    });
+
+    // --- DIVORCE ---
+    int topDivorceSunni = await db.insert('topics', {
+      'category_id': subDivorce,
+      'title': 'Le divorce sunnite', 'title_en': 'Sunni Divorce', 'title_ar': 'الطلاق السني',
+      'description': 'Le divorce conforme à la tradition prophétique.',
+    });
+    await db.insert('laws', {
+      'topic_id': topDivorceSunni, 'school_id': shHanbali,
+      'title': 'Hanbali', 'content': 'Le divorce doit être prononcé pendant une période de pureté sans rapport sexuel.',
+      'content_ar': 'الطلاق السني أن يطلقها في طهر لم يجامعها فيه طلقة واحدة.',
+    });
+
+    // --- INHERITANCE SPOUSE ---
+    int topInheritanceSpouse = await db.insert('topics', {
+      'category_id': catHeritage,
+      'title': 'Part du conjoint', 'title_en': 'Spouse Share', 'title_ar': 'ميراث الزوجين',
+      'description': 'Les parts fixées pour le mari et la femme.',
+    });
+    await db.insert('laws', {
+      'topic_id': topInheritanceSpouse, 'school_id': shJafari,
+      'title': 'Ja\'fari', 'content': 'Le mari hérite de tout si elle n\'a pas d\'autre héritier, mais la femme n\'hérite pas de tout par Radd (retour).',
+      'content_ar': 'الزوج يرث الجميع بالفرض والرد إذا لم يكن غيره، والزوجة لا ترث بالرد.',
     });
   }
 
