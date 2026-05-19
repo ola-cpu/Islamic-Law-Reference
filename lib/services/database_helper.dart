@@ -6,6 +6,7 @@ import '../models/topic.dart';
 import '../models/law.dart';
 import '../models/source.dart';
 import '../models/school.dart';
+import '../models/media_item.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
@@ -30,7 +31,7 @@ class DatabaseHelper {
     }
     return await openDatabase(
       path,
-      version: 3,
+      version: 4,
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
          // Simplified for this task: recreate tables if upgrading
@@ -41,6 +42,7 @@ class DatabaseHelper {
   }
 
   Future<void> _dropTables(Database db) async {
+    await db.execute('DROP TABLE IF EXISTS media');
     await db.execute('DROP TABLE IF EXISTS sources');
     await db.execute('DROP TABLE IF EXISTS favorites');
     await db.execute('DROP TABLE IF EXISTS notes');
@@ -57,6 +59,7 @@ class DatabaseHelper {
         parent_id INTEGER,
         name TEXT,
         icon TEXT,
+        image_url TEXT,
         FOREIGN KEY (parent_id) REFERENCES categories (id)
       )
     ''');
@@ -117,6 +120,17 @@ class DatabaseHelper {
         FOREIGN KEY (topic_id) REFERENCES topics (id)
       )
     ''');
+    await db.execute('''
+      CREATE TABLE media(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        topic_id INTEGER,
+        type INTEGER,
+        url TEXT,
+        title TEXT,
+        description TEXT,
+        FOREIGN KEY (topic_id) REFERENCES topics (id)
+      )
+    ''');
 
     await _seedDatabase(db);
   }
@@ -130,17 +144,72 @@ class DatabaseHelper {
     int shJafari = await db.insert('schools', {'name': 'Ja\'fari', 'description': 'L\'école de l\'Imam Ja\'far al-Sadiq.'});
 
     // Categories
-    int catCulte = await db.insert('categories', {'name': 'Prière et culte', 'icon': 'mosque', 'parent_id': null});
-    int catJeune = await db.insert('categories', {'name': 'Jeûne, zakât et pèlerinage', 'icon': 'volunteer_activism', 'parent_id': null});
-    int catFamille = await db.insert('categories', {'name': 'Relations sociales et familiales', 'icon': 'people', 'parent_id': null});
-    int catMariage = await db.insert('categories', {'name': 'Mariage, divorce et garde des enfants', 'icon': 'family_restroom', 'parent_id': null});
-    int catEconomie = await db.insert('categories', {'name': 'Économie, finance et commerce', 'icon': 'monetization_on', 'parent_id': null});
-    int catJustice = await db.insert('categories', {'name': 'Justice et gouvernance', 'icon': 'gavel', 'parent_id': null});
-    int catEthique = await db.insert('categories', {'name': 'Éthique et spiritualité', 'icon': 'favorite', 'parent_id': null});
-    int catAlimentation = await db.insert('categories', {'name': 'Alimentation et règles de pureté', 'icon': 'restaurant', 'parent_id': null});
-    int catContrats = await db.insert('categories', {'name': 'Les contrats et engagements', 'icon': 'description', 'parent_id': null});
-    int catDroits = await db.insert('categories', {'name': 'Les droits et devoirs individuels', 'icon': 'accessibility', 'parent_id': null});
-    int catHeritage = await db.insert('categories', {'name': 'Héritage et succession (Farāʾiḍ)', 'icon': 'account_balance', 'parent_id': null});
+    int catCulte = await db.insert('categories', {
+      'name': 'Prière et culte',
+      'icon': 'mosque',
+      'image_url': 'https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catJeune = await db.insert('categories', {
+      'name': 'Jeûne, zakât et pèlerinage',
+      'icon': 'volunteer_activism',
+      'image_url': 'https://images.unsplash.com/photo-1564121211835-e88c852648ab?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catFamille = await db.insert('categories', {
+      'name': 'Relations sociales et familiales',
+      'icon': 'people',
+      'image_url': 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catMariage = await db.insert('categories', {
+      'name': 'Mariage, divorce et garde des enfants',
+      'icon': 'family_restroom',
+      'image_url': 'https://images.unsplash.com/photo-1581333100576-b73bbe92c2cb?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catEconomie = await db.insert('categories', {
+      'name': 'Économie, finance et commerce',
+      'icon': 'monetization_on',
+      'image_url': 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catJustice = await db.insert('categories', {
+      'name': 'Justice et gouvernance',
+      'icon': 'gavel',
+      'image_url': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catEthique = await db.insert('categories', {
+      'name': 'Éthique et spiritualité',
+      'icon': 'favorite',
+      'image_url': 'https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catAlimentation = await db.insert('categories', {
+      'name': 'Alimentation et règles de pureté',
+      'icon': 'restaurant',
+      'image_url': 'https://images.unsplash.com/photo-1547573854-74d2a71d0826?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catContrats = await db.insert('categories', {
+      'name': 'Les contrats et engagements',
+      'icon': 'description',
+      'image_url': 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catDroits = await db.insert('categories', {
+      'name': 'Les droits et devoirs individuels',
+      'icon': 'accessibility',
+      'image_url': 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
+    int catHeritage = await db.insert('categories', {
+      'name': 'Héritage et succession (Farāʾiḍ)',
+      'icon': 'account_balance',
+      'image_url': 'https://images.unsplash.com/photo-14539414037aa4-944c883e585e?auto=format&fit=crop&q=80&w=1000',
+      'parent_id': null
+    });
 
     // Category 1: Prière et culte
     int topHands = await db.insert('topics', {
@@ -332,6 +401,15 @@ class DatabaseHelper {
       'text_ar': 'عن أبي عبد الله عليه السلام قال: ارفع يديك في كل تكبيرة',
       'authenticity': 1, // Hasan (contextual)
       'citation': 'Wasa\'il al-Shia, Kitab al-Salat'
+    });
+
+    // Seed Media for 'Lever les mains'
+    await db.insert('media', {
+      'topic_id': topHands,
+      'type': 0, // Image
+      'url': 'https://images.unsplash.com/photo-1597933971247-a95054881729?auto=format&fit=crop&q=80&w=1000',
+      'title': 'Positions des mains',
+      'description': 'Illustration des différentes positions des mains selon les écoles.'
     });
 
     // Mahr (Dot) - Maliki Example
@@ -584,5 +662,18 @@ class DatabaseHelper {
     Database db = await database;
     var results = await db.query('notes');
     return { for (var r in results) r['topic_id'] as int : r['content'] as String };
+  }
+
+  // Media
+  Future<List<MediaItem>> getMediaForTopic(int topicId) async {
+    Database db = await database;
+    var results = await db.query('media', where: 'topic_id = ?', whereArgs: [topicId]);
+    return results.map((m) => MediaItem.fromMap(m)).toList();
+  }
+
+  Future<List<MediaItem>> getAllMedia() async {
+    Database db = await database;
+    var results = await db.query('media');
+    return results.map((m) => MediaItem.fromMap(m)).toList();
   }
 }

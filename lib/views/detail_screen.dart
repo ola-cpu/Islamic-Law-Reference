@@ -4,9 +4,11 @@ import '../models/topic.dart';
 import '../models/law.dart';
 import '../models/source.dart';
 import '../models/school.dart';
+import '../models/media_item.dart';
 import '../services/database_helper.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/user_provider.dart';
+import 'hajj_timeline.dart';
 
 class DetailScreen extends StatefulWidget {
   final Topic topic;
@@ -20,6 +22,7 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   final TextEditingController _noteController = TextEditingController();
   late Future<List<Law>> _lawsFuture;
+  late Future<List<MediaItem>> _mediaFuture;
 
   @override
   void initState() {
@@ -27,6 +30,7 @@ class _DetailScreenState extends State<DetailScreen> {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     _noteController.text = userProvider.getNote(widget.topic.id!) ?? '';
     _lawsFuture = DatabaseHelper().getLawsByTopic(widget.topic.id!);
+    _mediaFuture = DatabaseHelper().getMediaForTopic(widget.topic.id!);
   }
 
   @override
@@ -39,6 +43,7 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final userProvider = Provider.of<UserProvider>(context);
+    final theme = Theme.of(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -60,10 +65,27 @@ class _DetailScreenState extends State<DetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              widget.topic.description,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(fontStyle: FontStyle.italic),
+            Card(
+              color: theme.colorScheme.secondaryContainer.withOpacity(0.3),
+              elevation: 0,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  widget.topic.description,
+                  style: theme.textTheme.bodyLarge?.copyWith(
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ),
             ),
+            const SizedBox(height: 20),
+            _buildMediaSection(l10n),
+            const SizedBox(height: 20),
+            if (widget.topic.title.toLowerCase().contains('hajj') || widget.topic.title.toLowerCase().contains('pèlerinage')) ...[
+               const HajjTimeline(),
+               const SizedBox(height: 20),
+            ],
+            _buildComparisonToggle(l10n),
             const SizedBox(height: 20),
             FutureBuilder<List<Law>>(
               future: _lawsFuture,
@@ -82,7 +104,7 @@ class _DetailScreenState extends State<DetailScreen> {
             const SizedBox(height: 20),
             Text(
               l10n.personalNotes,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
             ),
             const Divider(),
             TextField(
@@ -90,19 +112,226 @@ class _DetailScreenState extends State<DetailScreen> {
               maxLines: 3,
               decoration: InputDecoration(
                 hintText: l10n.addNoteHint,
-                border: const OutlineInputBorder(),
+                filled: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide.none,
+                ),
               ),
             ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                userProvider.addNote(widget.topic.id!, _noteController.text);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l10n.noteSaved)),
-                );
-              },
-              child: Text(l10n.saveNote),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.save),
+                onPressed: () {
+                  userProvider.addNote(widget.topic.id!, _noteController.text);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(l10n.noteSaved)),
+                  );
+                },
+                label: Text(l10n.saveNote),
+              ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildComparisonToggle(AppLocalizations l10n) {
+    return FutureBuilder<List<Law>>(
+      future: _lawsFuture,
+      builder: (context, snapshot) {
+        if (!snapshot.hasData || snapshot.data!.length < 2) return const SizedBox.shrink();
+        return Card(
+          elevation: 0,
+          color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.5),
+          child: ListTile(
+            leading: const Icon(Icons.compare_arrows),
+            title: const Text("Tableau comparatif des écoles"),
+            subtitle: const Text("Comparer les avis juridiques en un coup d'œil"),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => _showComparisonDialog(context, snapshot.data!, l10n),
+          ),
+        );
+      },
+    );
+  }
+
+  void _showComparisonDialog(BuildContext context, List<Law> laws, AppLocalizations l10n) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+      builder: (context) {
+        return DraggableScrollableSheet(
+          initialChildSize: 0.7,
+          minChildSize: 0.5,
+          maxChildSize: 0.95,
+          expand: false,
+          builder: (context, scrollController) {
+            return Column(
+              children: [
+                Container(
+                  width: 40,
+                  height: 4,
+                  margin: const EdgeInsets.symmetric(vertical: 12),
+                  decoration: BoxDecoration(color: Colors.grey[300], borderRadius: BorderRadius.circular(2)),
+                ),
+                Text(
+                  "Comparaison des Écoles",
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
+                Expanded(
+                  child: SingleChildScrollView(
+                    controller: scrollController,
+                    scrollDirection: Axis.horizontal,
+                    child: SingleChildScrollView(
+                      controller: scrollController,
+                      child: FutureBuilder<Map<int, School>>(
+                        future: _getSchoolsMap(laws),
+                        builder: (context, schoolMapSnapshot) {
+                          if (!schoolMapSnapshot.hasData) return const Center(child: CircularProgressIndicator());
+                          final schools = schoolMapSnapshot.data!;
+                          return DataTable(
+                            columnSpacing: 24,
+                            columns: [
+                              const DataColumn(label: Text("École")),
+                              const DataColumn(label: Text("Avis Juridique")),
+                            ],
+                            rows: laws.map((law) {
+                              final school = schools[law.schoolId];
+                              final color = _getSchoolColor(school?.name);
+                              return DataRow(
+                                cells: [
+                                  DataCell(
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                      decoration: BoxDecoration(
+                                        color: color.withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(4),
+                                        border: Border.all(color: color),
+                                      ),
+                                      child: Text(
+                                        _getLocalizedSchoolName(school?.name, l10n),
+                                        style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 12),
+                                      ),
+                                    ),
+                                  ),
+                                  DataCell(
+                                    SizedBox(
+                                      width: 300,
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                        child: Text(
+                                          law.content,
+                                          style: const TextStyle(fontSize: 13),
+                                          maxLines: 5,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }).toList(),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+  }
+
+  Future<Map<int, School>> _getSchoolsMap(List<Law> laws) async {
+    final Map<int, School> map = {};
+    for (var law in laws) {
+      if (!map.containsKey(law.schoolId)) {
+        final school = await DatabaseHelper().getSchoolById(law.schoolId);
+        if (school != null) map[law.schoolId] = school;
+      }
+    }
+    return map;
+  }
+
+  Widget _buildMediaSection(AppLocalizations l10n) {
+    return FutureBuilder<List<MediaItem>>(
+      future: _mediaFuture,
+      builder: (context, snapshot) {
+        if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          // If no specific media for topic, show a placeholder diagram for certain categories
+          if (widget.topic.title.contains('Héritage') || widget.topic.title.contains('succession')) {
+             return _buildPlaceholderDiagram("Diagramme d'Héritage", Icons.account_tree);
+          }
+          return const SizedBox.shrink();
+        }
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Médias et Illustrations",
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            ...snapshot.data!.map((media) => _buildMediaWidget(media)).toList(),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildMediaWidget(MediaItem media) {
+     return Card(
+       clipBehavior: Clip.antiAlias,
+       child: Column(
+         children: [
+           if (media.type == MediaType.image || media.type == MediaType.infographic)
+             Image.network(media.url, fit: BoxFit.cover, errorBuilder: (c, e, s) => const Icon(Icons.broken_image, size: 50)),
+           ListTile(
+             title: Text(media.title ?? "Illustration"),
+             subtitle: media.description != null ? Text(media.description!) : null,
+             leading: Icon(_getMediaIcon(media.type)),
+           ),
+         ],
+       ),
+     );
+  }
+
+  IconData _getMediaIcon(MediaType type) {
+    switch (type) {
+      case MediaType.image: return Icons.image;
+      case MediaType.audio: return Icons.audiotrack;
+      case MediaType.video: return Icons.videocam;
+      case MediaType.infographic: return Icons.assessment;
+    }
+  }
+
+  Widget _buildPlaceholderDiagram(String title, IconData icon) {
+    return Card(
+      elevation: 0,
+      color: Colors.blueGrey.withOpacity(0.1),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(color: Colors.blueGrey.withOpacity(0.2)),
+      ),
+      child: Container(
+        height: 150,
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 48, color: Colors.blueGrey),
+            const SizedBox(height: 8),
+            Text(title, style: const TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+            const Text("(Bientôt disponible)", style: TextStyle(color: Colors.blueGrey, fontSize: 12)),
           ],
         ),
       ),
@@ -143,8 +372,8 @@ class _DetailScreenState extends State<DetailScreen> {
           margin: const EdgeInsets.symmetric(vertical: 12),
           elevation: 4,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: schoolColor.withOpacity(0.5), width: 1),
+            borderRadius: BorderRadius.circular(16),
+            side: BorderSide(color: schoolColor.withOpacity(0.3), width: 2),
           ),
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -154,50 +383,75 @@ class _DetailScreenState extends State<DetailScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Chip(
-                      label: Text(
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: schoolColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
                         localizedSchoolName,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      backgroundColor: schoolColor,
                     ),
                     Icon(Icons.gavel, color: schoolColor),
                   ],
                 ),
-                const Divider(),
+                const SizedBox(height: 16),
                 if (law.contentAr != null) ...[
                   Align(
                     alignment: Alignment.centerRight,
                     child: Text(
                       law.contentAr!,
                       style: const TextStyle(
-                        fontSize: 20,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Amiri', // Using a common Arabic font family if available
+                        fontFamily: 'Amiri',
                       ),
                       textAlign: TextAlign.right,
                       textDirection: TextDirection.rtl,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 12),
                 ],
-                Text(law.content),
-                const SizedBox(height: 16),
+                Text(
+                  law.content,
+                  style: const TextStyle(fontSize: 16, height: 1.5),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16),
+                  child: Divider(),
+                ),
                 Text(
                   l10n.sources,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
                 ),
+                const SizedBox(height: 8),
                 _buildSourcesList(law.id!, l10n),
                 if (law.scholarComments != null && law.scholarComments!.isNotEmpty) ...[
-                  const SizedBox(height: 12),
-                  Text(
-                    l10n.comments,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  const SizedBox(height: 20),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border(left: BorderSide(color: schoolColor, width: 4)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          l10n.comments,
+                          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(law.scholarComments!, style: const TextStyle(fontStyle: FontStyle.italic)),
+                      ],
+                    ),
                   ),
-                  Text(law.scholarComments!),
                 ],
               ],
             ),
@@ -217,37 +471,55 @@ class _DetailScreenState extends State<DetailScreen> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: snapshot.data!.map((source) {
-            return Padding(
-              padding: const EdgeInsets.only(top: 8),
+            return Container(
+              margin: const EdgeInsets.only(bottom: 12),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "${source.reference} (${_getAuthenticityLabel(source.authenticity)})",
-                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blueGrey),
+                  Row(
+                    children: [
+                      _getAuthenticityBadge(source.authenticity),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          source.reference,
+                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blueGrey),
+                        ),
+                      ),
+                    ],
                   ),
-                  if (source.textAr != null)
+                  if (source.textAr != null) ...[
+                    const SizedBox(height: 8),
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         source.textAr!,
                         style: const TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                           fontFamily: 'Amiri',
                         ),
                         textAlign: TextAlign.right,
                         textDirection: TextDirection.rtl,
                       ),
                     ),
+                  ],
+                  const SizedBox(height: 8),
                   Text(
                     source.text,
                     style: const TextStyle(fontSize: 14, fontStyle: FontStyle.italic),
                   ),
-                  if (source.citation != null)
+                  if (source.citation != null) ...[
+                    const SizedBox(height: 4),
                     Text(
                       "Ref: ${source.citation}",
                       style: const TextStyle(fontSize: 10, color: Colors.grey),
                     ),
+                  ],
                 ],
               ),
             );
@@ -257,13 +529,44 @@ class _DetailScreenState extends State<DetailScreen> {
     );
   }
 
-  String _getAuthenticityLabel(Authenticity authenticity) {
+  Widget _getAuthenticityBadge(Authenticity authenticity) {
+    if (authenticity == Authenticity.none) return const SizedBox.shrink();
+
+    Color color;
+    String label;
+
     switch (authenticity) {
-      case Authenticity.sahih: return "Sahih";
-      case Authenticity.hasan: return "Hasan";
-      case Authenticity.daif: return "Da'if";
-      case Authenticity.mawdu: return "Mawdu'";
-      default: return "";
+      case Authenticity.sahih:
+        color = Colors.green;
+        label = "Sahih";
+        break;
+      case Authenticity.hasan:
+        color = Colors.blue;
+        label = "Hasan";
+        break;
+      case Authenticity.daif:
+        color = Colors.orange;
+        label = "Da'if";
+        break;
+      case Authenticity.mawdu:
+        color = Colors.red;
+        label = "Mawdu'";
+        break;
+      default:
+        return const SizedBox.shrink();
     }
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.1),
+        border: Border.all(color: color),
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.bold),
+      ),
+    );
   }
 }
