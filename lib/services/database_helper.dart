@@ -142,26 +142,102 @@ class DatabaseHelper {
     int catDroits = await db.insert('categories', {'name': 'Les droits et devoirs individuels', 'icon': 'accessibility', 'parent_id': null});
     int catHeritage = await db.insert('categories', {'name': 'Héritage et succession (Farāʾiḍ)', 'icon': 'account_balance', 'parent_id': null});
 
-    // Topic: Lever les mains dans la prière
+    // Category 1: Prière et culte
     int topHands = await db.insert('topics', {
       'category_id': catCulte,
       'title': 'Lever les mains dans la prière',
       'description': 'Les règles concernant le fait de lever les mains à différents moments de la prière.'
     });
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Les conditions de la prière', 'description': 'Les prérequis nécessaires pour la validité de la prière.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Les horaires des prières', 'description': 'Les temps prescrits pour chacune des cinq prières obligatoires.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Les ablutions (wuḍū’)', 'description': 'La purification mineure avant la prière.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Le ghusl (grande purification)', 'description': 'Le bain rituel obligatoire dans certaines situations.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Le tayammum', 'description': 'La purification sèche en l\'absence d\'eau.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Les piliers et obligations de la prière', 'description': 'Les éléments essentiels qui constituent la prière.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Les prières surérogatoires (Nawāfil)', 'description': 'Les prières volontaires recommandées.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'La prière du vendredi (Jumu\'ah)', 'description': 'Les règles spécifiques à la prière collective du vendredi.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'La prière en voyage', 'description': 'Les allègements accordés au voyageur.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Les prières des fêtes (ʿĪd)', 'description': 'Les règles des prières de l\'Aïd al-Fitr et de l\'Aïd al-Adha.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'La prière funéraire (Janāzah)', 'description': 'La prière sur le défunt musulman.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Les invocations et adhkār', 'description': 'Les rappels et supplications liés à la prière.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Les règles de la mosquée', 'description': 'L\'étiquette et les dispositions légales liées au lieu de culte.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Les annulations et erreurs (Sujūd al-Sahw)', 'description': 'Comment corriger les oublis ou erreurs pendant la prière.'});
+    await db.insert('topics', {'category_id': catCulte, 'title': 'Divergences entre écoles (Prière)', 'description': 'Les principaux points de désaccord sur les actes d\'adoration.'});
 
-    // Topic: La Dot (Mahr)
+    // Category 2: Jeûne, Zakât et pèlerinage
+    int subCatJeune = await db.insert('categories', {'name': 'Jeûne (Ṣawm)', 'icon': 'self_improvement', 'parent_id': catJeune});
+    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Conditions du jeûne', 'description': 'Les prérequis pour l\'obligation du jeûne.'});
+    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Invalidations du jeûne', 'description': 'Les actes qui rompent le jeûne.'});
+    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Jeûne de Ramadan', 'description': 'Les règles spécifiques au mois béni.'});
+    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Jeûnes volontaires', 'description': 'Les jours recommandés pour le jeûne surérogatoire.'});
+    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Rattrapage et expiation (Kaffārah)', 'description': 'Comment compenser les jours manqués.'});
+    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Jeûne du voyageur et du malade', 'description': 'Les dispenses accordées par la charia.'});
+    await db.insert('topics', {'category_id': subCatJeune, 'title': 'Iʿtikāf', 'description': 'La retraite spirituelle à la mosquée.'});
+
+    int subCatZakat = await db.insert('categories', {'name': 'Zakât', 'icon': 'volunteer_activism', 'parent_id': catJeune});
+    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Calcul de la zakât', 'description': 'Comment déterminer le montant dû.'});
+    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Le Nisāb', 'description': 'Le seuil de richesse au-delà duquel la zakât devient obligatoire.'});
+    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Catégories de biens concernés', 'description': 'Or, argent, bétail, récoltes et commerce.'});
+    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Bénéficiaires de la zakât', 'description': 'Les huit catégories de personnes pouvant recevoir la zakât.'});
+    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Zakāt al-fiṭr', 'description': 'L\'aumône obligatoire à la fin du Ramadan.'});
+    await db.insert('topics', {'category_id': subCatZakat, 'title': 'Zakât commerciale et agricole', 'description': 'Règles spécifiques pour les commerçants et agriculteurs.'});
+
+    int subCatHajj = await db.insert('categories', {'name': 'Pèlerinage (Ḥajj et ʿUmrah)', 'icon': 'mosque', 'parent_id': catJeune});
+    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Conditions du pèlerinage', 'description': 'Qui doit effectuer le Hajj.'});
+    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Rites du ḥajj', 'description': 'Le déroulement étape par étape.'});
+    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Iḥrām', 'description': 'L\'état de sacralisation et ses interdits.'});
+    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Tawāf et Saʿy', 'description': 'Les circumambulations et la marche entre Safa et Marwa.'});
+    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Sacrifices (Hady)', 'description': 'L\'offrande rituelles lors du pèlerinage.'});
+    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Erreurs et compensations (Fidyah)', 'description': 'Comment réparer les manquements aux rites.'});
+    await db.insert('topics', {'category_id': subCatHajj, 'title': 'Différences entre ḥajj et ʿumrah', 'description': 'Comparaison des deux types de pèlerinage.'});
+
+    // Category 3: Relations sociales et familiales
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Respect des parents', 'description': 'Le devoir de piété filiale en Islam.'});
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Droits des voisins', 'description': 'L\'importance du bon voisinage.'});
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Relations entre musulmans', 'description': 'Les bases de la fraternité islamique.'});
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Fraternité et solidarité', 'description': 'L\'entraide au sein de la communauté.'});
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Comportement en société (Adab)', 'description': 'L\'étiquette sociale et le savoir-vivre.'});
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Éducation des enfants', 'description': 'Les responsabilités des parents envers leur progéniture.'});
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Gestion des conflits', 'description': 'La médiation et la réconciliation.'});
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Droits des invités', 'description': 'Les règles de l\'hospitalité.'});
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Relations avec les non-musulmans', 'description': 'La coexistence et le respect mutuel.'});
+    await db.insert('topics', {'category_id': catFamille, 'title': 'Visites et salutations', 'description': 'Les règles du Salam et des visites.'});
+
+    // Category 4: Mariage, divorce et garde des enfants
     int topMahr = await db.insert('topics', {
       'category_id': catMariage,
       'title': 'La Dot (Mahr)',
       'description': 'Les règles concernant le don obligatoire du mari à son épouse lors du mariage.'
     });
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Conditions du mariage (Nikāḥ)', 'description': 'Les éléments requis pour la validité du contrat.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Contrat de mariage', 'description': 'La rédaction et les clauses du contrat.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Droits et devoirs des époux', 'description': 'Les obligations mutuelles dans le couple.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Polygamie', 'description': 'Les règles et conditions de la polygamie.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Causes de divorce', 'description': 'Quand le divorce devient une nécessité.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Le ṭalāq', 'description': 'La répudiation par le mari.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Le khulʿ', 'description': 'Le divorce à l\'initiative de l\'épouse.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Période de viduité (ʿiddah)', 'description': 'Le temps d\'attente après une séparation.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Pension et entretien (Nafaqah)', 'description': 'La prise en charge financière de la famille.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Garde des enfants (Ḥaḍānah)', 'description': 'À qui revient la garde en cas de divorce.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Filiation et Adoption (Kafālah)', 'description': 'La reconnaissance de l\'enfant et la prise en charge d\'orphelins.'});
+    await db.insert('topics', {'category_id': catMariage, 'title': 'Médiation familiale', 'description': 'Chercher la conciliation avant la rupture.'});
 
-    // Topic: Le Riba (Intérêt)
+    // Category 5: Économie, finance et commerce
     int topRiba = await db.insert('topics', {
       'category_id': catEconomie,
       'title': 'Le Riba (Intérêt)',
       'description': 'L\'interdiction de l\'usure et de l\'intérêt dans les transactions financières.'
     });
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Commerce Halal', 'description': 'Les principes de base des échanges licites.'});
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Contrats commerciaux', 'description': 'Les différents types de contrats en Islam.'});
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Partenariats (Mushārakah)', 'description': 'Le partage des profits et des pertes.'});
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Investissements et ventes interdites', 'description': 'Ce qu\'il n\'est pas permis de commercialiser.'});
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Dette et crédit', 'description': 'L\'éthique de l\'emprunt et du remboursement.'});
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Finance et Banques Islamiques', 'description': 'Le fonctionnement du système bancaire sans Riba.'});
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Assurances Islamiques (Takāful)', 'description': 'Le concept d\'assurance mutuelle.'});
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Commerce électronique', 'description': 'Les règles modernes de la vente en ligne.'});
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Fraude et tromperie', 'description': 'L\'interdiction de la triche dans les transactions.'});
+    await db.insert('topics', {'category_id': catEconomie, 'title': 'Monnaies numériques', 'description': 'Le statut juridique des cryptomonnaies.'});
 
     // Law Hanafi
     int lawHanafi = await db.insert('laws', {
@@ -314,12 +390,79 @@ class DatabaseHelper {
       'citation': 'Muslim, Kitab al-Musaqat'
     });
 
-    // Topic: Le Témoignage
+    // Category 6: Justice et gouvernance
     int topWitness = await db.insert('topics', {
       'category_id': catJustice,
       'title': 'Le Témoignage (Shahada)',
       'description': 'Les conditions pour qu\'un témoignage soit accepté devant un juge.'
     });
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Justice Islamique', 'description': 'Les principes fondamentaux de l\'équité.'});
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Preuves et procédures', 'description': 'Le déroulement d\'un procès en Islam.'});
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Droits des citoyens', 'description': 'Les garanties individuelles face à l\'État.'});
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Responsabilités des gouvernants', 'description': 'Les devoirs de ceux qui détiennent l\'autorité.'});
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Consultation (Shūrā)', 'description': 'Le principe de participation politique.'});
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Arbitrage et médiation', 'description': 'Le règlement amiable des litiges.'});
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Sanctions et peines (Hudūd et Ta\'zīr)', 'description': 'Le système pénal islamique.'});
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Protection des biens et des personnes', 'description': 'La sécurité publique en Islam.'});
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Équité sociale', 'description': 'La justice distributive.'});
+    await db.insert('topics', {'category_id': catJustice, 'title': 'Gouvernance éthique', 'description': 'La morale dans l\'exercice du pouvoir.'});
+
+    // Category 7: Éthique et spiritualité
+    int topSincerity = await db.insert('topics', {
+      'category_id': catEthique,
+      'title': 'L\'Importance de l\'Intention',
+      'description': 'La place de l\'intention (Niyya) dans les actes d\'adoration.'
+    });
+    await db.insert('topics', {'category_id': catEthique, 'title': 'La Sincérité (Ikhlāṣ)', 'description': 'Agir uniquement pour l\'agrément d\'Allah.'});
+    await db.insert('topics', {'category_id': catEthique, 'title': 'Patience et Gratitude', 'description': 'Les deux piliers de la foi.'});
+    await db.insert('topics', {'category_id': catEthique, 'title': 'Confiance en Allah (Tawakkul)', 'description': 'S\'en remettre à Dieu après avoir agi.'});
+    await db.insert('topics', {'category_id': catEthique, 'title': 'Repentance (Tawbah)', 'description': 'Le retour vers Allah après une faute.'});
+    await db.insert('topics', {'category_id': catEthique, 'title': 'Modestie et humilité', 'description': 'La vertu de se rabaisser devant Dieu.'});
+    await db.insert('topics', {'category_id': catEthique, 'title': 'Purification du cœur', 'description': 'Lutter contre l\'orgueil, la jalousie et la colère.'});
+    await db.insert('topics', {'category_id': catEthique, 'title': 'Bonnes manières (Husn al-Khuluq)', 'description': 'L\'excellence du comportement.'});
+    await db.insert('topics', {'category_id': catEthique, 'title': 'Développement personnel islamique', 'description': 'S\'améliorer en tant que croyant.'});
+    await db.insert('topics', {'category_id': catEthique, 'title': 'Spiritualité quotidienne', 'description': 'Vivre sa foi à chaque instant.'});
+
+    // Category 8: Alimentation et règles de pureté
+    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Aliments Halal et Haram', 'description': 'Ce qui est licite et illicite à consommer.'});
+    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Abattage rituel (Dhabīḥah)', 'description': 'Les règles pour rendre la viande licite.'});
+    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Boissons interdites', 'description': 'L\'interdiction de l\'alcool et des stupéfiants.'});
+    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Impuretés (Najāsāt)', 'description': 'Identifier et nettoyer les substances impures.'});
+    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Purification des vêtements et lieux', 'description': 'Comment rendre son environnement pur.'});
+    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Hygiène personnelle', 'description': 'Les règles de la Fitrah et de la propreté.'});
+    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Règles liées aux animaux', 'description': 'Pureté et licéité des animaux.'});
+    await db.insert('topics', {'category_id': catAlimentation, 'title': 'Ustensiles et récipients', 'description': 'Ce qu\'il est permis d\'utiliser pour manger et boire.'});
+
+    // Category 9: Contrats et engagements
+    await db.insert('topics', {'category_id': catContrats, 'title': 'Promesses et engagements', 'description': 'L\'obligation de respecter sa parole.'});
+    await db.insert('topics', {'category_id': catContrats, 'title': 'Location (Ijārah)', 'description': 'Les règles du louage de services ou de biens.'});
+    await db.insert('topics', {'category_id': catContrats, 'title': 'Prêts et Garanties', 'description': 'Sécuriser les transactions financières.'});
+    await db.insert('topics', {'category_id': catContrats, 'title': 'Contrats de travail', 'description': 'Les droits des employeurs et des salariés.'});
+    await db.insert('topics', {'category_id': catContrats, 'title': 'Donations et Testaments (Waṣiyyah)', 'description': 'Disposer de ses biens de son vivant ou pour après sa mort.'});
+    await db.insert('topics', {'category_id': catContrats, 'title': 'Responsabilité contractuelle', 'description': 'Les conséquences du non-respect des engagements.'});
+    await db.insert('topics', {'category_id': catContrats, 'title': 'Conditions de validité des contrats', 'description': 'Les éléments essentiels de tout accord.'});
+    await db.insert('topics', {'category_id': catContrats, 'title': 'Annulation et litiges', 'description': 'Comment mettre fin à un contrat.'});
+
+    // Category 10: Droits et devoirs individuels
+    await db.insert('topics', {'category_id': catDroits, 'title': 'Droits fondamentaux', 'description': 'La protection de la vie, des biens et de l\'honneur.'});
+    await db.insert('topics', {'category_id': catDroits, 'title': 'Liberté et responsabilité', 'description': 'Le libre arbitre au sein de la loi divine.'});
+    await db.insert('topics', {'category_id': catDroits, 'title': 'Droit à l\'éducation', 'description': 'L\'obligation de rechercher la science.'});
+    await db.insert('topics', {'category_id': catDroits, 'title': 'Droit au travail', 'description': 'Gagner sa vie honnêtement.'});
+    await db.insert('topics', {'category_id': catDroits, 'title': 'Droits des femmes', 'description': 'Le statut et les garanties accordés aux femmes.'});
+    await db.insert('topics', {'category_id': catDroits, 'title': 'Droits des enfants', 'description': 'La protection et l\'éducation de la jeunesse.'});
+    await db.insert('topics', {'category_id': catDroits, 'title': 'Comportement civique', 'description': 'Les devoirs envers la société.'});
+    await db.insert('topics', {'category_id': catDroits, 'title': 'Responsabilité morale', 'description': 'Répondre de ses actes devant Dieu et les hommes.'});
+
+    // Category 11: Héritage et succession (Farāʾiḍ)
+    await db.insert('topics', {'category_id': catHeritage, 'title': 'Parts d\'héritage', 'description': 'Les quotités fixées par le Coran.'});
+    await db.insert('topics', {'category_id': catHeritage, 'title': 'Héritiers prioritaires', 'description': 'Ceux qui ne peuvent être exclus de la succession.'});
+    await db.insert('topics', {'category_id': catHeritage, 'title': 'Héritage des époux et enfants', 'description': 'Les règles spécifiques pour le noyau familial.'});
+    await db.insert('topics', {'category_id': catHeritage, 'title': 'Héritage des parents, frères et sœurs', 'description': 'Le partage entre les ascendants et collatéraux.'});
+    await db.insert('topics', {'category_id': catHeritage, 'title': 'Empêchements à l\'héritage', 'description': 'Les causes qui privent d\'une part successorale.'});
+    await db.insert('topics', {'category_id': catHeritage, 'title': 'Calcul des parts', 'description': 'La méthodologie pratique de partage.'});
+    await db.insert('topics', {'category_id': catHeritage, 'title': 'Dettes et testaments dans la succession', 'description': 'Ce qui doit être prélevé avant le partage.'});
+    await db.insert('topics', {'category_id': catHeritage, 'title': 'Divergences entre écoles sur la succession', 'description': 'Les points de désaccord entre les madhahib.'});
+    await db.insert('topics', {'category_id': catHeritage, 'title': 'Calculateur d\'héritage', 'description': 'Outil d\'aide au calcul des parts successorales.'});
 
     int lawWitnessMaliki = await db.insert('laws', {
       'topic_id': topWitness,
@@ -337,13 +480,6 @@ class DatabaseHelper {
       'text_ar': 'وَاسْتَشْهِدُوا شَهِيدَيْنِ مِنْ رِجَالِكُمْ',
       'authenticity': 4,
       'citation': 'Le Saint Coran'
-    });
-
-    // Topic: La Sincérité
-    int topSincerity = await db.insert('topics', {
-      'category_id': catEthique,
-      'title': 'L\'Importance de l\'Intention',
-      'description': 'La place de l\'intention (Niyya) dans les actes d\'adoration.'
     });
 
     int lawSincerityHanafi = await db.insert('laws', {
