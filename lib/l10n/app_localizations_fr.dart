@@ -124,4 +124,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hajjStep7Desc => 'Offrande et fin du Hajj.';
+
+  @override
+  String get relatedTopics => 'Sujets Connexes';
+
+  @override
+  String get filterBySchool => 'Filtrer par École';
+
+  @override
+  String get filterByCategory => 'Filtrer par Catégorie';
 }

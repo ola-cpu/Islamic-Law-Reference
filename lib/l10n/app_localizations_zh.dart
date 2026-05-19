@@ -124,4 +124,13 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get hajjStep7Desc => '宰牲并结束朝觐仪式。';
+
+  @override
+  String get relatedTopics => '相关话题';
+
+  @override
+  String get filterBySchool => '按流派筛选';
+
+  @override
+  String get filterByCategory => '按类别筛选';
 }

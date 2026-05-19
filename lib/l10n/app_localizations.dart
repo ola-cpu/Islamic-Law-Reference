@@ -337,6 +337,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sacrifice and end of Hajj rituals.'**
   String get hajjStep7Desc;
+
+  /// No description provided for @relatedTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'Related Topics'**
+  String get relatedTopics;
+
+  /// No description provided for @filterBySchool.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by School'**
+  String get filterBySchool;
+
+  /// No description provided for @filterByCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by Category'**
+  String get filterByCategory;
 }
 
 class _AppLocalizationsDelegate
