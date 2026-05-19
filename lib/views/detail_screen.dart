@@ -169,11 +169,18 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
                 const Divider(),
                 if (law.contentAr != null) ...[
-                  Text(
-                    law.contentAr!,
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Arabic'),
-                    textAlign: TextAlign.right,
-                    textDirection: TextDirection.rtl,
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      law.contentAr!,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Amiri', // Using a common Arabic font family if available
+                      ),
+                      textAlign: TextAlign.right,
+                      textDirection: TextDirection.rtl,
+                    ),
                   ),
                   const SizedBox(height: 8),
                 ],
@@ -220,11 +227,17 @@ class _DetailScreenState extends State<DetailScreen> {
                     style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blueGrey),
                   ),
                   if (source.textAr != null)
-                    Text(
-                      source.textAr!,
-                      style: const TextStyle(fontSize: 14, fontFamily: 'Arabic'),
-                      textAlign: TextAlign.right,
-                      textDirection: TextDirection.rtl,
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        source.textAr!,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Amiri',
+                        ),
+                        textAlign: TextAlign.right,
+                        textDirection: TextDirection.rtl,
+                      ),
                     ),
                   Text(
                     source.text,
