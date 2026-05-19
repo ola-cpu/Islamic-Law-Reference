@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import '../models/category.dart';
@@ -21,7 +22,12 @@ class DatabaseHelper {
   }
 
   Future<Database> _initDatabase() async {
-    String path = join(await getDatabasesPath(), 'islamic_law.db');
+    String path;
+    if (kIsWeb) {
+      path = 'islamic_law.db';
+    } else {
+      path = join(await getDatabasesPath(), 'islamic_law.db');
+    }
     return await openDatabase(
       path,
       version: 2,
