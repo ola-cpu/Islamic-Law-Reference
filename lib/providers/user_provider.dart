@@ -5,9 +5,11 @@ class UserProvider with ChangeNotifier {
   final DatabaseHelper _dbHelper = DatabaseHelper();
   List<int> _favorites = [];
   Map<int, String> _notes = {};
+  Locale _locale = const Locale('fr'); // Default to French as it seems to be the primary language
 
   List<int> get favorites => _favorites;
   Map<int, String> get notes => _notes;
+  Locale get locale => _locale;
 
   UserProvider() {
     _loadFromDatabase();
@@ -17,6 +19,13 @@ class UserProvider with ChangeNotifier {
     _favorites = await _dbHelper.getFavorites();
     _notes = await _dbHelper.getAllNotes();
     notifyListeners();
+  }
+
+  void setLocale(Locale locale) {
+    if (_locale != locale) {
+      _locale = locale;
+      notifyListeners();
+    }
   }
 
   Future<void> toggleFavorite(int lawId) async {

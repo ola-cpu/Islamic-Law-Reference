@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/topic.dart';
 import '../services/database_helper.dart';
 import 'detail_screen.dart';
 import '../l10n/app_localizations.dart';
+import '../providers/user_provider.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -29,7 +31,8 @@ class _SearchScreenState extends State<SearchScreen> {
       _isSearching = true;
     });
 
-    final results = await DatabaseHelper().searchTopics(query);
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final results = await DatabaseHelper().searchTopics(query, locale: userProvider.locale);
 
     setState(() {
       _searchResults = results;
@@ -40,11 +43,17 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final userProvider = Provider.of<UserProvider>(context);
+    final isAr = userProvider.locale.languageCode == 'ar';
+
     return Scaffold(
       appBar: AppBar(
         title: TextField(
           controller: _controller,
           autofocus: true,
+          textAlign: isAr ? TextAlign.right : TextAlign.left,
+          textDirection: isAr ? TextDirection.rtl : TextDirection.ltr,
+          style: TextStyle(fontFamily: isAr ? 'Amiri' : null),
           decoration: InputDecoration(
             hintText: l10n.searchHint,
             border: InputBorder.none,
@@ -62,8 +71,16 @@ class _SearchScreenState extends State<SearchScreen> {
                   itemBuilder: (context, index) {
                     final topic = _searchResults[index];
                     return ListTile(
-                      title: Text(topic.title),
-                      subtitle: Text(topic.description),
+                      title: Text(
+                        topic.title,
+                        textAlign: isAr ? TextAlign.right : TextAlign.left,
+                        style: TextStyle(fontFamily: isAr ? 'Amiri' : null),
+                      ),
+                      subtitle: Text(
+                        topic.description,
+                        textAlign: isAr ? TextAlign.right : TextAlign.left,
+                        style: TextStyle(fontFamily: isAr ? 'Amiri' : null),
+                      ),
                       onTap: () {
                         Navigator.push(
                           context,

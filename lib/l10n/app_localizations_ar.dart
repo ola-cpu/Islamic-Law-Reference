@@ -58,4 +58,70 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get schoolJafari => 'جعفري';
+
+  @override
+  String get mediaLibrary => 'مكتبة الوسائط';
+
+  @override
+  String get comparisonTable => 'جدول مقارنة المذاهب';
+
+  @override
+  String get schoolTitle => 'المذهب';
+
+  @override
+  String get legalOpinion => 'الرأي القانوني';
+
+  @override
+  String get mediaSectionTitle => 'الوسائط والرسوم التوضيحية';
+
+  @override
+  String get illustration => 'توضيح';
+
+  @override
+  String get comingSoon => 'قريباً';
+
+  @override
+  String get close => 'إغلاق';
+
+  @override
+  String get hajjSteps => 'خطوات الحج';
+
+  @override
+  String get noMediaFound => 'لم يتم العثور على وسائط.';
+
+  @override
+  String get languageEn => 'الإنجليزية';
+
+  @override
+  String get languageFr => 'الفرنسية';
+
+  @override
+  String get languageAr => 'العربية';
+
+  @override
+  String get languageRu => 'الروسية';
+
+  @override
+  String get languageZh => 'الصينية';
+
+  @override
+  String get hajjStep1Desc => 'الدخول في حالة الإحرام';
+
+  @override
+  String get hajjStep2Desc => 'الانطلاق إلى منى في 8 ذو الحجة';
+
+  @override
+  String get hajjStep3Desc => 'يوم عرفة (ذروة الحج)';
+
+  @override
+  String get hajjStep4Desc => 'جمع الحصى';
+
+  @override
+  String get hajjStep5Desc => 'رمي الجمرات في منى';
+
+  @override
+  String get hajjStep6Desc => 'الطواف حول الكعبة والسعي';
+
+  @override
+  String get hajjStep7Desc => 'النحر وانتهاء الحج';
 }

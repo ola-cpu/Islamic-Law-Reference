@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 
 class HajjTimeline extends StatelessWidget {
   const HajjTimeline({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final List<Map<String, String>> steps = [
-      {'title': '1. Ihram', 'desc': 'Entrée en état de sacralisation.'},
-      {'title': '2. Mina', 'desc': 'Départ pour Mina le 8 Dhul-Hijjah.'},
-      {'title': '3. Arafat', 'desc': 'Le jour d\'Arafat (le point culminant).'},
-      {'title': '4. Muzdalifah', 'desc': 'Ramassage des cailloux.'},
-      {'title': '5. Jamarat', 'desc': 'Lapidation des stèles à Mina.'},
-      {'title': '6. Tawaf & Sa\'y', 'desc': 'Circumambulation de la Kaaba.'},
-      {'title': '7. Sacrifice', 'desc': 'Offrande et fin du Hajj.'},
+      {'title': '1. Ihram', 'desc': l10n.hajjStep1Desc},
+      {'title': '2. Mina', 'desc': l10n.hajjStep2Desc},
+      {'title': '3. Arafat', 'desc': l10n.hajjStep3Desc},
+      {'title': '4. Muzdalifah', 'desc': l10n.hajjStep4Desc},
+      {'title': '5. Jamarat', 'desc': l10n.hajjStep5Desc},
+      {'title': '6. Tawaf & Sa\'y', 'desc': l10n.hajjStep6Desc},
+      {'title': '7. Sacrifice', 'desc': l10n.hajjStep7Desc},
     ];
 
     return Card(
@@ -27,9 +29,9 @@ class HajjTimeline extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Étapes du Pèlerinage (Hajj)",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.brown),
+            Text(
+              l10n.hajjSteps,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.brown),
             ),
             const SizedBox(height: 16),
             ...steps.map((step) => _buildTimelineStep(step['title']!, step['desc']!, steps.last == step)).toList(),

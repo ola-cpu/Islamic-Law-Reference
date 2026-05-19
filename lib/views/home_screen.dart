@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../services/database_helper.dart';
 import '../models/category.dart';
 import 'search_screen.dart';
 import 'topic_list_screen.dart';
 import '../l10n/app_localizations.dart';
 import 'media_gallery_screen.dart';
+import '../providers/user_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   final int? parentCategoryId;
@@ -28,7 +30,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _loadCategories() async {
-    final categories = await _dbHelper.getCategories(parentId: widget.parentCategoryId);
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final categories = await _dbHelper.getCategories(
+      parentId: widget.parentCategoryId,
+      locale: userProvider.locale,
+    );
     setState(() {
       _categories = categories;
       _isLoading = false;
@@ -57,16 +63,45 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
+    final userProvider = Provider.of<UserProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.categoryName ?? l10n.appTitle),
         actions: [
           if (widget.parentCategoryId == null) ...[
+            PopupMenuButton<Locale>(
+              icon: const Icon(Icons.language),
+              onSelected: (Locale locale) {
+                userProvider.setLocale(locale);
+                _loadCategories(); // Reload content when language changes
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<Locale>>[
+                PopupMenuItem<Locale>(
+                  value: const Locale('en'),
+                  child: Text(l10n.languageEn),
+                ),
+                PopupMenuItem<Locale>(
+                  value: const Locale('fr'),
+                  child: Text(l10n.languageFr),
+                ),
+                PopupMenuItem<Locale>(
+                  value: const Locale('ar'),
+                  child: Text(l10n.languageAr),
+                ),
+                PopupMenuItem<Locale>(
+                  value: const Locale('ru'),
+                  child: Text(l10n.languageRu),
+                ),
+                PopupMenuItem<Locale>(
+                  value: const Locale('zh'),
+                  child: Text(l10n.languageZh),
+                ),
+              ],
+            ),
             IconButton(
               icon: const Icon(Icons.photo_library),
-              tooltip: "Bibliothèque Média",
+              tooltip: l10n.mediaLibrary,
               onPressed: () {
                 Navigator.push(
                   context,
@@ -100,13 +135,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: _categories.length,
                   itemBuilder: (context, index) {
                     final category = _categories[index];
-                    return _buildCategoryCard(context, category);
+                    return _buildCategoryCard(context, category, userProvider);
                   },
                 ),
     );
   }
 
-  Widget _buildCategoryCard(BuildContext context, Category category) {
+  Widget _buildCategoryCard(BuildContext context, Category category, UserProvider userProvider) {
     return Card(
       elevation: 4,
       clipBehavior: Clip.antiAlias,
@@ -157,11 +192,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Text(
                       category.name,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 14,
-                        shadows: [Shadow(offset: Offset(0, 1), blurRadius: 3)],
+                        fontSize: userProvider.locale.languageCode == 'ar' ? 16 : 14,
+                        fontFamily: userProvider.locale.languageCode == 'ar' ? 'Amiri' : null,
+                        shadows: const [Shadow(offset: Offset(0, 1), blurRadius: 3)],
                       ),
                     ),
                   ),
@@ -176,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildTopicList() {
     if (widget.parentCategoryId == null) {
-      return const Center(child: Text("No categories found."));
+      return Center(child: Text(AppLocalizations.of(context)!.noResults));
     }
     return TopicListScreen(
       categoryId: widget.parentCategoryId!,

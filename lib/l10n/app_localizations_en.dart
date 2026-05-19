@@ -58,4 +58,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get schoolJafari => 'Ja\'fari';
+
+  @override
+  String get mediaLibrary => 'Media Library';
+
+  @override
+  String get comparisonTable => 'Comparative table of schools';
+
+  @override
+  String get schoolTitle => 'School';
+
+  @override
+  String get legalOpinion => 'Legal Opinion';
+
+  @override
+  String get mediaSectionTitle => 'Media and Illustrations';
+
+  @override
+  String get illustration => 'Illustration';
+
+  @override
+  String get comingSoon => 'Coming soon';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get hajjSteps => 'Steps of the Pilgrimage (Hajj)';
+
+  @override
+  String get noMediaFound => 'No media found.';
+
+  @override
+  String get languageEn => 'English';
+
+  @override
+  String get languageFr => 'French';
+
+  @override
+  String get languageAr => 'Arabic';
+
+  @override
+  String get languageRu => 'Russian';
+
+  @override
+  String get languageZh => 'Chinese';
+
+  @override
+  String get hajjStep1Desc => 'Entering the state of Ihram.';
+
+  @override
+  String get hajjStep2Desc => 'Departure for Mina on the 8th of Dhul-Hijjah.';
+
+  @override
+  String get hajjStep3Desc => 'Day of Arafat (The climax of Hajj).';
+
+  @override
+  String get hajjStep4Desc => 'Collecting pebbles at Muzdalifah.';
+
+  @override
+  String get hajjStep5Desc => 'Stoning the pillars at Mina.';
+
+  @override
+  String get hajjStep6Desc => 'Tawaf and Sa\'y at Mecca.';
+
+  @override
+  String get hajjStep7Desc => 'Sacrifice and end of Hajj rituals.';
 }
