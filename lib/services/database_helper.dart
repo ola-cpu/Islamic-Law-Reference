@@ -30,7 +30,7 @@ class DatabaseHelper {
     }
     return await openDatabase(
       path,
-      version: 2,
+      version: 3,
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
          // Simplified for this task: recreate tables if upgrading
@@ -130,22 +130,21 @@ class DatabaseHelper {
     int shJafari = await db.insert('schools', {'name': 'Ja\'fari', 'description': 'L\'école de l\'Imam Ja\'far al-Sadiq.'});
 
     // Categories
-    int catCulte = await db.insert('categories', {'name': 'Culte (Ibadat)', 'icon': 'mosque', 'parent_id': null});
-    int catPriere = await db.insert('categories', {'name': 'Prière (Salat)', 'icon': 'mosque', 'parent_id': catCulte});
+    int catCulte = await db.insert('categories', {'name': 'Prière et culte', 'icon': 'mosque', 'parent_id': null});
+    int catJeune = await db.insert('categories', {'name': 'Jeûne, zakât et pèlerinage', 'icon': 'volunteer_activism', 'parent_id': null});
     int catFamille = await db.insert('categories', {'name': 'Relations sociales et familiales', 'icon': 'people', 'parent_id': null});
-    int catEconomie = await db.insert('categories', {'name': 'Économie et commerce', 'icon': 'monetization_on', 'parent_id': null});
+    int catMariage = await db.insert('categories', {'name': 'Mariage, divorce et garde des enfants', 'icon': 'family_restroom', 'parent_id': null});
+    int catEconomie = await db.insert('categories', {'name': 'Économie, finance et commerce', 'icon': 'monetization_on', 'parent_id': null});
     int catJustice = await db.insert('categories', {'name': 'Justice et gouvernance', 'icon': 'gavel', 'parent_id': null});
     int catEthique = await db.insert('categories', {'name': 'Éthique et spiritualité', 'icon': 'favorite', 'parent_id': null});
-
-    // Subcategories
-    int catMariage = await db.insert('categories', {'name': 'Mariage (Nikah)', 'icon': 'people', 'parent_id': catFamille});
-    int catCommerce = await db.insert('categories', {'name': 'Transactions (Muamalat)', 'icon': 'monetization_on', 'parent_id': catEconomie});
-    int catQada = await db.insert('categories', {'name': 'Jugements (Qada)', 'icon': 'gavel', 'parent_id': catJustice});
-    int catIkhlas = await db.insert('categories', {'name': 'Sincérité (Ikhlas)', 'icon': 'favorite', 'parent_id': catEthique});
+    int catAlimentation = await db.insert('categories', {'name': 'Alimentation et règles de pureté', 'icon': 'restaurant', 'parent_id': null});
+    int catContrats = await db.insert('categories', {'name': 'Les contrats et engagements', 'icon': 'description', 'parent_id': null});
+    int catDroits = await db.insert('categories', {'name': 'Les droits et devoirs individuels', 'icon': 'accessibility', 'parent_id': null});
+    int catHeritage = await db.insert('categories', {'name': 'Héritage et succession (Farāʾiḍ)', 'icon': 'account_balance', 'parent_id': null});
 
     // Topic: Lever les mains dans la prière
     int topHands = await db.insert('topics', {
-      'category_id': catPriere,
+      'category_id': catCulte,
       'title': 'Lever les mains dans la prière',
       'description': 'Les règles concernant le fait de lever les mains à différents moments de la prière.'
     });
@@ -159,7 +158,7 @@ class DatabaseHelper {
 
     // Topic: Le Riba (Intérêt)
     int topRiba = await db.insert('topics', {
-      'category_id': catCommerce,
+      'category_id': catEconomie,
       'title': 'Le Riba (Intérêt)',
       'description': 'L\'interdiction de l\'usure et de l\'intérêt dans les transactions financières.'
     });
@@ -317,7 +316,7 @@ class DatabaseHelper {
 
     // Topic: Le Témoignage
     int topWitness = await db.insert('topics', {
-      'category_id': catQada,
+      'category_id': catJustice,
       'title': 'Le Témoignage (Shahada)',
       'description': 'Les conditions pour qu\'un témoignage soit accepté devant un juge.'
     });
@@ -342,7 +341,7 @@ class DatabaseHelper {
 
     // Topic: La Sincérité
     int topSincerity = await db.insert('topics', {
-      'category_id': catIkhlas,
+      'category_id': catEthique,
       'title': 'L\'Importance de l\'Intention',
       'description': 'La place de l\'intention (Niyya) dans les actes d\'adoration.'
     });
