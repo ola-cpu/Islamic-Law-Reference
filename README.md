@@ -60,7 +60,10 @@ flutter test
 
 ## Publication Store
 
-Voir [store/LISTING.md](store/LISTING.md) (descriptions FR/EN/AR, mots-clés, checklist captures).
+- [store/LISTING.md](store/LISTING.md) — descriptions FR/EN/AR, mots-clés
+- [store/PLAY_CONSOLE.md](store/PLAY_CONSOLE.md) — keystore, AAB, checklist Play Console
+- [Politique de confidentialité (web)](https://ola-cpu.github.io/Islamic-Law-Reference/privacy.html)
+- Captures : `.\tool\capture_store_screenshots.ps1` (émulateur Android requis)
 
 ## Confidentialité
 

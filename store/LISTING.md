@@ -9,7 +9,10 @@
 | **Nom** | Islamic Law Reference |
 | **Package** | `islamic_law_reference` |
 | **Catégorie** | Éducation / Livres de référence |
-| **Politique de confidentialité** | [PRIVACY.md](../PRIVACY.md) (héberger l’URL publique sur GitHub Pages ou site du projet) |
+| **Politique de confidentialité** | https://ola-cpu.github.io/Islamic-Law-Reference/privacy.html |
+| **Icône** | `store/icon/app_icon.png` |
+| **Feature graphic** | `store/feature_graphic.png` |
+| **Guide publication** | [PLAY_CONSOLE.md](PLAY_CONSOLE.md) |
 
 ---
 
