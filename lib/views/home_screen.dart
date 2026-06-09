@@ -12,6 +12,7 @@ import '../router/app_router.dart';
 import '../services/widget_service.dart';
 import '../services/daily_question_service.dart';
 import '../widgets/skeleton_loader.dart';
+import '../data/category_visuals.dart';
 import 'quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,30 +42,35 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _loadContent() async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-    final categories = await _dbHelper.getCategories(
-      parentId: widget.parentCategoryId,
-      locale: userProvider.locale,
-    );
-    Topic? dailyTopic;
-    Topic? continueTopic;
-    List<Topic> seasonTopics = [];
-    SeasonInfo? seasonInfo;
-    if (widget.parentCategoryId == null) {
-      dailyTopic = await _dbHelper.getDailyTopic(locale: userProvider.locale);
-      continueTopic = await userProvider.getLastReadTopic();
-      if (dailyTopic != null) {
-        await WidgetService.updateDailyTopic(dailyTopic);
-        await userProvider.syncDailyReminder();
+    try {
+      final categories = await _dbHelper.getCategories(
+        parentId: widget.parentCategoryId,
+        locale: userProvider.locale,
+      );
+      Topic? dailyTopic;
+      Topic? continueTopic;
+      List<Topic> seasonTopics = [];
+      SeasonInfo? seasonInfo;
+      if (widget.parentCategoryId == null) {
+        dailyTopic = await _dbHelper.getDailyTopic(locale: userProvider.locale);
+        continueTopic = await userProvider.getLastReadTopic();
+        if (dailyTopic != null) {
+          try {
+            await WidgetService.updateDailyTopic(dailyTopic);
+            await userProvider.syncDailyReminder();
+          } catch (_) {
+            // Widget / notifications indisponibles sur desktop.
+          }
+        }
+        seasonInfo = SeasonService.getSeasonInfo();
+        if (seasonInfo != null) {
+          seasonTopics = await _dbHelper.getTopicsByTitles(
+            seasonInfo.topicTitlesFr,
+            locale: userProvider.locale,
+          );
+        }
       }
-      seasonInfo = SeasonService.getSeasonInfo();
-      if (seasonInfo != null) {
-        seasonTopics = await _dbHelper.getTopicsByTitles(
-          seasonInfo.topicTitlesFr,
-          locale: userProvider.locale,
-        );
-      }
-    }
-    if (mounted) {
+      if (!mounted) return;
       setState(() {
         _categories = categories;
         _dailyTopic = dailyTopic;
@@ -73,42 +79,9 @@ class _HomeScreenState extends State<HomeScreen> {
         _seasonInfo = seasonInfo;
         _isLoading = false;
       });
-    }
-  }
-
-  IconData _getIconData(String iconName) {
-    switch (iconName) {
-      case 'mosque': return Icons.mosque;
-      case 'people': return Icons.people;
-      case 'monetization_on': return Icons.monetization_on;
-      case 'gavel': return Icons.gavel;
-      case 'favorite': return Icons.favorite;
-      case 'self_improvement': return Icons.self_improvement;
-      case 'business': return Icons.business;
-      case 'volunteer_activism': return Icons.volunteer_activism;
-      case 'family_restroom': return Icons.family_restroom;
-      case 'restaurant': return Icons.restaurant;
-      case 'description': return Icons.description;
-      case 'accessibility': return Icons.accessibility;
-      case 'account_balance': return Icons.account_balance;
-      default: return Icons.category;
-    }
-  }
-
-  List<Color> _getCategoryGradient(String icon) {
-    switch (icon) {
-      case 'mosque': return [const Color(0xFF1B5E20), const Color(0xFF66BB6A)];
-      case 'volunteer_activism': return [const Color(0xFF4A148C), const Color(0xFFAB47BC)];
-      case 'people': return [const Color(0xFF0D47A1), const Color(0xFF42A5F5)];
-      case 'family_restroom': return [const Color(0xFF880E4F), const Color(0xFFEC407A)];
-      case 'monetization_on': return [const Color(0xFFE65100), const Color(0xFFFFA726)];
-      case 'gavel': return [const Color(0xFF37474F), const Color(0xFF78909C)];
-      case 'favorite': return [const Color(0xFF00695C), const Color(0xFF26A69A)];
-      case 'restaurant': return [const Color(0xFF33691E), const Color(0xFF9CCC65)];
-      case 'description': return [const Color(0xFF4527A0), const Color(0xFF7E57C2)];
-      case 'accessibility': return [const Color(0xFF1565C0), const Color(0xFF64B5F6)];
-      case 'account_balance': return [const Color(0xFF4E342E), const Color(0xFFA1887F)];
-      default: return [Colors.green.shade700, Colors.green.shade400];
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _isLoading = false);
     }
   }
 
@@ -421,7 +394,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildCategoryCard(BuildContext context, Category category, UserProvider userProvider) {
-    final colors = _getCategoryGradient(category.icon);
+    final colors = CategoryVisuals.gradient(category.icon);
+    final asset = CategoryVisuals.assetPath(category.icon, imageUrl: category.imageUrl);
 
     return Card(
       elevation: 4,
@@ -430,14 +404,24 @@ class _HomeScreenState extends State<HomeScreen> {
       child: InkWell(
         onTap: () => context.push(AppRoutes.category(category.id!, name: category.name)),
         child: Stack(
+          fit: StackFit.expand,
           children: [
+            if (asset != null)
+              Image.asset(
+                asset,
+                fit: BoxFit.cover,
+                errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+              ),
             Positioned.fill(
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: colors,
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      colors.first.withValues(alpha: asset != null ? 0.55 : 1),
+                      colors.last.withValues(alpha: asset != null ? 0.92 : 1),
+                    ],
                   ),
                 ),
               ),
@@ -446,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(_getIconData(category.icon), size: 40, color: Colors.white),
+                  Icon(CategoryVisuals.iconData(category.icon), size: 40, color: Colors.white),
                   const SizedBox(height: 12),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),

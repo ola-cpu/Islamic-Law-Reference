@@ -393,17 +393,17 @@ class DatabaseHelper {
 
   Future _seedDatabase(Database db) async {
     // Images locales via gradients UI — pas d'URL externes (100 % offline).
-    const String imgPrayer = '';
-    const String imgFasting = '';
-    const String imgFamily = '';
-    const String imgMarriage = '';
-    const String imgEconomy = '';
-    const String imgJustice = '';
-    const String imgEthics = '';
-    const String imgFood = '';
-    const String imgContracts = '';
-    const String imgRights = '';
-    const String imgInheritance = '';
+    const String imgPrayer = 'asset:assets/images/categories/mosque.png';
+    const String imgFasting = 'asset:assets/images/categories/volunteer_activism.png';
+    const String imgFamily = 'asset:assets/images/categories/people.png';
+    const String imgMarriage = 'asset:assets/images/categories/family_restroom.png';
+    const String imgEconomy = 'asset:assets/images/categories/monetization_on.png';
+    const String imgJustice = 'asset:assets/images/categories/gavel.png';
+    const String imgEthics = 'asset:assets/images/categories/favorite.png';
+    const String imgFood = 'asset:assets/images/categories/restaurant.png';
+    const String imgContracts = 'asset:assets/images/categories/description.png';
+    const String imgRights = 'asset:assets/images/categories/accessibility.png';
+    const String imgInheritance = 'asset:assets/images/categories/account_balance.png';
 
     // Schools
     int shHanafi = await db.insert('schools', {
@@ -1463,7 +1463,11 @@ class DatabaseHelper {
     }).toList();
   }
 
-  Future<List<Topic>> getTopicsByCategory(int categoryId, {Locale? locale}) async {
+  Future<List<Topic>> getTopicsByCategory(
+    int categoryId, {
+    Locale? locale,
+    bool light = false,
+  }) async {
     Database db = await database;
     var results = await db.query('topics', where: 'category_id = ?', whereArgs: [categoryId]);
     List<Topic> topics = [];
@@ -1474,12 +1478,43 @@ class DatabaseHelper {
         if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
         if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
       }
+      if (light) {
+        topics.add(Topic.fromMap(map));
+        continue;
+      }
       int topicId = map['id'];
       List<String> tags = await getTagsForTopic(topicId);
       List<int> related = await _getRelatedTopicIds(topicId);
       topics.add(Topic.fromMap(map, tags: tags, relatedTopicIds: related));
     }
     return topics;
+  }
+
+  /// Filtre en une requête SQL les sujets ayant une loi pour l'école donnée.
+  Future<Set<int>> topicIdsMatchingSchool(List<int> topicIds, String schoolSlug) async {
+    if (topicIds.isEmpty) return {};
+    final db = await database;
+    final placeholders = List.filled(topicIds.length, '?').join(',');
+    final slug = schoolSlug.toLowerCase();
+    final schoolLike = switch (slug) {
+      'hanafi' => '%hanafi%',
+      'maliki' => '%maliki%',
+      'shafii' => '%shafi%',
+      'hanbali' => '%hanbali%',
+      'jafari' => '%jafari%',
+      _ => '%$slug%',
+    };
+    final rows = await db.rawQuery('''
+      SELECT DISTINCT l.topic_id AS topic_id
+      FROM laws l
+      LEFT JOIN schools s ON s.id = l.school_id
+      WHERE l.topic_id IN ($placeholders)
+        AND (
+          LOWER(REPLACE(s.name, '''', '')) LIKE ?
+          OR LOWER(REPLACE(l.title, '''', '')) LIKE ?
+        )
+    ''', [...topicIds, schoolLike, schoolLike]);
+    return rows.map((r) => r['topic_id'] as int).toSet();
   }
 
   Future<List<Law>> getLawsByTopic(int topicId, {Locale? locale}) async {

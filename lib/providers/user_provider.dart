@@ -285,13 +285,9 @@ class UserProvider with ChangeNotifier {
 
   Future<List<Topic>> filterTopicsByMadhhab(List<Topic> topics) async {
     if (!_globalMadhhhabFilter || _preferredSchool == null) return topics;
-    final out = <Topic>[];
-    for (final t in topics) {
-      if (t.id != null && await _dbHelper.topicMatchesSchool(t.id!, _preferredSchool!)) {
-        out.add(t);
-      }
-    }
-    return out;
+    final ids = topics.where((t) => t.id != null).map((t) => t.id!).toList();
+    final matching = await _dbHelper.topicIdsMatchingSchool(ids, _preferredSchool!);
+    return topics.where((t) => t.id != null && matching.contains(t.id)).toList();
   }
 
   Future<bool> isTopicVerified(int topicId) => _dbHelper.isTopicVerified(topicId);
