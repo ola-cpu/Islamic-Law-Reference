@@ -161,6 +161,8 @@ class ContentJsonLoader {
     await db.insert('app_meta', {'key': key, 'value': path}, conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
+  static Future<void> ensureMetaTable(Database db) => _ensureMetaTable(db);
+
   static Future<void> _ensureMetaTable(Database db) async {
     await db.execute('''
       CREATE TABLE IF NOT EXISTS app_meta(

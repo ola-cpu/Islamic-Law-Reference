@@ -18,7 +18,7 @@ Encyclopédie fiqh **hors ligne** : plus de 500 sujets, comparaison des madhhabs
 ## Stack technique
 
 - **Flutter** 3.11+ · **Provider** · **go_router**
-- **SQLite** (sqflite) + FTS5 · DB v22
+- **SQLite** (sqflite) + FTS5 · DB v23 (migrations non destructives depuis v18)
 - Contenu JSON extensible (`assets/content/`) + catalogue Dart (`lib/data/expansion/`)
 - CI : `flutter analyze` + `flutter test` (GitHub Actions)
 

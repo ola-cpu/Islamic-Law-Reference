@@ -51,18 +51,15 @@ class DatabaseHelper {
     }
     return await openDatabase(
       path,
-      version: 22,
+      version: 23,
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
-        if (oldVersion < 18) {
-          await _dropTables(db, dropUserData: false);
-          await _onCreate(db, newVersion);
-        } else {
-          if (oldVersion < 19) await _rebuildTopicsFts(db);
-          if (oldVersion < 20) await _migrateToV20(db);
-          if (oldVersion < 21) await _migrateToV21(db);
-          if (oldVersion < 22) await _migrateToV22(db);
-        }
+        if (oldVersion < 18) await _migrateLegacyCatchUp(db);
+        if (oldVersion < 19) await _rebuildTopicsFts(db);
+        if (oldVersion < 20) await _migrateToV20(db);
+        if (oldVersion < 21) await _migrateToV21(db);
+        if (oldVersion < 22) await _migrateToV22(db);
+        if (oldVersion < 23) await _migrateToV23(db);
       },
     );
   }
@@ -257,6 +254,97 @@ class DatabaseHelper {
       metaKey: 'premium_enriched',
     );
     await _rebuildTopicsFts(db);
+  }
+
+  Future<void> _migrateToV23(Database db) async {
+    await ContentJsonLoader.loadAssetBatch(
+      db,
+      'assets/content/topics_enriched_premium_2.json',
+      metaKey: 'premium_enriched_2',
+    );
+    await _rebuildTopicsFts(db);
+  }
+
+  /// Mise à niveau non destructive pour les bases antérieures à v18.
+  Future<void> _migrateLegacyCatchUp(Database db) async {
+    await _ensureSchemaCurrent(db);
+    await ContentJsonLoader.loadAllRegisteredBatches(db);
+    await _rebuildTopicsFts(db);
+  }
+
+  Future<void> _ensureSchemaCurrent(Database db) async {
+    await _ensureFtsTable(db);
+    await ContentJsonLoader.ensureMetaTable(db);
+
+    const localeColumns = <String, List<String>>{
+      'categories': ['name_en', 'name_ar', 'name_ru', 'name_zh', 'image_url'],
+      'schools': [
+        'name_en', 'name_ar', 'name_ru', 'name_zh',
+        'description', 'description_en', 'description_ar', 'description_ru', 'description_zh',
+      ],
+      'topics': [
+        'title_en', 'title_ar', 'title_ru', 'title_zh',
+        'description_en', 'description_ar', 'description_ru', 'description_zh',
+      ],
+      'laws': [
+        'title_en', 'title_ar', 'title_ru', 'title_zh',
+        'content_en', 'content_ar', 'content_ru', 'content_zh',
+        'scholar_comments', 'scholar_comments_en', 'scholar_comments_ar',
+        'scholar_comments_ru', 'scholar_comments_zh',
+      ],
+      'sources': [
+        'reference_en', 'reference_ar', 'reference_ru', 'reference_zh',
+        'text_en', 'text_ar', 'text_ru', 'text_zh',
+        'citation', 'citation_en', 'citation_ar', 'citation_ru', 'citation_zh',
+        'isnad',
+      ],
+    };
+
+    for (final entry in localeColumns.entries) {
+      for (final column in entry.value) {
+        try {
+          await db.execute('ALTER TABLE ${entry.key} ADD COLUMN $column TEXT');
+        } catch (_) {
+          // Colonne déjà présente.
+        }
+      }
+    }
+
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS media(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        topic_id INTEGER,
+        type INTEGER,
+        url TEXT,
+        title TEXT,
+        description TEXT,
+        FOREIGN KEY (topic_id) REFERENCES topics (id)
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS tags(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT UNIQUE
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS topic_tags(
+        topic_id INTEGER,
+        tag_id INTEGER,
+        FOREIGN KEY (topic_id) REFERENCES topics (id),
+        FOREIGN KEY (tag_id) REFERENCES tags (id),
+        PRIMARY KEY (topic_id, tag_id)
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS related_topics(
+        topic_id INTEGER,
+        related_id INTEGER,
+        FOREIGN KEY (topic_id) REFERENCES topics (id),
+        FOREIGN KEY (related_id) REFERENCES topics (id),
+        PRIMARY KEY (topic_id, related_id)
+      )
+    ''');
   }
 
   Future<void> _ensureFtsTable(Database db) async {

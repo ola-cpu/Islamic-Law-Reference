@@ -1,0 +1,270 @@
+{
+  "version": 1,
+  "mode": "enrich",
+  "topics": [
+    {
+      "title_fr": "Annulations du wuḍū’",
+      "description_ar": "ما يُبطل الوضوء ويُوجب إعادته قبل الصلاة.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Sortie de matière impure, perte de conscience, sommeil profond, contact direct peau-à-peau sans barrière, et tout ce qui annule la pureté rituelle.",
+          "content_ar": "خروج نجس وفقدان عقل ونوم ثقيل وملامسة بشرة بشرة وما يُخرج من حالة الطهارة.",
+          "sources": [{"type": 1, "reference": "Hadith — Sahih Muslim", "text": "لا تقبل صلاة بغير طهور", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Même liste ; le toucher du sexe opposé sans barrière annule selon l'avis fort.",
+          "content_ar": "نفس القائمة مع نقض مس فرج الآخر بلا حائل عند الجمهور."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Nuances sur le sommeil léger et les impuretés mineures selon les fatwas.",
+          "content_ar": "تفصيل في النوم الخفيف والنجاسات اليسيرة."
+        }
+      ]
+    },
+    {
+      "title_fr": "Piliers du contrat de mariage",
+      "description_ar": "أركان عقد النكاح التي لا يصح بدونها.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Époux, épouse, wali, deux témoins musulmans et formule Ijab-Qabul explicite.",
+          "content_ar": "الزوج والزوجة والولي وشاهدان مسلمان وصيغة إيجاب وقبول.",
+          "sources": [{"type": 1, "reference": "Hadith — Sunan al-Tirmidhi", "text": "لا نكاح إلا بولي وشاهدي عدل", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Insiste sur le wali et l'absence de secret (khalwat) au moment du contrat.",
+          "content_ar": "يشترط الولي وعدم الخلوة عند العقد."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Conditions proches ; attention au consentement libre et au mahr stipulé ou mahr al-mithl.",
+          "content_ar": "شروط متقاربة مع مراعاة الرضا والمهر."
+        }
+      ]
+    },
+    {
+      "title_fr": "Les droits et devoirs conjugaux",
+      "description_ar": "الحقوق المتبادلة بين الزوجين في الشريعة.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Nafaqa (entretien), logement convenable, justice entre épouses, droit à l'intimité licite.",
+          "content_ar": "النفقة والسكن المعروف والعدل بين الزوجات وحق المعاشرة.",
+          "sources": [{"type": 0, "reference": "Coran 4:34", "text_ar": "عَلَى الْمُؤْمِنِينَ أَن يَغْضُوا مِنْ أَبْصَارِهِمْ...", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "L'épouse doit obéissance dans le bien ; l'époux protège et ne nuit pas.",
+          "content_ar": "طاعة الزوجة في المعروف وحفظ الزوج وعدم الضرر."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Droits réciproques de respect, éducation des enfants et gestion du foyer selon accord.",
+          "content_ar": "حقوق متبادلة في التربية والمعاملة بالمعروف."
+        }
+      ]
+    },
+    {
+      "title_fr": "La Qunut dans la prière",
+      "description_ar": "الدعاء في القنوت أثناء الصلاة.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Qunut recommandé dans Fajr et Witr ; supplication en standing après le ruku.",
+          "content_ar": "قنوت مستحب في الفجر والوتر بعد الركوع قائماً.",
+          "sources": [{"type": 1, "reference": "Hadith — Sunan Abi Dawud", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Qunut du Witr surtout en deuxième moitié de Ramadan ; dua longue permise.",
+          "content_ar": "قنوت الوتر في آخر رمضان مع جواز الدعاء المطول."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Qunut dans Fajr obligatoire selon l'école ; formulations codifiées.",
+          "content_ar": "قنوت الفجر واجب عند الإمامية مع أدعية مأثورة."
+        }
+      ]
+    },
+    {
+      "title_fr": "Le divorce sunnite",
+      "description_ar": "الطلاق السني بشروطه المعتبرة.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Une répudiation par période de pureté sans rapport ; intention de divorce explicite.",
+          "content_ar": "طلقة واحدة في طهر لم يمس فيه مع نية الطلاق.",
+          "sources": [{"type": 1, "reference": "Hadith — Sahih al-Bukhari", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Même condition ; triple divorce en une fois détesté et compte comme une selon l'avis fort.",
+          "content_ar": "نفس الشرط؛ الثلاث جملة واحدة مكروه وتحسب واحدة عند كثير من العلماء."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Formalités et témoins discutés ; distinction entre divorce révocable et ba'in.",
+          "content_ar": "تفصيل بين الرجعي والبائن وشروط الصيغة."
+        }
+      ]
+    },
+    {
+      "title_fr": "Part du conjoint",
+      "description_ar": "ميراث الزوج والزوجة في الفرائض.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Épouse : 1/4 sans enfant, 1/8 avec enfant. Époux : 1/2 sans enfant, 1/4 avec enfant.",
+          "content_ar": "الزوجة ربع أو ثمن؛ الزوج نصف أو ربع.",
+          "sources": [{"type": 0, "reference": "Coran 4:12", "text_ar": "وَلَكُمْ نِصْفُ مَا تَرَكَ أَزْوَاجُكُمْ...", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Mêmes fractions ; le conjoint ne hérite pas du terrain dote (mahr) non consommé selon règles.",
+          "content_ar": "نفس الأنصاب مع أحكام المهر غير المقبوض."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Parts identiques au sunnisme ; nuances sur le radd selon les manuels ja'farites.",
+          "content_ar": "حصص متطابقة مع فروق في الرّد."
+        }
+      ]
+    },
+    {
+      "title_fr": "L'I'tikaf en Ramadan",
+      "description_ar": "الاعتكاف في المسجد خلال رمضان.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Sunna muakkada ; intention, séjour en mosquée, abstention des péchés et des rapports conjugaux.",
+          "content_ar": "سنة مؤكدة بالنية واللزوم في المسجد وترك المفطرات.",
+          "sources": [{"type": 1, "reference": "Hadith — Sahih al-Bukhari", "text": "كان النبي يعتكف العشر الأواخر", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Sortie pour besoin naturel indispensable ; invalidation par rapport sexuel.",
+          "content_ar": "الخروج للضرورة ويبطل بالجماع."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Recommandé les dix derniers jours ; certaines mosquées historiques ont règles spécifiques.",
+          "content_ar": "مستحب في العشر الأواخر مع آداب خاصة."
+        }
+      ]
+    },
+    {
+      "title_fr": "Les piliers de la Salat",
+      "description_ar": "أركان الصلاة التي تبطل إن سقط أحدها.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Treize piliers : intention, takbir, qiyam, Fatiha, ruku, sujud, jalsa, tashahhud final, salam.",
+          "content_ar": "ثلاثة عشر ركناً من النية إلى السلام.",
+          "sources": [{"type": 0, "reference": "Coran 2:238", "text_ar": "حَافِظُوا عَلَى الصَّلَوَاتِ", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Quatorze piliers incluant le premier tashahhud selon l'avis fort.",
+          "content_ar": "أربعة عشر ركناً مع التشهد الأول عند الجمهور."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Arkan proches ; ordre et continuité (muwalat) entre les actes.",
+          "content_ar": "أركان متقاربة مع الموالاة بين الأفعال."
+        }
+      ]
+    },
+    {
+      "title_fr": "Le Khula",
+      "description_ar": "خلع الزوجة بعوض للزوج.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Rupture à l'initiative de l'épouse moyennant compensation (souvent restitution du mahr).",
+          "content_ar": "انفصال بإرادة الزوجة بعوض غالباً رد المهر.",
+          "sources": [{"type": 1, "reference": "Hadith — Sahih al-Bukhari", "text": "أمرت أن أتخذ العوض في الخلع", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Une seule répudiation ba'in ; le juge peut intervenir si le mari refuse injustement.",
+          "content_ar": "طلقة واحدة بائنة ويجوز للقاضي الفصل عند الضرر."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Khula distinct du talaq ; conditions de consentement et montant négocié.",
+          "content_ar": "الخلع صورة مفارقة بعوض متفق عليه."
+        }
+      ]
+    },
+    {
+      "title_fr": "La Murabaha",
+      "description_ar": "المرابحة في المعاملات المالية الإسلامية.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Vente à prix coûtant + marge connue ; interdit de vendre ce qu'on ne possède pas encore sans structure licite.",
+          "content_ar": "بيع بثمن معلوم ربح على التكلفة مع ملكية البضاعة.",
+          "sources": [{"type": 1, "reference": "Hadith — Sunan al-Tirmidhi", "text": "لا تبع ما ليس عندك", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Contrat de vente différé permis si objet identifié et possédé avant revente.",
+          "content_ar": "جواز البيع الآجل بعد التملك والوصف."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Acceptée avec transparence totale ; éviter toute clause cachée de riba.",
+          "content_ar": "مباحة بالشفافية ودون شروط ربوية."
+        }
+      ]
+    },
+    {
+      "title_fr": "La patience (Sabr)",
+      "description_ar": "الصبر عند البلاء وطاعة الله.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Trois types : sabr sur l'obéissance, contre le péché, et face aux épreuves.",
+          "content_ar": "صبر على الطاعة وعن المعصية وعلى البلاء.",
+          "sources": [{"type": 0, "reference": "Coran 2:153", "text_ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Patience obligatoire dans l'adoration difficile ; recommandée dans la douleur.",
+          "content_ar": "واجب في الطاعة ومندوب عند المصيبة."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Vertu cardinale liée au tawakkul ; récompense multipliée pour le patient.",
+          "content_ar": "فضيلة عظيمة مع التوكل على الله."
+        }
+      ]
+    },
+    {
+      "title_fr": "La médisance (Ghibah)",
+      "description_ar": "الغيبة بذكر المسلم بما يكره.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Interdite même si vrai ; permise en cas de injustice à réparer, conseil religieux ou avertissement.",
+          "content_ar": "حرام وإن كان حقاً إلا لمصلحة شرعية.",
+          "sources": [{"type": 1, "reference": "Hadith — Sahih Muslim", "text": "أتدرون ما الغيبة؟", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Équivalent à manger la chair du mort ; exceptions strictement encadrées.",
+          "content_ar": "كأكل لحم أخيه ميتاً مع استثناءات محدودة."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Même interdiction ; réparation par repentir et demande de pardon si possible.",
+          "content_ar": "تحريم مع التوبة والاستغفار."
+        }
+      ]
+    }
+  ]
+}
