@@ -812,4 +812,111 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get shortcutZakat => 'Калькулятор закята';
+
+  @override
+  String get inheritanceCalculator => 'Калькулятор наследства (Фараид)';
+
+  @override
+  String get inheritanceCalculatorShort => 'Оценка долей по семейной ситуации';
+
+  @override
+  String get inheritanceCalculatorDesc =>
+      'Введите чистую массу и наследников для приблизительного распределения по суннитским правилам.';
+
+  @override
+  String get inheritanceDisclaimer =>
+      'Только для обучения. Сложные случаи — к учёному.';
+
+  @override
+  String get inheritanceSectionEstate => 'Имущество';
+
+  @override
+  String get inheritanceNetEstate => 'Чистая масса';
+
+  @override
+  String get inheritanceNetEstateHint => 'После долгов';
+
+  @override
+  String get inheritanceWasiyyah => 'Завещание';
+
+  @override
+  String get inheritanceWasiyyahHint => 'Макс. 1/3';
+
+  @override
+  String get inheritanceSectionSpouse => 'Супруг(а)';
+
+  @override
+  String get inheritanceNoSpouse => 'Нет';
+
+  @override
+  String get inheritanceWivesCount => 'Число жён';
+
+  @override
+  String get inheritanceSectionChildren => 'Дети';
+
+  @override
+  String get inheritanceSectionParents => 'Родители';
+
+  @override
+  String get inheritanceSectionSiblings => 'Полные братья/сёстры';
+
+  @override
+  String get inheritanceCalculate => 'Рассчитать';
+
+  @override
+  String get inheritanceResults => 'Оценка распределения';
+
+  @override
+  String inheritanceDistributable(String amount) {
+    return 'К распределению: $amount';
+  }
+
+  @override
+  String inheritanceWasiyyahDeducted(String amount) {
+    return 'Завещание: $amount';
+  }
+
+  @override
+  String inheritancePerPerson(String amount) {
+    return '$amount на человека';
+  }
+
+  @override
+  String get inheritanceApproximateNote => 'Суммы ориентировочные.';
+
+  @override
+  String get inheritanceNoteAwl => 'Применён авль.';
+
+  @override
+  String get inheritanceNoteRadd => 'Применён рэдд.';
+
+  @override
+  String get inheritanceNoteWasiyyahCapped => 'Завещание ограничено третью.';
+
+  @override
+  String get inheritanceNoteNoHeirs => 'Наследники не определены.';
+
+  @override
+  String get heirHusband => 'Муж';
+
+  @override
+  String get heirWife => 'Жена(ы)';
+
+  @override
+  String get heirSon => 'Сын(овья)';
+
+  @override
+  String get heirDaughter => 'Дочь(ери)';
+
+  @override
+  String get heirFather => 'Отец';
+
+  @override
+  String get heirMother => 'Мать';
+
+  @override
+  String get heirFullBrother => 'Полный брат';
+
+  @override
+  String get heirFullSister => 'Полная сестра';
 }

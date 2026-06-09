@@ -7,6 +7,7 @@ import '../l10n/app_localizations.dart';
 import 'flashcard_screen.dart';
 import 'quiz_screen.dart';
 import 'zakat_calculator_screen.dart';
+import 'inheritance_calculator_screen.dart';
 import 'practical_cases_screen.dart';
 
 class LearnHubScreen extends StatelessWidget {
@@ -39,6 +40,23 @@ class LearnHubScreen extends StatelessWidget {
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const ZakatCalculatorScreen()),
+              ),
+            ),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            margin: const EdgeInsets.only(bottom: 8),
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.brown.shade100,
+                child: Icon(Icons.account_balance_wallet, color: Colors.brown.shade800),
+              ),
+              title: Text(l10n.inheritanceCalculator),
+              subtitle: Text(l10n.inheritanceCalculatorShort),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const InheritanceCalculatorScreen()),
               ),
             ),
           ),

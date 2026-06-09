@@ -1,4 +1,3 @@
-import 'fiqh_topic_builder.dart';
 import 'chapters/prayer_chapter.dart';
 import 'chapters/fasting_chapter.dart';
 import 'chapters/family_chapter.dart';

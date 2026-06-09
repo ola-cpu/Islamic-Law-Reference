@@ -4,6 +4,7 @@ import '../models/topic.dart';
 import '../router/app_router.dart';
 import '../l10n/app_localizations.dart';
 import '../views/zakat_calculator_screen.dart';
+import '../views/inheritance_calculator_screen.dart';
 import '../views/quiz_screen.dart';
 import '../data/learning_content.dart';
 import '../views/flashcard_screen.dart';
@@ -22,6 +23,11 @@ class ContextualShortcuts extends StatelessWidget {
     if (_match(haystack, ['zakat', 'nisab', 'aumône', 'زكاة'])) {
       chips.add(_chip(context, l10n.shortcutZakat, Icons.calculate, () {
         Navigator.push(context, MaterialPageRoute(builder: (_) => const ZakatCalculatorScreen()));
+      }));
+    }
+    if (_match(haystack, ['héritage', 'inheritance', 'mira', 'faraid', 'farāʾiḍ', 'succession', 'ميراث', 'فرائض'])) {
+      chips.add(_chip(context, l10n.inheritanceCalculator, Icons.account_balance_wallet, () {
+        Navigator.push(context, MaterialPageRoute(builder: (_) => const InheritanceCalculatorScreen()));
       }));
     }
     if (_match(haystack, ['compare', 'école', 'madhhab', 'hanafi', 'maliki', 'مذهب'])) {

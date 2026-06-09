@@ -822,4 +822,117 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shortcutZakat => 'Zakat calculator';
+
+  @override
+  String get inheritanceCalculator => 'Inheritance Calculator (Farāʾiḍ)';
+
+  @override
+  String get inheritanceCalculatorShort =>
+      'Estimate shares from family situation';
+
+  @override
+  String get inheritanceCalculatorDesc =>
+      'Enter net estate (after debts and funeral costs), surviving heirs, and get an approximate distribution under classical Sunni rules.';
+
+  @override
+  String get inheritanceDisclaimer =>
+      'Educational tool only. Inheritance has many exceptions (blocking, \'awl, pregnancy, etc.). Consult a qualified scholar before any decision.';
+
+  @override
+  String get inheritanceSectionEstate => 'Estate';
+
+  @override
+  String get inheritanceNetEstate => 'Net estate';
+
+  @override
+  String get inheritanceNetEstateHint => 'Amount after debts';
+
+  @override
+  String get inheritanceWasiyyah => 'Bequest (wasiyyah)';
+
+  @override
+  String get inheritanceWasiyyahHint => 'Max 1/3 for non-heir';
+
+  @override
+  String get inheritanceSectionSpouse => 'Surviving spouse';
+
+  @override
+  String get inheritanceNoSpouse => 'None';
+
+  @override
+  String get inheritanceWivesCount => 'Number of wives';
+
+  @override
+  String get inheritanceSectionChildren => 'Deceased\'s children';
+
+  @override
+  String get inheritanceSectionParents => 'Deceased\'s parents';
+
+  @override
+  String get inheritanceSectionSiblings => 'Full siblings';
+
+  @override
+  String get inheritanceCalculate => 'Calculate distribution';
+
+  @override
+  String get inheritanceResults => 'Estimated distribution';
+
+  @override
+  String inheritanceDistributable(String amount) {
+    return 'To distribute: $amount';
+  }
+
+  @override
+  String inheritanceWasiyyahDeducted(String amount) {
+    return 'Bequest deducted: $amount';
+  }
+
+  @override
+  String inheritancePerPerson(String amount) {
+    return '$amount per person';
+  }
+
+  @override
+  String get inheritanceApproximateNote =>
+      'Amounts are indicative. Schools may differ on edge cases.';
+
+  @override
+  String get inheritanceNoteAwl =>
+      'Proportional reduction (\'awl) applied — fixed shares exceeded the estate.';
+
+  @override
+  String get inheritanceNoteRadd =>
+      'Increase (radd) applied — surplus redistributed to fixed sharers.';
+
+  @override
+  String get inheritanceNoteWasiyyahCapped =>
+      'Bequest capped at one-third of the estate.';
+
+  @override
+  String get inheritanceNoteNoHeirs =>
+      'No recognized heirs with these inputs — check entries or consult a scholar.';
+
+  @override
+  String get heirHusband => 'Husband';
+
+  @override
+  String get heirWife => 'Wife(s)';
+
+  @override
+  String get heirSon => 'Son(s)';
+
+  @override
+  String get heirDaughter => 'Daughter(s)';
+
+  @override
+  String get heirFather => 'Father';
+
+  @override
+  String get heirMother => 'Mother';
+
+  @override
+  String get heirFullBrother => 'Full brother(s)';
+
+  @override
+  String get heirFullSister => 'Full sister(s)';
 }

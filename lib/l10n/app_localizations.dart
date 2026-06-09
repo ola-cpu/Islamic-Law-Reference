@@ -1603,6 +1603,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Zakat calculator'**
   String get shortcutZakat;
+
+  /// No description provided for @inheritanceCalculator.
+  ///
+  /// In en, this message translates to:
+  /// **'Inheritance Calculator (Farāʾiḍ)'**
+  String get inheritanceCalculator;
+
+  /// No description provided for @inheritanceCalculatorShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimate shares from family situation'**
+  String get inheritanceCalculatorShort;
+
+  /// No description provided for @inheritanceCalculatorDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter net estate (after debts and funeral costs), surviving heirs, and get an approximate distribution under classical Sunni rules.'**
+  String get inheritanceCalculatorDesc;
+
+  /// No description provided for @inheritanceDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Educational tool only. Inheritance has many exceptions (blocking, \'awl, pregnancy, etc.). Consult a qualified scholar before any decision.'**
+  String get inheritanceDisclaimer;
+
+  /// No description provided for @inheritanceSectionEstate.
+  ///
+  /// In en, this message translates to:
+  /// **'Estate'**
+  String get inheritanceSectionEstate;
+
+  /// No description provided for @inheritanceNetEstate.
+  ///
+  /// In en, this message translates to:
+  /// **'Net estate'**
+  String get inheritanceNetEstate;
+
+  /// No description provided for @inheritanceNetEstateHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount after debts'**
+  String get inheritanceNetEstateHint;
+
+  /// No description provided for @inheritanceWasiyyah.
+  ///
+  /// In en, this message translates to:
+  /// **'Bequest (wasiyyah)'**
+  String get inheritanceWasiyyah;
+
+  /// No description provided for @inheritanceWasiyyahHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Max 1/3 for non-heir'**
+  String get inheritanceWasiyyahHint;
+
+  /// No description provided for @inheritanceSectionSpouse.
+  ///
+  /// In en, this message translates to:
+  /// **'Surviving spouse'**
+  String get inheritanceSectionSpouse;
+
+  /// No description provided for @inheritanceNoSpouse.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get inheritanceNoSpouse;
+
+  /// No description provided for @inheritanceWivesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of wives'**
+  String get inheritanceWivesCount;
+
+  /// No description provided for @inheritanceSectionChildren.
+  ///
+  /// In en, this message translates to:
+  /// **'Deceased\'s children'**
+  String get inheritanceSectionChildren;
+
+  /// No description provided for @inheritanceSectionParents.
+  ///
+  /// In en, this message translates to:
+  /// **'Deceased\'s parents'**
+  String get inheritanceSectionParents;
+
+  /// No description provided for @inheritanceSectionSiblings.
+  ///
+  /// In en, this message translates to:
+  /// **'Full siblings'**
+  String get inheritanceSectionSiblings;
+
+  /// No description provided for @inheritanceCalculate.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculate distribution'**
+  String get inheritanceCalculate;
+
+  /// No description provided for @inheritanceResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated distribution'**
+  String get inheritanceResults;
+
+  /// No description provided for @inheritanceDistributable.
+  ///
+  /// In en, this message translates to:
+  /// **'To distribute: {amount}'**
+  String inheritanceDistributable(String amount);
+
+  /// No description provided for @inheritanceWasiyyahDeducted.
+  ///
+  /// In en, this message translates to:
+  /// **'Bequest deducted: {amount}'**
+  String inheritanceWasiyyahDeducted(String amount);
+
+  /// No description provided for @inheritancePerPerson.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} per person'**
+  String inheritancePerPerson(String amount);
+
+  /// No description provided for @inheritanceApproximateNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Amounts are indicative. Schools may differ on edge cases.'**
+  String get inheritanceApproximateNote;
+
+  /// No description provided for @inheritanceNoteAwl.
+  ///
+  /// In en, this message translates to:
+  /// **'Proportional reduction (\'awl) applied — fixed shares exceeded the estate.'**
+  String get inheritanceNoteAwl;
+
+  /// No description provided for @inheritanceNoteRadd.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase (radd) applied — surplus redistributed to fixed sharers.'**
+  String get inheritanceNoteRadd;
+
+  /// No description provided for @inheritanceNoteWasiyyahCapped.
+  ///
+  /// In en, this message translates to:
+  /// **'Bequest capped at one-third of the estate.'**
+  String get inheritanceNoteWasiyyahCapped;
+
+  /// No description provided for @inheritanceNoteNoHeirs.
+  ///
+  /// In en, this message translates to:
+  /// **'No recognized heirs with these inputs — check entries or consult a scholar.'**
+  String get inheritanceNoteNoHeirs;
+
+  /// No description provided for @heirHusband.
+  ///
+  /// In en, this message translates to:
+  /// **'Husband'**
+  String get heirHusband;
+
+  /// No description provided for @heirWife.
+  ///
+  /// In en, this message translates to:
+  /// **'Wife(s)'**
+  String get heirWife;
+
+  /// No description provided for @heirSon.
+  ///
+  /// In en, this message translates to:
+  /// **'Son(s)'**
+  String get heirSon;
+
+  /// No description provided for @heirDaughter.
+  ///
+  /// In en, this message translates to:
+  /// **'Daughter(s)'**
+  String get heirDaughter;
+
+  /// No description provided for @heirFather.
+  ///
+  /// In en, this message translates to:
+  /// **'Father'**
+  String get heirFather;
+
+  /// No description provided for @heirMother.
+  ///
+  /// In en, this message translates to:
+  /// **'Mother'**
+  String get heirMother;
+
+  /// No description provided for @heirFullBrother.
+  ///
+  /// In en, this message translates to:
+  /// **'Full brother(s)'**
+  String get heirFullBrother;
+
+  /// No description provided for @heirFullSister.
+  ///
+  /// In en, this message translates to:
+  /// **'Full sister(s)'**
+  String get heirFullSister;
 }
 
 class _AppLocalizationsDelegate

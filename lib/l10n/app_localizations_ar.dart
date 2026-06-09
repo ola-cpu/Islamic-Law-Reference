@@ -807,4 +807,111 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get shortcutZakat => 'حاسبة الزكاة';
+
+  @override
+  String get inheritanceCalculator => 'حاسبة الميراث (الفرائض)';
+
+  @override
+  String get inheritanceCalculatorShort => 'تقدير الحصص حسب الوضع العائلي';
+
+  @override
+  String get inheritanceCalculatorDesc =>
+      'أدخل التركة الصافية والورثة للحصول على توزيع تقريبي وفق القواعد السنية الكلاسيكية.';
+
+  @override
+  String get inheritanceDisclaimer =>
+      'أداة تعليمية فقط. للحالات المعقدة استشر عالماً مختصاً.';
+
+  @override
+  String get inheritanceSectionEstate => 'التركة';
+
+  @override
+  String get inheritanceNetEstate => 'التركة الصافية';
+
+  @override
+  String get inheritanceNetEstateHint => 'بعد الديون';
+
+  @override
+  String get inheritanceWasiyyah => 'الوصية';
+
+  @override
+  String get inheritanceWasiyyahHint => 'ثلث كحد أقصى';
+
+  @override
+  String get inheritanceSectionSpouse => 'الزوج الباقي';
+
+  @override
+  String get inheritanceNoSpouse => 'لا يوجد';
+
+  @override
+  String get inheritanceWivesCount => 'عدد الزوجات';
+
+  @override
+  String get inheritanceSectionChildren => 'أبناء المتوفى';
+
+  @override
+  String get inheritanceSectionParents => 'والدا المتوفى';
+
+  @override
+  String get inheritanceSectionSiblings => 'الإخوة الأشقاء';
+
+  @override
+  String get inheritanceCalculate => 'احسب التوزيع';
+
+  @override
+  String get inheritanceResults => 'التوزيع التقديري';
+
+  @override
+  String inheritanceDistributable(String amount) {
+    return 'للتوزيع: $amount';
+  }
+
+  @override
+  String inheritanceWasiyyahDeducted(String amount) {
+    return 'وصية مخصومة: $amount';
+  }
+
+  @override
+  String inheritancePerPerson(String amount) {
+    return '$amount لكل شخص';
+  }
+
+  @override
+  String get inheritanceApproximateNote => 'المبالغ إرشادية فقط.';
+
+  @override
+  String get inheritanceNoteAwl => 'طُبِّق العول — الحصص تجاوزت التركة.';
+
+  @override
+  String get inheritanceNoteRadd => 'طُبِّق الرد — فُوِّض الفائض للورثة.';
+
+  @override
+  String get inheritanceNoteWasiyyahCapped => 'الوصية محدودة بثلث التركة.';
+
+  @override
+  String get inheritanceNoteNoHeirs => 'لا ورثة مع هذه المعطيات.';
+
+  @override
+  String get heirHusband => 'الزوج';
+
+  @override
+  String get heirWife => 'الزوجة';
+
+  @override
+  String get heirSon => 'الابن';
+
+  @override
+  String get heirDaughter => 'البنت';
+
+  @override
+  String get heirFather => 'الأب';
+
+  @override
+  String get heirMother => 'الأم';
+
+  @override
+  String get heirFullBrother => 'الأخ الشقيق';
+
+  @override
+  String get heirFullSister => 'الأخت الشقيقة';
 }

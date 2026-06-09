@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "mode": "enrich",
+  "topics": [
+    {
+      "title_fr": "Le testament (Wasiyyah)",
+      "description_ar": "التبرع بجزء من المال لغير الوارث بعد الوفاة، بحد أقصى الثلث.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Jusqu'à un tiers du patrimoine pour un non-héritier ; valide avec témoins.",
+          "content_ar": "حتى ثلث التركة لغير الوارث مع الشهود.",
+          "sources": [{"type": 0, "reference": "Coran 2:180", "text": "كتب عليكم إذا حضر أحدكم الموت...", "text_ar": "كتب عليكم إذا حضر أحدكم الموت إن ترك خيراً الوصية للوالدين والأقربين بالمعروف", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Ne peut pas léser un héritier ; révoquable avant le décès.",
+          "content_ar": "لا يجوز أن تضر بالوارث؛ قابلة للرجوع قبل الموت."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Un tiers maximum ; priorité aux proches et œuvres pieuses selon conditions.",
+          "content_ar": "الثلث كحد أقصى مع مراعاة الأقارب والأعمال الصالحة."
+        }
+      ]
+    },
+    {
+      "title_fr": "Le blocage (Hajb)",
+      "description_ar": "منع بعض الورثة من الميراث أو تقليص نصيبهم لوجود وارث أقرب.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Hajb nuqsan réduit la part ; hajb hijr exclut totalement l'héritier lointain.",
+          "content_ar": "الحجب نقصان يُنقص السهم والحجب حرمان يُسقط الإرث."
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Le fils bloque les petits-enfants en présence directe.",
+          "content_ar": "الابن يحجب أبناء الابن عند وجوده."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Règles de hajb proches du sunnisme avec nuances sur certains cas.",
+          "content_ar": "قواعد الحجب قريبة من السنة مع فروق في بعض الصور."
+        }
+      ]
+    },
+    {
+      "title_fr": "Parts des parents",
+      "description_ar": "نصيب الأب والأم في الميراث حسب وجود الفرع والإخوة.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Mère : 1/3 sans enfant ni frères multiples ; 1/6 sinon. Père : 1/6 avec enfant ou reste asaba.",
+          "content_ar": "الأم ثلث أو سدس؛ الأب سدس أو الباقي عصبة.",
+          "sources": [{"type": 0, "reference": "Coran 4:11", "text_ar": "ولِلْآبَاءِ وَالْأَمْهَاتِ لِكُلِّ وَاحِدٍ مِّنْهُمَا السُّدُسُ", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Même répartition ; le père peut hériter du reste en l'absence d'autres asaba.",
+          "content_ar": "نفس التوزيع مع إرث الأب الباقي عند الانفراد."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Parts similaires avec attention au hajb selon la branche ja'farite.",
+          "content_ar": "حصص متقاربة مع مراعاة أحكام الحجب."
+        }
+      ]
+    },
+    {
+      "title_fr": "Les huit catégories de bénéficiaires",
+      "description_ar": "مصارف الزكاة الثمانية المذكورة في القرآن.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Coran 9:60 : pauvres, nécessiteux, collecteurs, réconciliation des cœurs, esclaves, endettés, cause d'Allah, voyageurs.",
+          "content_ar": "الفقراء والمساكين والعاملين عليها والمؤلفة قلوبهم وفي الرقاب والغارمين وفي سبيل الله وابن السبيل.",
+          "sources": [{"type": 0, "reference": "Coran 9:60", "text_ar": "إِنَّمَا الصَّدَقَاتُ لِلْفُقَرَاءِ وَالْمَسَاكِينِ...", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Interdit de donner la zakat aux ascendants, descendants et conjoint.",
+          "content_ar": "لا تجوز الزكاة للأصول والفروع والزوج."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Mêmes catégories ; sahm al-Imam discuté selon contexte historique.",
+          "content_ar": "نفس المصارف مع اختلاف في سهم الإمام."
+        }
+      ]
+    },
+    {
+      "title_fr": "L'héritage des frères et sœurs",
+      "description_ar": "ميراث الإخوة والأخوات بأنواعهم في الفرائض.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Germains : residuaires ou 2/3 pour sœurs seules ; utérins : 1/6 chacun si un seul.",
+          "content_ar": "الأشقاء عصبة أو ثلثا للإناث؛ لأم سدس لكل منهم."
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Présence du père ou du fils bloque souvent les frères.",
+          "content_ar": "الأب أو الابن يحجبان الإخوة غالباً."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Distinction entre frères paternels, maternels et germains selon les manuels.",
+          "content_ar": "تفصيل بين الإخوة لأب ولأم وأشقاء."
+        }
+      ]
+    },
+    {
+      "title_fr": "Règles de la dot (Mahr)",
+      "description_ar": "أحكام المهر في عقد الزواج.",
+      "laws": [
+        {
+          "school": "Shafi'i",
+          "content_fr": "Mahr mithl si non stipulé ; propriété exclusive de l'épouse dès le contrat.",
+          "content_ar": "مهر المثل عند عدم التسمية؛ ملك للزوجة بمجرد العقد.",
+          "sources": [{"type": 1, "reference": "Hadith — Sunan Abu Dawud", "text": "استمتعوا ولا ضرار", "authenticity": 0}]
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Tout bien licite peut être Mahr ; dû avant consommation si convenu.",
+          "content_ar": "كل مال حلال يصح أن يكون مهراً."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Obligatoire ; peut être reporté par accord ; non remboursable sauf khula.",
+          "content_ar": "واجب؛ يجوز تأجيله بالتراضي."
+        }
+      ]
+    },
+    {
+      "title_fr": "Le Nisab de la Zakat",
+      "description_ar": "الحد الأدنى من المال الذي تجب فيه الزكاة.",
+      "laws": [
+        {
+          "school": "Maliki",
+          "content_fr": "85g d'or ou 595g d'argent ; possession un an lunaire (hawl).",
+          "content_ar": "خمسة وثمانون غراماً ذهباً أو ستمائة وخمسة وتسعون فضة؛ حولان كامل."
+        },
+        {
+          "school": "Shafi'i",
+          "content_fr": "2,5% sur l'excédent après hawl ; intention recommandée.",
+          "content_ar": "ربع العشر بعد الحول مع نية الزكاة."
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Évaluation au moment du paiement pour biens commerciaux.",
+          "content_ar": "تقويم عروض التجارة عند الأداء."
+        }
+      ]
+    },
+    {
+      "title_fr": "Conditions de validité du wuḍū’",
+      "description_ar": "شروط صحة الوضوء قبل الصلاة.",
+      "laws": [
+        {
+          "school": "Maliki",
+          "content_fr": "Intention, eau pure, absence d'obstacle sur la peau, ordre des membres.",
+          "content_ar": "النية والماء الطهور وإزالة الحائل والترتيب."
+        },
+        {
+          "school": "Hanbali",
+          "content_fr": "Islam, discernement, pureté de l'eau ; lavage des parties obligatoires.",
+          "content_ar": "الإسلام والتمييز وطهارة الماء وغسل الأعضاء."
+        },
+        {
+          "school": "Ja'fari",
+          "content_fr": "Ordre et continuité (mouwalat) entre les actes selon l'école.",
+          "content_ar": "الترتيب والموالاة بين أفعال الوضوء.",
+          "sources": [{"type": 0, "reference": "Coran 5:6", "text_ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا قُمْتُمْ إِلَى الصَّلَاةِ فَاغْسِلُوا وُجُوهَكُمْ...", "authenticity": 0}]
+        }
+      ]
+    }
+  ]
+}

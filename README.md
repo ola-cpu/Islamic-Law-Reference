@@ -1,27 +1,67 @@
 # Islamic Law Reference
 
-Islamic Law Reference est une application mobile visant à regrouper, organiser et rendre accessible l’ensemble des lois qui régissent la vie en islam, issues du Coran, de la Sunnah, et des grands ouvrages de jurisprudence islamique (fiqh).
+Encyclopédie fiqh **hors ligne** : plus de 500 sujets, comparaison des madhhabs, parcours d'apprentissage, outils pratiques — en **5 langues** (FR, EN, AR, RU, ZH).
 
-## Architecture Technique
+> **Avertissement** : outil éducatif. Ne remplace pas l'avis d'un savant qualifié pour les cas personnels (héritage, divorce, finance, etc.).
 
-- **Framework** : [Flutter](https://flutter.dev/) (pour le développement mobile multiplateforme).
-- **Stockage Local** : [SQLite](https://www.sqlite.org/) (via `sqflite`) pour une gestion structurée et performante des données hors ligne.
-- **Gestion d'état** : [Provider](https://pub.dev/packages/provider) pour une gestion simple et efficace de l'état de l'application (favoris, notes).
-- **Internationalisation** : `flutter_localizations` et `intl` pour le support multilingue (Arabe, Français, Anglais).
+## Fonctionnalités
 
-## Structure du Projet
+| Domaine | Détails |
+|---------|---------|
+| **Encyclopédie** | 500+ fiches par catégories, recherche FTS multilingue |
+| **Comparaison** | Positions Hanafi, Maliki, Shafi'i, Hanbali, Ja'fari |
+| **Apprentissage** | 7 parcours guidés, flashcards SRS, quiz adaptatif, examen encyclopédique |
+| **Outils** | Calculateur zakat, calculateur d'héritage (farāʾiḍ), conseiller de situation |
+| **Données** | Favoris, notes, badges, export PDF/JSON, sync chiffrée AES |
+| **Plateformes** | Android, iOS, Windows, Linux, macOS, Web (SQLite) |
 
-- `lib/models/` : Définition des objets de données (Loi, Catégorie, Source, etc.).
-- `lib/views/` : Écrans et composants de l'interface utilisateur.
-- `lib/services/` : Services pour la base de données et autres fonctionnalités externes.
-- `lib/providers/` : Gestion de l'état global de l'application.
-- `lib/l10n/` : Fichiers de traduction.
+## Stack technique
 
-## Fonctionnalités Principales
+- **Flutter** 3.11+ · **Provider** · **go_router**
+- **SQLite** (sqflite) + FTS5 · DB v22
+- Contenu JSON extensible (`assets/content/`) + catalogue Dart (`lib/data/expansion/`)
+- CI : `flutter analyze` + `flutter test` (GitHub Actions)
 
-- Navigation par catégories thématiques.
-- Moteur de recherche avancé avec filtres par école juridique et source.
-- Fiches détaillées avec références textuelles et commentaires d'érudits.
-- Support multilingue complet.
-- Système de favoris et de notes personnelles.
-- Mode hors ligne intégral.
+## Démarrage
+
+```bash
+flutter pub get
+flutter gen-l10n
+# Polices arabes (optionnel mais recommandé) :
+# powershell -File tool/download_amiri_fonts.ps1
+flutter run
+```
+
+## Structure
+
+```
+lib/
+  models/       # Topic, Law, School, Source…
+  services/     # DB, export, sync, calculateurs, SRS
+  views/        # Écrans
+  providers/    # UserProvider
+  data/         # Parcours, cas pratiques, expansion fiqh
+  l10n/         # Traductions ARB
+assets/content/ # Lots JSON encyclopédiques
+tool/           # export_topic_batches.dart, download_amiri_fonts.ps1
+```
+
+## Contenu
+
+- Seed initial (~110 fiches enrichies) + 11 lots JSON (~485 sujets)
+- Lot premium `topics_enriched_premium.json` : enrichissement 5 écoles + sources
+- Régénérer les lots : `dart run tool/export_topic_batches.dart`
+
+## Tests
+
+```bash
+flutter test
+```
+
+## Confidentialité
+
+Voir [PRIVACY.md](PRIVACY.md).
+
+## Licence
+
+Code du projet : voir le dépôt. Contenu éducatif : usage personnel ; les textes religieux cités appartiennent à leur tradition respective.

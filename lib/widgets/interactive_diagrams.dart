@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/badge.dart';
+import '../views/inheritance_calculator_screen.dart';
 
 class InteractiveWuduDiagram extends StatefulWidget {
   const InteractiveWuduDiagram({super.key});
@@ -150,6 +150,15 @@ class _InteractiveInheritanceDiagramState extends State<InteractiveInheritanceDi
             Text(
               isEn ? 'Inheritance tree — tap an heir' : isAr ? 'شجرة الميراث — اضغط على وارث' : 'Arbre d\'héritage — touchez un héritier',
               style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold, color: Colors.brown.shade800),
+            ),
+            const SizedBox(height: 12),
+            FilledButton.tonalIcon(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const InheritanceCalculatorScreen()),
+              ),
+              icon: const Icon(Icons.calculate),
+              label: Text(isEn ? 'Open inheritance calculator' : isAr ? 'فتح حاسبة الميراث' : 'Ouvrir le calculateur'),
             ),
             const SizedBox(height: 12),
             ...heirs.map((heir) {

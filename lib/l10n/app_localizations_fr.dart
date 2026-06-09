@@ -824,4 +824,117 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get shortcutZakat => 'Calculateur de zakat';
+
+  @override
+  String get inheritanceCalculator => 'Calculateur d\'héritage (Farāʾiḍ)';
+
+  @override
+  String get inheritanceCalculatorShort =>
+      'Estimation des parts selon la situation familiale';
+
+  @override
+  String get inheritanceCalculatorDesc =>
+      'Indiquez le patrimoine net (après dettes et frais funéraires), les héritiers présents, et obtenez une répartition approximative selon les règles classiques sunnites.';
+
+  @override
+  String get inheritanceDisclaimer =>
+      'Outil éducatif uniquement. L\'héritage comporte de nombreuses exceptions (hajb, \'awl, grossesse, etc.). Consultez un savant qualifié avant toute décision.';
+
+  @override
+  String get inheritanceSectionEstate => 'Patrimoine';
+
+  @override
+  String get inheritanceNetEstate => 'Patrimoine net';
+
+  @override
+  String get inheritanceNetEstateHint => 'Montant après dettes';
+
+  @override
+  String get inheritanceWasiyyah => 'Legs (wasiyyah)';
+
+  @override
+  String get inheritanceWasiyyahHint => 'Max. 1/3 pour non-héritier';
+
+  @override
+  String get inheritanceSectionSpouse => 'Conjoint survivant';
+
+  @override
+  String get inheritanceNoSpouse => 'Aucun';
+
+  @override
+  String get inheritanceWivesCount => 'Nombre d\'épouses';
+
+  @override
+  String get inheritanceSectionChildren => 'Enfants du défunt';
+
+  @override
+  String get inheritanceSectionParents => 'Parents du défunt';
+
+  @override
+  String get inheritanceSectionSiblings => 'Frères et sœurs germains';
+
+  @override
+  String get inheritanceCalculate => 'Calculer le partage';
+
+  @override
+  String get inheritanceResults => 'Répartition estimée';
+
+  @override
+  String inheritanceDistributable(String amount) {
+    return 'À partager : $amount';
+  }
+
+  @override
+  String inheritanceWasiyyahDeducted(String amount) {
+    return 'Legs déduit : $amount';
+  }
+
+  @override
+  String inheritancePerPerson(String amount) {
+    return '$amount par personne';
+  }
+
+  @override
+  String get inheritanceApproximateNote =>
+      'Les montants sont indicatifs. Les écoles peuvent diverger sur certains cas.';
+
+  @override
+  String get inheritanceNoteAwl =>
+      'Réduction proportionnelle (\'awl) appliquée — parts fixes dépassaient le total.';
+
+  @override
+  String get inheritanceNoteRadd =>
+      'Augmentation (radd) appliquée — surplus redistribué aux héritiers à parts fixes.';
+
+  @override
+  String get inheritanceNoteWasiyyahCapped =>
+      'Le legs a été plafonné à un tiers du patrimoine.';
+
+  @override
+  String get inheritanceNoteNoHeirs =>
+      'Aucun héritier reconnu avec ces paramètres — vérifiez la saisie ou consultez un savant.';
+
+  @override
+  String get heirHusband => 'Époux';
+
+  @override
+  String get heirWife => 'Épouse(s)';
+
+  @override
+  String get heirSon => 'Fils';
+
+  @override
+  String get heirDaughter => 'Fille(s)';
+
+  @override
+  String get heirFather => 'Père';
+
+  @override
+  String get heirMother => 'Mère';
+
+  @override
+  String get heirFullBrother => 'Frère germain';
+
+  @override
+  String get heirFullSister => 'Sœur germaine';
 }

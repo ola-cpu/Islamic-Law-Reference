@@ -22,7 +22,9 @@ class ContentJsonLoader {
     final raw = await rootBundle.loadString(assetPath);
     final data = jsonDecode(raw) as Map<String, dynamic>;
     final topics = data['topics'] as List<dynamic>? ?? [];
+    final enrichMode = data['mode'] == 'enrich';
     var inserted = 0;
+    var enriched = 0;
 
     final schools = <String, int>{};
     for (final name in _schoolNames) {
@@ -34,7 +36,15 @@ class ContentJsonLoader {
       final t = item as Map<String, dynamic>;
       final titleFr = t['title_fr'] as String;
       final existing = await db.query('topics', where: 'title = ?', whereArgs: [titleFr], limit: 1);
-      if (existing.isNotEmpty) continue;
+
+      int topicId;
+      if (existing.isNotEmpty) {
+        if (!enrichMode) continue;
+        topicId = existing.first['id'] as int;
+        await _patchTopicLocales(db, topicId, t);
+        enriched += await _insertLawsForTopic(db, topicId, titleFr, t, schools, skipExistingSchools: true);
+        continue;
+      }
 
       final catIcon = t['category_icon'] as String? ?? 'mosque';
       final catRow = await db.query(
@@ -46,7 +56,7 @@ class ContentJsonLoader {
       if (catRow.isEmpty) continue;
       final categoryId = catRow.first['id'] as int;
 
-      final topicId = await db.insert('topics', {
+      topicId = await db.insert('topics', {
         'category_id': categoryId,
         'title': titleFr,
         'title_en': t['title_en'],
@@ -60,42 +70,84 @@ class ContentJsonLoader {
         'description_zh': t['description_zh'] ?? t['description_en'],
       });
 
-      final laws = t['laws'] as List<dynamic>? ?? [];
-      for (final law in laws) {
-        final l = law as Map<String, dynamic>;
-        final schoolName = l['school'] as String;
-        final schoolId = schools[schoolName];
-        if (schoolId == null) continue;
-        final lawId = await db.insert('laws', {
-          'topic_id': topicId,
-          'school_id': schoolId,
-          'title': '$schoolName — ${l['title_fr'] ?? titleFr}',
-          'content': l['content_fr'],
-          'content_en': l['content_en'],
-          'content_ar': l['content_ar'],
-          'content_ru': l['content_ru'] ?? l['content_en'],
-          'content_zh': l['content_zh'] ?? l['content_en'],
-        });
-        final sources = l['sources'] as List<dynamic>? ?? [];
-        for (final s in sources) {
-          final src = s as Map<String, dynamic>;
-          await db.insert('sources', {
-            'law_id': lawId,
-            'type': src['type'] ?? 1,
-            'reference': src['reference'],
-            'text': src['text'],
-            'text_ar': src['text_ar'],
-            'authenticity': src['authenticity'] ?? 0,
-            'citation': src['citation'],
-            'isnad': src['isnad'],
-          });
-        }
-      }
+      await _insertLawsForTopic(db, topicId, titleFr, t, schools);
       inserted++;
     }
 
     await _markLoaded(db, metaKey, assetPath);
-    return inserted;
+    return inserted + enriched;
+  }
+
+  static Future<void> _patchTopicLocales(Database db, int topicId, Map<String, dynamic> t) async {
+    final row = (await db.query('topics', where: 'id = ?', whereArgs: [topicId], limit: 1)).first;
+    final patch = <String, Object?>{};
+    void setIfEmpty(String col, String? value) {
+      if (value == null || value.isEmpty) return;
+      final current = row[col] as String?;
+      if (current == null || current.isEmpty || current == row['title_en']) {
+        patch[col] = value;
+      }
+    }
+
+    setIfEmpty('description_ar', t['description_ar'] as String?);
+    setIfEmpty('description_en', t['description_en'] as String?);
+    setIfEmpty('title_ar', t['title_ar'] as String?);
+    if (patch.isNotEmpty) {
+      await db.update('topics', patch, where: 'id = ?', whereArgs: [topicId]);
+    }
+  }
+
+  static Future<int> _insertLawsForTopic(
+    Database db,
+    int topicId,
+    String titleFr,
+    Map<String, dynamic> t,
+    Map<String, int> schools, {
+    bool skipExistingSchools = false,
+  }) async {
+    var added = 0;
+    final laws = t['laws'] as List<dynamic>? ?? [];
+    for (final law in laws) {
+      final l = law as Map<String, dynamic>;
+      final schoolName = l['school'] as String;
+      final schoolId = schools[schoolName];
+      if (schoolId == null) continue;
+      if (skipExistingSchools) {
+        final exists = await db.query(
+          'laws',
+          where: 'topic_id = ? AND school_id = ?',
+          whereArgs: [topicId, schoolId],
+          limit: 1,
+        );
+        if (exists.isNotEmpty) continue;
+      }
+      final lawId = await db.insert('laws', {
+        'topic_id': topicId,
+        'school_id': schoolId,
+        'title': '$schoolName — ${l['title_fr'] ?? titleFr}',
+        'content': l['content_fr'],
+        'content_en': l['content_en'],
+        'content_ar': l['content_ar'],
+        'content_ru': l['content_ru'] ?? l['content_en'],
+        'content_zh': l['content_zh'] ?? l['content_en'],
+      });
+      final sources = l['sources'] as List<dynamic>? ?? [];
+      for (final s in sources) {
+        final src = s as Map<String, dynamic>;
+        await db.insert('sources', {
+          'law_id': lawId,
+          'type': src['type'] ?? 1,
+          'reference': src['reference'],
+          'text': src['text'],
+          'text_ar': src['text_ar'],
+          'authenticity': src['authenticity'] ?? 0,
+          'citation': src['citation'],
+          'isnad': src['isnad'],
+        });
+      }
+      added++;
+    }
+    return added;
   }
 
   static Future<bool> _isLoaded(Database db, String key) async {

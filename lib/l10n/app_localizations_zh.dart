@@ -794,4 +794,109 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get shortcutZakat => '天课计算器';
+
+  @override
+  String get inheritanceCalculator => '继承计算器（法拉伊德）';
+
+  @override
+  String get inheritanceCalculatorShort => '根据家庭情况估算份额';
+
+  @override
+  String get inheritanceCalculatorDesc => '输入净遗产和继承人，按逊尼派经典规则获得近似分配。';
+
+  @override
+  String get inheritanceDisclaimer => '仅供教育。复杂情况请咨询学者。';
+
+  @override
+  String get inheritanceSectionEstate => '遗产';
+
+  @override
+  String get inheritanceNetEstate => '净遗产';
+
+  @override
+  String get inheritanceNetEstateHint => '扣除债务后';
+
+  @override
+  String get inheritanceWasiyyah => '遗嘱';
+
+  @override
+  String get inheritanceWasiyyahHint => '最多三分之一';
+
+  @override
+  String get inheritanceSectionSpouse => '在世配偶';
+
+  @override
+  String get inheritanceNoSpouse => '无';
+
+  @override
+  String get inheritanceWivesCount => '妻子人数';
+
+  @override
+  String get inheritanceSectionChildren => '已故者子女';
+
+  @override
+  String get inheritanceSectionParents => '已故者父母';
+
+  @override
+  String get inheritanceSectionSiblings => '同父母兄弟姐妹';
+
+  @override
+  String get inheritanceCalculate => '计算分配';
+
+  @override
+  String get inheritanceResults => '估算分配';
+
+  @override
+  String inheritanceDistributable(String amount) {
+    return '可分配：$amount';
+  }
+
+  @override
+  String inheritanceWasiyyahDeducted(String amount) {
+    return '遗嘱扣除：$amount';
+  }
+
+  @override
+  String inheritancePerPerson(String amount) {
+    return '每人 $amount';
+  }
+
+  @override
+  String get inheritanceApproximateNote => '金额为参考值。';
+
+  @override
+  String get inheritanceNoteAwl => '已应用阿乌勒（比例缩减）。';
+
+  @override
+  String get inheritanceNoteRadd => '已应用拉德（盈余返还）。';
+
+  @override
+  String get inheritanceNoteWasiyyahCapped => '遗嘱上限为遗产三分之一。';
+
+  @override
+  String get inheritanceNoteNoHeirs => '未识别继承人。';
+
+  @override
+  String get heirHusband => '丈夫';
+
+  @override
+  String get heirWife => '妻子';
+
+  @override
+  String get heirSon => '儿子';
+
+  @override
+  String get heirDaughter => '女儿';
+
+  @override
+  String get heirFather => '父亲';
+
+  @override
+  String get heirMother => '母亲';
+
+  @override
+  String get heirFullBrother => '同父同母兄弟';
+
+  @override
+  String get heirFullSister => '同父同母姐妹';
 }

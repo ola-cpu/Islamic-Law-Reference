@@ -261,7 +261,7 @@ class SettingsScreen extends StatelessWidget {
   }
 
   Future<void> _importEncrypted(BuildContext context, UserProvider user, AppLocalizations l10n) async {
-    final result = await FilePicker.platform.pickFiles(
+    final result = await FilePicker.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['json', 'txt', 'enc'],
       withData: true,
@@ -291,7 +291,7 @@ class SettingsScreen extends StatelessWidget {
     UserProvider user,
     AppLocalizations l10n,
   ) async {
-    final result = await FilePicker.platform.pickFiles(
+    final result = await FilePicker.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['json', 'txt'],
       withData: true,

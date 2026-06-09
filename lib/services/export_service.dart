@@ -10,6 +10,16 @@ import '../models/badge.dart';
 import 'database_helper.dart';
 
 class ExportService {
+  static Future<({pw.Font regular, pw.Font bold})> _pdfFonts() async {
+    try {
+      final fontData = await rootBundle.load('assets/fonts/Amiri-Regular.ttf');
+      final boldData = await rootBundle.load('assets/fonts/Amiri-Bold.ttf');
+      return (regular: pw.Font.ttf(fontData), bold: pw.Font.ttf(boldData));
+    } catch (_) {
+      return (regular: pw.Font.helvetica(), bold: pw.Font.helveticaBold());
+    }
+  }
+
   static Future<String> buildLibraryExport({
     required UserProvider user,
     required String appTitle,
@@ -69,10 +79,9 @@ class ExportService {
   }) async {
     final db = DatabaseHelper();
     final locale = user.locale;
-    final fontData = await rootBundle.load('assets/fonts/Amiri-Regular.ttf');
-    final font = pw.Font.ttf(fontData);
-    final boldData = await rootBundle.load('assets/fonts/Amiri-Bold.ttf');
-    final bold = pw.Font.ttf(boldData);
+    final fonts = await _pdfFonts();
+    final font = fonts.regular;
+    final bold = fonts.bold;
 
     final doc = pw.Document();
     final sections = <pw.Widget>[
@@ -135,10 +144,9 @@ class ExportService {
     required String completedLabel,
     required String dateLabel,
   }) async {
-    final fontData = await rootBundle.load('assets/fonts/Amiri-Regular.ttf');
-    final font = pw.Font.ttf(fontData);
-    final boldData = await rootBundle.load('assets/fonts/Amiri-Bold.ttf');
-    final bold = pw.Font.ttf(boldData);
+    final fonts = await _pdfFonts();
+    final font = fonts.regular;
+    final bold = fonts.bold;
     final now = DateTime.now();
     final doc = pw.Document();
     doc.addPage(
@@ -168,17 +176,9 @@ class ExportService {
     required String titleLabel,
     required String schoolsLabel,
   }) async {
-    pw.Font font;
-    pw.Font bold;
-    try {
-      final fontData = await rootBundle.load('assets/fonts/Amiri-Regular.ttf');
-      font = pw.Font.ttf(fontData);
-      final boldData = await rootBundle.load('assets/fonts/Amiri-Bold.ttf');
-      bold = pw.Font.ttf(boldData);
-    } catch (_) {
-      font = pw.Font.helvetica();
-      bold = pw.Font.helveticaBold();
-    }
+    final fonts = await _pdfFonts();
+    final font = fonts.regular;
+    final bold = fonts.bold;
 
     final doc = pw.Document();
     final blocks = <pw.Widget>[

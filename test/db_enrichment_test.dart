@@ -17,12 +17,12 @@ void main() {
     await DatabaseHelper().closeForTesting();
   });
 
-  test('Database enrichment verification v21', () async {
+  test('Database enrichment verification v22', () async {
     final dbHelper = DatabaseHelper();
     final db = await dbHelper.database;
 
     final version = await db.getVersion();
-    expect(version, 21);
+    expect(version, 22);
 
     final fts = await db.rawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='topics_fts'");
     expect(fts.isNotEmpty, true);
