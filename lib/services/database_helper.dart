@@ -1504,14 +1504,15 @@ class DatabaseHelper {
       'jafari' => '%jafari%',
       _ => '%$slug%',
     };
+    const apostrophe = "'";
     final rows = await db.rawQuery('''
       SELECT DISTINCT l.topic_id AS topic_id
       FROM laws l
       LEFT JOIN schools s ON s.id = l.school_id
       WHERE l.topic_id IN ($placeholders)
         AND (
-          LOWER(REPLACE(s.name, '''', '')) LIKE ?
-          OR LOWER(REPLACE(l.title, '''', '')) LIKE ?
+          LOWER(REPLACE(s.name, '$apostrophe', '')) LIKE ?
+          OR LOWER(REPLACE(l.title, '$apostrophe', '')) LIKE ?
         )
     ''', [...topicIds, schoolLike, schoolLike]);
     return rows.map((r) => r['topic_id'] as int).toSet();
