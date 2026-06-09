@@ -18,7 +18,7 @@ Encyclopédie fiqh **hors ligne** : plus de 500 sujets, comparaison des madhhabs
 ## Stack technique
 
 - **Flutter** 3.11+ · **Provider** · **go_router**
-- **SQLite** (sqflite) + FTS5 · DB v23 (migrations non destructives depuis v18)
+- **SQLite** (sqflite) + FTS5 · DB v24 (migrations non destructives depuis v18)
 - Contenu JSON extensible (`assets/content/`) + catalogue Dart (`lib/data/expansion/`)
 - CI : `flutter analyze` + `flutter test` (GitHub Actions)
 
@@ -57,6 +57,10 @@ tool/           # export_topic_batches.dart, download_amiri_fonts.ps1
 ```bash
 flutter test
 ```
+
+## Publication Store
+
+Voir [store/LISTING.md](store/LISTING.md) (descriptions FR/EN/AR, mots-clés, checklist captures).
 
 ## Confidentialité
 

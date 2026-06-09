@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "mode": "enrich",
+  "topics": [
+    {
+      "title_fr": "Obligations du Ghusl",
+      "title_ar": "فرائض الغسل",
+      "description_ar": "ما يجب في الغسل من نية وإسالة الماء على جميع البدن.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Intention et lavage intégral du corps, y compris cheveux et peau.", "content_ar": "النية وغسل جميع البدن شعراً وبشرةً.", "sources": [{"type": 0, "reference": "Coran 5:6", "text_ar": "وَإِن كُنتُمْ جُنُبًا فَاطَّهَّرُوا", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Rincer la bouche et le nez recommandés ; ordre des actes sunna.", "content_ar": "المضمضة والاستنشاق مستحبتان مع ترتيب السنن."},
+        {"school": "Ja'fari", "content_fr": "Ghusl obligatoire après janaba, menstrues et lochies ; continuité entre les parties.", "content_ar": "الغسل واجب بعد الجنابة والحيض والنفاس مع الموالاة."}
+      ]
+    },
+    {
+      "title_fr": "Le raccourcissement de la prière (Qasr)",
+      "title_ar": "قصر الصلاة",
+      "description_ar": "تخفيف الصلاة الرباعية إلى ركعتين للمسافر.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Rukhsa : le voyageur peut raccourcir Dhuhr, Asr et Isha à deux rak'ats.", "content_ar": "رخصة للمسافر في الظهر والعصر والعشاء إلى ركعتين."},
+        {"school": "Hanbali", "content_fr": "Distance minimale d'environ 80 km ; intention de voyage requise.", "content_ar": "بعد مسافة قدرها نحو ثمانين كيلومتراً مع نية السفر."},
+        {"school": "Ja'fari", "content_fr": "Qasr permis avec mêmes conditions de safar selon les fatwas.", "content_ar": "القصر جائز بشروط السفر عند الإمامية."}
+      ]
+    },
+    {
+      "title_fr": "Intention du jeûne",
+      "title_ar": "نية الصيام",
+      "description_ar": "تعيين النية قبل طلوع الفجر لصحة الصوم.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Renouveler l'intention chaque nuit avant l'aube.", "content_ar": "تجديد النية كل ليلة قبل الفجر.", "sources": [{"type": 1, "reference": "Hadith — Sunan Abi Dawud", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Une intention au début de Ramadan peut suffire si le jeûne est continu.", "content_ar": "نية أول رمضان تكفي عند الاستمرار دون انقطاع."},
+        {"school": "Ja'fari", "content_fr": "Intention obligatoire ; formuler mentalement le type de jeûne visé.", "content_ar": "النية واجبة تعييناً للصوم المراد."}
+      ]
+    },
+    {
+      "title_fr": "Les types de Riba",
+      "title_ar": "أنواع الربا",
+      "description_ar": "تفصيل الربا في القرآن والسنة وأحكامه.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Riba al-fadl (échange inégal) et riba al-nasi'ah (crédit à intérêt).", "content_ar": "ربا الفضل وربا النسيئة.", "sources": [{"type": 0, "reference": "Coran 2:275", "text_ar": "وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Toute plus-value stipulée en contrepartie du délai est illicite.", "content_ar": "كل زيادة مشروطة في مقابل الأجل محرمة."},
+        {"school": "Ja'fari", "content_fr": "Interdiction absolue ; contrats islamiques alternatifs obligatoires.", "content_ar": "تحريم مطلق مع البدل بالعقود الشرعية."}
+      ]
+    },
+    {
+      "title_fr": "Le respect des parents (Birr al-Walidayn)",
+      "title_ar": "بر الوالدين",
+      "description_ar": "وجوب الإحسان للأبوين وطاعتهما في المعروف.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Birr : parole douce, aide matérielle, invocation pour eux.", "content_ar": "القول الطيب والنفقة والدعاء لهما.", "sources": [{"type": 0, "reference": "Coran 17:23", "text_ar": "وَقُل لَّهُمَا قَوْلًا كَرِيمًا", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Désobéir dans le péché ; obéissance dans le bien obligatoire.", "content_ar": "لا طاعة في معصية وطاعتهما في المعروف واجبة."},
+        {"school": "Ja'fari", "content_fr": "Vertu majeure ; priorité aux parents même sur certaines œuvres volontaires.", "content_ar": "فضيلة عظمى وتقديم برهما على بعض النوافل."}
+      ]
+    },
+    {
+      "title_fr": "Prohibition de l'usure (Riba)",
+      "title_ar": "تحريم الربا",
+      "description_ar": "بيان حرمة الربا في المعاملات المالية.",
+      "laws": [
+        {"school": "Maliki", "content_fr": "Consensus sur l'interdiction ; guerre déclarée contre le preneur, le donneur et le scribe.", "content_ar": "إجماع على التحريم ووعيد شديد على آكل الربا.", "sources": [{"type": 1, "reference": "Hadith — Sahih Muslim", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Même une petite quantité est interdite ; pas de distinction d'échelle.", "content_ar": "حرام ولو قليلاً بلا تمييز في القدر."},
+        {"school": "Ja'fari", "content_fr": "Riba annule la bénédiction du gain ; purification par aumône recommandée après repentir.", "content_ar": "الربا يمحو البركة مع التوبة والتصدق."}
+      ]
+    },
+    {
+      "title_fr": "L'abattage rituel (Dhabihah)",
+      "title_ar": "ذبح الذبيحة",
+      "description_ar": "كيفية ذبح الحيوان على الوجه الشرعي.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Couper trachée, œsophage et veines jugulaires ; mention du nom d'Allah.", "content_ar": "قطع الحلقوم والمريء والودجين مع التسمية.", "sources": [{"type": 0, "reference": "Coran 6:118", "text_ar": "فَكُلُوا مِمَّا ذُكِرَ اسْمُ اللَّهِ عَلَيْهِ", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Abattage par musulman ou personne du Livre ; animal vivant au moment de la coupe.", "content_ar": "ذبح مسلم أو كتابي والحيوان حي عند الذبح."},
+        {"school": "Ja'fari", "content_fr": "Orientation vers la qibla ; outil tranchant ; éviter l'étourdissement mortel préalable.", "content_ar": "استقبال القبلة وأداة حادة واجتناب الصعق المميت."}
+      ]
+    },
+    {
+      "title_fr": "Conditions de la viande Halal",
+      "title_ar": "شروط اللحم الحلال",
+      "description_ar": "ما يجب مراعاته لحل أكل اللحم.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Animal licite, abattage rituel correct, absence de carogne.", "content_ar": "حيوان مباح وذبح صحيح وعدم كونه ميتة."},
+        {"school": "Hanbali", "content_fr": "Interdit la viande d'animaux non égorgés rituellement ou morts naturellement.", "content_ar": "يحرم ما لم يذك وما مات دون ذبح شرعي."},
+        {"school": "Ja'fari", "content_fr": "Vérifier la chaîne d'abattage ; doute sur l'origine impose prudence.", "content_ar": "التحقق من الذبح؛ الشك يوجب الاحتياط."}
+      ]
+    },
+    {
+      "title_fr": "La sincérité (Ikhlas)",
+      "title_ar": "الإخلاص",
+      "description_ar": "إرادة وجه الله وحده في العبادات.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Sans ikhlas, l'acte est nul ou sans récompense durable.", "content_ar": "لا قبول للعمل بلا إخلاص.", "sources": [{"type": 0, "reference": "Coran 39:2", "text_ar": "فَاعْبُدِ اللَّهَ مُخْلِصًا لَّهُ الدِّينَ", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Riya (ostentation) annule la récompense.", "content_ar": "الرياء يبطل الأجر."},
+        {"school": "Ja'fari", "content_fr": "Ikhlas condition de validité des actes d'adoration.", "content_ar": "الإخلاص شرط في صحة العبادات."}
+      ]
+    },
+    {
+      "title_fr": "Conditions du Tayammum",
+      "title_ar": "شروط التيمم",
+      "description_ar": "التطهر بالتراب عند عدم توفر الماء أو العجز عن استعماله.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Absence d'eau ou danger à l'utiliser ; terre pure ; intention.", "content_ar": "عدم الماء أو العجز عنه مع تراب طاهر ونية.", "sources": [{"type": 0, "reference": "Coran 5:6", "text_ar": "فَتَيَمَّمُوا صَعِيدًا طَيِّبًا", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Frapper la terre une ou deux fois puis essuyer visage et mains.", "content_ar": "ضرب التراب مرة أو مرتين ومسح الوجه واليدين."},
+        {"school": "Ja'fari", "content_fr": "Ordre : intention, frappe, essuyage dans la séquence prescrite.", "content_ar": "الترتيب: نية ثم ضرب ثم مسح."}
+      ]
+    },
+    {
+      "title_fr": "Zakat sur le bétail",
+      "title_ar": "زكاة الأنعام",
+      "description_ar": "نصاب الأغنام والإبل والبقر وما يجب فيها.",
+      "laws": [
+        {"school": "Maliki", "content_fr": "Nisab et taux selon tables classiques ; due après hawl.", "content_ar": "نصاب ومقدار بحسب الجداول بعد الحول.", "sources": [{"type": 0, "reference": "Coran 9:103", "text_ar": "خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً", "authenticity": 0}]},
+        {"school": "Shafi'i", "content_fr": "Pâturage libre (sawa'i) condition pour certains animaux.", "content_ar": "السوم في السائمة شرط في بعض الأنعام."},
+        {"school": "Hanbali", "content_fr": "Évaluation au moment de l'échéance si mélange d'espèces.", "content_ar": "التقويم عند الحول عند اختلاط الأنواع."}
+      ]
+    },
+    {
+      "title_fr": "Les rites du Hajj",
+      "title_ar": "مناسك الحج",
+      "description_ar": "أركان الحج وواجباته ومحظورات الإحرام.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Piliers : ihram, wuquf Arafat, tawaf al-ifada, sa'y.", "content_ar": "الأركان: الإحرام والوقوف بعرفة وطواف الإفاضة والسعي.", "sources": [{"type": 0, "reference": "Coran 2:196", "text_ar": "وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ لِلَّهِ", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Obligations : nuit Muzdalifa, lapidation, rasage/coupe.", "content_ar": "واجبات: المبيت بمزدلفة والرمي والحلق."},
+        {"school": "Ja'fari", "content_fr": "Mêmes piliers avec attention aux rites spécifiques selon les guides.", "content_ar": "أركان متفقة مع تفصيل في بعض المناسك."}
+      ]
+    },
+    {
+      "title_fr": "La Zakat al-Fitr",
+      "title_ar": "زكاة الفطر",
+      "description_ar": "صدقة تخرج قبل صلاة العيد عن كل مسلم.",
+      "laws": [
+        {"school": "Maliki", "content_fr": "Environ 2,5 kg de nourriture de base par personne du foyer.", "content_ar": "صاع من طعام أهل البلد عن كل فرد.", "sources": [{"type": 1, "reference": "Hadith — Sunan Abi Dawud", "authenticity": 0}]},
+        {"school": "Shafi'i", "content_fr": "Obligatoire sur soi et les personnes à charge ; avant l'Aïd.", "content_ar": "واجبة عن النفس والتابعين قبل صلاة العيد."},
+        {"school": "Hanbali", "content_fr": "Peut être donnée un ou deux jours avant l'Aïd.", "content_ar": "يجوز إخراجها يوم أو يومين قبل العيد."}
+      ]
+    },
+    {
+      "title_fr": "L'Adhan et l'Iqama",
+      "title_ar": "الأذان والإقامة",
+      "description_ar": "نداء الصلاة وإقامتها في الجماعة.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Adhan sunna pour les cinq prières ; iqama avant chaque salat en groupe.", "content_ar": "الأذان سنة للفرائض والإقامة قبل الجماعة.", "sources": [{"type": 1, "reference": "Hadith — Sahih al-Bukhari", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Iqama obligatoire pour celui qui prie en groupe.", "content_ar": "الإقامة واجبة على من صلى جماعة."},
+        {"school": "Ja'fari", "content_fr": "Formules codifiées ; doublure des hayya 'ala al-falah à l'adhan.", "content_ar": "صيغ مأثورة مع تكرار حي على الفلاح."}
+      ]
+    },
+    {
+      "title_fr": "La prière du Witr",
+      "title_ar": "صلاة الوتر",
+      "description_ar": "صلاة الوتر بعد العشاء ختام ليل المسلم.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Sunna muakkada ; 1 à 11 rak'ats ; qunut recommandé.", "content_ar": "سنة مؤكدة من ركعة إلى إحدى عشرة مع قنوت.", "sources": [{"type": 1, "reference": "Hadith — Sunan al-Tirmidhi", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Dernier witr de la nuit ; priorité avant le sommeil.", "content_ar": "آخر الوتر آكد؛ والأفضل قبل النوم."},
+        {"school": "Ja'fari", "content_fr": "Witr obligatoire en dernière prière de la nuit selon l'école.", "content_ar": "الوتر واجب آخر الليل عند الإمامية."}
+      ]
+    },
+    {
+      "title_fr": "Les nullificateurs du jeûne",
+      "title_ar": "مفطرات الصيام",
+      "description_ar": "ما يبطل الصوم من أكل وشرب وغيرهما.",
+      "laws": [
+        {"school": "Hanafi", "content_fr": "Manger, boire, rapport sexuel, vomissement volontaire.", "content_ar": "الأكل والشرب والجماع والقيء عمداً.", "sources": [{"type": 1, "reference": "Hadith — Sahih al-Bukhari", "authenticity": 0}]},
+        {"school": "Shafi'i", "content_fr": "Ajoute : injection nutritive et sortie du sperme avec désir.", "content_ar": "يضاف: الإطعام بالحقن وإنزال المني بشهوة."},
+        {"school": "Ja'fari", "content_fr": "Mêmes règles avec attention aux cas de doute médical.", "content_ar": "قواعد متقاربة مع تفصيل في الشك الطبي."}
+      ]
+    },
+    {
+      "title_fr": "Le jeûne du jour de Arafat",
+      "title_ar": "صيام يوم عرفة",
+      "description_ar": "صيام تاسع ذي الحجة لغير الحاج.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Sunna muakkada pour non-pèlerin ; expie péchés de deux années.", "content_ar": "سنة مؤكدة لغير الحاج ويكفر سنتين.", "sources": [{"type": 1, "reference": "Hadith — Sahih Muslim", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Fortement recommandé ; le Hajj ne jeûne pas à Arafat selon l'avis fort.", "content_ar": "مستحب شديد؛ والحاج لا يصوم بعرفة عند الجمهور."},
+        {"school": "Ja'fari", "content_fr": "Recommandé ; certains déconseillent si faiblesse pour le wuquf.", "content_ar": "مستحب مع كراهة عند ضعف الوقوف."}
+      ]
+    },
+    {
+      "title_fr": "L'Umrah",
+      "title_ar": "العمرة",
+      "description_ar": "زيارة بيت الله بمناسك أخف من الحج.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Ihram, tawaf, sa'y, rasage/coupe ; sunna une fois dans la vie.", "content_ar": "إحرام وطواف وسعي وتحلل؛ سنة مرة في العمر.", "sources": [{"type": 0, "reference": "Coran 2:196", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Peut se combiner avec Hajj (tamattu', qiran, ifrad).", "content_ar": "تجمع مع الحج تمتعاً أو قراناً أو إفراداً."},
+        {"school": "Ja'fari", "content_fr": "Umrah mu'tamadah recommandée plusieurs fois si possible.", "content_ar": "العمرة المعتبرة مستحبة متى تيسر."}
+      ]
+    },
+    {
+      "title_fr": "La prière du Jumu'a",
+      "title_ar": "صلاة الجمعة",
+      "description_ar": "صلاة الجمعة يوم الجمعة بدل الظهر.",
+      "laws": [
+        {"school": "Maliki", "content_fr": "Fard 'ayn pour homme libre, sain, résident ; remplace Dhuhr.", "content_ar": "فرض عين على الحر البالغ المقيم؛ بدل الظهر.", "sources": [{"type": 0, "reference": "Coran 62:9", "text_ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ", "authenticity": 0}]},
+        {"school": "Shafi'i", "content_fr": "Khutba en arabe avec deux sermons séparés.", "content_ar": "خطبتان بالعربية بينهما جلسة."},
+        {"school": "Ja'fari", "content_fr": "Obligatoire avec conditions de justice et présence du imam.", "content_ar": "واجبة بشروط العدالة والإمام."}
+      ]
+    },
+    {
+      "title_fr": "La prière de l'Aïd",
+      "title_ar": "صلاة العيد",
+      "description_ar": "صلاة الفطر والأضحى يوم العيد.",
+      "laws": [
+        {"school": "Hanafi", "content_fr": "Sunna muakkada ; 2 rak'ats avec takbirs supplémentaires.", "content_ar": "سنة مؤكدة ركعتان مع تكبيرات إضافية.", "sources": [{"type": 1, "reference": "Hadith — Sunan Abi Dawud", "authenticity": 0}]},
+        {"school": "Shafi'i", "content_fr": "Pas d'adhan ni iqama ; khutba après la prière.", "content_ar": "بلا أذان ولا إقامة وخطبة بعد الصلاة."},
+        {"school": "Hanbali", "content_fr": "Sortie vers le musalla recommandée ; zakat al-fitr avant.", "content_ar": "الخروج للمصلى مستحب مع زكاة الفطر قبلها."}
+      ]
+    },
+    {
+      "title_fr": "Part de la fille unique",
+      "title_ar": "ميراث البنت الواحدة",
+      "description_ar": "نصيب البنت إذا انفردت أو مع غيرها من الورثة.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Fille seule : 1/2 ; avec fille autre : 2/3 à partager.", "content_ar": "واحدة نصف؛ اثنتان فأكثر ثلثا.", "sources": [{"type": 0, "reference": "Coran 4:11", "text_ar": "وَإِن كَانَتْ وَاحِدَةً فَلَهَا النِّصْفُ", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Le fils bloque les petites-filles en présence directe.", "content_ar": "الابن يحجب بنات الابن عند وجوده."},
+        {"school": "Ja'fari", "content_fr": "Mêmes fractions coraniques avec règles de hajb spécifiques.", "content_ar": "نصيب قرآني مع أحكام حجب خاصة."}
+      ]
+    },
+    {
+      "title_fr": "Le contrat de vente (Al-Bay')",
+      "title_ar": "عقد البيع",
+      "description_ar": "شروط صحة البيع في الفقه الإسلامي.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Offre et acceptation, objet licite, prix connu, capacité juridique.", "content_ar": "إيجاب وقبول ومحل حلال وثمن معلوم وأهلية.", "sources": [{"type": 0, "reference": "Coran 2:275", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Interdit gharar (incertitude excessive) et vente de l'inexistant.", "content_ar": "يمنع الغرر وبيع ما ليس عند البائع."},
+        {"school": "Ja'fari", "content_fr": "Transparence et possession ou garantie de livraison requises.", "content_ar": "الشفافية والقدرة على التسليم شرط."}
+      ]
+    },
+    {
+      "title_fr": "La kaffarah du jeûne",
+      "title_ar": "كفارة الفطر",
+      "description_ar": "جزاء الإفطار المتعمد في رمضان بغير عذر.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Affranchir esclave, ou jeûner 60 jours, ou nourrir 60 pauvres.", "content_ar": "عتق رقبة أو صيام ستين يوماً أو إطعام ستين مسكيناً.", "sources": [{"type": 0, "reference": "Coran 5:89", "text_ar": "فَكَفَّارَتُهُ إِطْعَامُ عَشَرَةِ مَسَاكِينَ", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Ordre des options selon capacité ; rupture par rapport sexuel inclus.", "content_ar": "ترتيب الخيارات حسب الاستطاعة ويشمل الجماع."},
+        {"school": "Ja'fari", "content_fr": "Kaffarah similaire avec nuances sur l'ordre des expiations.", "content_ar": "كفارة متقاربة مع تفصيل في الترتيب."}
+      ]
+    },
+    {
+      "title_fr": "Le contrat de Salam",
+      "title_ar": "عقد السلم",
+      "description_ar": "بيع سلعة موصوفة في الذمة لتسليمها في أجل.",
+      "laws": [
+        {"school": "Hanbali", "content_fr": "Prix payé à l'avance ; objet, qualité et délai précisés.", "content_ar": "الثمن مقدماً مع بيان المسلم فيه والأجل.", "sources": [{"type": 1, "reference": "Hadith — Sahih al-Bukhari", "authenticity": 0}]},
+        {"school": "Shafi'i", "content_fr": "Interdit le salam sur ce qui ne peut être livré à terme fixe.", "content_ar": "لا سلم فيما لا يمكن تسليمه في أجل معين."},
+        {"school": "Ja'fari", "content_fr": "Valide pour denrées et métaux selon conditions classiques.", "content_ar": "يجوز في الأقوات والمعادن بشروطها."}
+      ]
+    },
+    {
+      "title_fr": "Les conditions du hijab",
+      "title_ar": "شروط الحجاب",
+      "description_ar": "آداب الستر والزينة للمرأة المسلمة.",
+      "laws": [
+        {"school": "Shafi'i", "content_fr": "Couvrir le corps sauf visage et mains ; vêtement opaque et ample.", "content_ar": "ستر البدن إلا الوجه والكفين بثوب ساتر فضفاض.", "sources": [{"type": 0, "reference": "Coran 24:31", "text_ar": "وَلْيَضْرِبْنَ بِخُمُرِهِنَّ عَلَى جُيُوبِهِنَّ", "authenticity": 0}]},
+        {"school": "Hanbali", "content_fr": "Ne pas imiter les hommes ni les non-musulmans dans l'habit.", "content_ar": "عدم التشبه بالرجال أو الكافرات في اللباس."},
+        {"school": "Ja'fari", "content_fr": "Couvrir cheveux et corps ; éviter parfum en public.", "content_ar": "ستر الشعر والبدن واجتناب الطيب عند الخروج."}
+      ]
+    }
+  ]
+}

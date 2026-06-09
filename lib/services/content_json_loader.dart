@@ -89,9 +89,16 @@ class ContentJsonLoader {
       }
     }
 
-    setIfEmpty('description_ar', t['description_ar'] as String?);
+    void setArabicIfProvided(String col, String? value) {
+      if (value == null || value.isEmpty) return;
+      patch[col] = value;
+    }
+
+    setArabicIfProvided('description_ar', t['description_ar'] as String?);
+    setArabicIfProvided('title_ar', t['title_ar'] as String?);
     setIfEmpty('description_en', t['description_en'] as String?);
-    setIfEmpty('title_ar', t['title_ar'] as String?);
+    setIfEmpty('description_ru', t['description_ru'] as String?);
+    setIfEmpty('description_zh', t['description_zh'] as String?);
     if (patch.isNotEmpty) {
       await db.update('topics', patch, where: 'id = ?', whereArgs: [topicId]);
     }

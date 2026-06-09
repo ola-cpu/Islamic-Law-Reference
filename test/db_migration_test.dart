@@ -102,7 +102,7 @@ void main() {
     final helper = DatabaseHelper();
     final db = await helper.database;
 
-    expect(await db.getVersion(), 23);
+    expect(await db.getVersion(), 24);
 
     final favorites = await db.query('favorites', where: 'topic_id = ?', whereArgs: [1]);
     expect(favorites.length, 1);

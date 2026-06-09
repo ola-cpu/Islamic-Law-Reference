@@ -17,5 +17,6 @@ class ContentBatchRegistry {
     (asset: 'assets/content/topics_batch_11.json', metaKey: 'batch_11'),
     (asset: 'assets/content/topics_enriched_premium.json', metaKey: 'premium_enriched'),
     (asset: 'assets/content/topics_enriched_premium_2.json', metaKey: 'premium_enriched_2'),
+    (asset: 'assets/content/topics_enriched_premium_3.json', metaKey: 'premium_enriched_3'),
   ];
 }

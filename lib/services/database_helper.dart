@@ -51,7 +51,7 @@ class DatabaseHelper {
     }
     return await openDatabase(
       path,
-      version: 23,
+      version: 24,
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 18) await _migrateLegacyCatchUp(db);
@@ -60,6 +60,7 @@ class DatabaseHelper {
         if (oldVersion < 21) await _migrateToV21(db);
         if (oldVersion < 22) await _migrateToV22(db);
         if (oldVersion < 23) await _migrateToV23(db);
+        if (oldVersion < 24) await _migrateToV24(db);
       },
     );
   }
@@ -261,6 +262,15 @@ class DatabaseHelper {
       db,
       'assets/content/topics_enriched_premium_2.json',
       metaKey: 'premium_enriched_2',
+    );
+    await _rebuildTopicsFts(db);
+  }
+
+  Future<void> _migrateToV24(Database db) async {
+    await ContentJsonLoader.loadAssetBatch(
+      db,
+      'assets/content/topics_enriched_premium_3.json',
+      metaKey: 'premium_enriched_3',
     );
     await _rebuildTopicsFts(db);
   }

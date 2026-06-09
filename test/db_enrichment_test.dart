@@ -17,12 +17,12 @@ void main() {
     await DatabaseHelper().closeForTesting();
   });
 
-  test('Database enrichment verification v23', () async {
+  test('Database enrichment verification v24', () async {
     final dbHelper = DatabaseHelper();
     final db = await dbHelper.database;
 
     final version = await db.getVersion();
-    expect(version, 23);
+    expect(version, 24);
 
     final fts = await db.rawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='topics_fts'");
     expect(fts.isNotEmpty, true);
@@ -65,6 +65,16 @@ void main() {
 
     final itikaf = await dbHelper.getTopicByTitle('L\'I\'tikaf en Ramadan');
     expect(itikaf, isNotNull);
+
+    final ghusl = await db.query('topics', where: 'title = ?', whereArgs: ['Obligations du Ghusl'], limit: 1);
+    expect(ghusl.first['description_ar'], contains('الغسل'));
+    final ghuslShafii = await db.rawQuery('''
+      SELECT l.id FROM laws l
+      JOIN topics t ON t.id = l.topic_id
+      JOIN schools s ON s.id = l.school_id
+      WHERE t.title = ? AND s.name = ?
+    ''', ['Obligations du Ghusl', "Shafi'i"]);
+    expect(ghuslShafii, isNotEmpty);
 
     await db.insert('favorites', {'topic_id': 999}, conflictAlgorithm: ConflictAlgorithm.replace);
     await dbHelper.saveNote(999, 'Test Note');
