@@ -60,9 +60,11 @@ flutter test
 
 ## Publication Store
 
+- **[store/GUIDE_DEMARRAGE.md](store/GUIDE_DEMARRAGE.md)** — activer Pages + premier test interne Play (commencer ici)
 - [store/LISTING.md](store/LISTING.md) — descriptions FR/EN/AR, mots-clés
 - [store/PLAY_CONSOLE.md](store/PLAY_CONSOLE.md) — keystore, AAB, checklist Play Console
-- [Politique de confidentialité (web)](https://ola-cpu.github.io/Islamic-Law-Reference/privacy.html)
+- [Politique de confidentialité (web)](https://ola-cpu.github.io/Islamic-Law-Reference/privacy.html) *(activer Pages d’abord)*
+- Build AAB : `.\tool\prepare_play_release.ps1`
 - Captures : `.\tool\capture_store_screenshots.ps1` (émulateur Android requis)
 
 ## Confidentialité

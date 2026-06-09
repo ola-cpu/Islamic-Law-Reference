@@ -17,9 +17,14 @@
 
 ## 1. Activer GitHub Pages (une fois)
 
-1. GitHub → **Settings** → **Pages**
-2. Source : **GitHub Actions** (le workflow `pages.yml` déploie `docs/`)
-3. Vérifier l’URL : https://ola-cpu.github.io/Islamic-Law-Reference/privacy.html
+> **Important** : sans cette étape, l’URL confidentialité renvoie 404.
+
+1. Ouvrir : https://github.com/ola-cpu/Islamic-Law-Reference/settings/pages  
+2. **Build and deployment** → **Source** : **GitHub Actions**  
+3. Relancer le workflow : https://github.com/ola-cpu/Islamic-Law-Reference/actions/workflows/pages.yml → **Run workflow**  
+4. Vérifier : https://ola-cpu.github.io/Islamic-Law-Reference/privacy.html  
+
+Guide pas à pas : [GUIDE_DEMARRAGE.md](GUIDE_DEMARRAGE.md)
 
 ---
 
