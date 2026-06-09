@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/foundation.dart' show kIsWeb, visibleForTesting;
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import '../models/category.dart';
@@ -8,14 +8,29 @@ import '../models/law.dart';
 import '../models/source.dart';
 import '../models/school.dart';
 import '../models/media_item.dart';
+import '../data/extra_topics_seed.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
   static Database? _database;
+  static String? _testDatabaseName;
 
   factory DatabaseHelper() => _instance;
 
   DatabaseHelper._internal();
+
+  @visibleForTesting
+  static void setTestDatabaseName(String? name) {
+    _testDatabaseName = name;
+  }
+
+  @visibleForTesting
+  Future<void> closeForTesting() async {
+    if (_database != null) {
+      await _database!.close();
+      _database = null;
+    }
+  }
 
   Future<Database> get database async {
     if (_database != null) return _database!;
@@ -24,19 +39,19 @@ class DatabaseHelper {
   }
 
   Future<Database> _initDatabase() async {
+    final dbName = _testDatabaseName ?? 'islamic_law.db';
     String path;
     if (kIsWeb) {
-      path = 'islamic_law.db';
+      path = dbName;
     } else {
-      path = join(await getDatabasesPath(), 'islamic_law.db');
+      path = join(await getDatabasesPath(), dbName);
     }
     return await openDatabase(
       path,
-      version: 11, // Bumped to 11 for improved content and book references
+      version: 18,
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
-        if (oldVersion < 11) {
-          // Upgrade to re-seed enriched content while preserving user data
+        if (oldVersion < 18) {
           await _dropTables(db, dropUserData: false);
           await _onCreate(db, newVersion);
         }
@@ -780,6 +795,487 @@ class DatabaseHelper {
       'title': 'Ja\'fari', 'content': 'Le mari hérite de tout si elle n\'a pas d\'autre héritier, mais la femme n\'hérite pas de tout par Radd (retour).',
       'content_ar': 'الزوج يرث الجميع بالفرض والرد إذا لم يكن غيره، والزوجة لا ترث بالرد.',
     });
+
+    // --- PHASE 3: NEW TOPICS ---
+    int topHajjRites = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'Les rites du Hajj', 'title_en': 'Hajj Rituals', 'title_ar': 'مناسك الحج',
+      'description': 'Vue d\'ensemble des étapes du pèlerinage : Ihram, Arafat, Muzdalifah, lapidation et Tawaf.',
+      'description_en': 'Overview of pilgrimage steps: Ihram, Arafat, Muzdalifah, stoning and Tawaf.',
+      'description_ar': 'نظرة عامة على مناسك الحج: الإحرام، عرفات، مزدلفة، الرمي والطواف.',
+    });
+    await db.insert('laws', {
+      'topic_id': topHajjRites, 'school_id': shShafii,
+      'title': 'Position Shafi\'i', 'content': 'Les rites essentiels sont l\'Ihram, le séjour à Arafat, le Tawaf al-Ifada et le Sa\'y.',
+      'content_ar': 'أركان الحج: الإحرام، الوقوف بعرفة، طواف الإفاضة والسعي.',
+    });
+
+    int topTarawih = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'La prière du Tarawih', 'title_en': 'Tarawih Prayer', 'title_ar': 'صلاة التراويح',
+      'description': 'Prière nocturne spécifique au mois de Ramadan.',
+      'description_en': 'Special nightly prayer during Ramadan.',
+      'description_ar': 'صلاة ليلية خاصة بشهر رمضان.',
+    });
+    await db.insert('laws', {
+      'topic_id': topTarawih, 'school_id': shHanafi,
+      'title': 'Position Hanafi', 'content': 'Le Tarawih est une sunna muakkada (fortement recommandée), généralement 20 rak\'ats.',
+      'content_ar': 'التراويح سنة مؤكدة، ويصليها الحنفية عشرين ركعة.',
+    });
+
+    int topZakatFitr = await db.insert('topics', {
+      'category_id': subZakat,
+      'title': 'La Zakat al-Fitr', 'title_en': 'Zakat al-Fitr', 'title_ar': 'زكاة الفطر',
+      'description': 'Aumône obligatoire à la fin du Ramadan avant la prière de l\'Aïd.',
+      'description_en': 'Mandatory charity at end of Ramadan before Eid prayer.',
+      'description_ar': 'صدقة واجبة في آخر رمضان قبل صلاة العيد.',
+    });
+    await db.insert('laws', {
+      'topic_id': topZakatFitr, 'school_id': shMaliki,
+      'title': 'Position Maliki', 'content': 'Due pour chaque musulman, équivalent d\'environ 2,5 kg de dattes ou de nourriture de base.',
+      'content_ar': 'تجب على كل مسلم، بمقدار صاع من طعام أهل البلد.',
+    });
+
+    int topAdhan = await db.insert('topics', {
+      'category_id': subPriereObligatoire,
+      'title': 'L\'Adhan et l\'Iqama', 'title_en': 'Adhan and Iqama', 'title_ar': 'الأذان والإقامة',
+      'description': 'L\'appel à la prière et l\'annonce de son début.',
+      'description_en': 'The call to prayer and announcement of its start.',
+      'description_ar': 'النداء للصلاة وإعلان بدئها.',
+    });
+    await db.insert('laws', {
+      'topic_id': topAdhan, 'school_id': shHanbali,
+      'title': 'Position Hanbali', 'content': 'L\'Adhan est une sunna pour les prières obligatoires en commun. L\'Iqama est obligatoire pour le groupe.',
+      'content_ar': 'الأذان سنة للفرض في الجماعة، والإقامة واجبة.',
+    });
+
+    int topWitr = await db.insert('topics', {
+      'category_id': subPriereObligatoire,
+      'title': 'La prière du Witr', 'title_en': 'Witr Prayer', 'title_ar': 'صلاة الوتر',
+      'description': 'Prière impaire après les prières nocturnes, particulièrement en Ramadan.',
+      'description_en': 'Odd-numbered prayer after night prayers, especially in Ramadan.',
+      'description_ar': 'صلاة الوتر بعد العشاء، خاصة في رمضان.',
+    });
+    await db.insert('laws', {
+      'topic_id': topWitr, 'school_id': shShafii,
+      'title': 'Position Shafi\'i', 'content': 'Le Witr est une sunna muakkada, minimum 1 rak\'a, maximum 11.',
+      'content_ar': 'الوتر سنة مؤكدة، أقله ركعة وأكثره إحدى عشرة.',
+    });
+
+    // --- PHASE 4: NEW TOPICS ---
+    int topFastNullifiers = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'Les nullificateurs du jeûne', 'title_en': 'Nullifiers of Fasting', 'title_ar': 'مفطرات الصيام',
+      'description': 'Les actes qui invalident le jeûne de Ramadan.',
+      'description_en': 'Acts that invalidate the Ramadan fast.',
+      'description_ar': 'الأفعال التي تبطل صوم رمضان.',
+    });
+    await db.insert('laws', {
+      'topic_id': topFastNullifiers, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'Manger, boire, relations sexuelles et vomissement volontaire annulent le jeûne.',
+      'content_ar': 'الأكل والشرب والجماع والقيء عمداً من مفطرات الصيام.',
+    });
+
+    int topItikaf = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'L\'I\'tikaf en Ramadan', 'title_en': 'I\'tikaf in Ramadan', 'title_ar': 'الاعتكاف في رمضان',
+      'description': 'Retraite spirituelle dans la mosquée, surtout les 10 derniers jours de Ramadan.',
+      'description_en': 'Spiritual retreat in the mosque, especially last 10 days of Ramadan.',
+      'description_ar': 'الاعتكاف في المسجد، خاصة في العشر الأواخر من رمضان.',
+    });
+    await db.insert('laws', {
+      'topic_id': topItikaf, 'school_id': shMaliki,
+      'title': 'Maliki', 'content': 'L\'I\'tikaf est une sunna ; l\'intention et le séjour dans la mosquée sont requis.',
+      'content_ar': 'الاعتكاف سنة، ويشترط النية والمقام في المسجد.',
+    });
+
+    int topArafatFast = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'Le jeûne du jour de Arafat', 'title_en': 'Fasting on Day of Arafat', 'title_ar': 'صيام يوم عرفة',
+      'description': 'Jeûne recommandé le 9 Dhul Hijjah pour les non-pèlerins.',
+      'description_en': 'Recommended fast on 9 Dhul Hijjah for non-pilgrims.',
+      'description_ar': 'صيام مستحب لغير الحاج في يوم عرفة.',
+    });
+    await db.insert('laws', {
+      'topic_id': topArafatFast, 'school_id': shShafii,
+      'title': 'Shafi\'i', 'content': 'Fortement recommandé (sunna muakkada) pour expier les péchés de l\'année passée et à venir.',
+      'content_ar': 'سنة مؤكدة يكفر ذنوب سنتين.',
+    });
+
+    int topUmrah = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'L\'Umrah', 'title_en': 'Umrah', 'title_ar': 'العمرة',
+      'description': 'Petit pèlerinage à La Mecque, réalisable toute l\'année.',
+      'description_en': 'Lesser pilgrimage to Mecca, performable year-round.',
+      'description_ar': 'العمرة إلى مكة، تجوز في أي وقت.',
+    });
+    await db.insert('laws', {
+      'topic_id': topUmrah, 'school_id': shHanbali,
+      'title': 'Hanbali', 'content': 'Ihram, Tawaf, Sa\'y et rasage/coupe des cheveux. Peut être combinée avec le Hajj.',
+      'content_ar': 'الإحرام والطواف والسعي والتحلل. قد تُدمج مع الحج.',
+    });
+
+    int topJumuah = await db.insert('topics', {
+      'category_id': subPriereObligatoire,
+      'title': 'La prière du Jumu\'a', 'title_en': 'Friday Prayer (Jumu\'ah)', 'title_ar': 'صلاة الجمعة',
+      'description': 'Prière du vendredi en congregation, avec khutba.',
+      'description_en': 'Friday congregational prayer with sermon.',
+      'description_ar': 'صلاة الجمعة جماعة مع الخطبة.',
+    });
+    await db.insert('laws', {
+      'topic_id': topJumuah, 'school_id': shMaliki,
+      'title': 'Maliki', 'content': 'Obligatoire pour l\'homme musulman libre, résident, en bonne santé. Remplace Dhuhr.',
+      'content_ar': 'فرض عين على المسلم الحر المقيم القادر. تحل محل الظهر.',
+    });
+
+    int topSadaqah = await db.insert('topics', {
+      'category_id': catEthique,
+      'title': 'La Sadaqah (aumône volontaire)', 'title_en': 'Voluntary Charity (Sadaqah)', 'title_ar': 'الصدقة',
+      'description': 'Aumône recommandée, distincte de la Zakat obligatoire.',
+      'description_en': 'Recommended charity, distinct from obligatory Zakat.',
+      'description_ar': 'صدقة مستحبة، غير الزكاة الواجبة.',
+    });
+    await db.insert('laws', {
+      'topic_id': topSadaqah, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'Recommandée en tout temps ; cache la misère de l\'aumône-donateur et du bénéficiaire.',
+      'content_ar': 'مستحبة في كل وقت، وتُستر يد المعطي والآخذ.',
+    });
+
+    int topKhutba = await db.insert('topics', {
+      'category_id': catJustice,
+      'title': 'Les conditions du Khutba', 'title_en': 'Conditions of Khutba', 'title_ar': 'شروط الخطبة',
+      'description': 'Règles du sermon du vendredi.',
+      'description_en': 'Rules for the Friday sermon.',
+      'description_ar': 'أحكام خطبة الجمعة.',
+    });
+    await db.insert('laws', {
+      'topic_id': topKhutba, 'school_id': shShafii,
+      'title': 'Shafi\'i', 'content': 'Deux khutbas séparées, en arabe, mention d\'Allah, assise entre les deux.',
+      'content_ar': 'خطبتان، بالعربية، ذكر لله، وجلسة بينهما.',
+    });
+
+    int topEidPrayer = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'La prière de l\'Aïd', 'title_en': 'Eid Prayer', 'title_ar': 'صلاة العيد',
+      'description': 'Prière des fêtes de l\'Aïd al-Fitr et al-Adha.',
+      'description_en': 'Prayer for Eid al-Fitr and Eid al-Adha.',
+      'description_ar': 'صلاة عيد الفطر وعيد الأضحى.',
+    });
+    await db.insert('laws', {
+      'topic_id': topEidPrayer, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'Sunna muakkada, 2 rak\'ats avec takbirs supplémentaires, suivie du khutba.',
+      'content_ar': 'سنة مؤكدة ركعتان مع تكبيرات إضافية ثم خطبة.',
+    });
+
+    // --- PHASE 5: NEW TOPICS ---
+    int topWali = await db.insert('topics', {
+      'category_id': subContratMariage,
+      'title': 'Le rôle du Wali', 'title_en': 'Role of the Wali', 'title_ar': 'دور الولي',
+      'description': 'Le tuteur matrimonial et son rôle selon les écoles.',
+      'description_en': 'The marriage guardian and his role across schools.',
+      'description_ar': 'الولي في الزواج ودوره في المذاهب.',
+    });
+    await db.insert('laws', {
+      'topic_id': topWali, 'school_id': shShafii,
+      'title': 'Shafi\'i', 'content': 'Le Wali est obligatoire ; sans lui le contrat est nul.',
+      'content_ar': 'الولي شرط، ولا يصح النكاح بدونه.',
+    });
+
+    int topSpousalRights = await db.insert('topics', {
+      'category_id': catMariage,
+      'title': 'Les droits et devoirs conjugaux', 'title_en': 'Spousal Rights and Duties', 'title_ar': 'الحقوق والواجبات الزوجية',
+      'description': 'Les obligations réciproques entre époux en Islam.',
+      'description_en': 'Mutual obligations between spouses in Islam.',
+      'description_ar': 'الحقوق والواجبات المتبادلة بين الزوجين.',
+    });
+    await db.insert('laws', {
+      'topic_id': topSpousalRights, 'school_id': shMaliki,
+      'title': 'Maliki', 'content': 'Bonne companionship, entretien (nafaqa), et justice entre épouses.',
+      'content_ar': 'المعاشرة بالمعروف والنفقة والعدل بين الزوجات.',
+    });
+
+    int topGhibah = await db.insert('topics', {
+      'category_id': catEthique,
+      'title': 'La médisance (Ghibah)', 'title_en': 'Backbiting (Ghibah)', 'title_ar': 'الغيبة',
+      'description': 'Interdiction de parler mal d\'autrui en son absence.',
+      'description_en': 'Prohibition of speaking ill of others in their absence.',
+      'description_ar': 'تحريم ذكر الإنسان بما يكره في غيبته.',
+    });
+    await db.insert('laws', {
+      'topic_id': topGhibah, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'La Ghibah est un grand péché, équivalente à manger la chair du mort.',
+      'content_ar': 'الغيبة من كبائر الذنوب، كأكل لحم أخيه ميتاً.',
+    });
+
+    int topShawwalFast = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'Le jeûne des six jours de Shawwal', 'title_en': 'Six Days of Shawwal Fasting', 'title_ar': 'صيام ستة أيام من شوال',
+      'description': 'Jeûne surécompensé après le Ramadan.',
+      'description_en': 'Highly rewarded fasting after Ramadan.',
+      'description_ar': 'صيام مستحب مثاب عليه بعد رمضان.',
+    });
+    await db.insert('laws', {
+      'topic_id': topShawwalFast, 'school_id': shShafii,
+      'title': 'Shafi\'i', 'content': 'Sunna de jeûner six jours de Shawwal, séparément ou consécutivement.',
+      'content_ar': 'سنة صيام ستة أيام من شوال، متفرقة أو متتابعة.',
+    });
+
+    int topCongregation = await db.insert('topics', {
+      'category_id': subPriereObligatoire,
+      'title': 'La prière en congregation', 'title_en': 'Congregational Prayer', 'title_ar': 'صلاة الجماعة',
+      'description': 'Vertus et conditions de la prière en groupe.',
+      'description_en': 'Virtues and conditions of group prayer.',
+      'description_ar': 'فضائل وشروط صلاة الجماعة.',
+    });
+    await db.insert('laws', {
+      'topic_id': topCongregation, 'school_id': shHanbali,
+      'title': 'Hanbali', 'content': 'La prière en groupe est fortement recommandée pour l\'homme ; l\'Imam dirige.',
+      'content_ar': 'صلاة الجماعة سنة مؤكدة للرجال، والإمام يؤم.',
+    });
+
+    int topIjara = await db.insert('topics', {
+      'category_id': catContrats,
+      'title': 'Le contrat de location (Ijara)', 'title_en': 'Lease Contract (Ijara)', 'title_ar': 'عقد الإجارة',
+      'description': 'Location de biens ou services en droit islamique.',
+      'description_en': 'Leasing of goods or services in Islamic law.',
+      'description_ar': 'تأجير المنفعة أو الأعيان في الفقه.',
+    });
+    await db.insert('laws', {
+      'topic_id': topIjara, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'Contrat valide avec objet, loyer et durée définis ; usage licite requis.',
+      'content_ar': 'صحيح بمعين ومأجور ومدة، واستعمال حلال.',
+    });
+
+    // --- PHASE 6: NEW TOPICS ---
+    int topZakatBeneficiaries = await db.insert('topics', {
+      'category_id': subZakat,
+      'title': 'Les huit catégories de bénéficiaires', 'title_en': 'Eight Categories of Zakat Recipients', 'title_ar': 'مصارف الزكاة الثمانية',
+      'description': 'À qui distribuer la zakat selon le Coran (9:60).',
+      'description_en': 'Who may receive zakat per Quran (9:60).',
+      'description_ar': 'من يستحق الزكاة وفق القرآن (9:60).',
+    });
+    await db.insert('laws', {
+      'topic_id': topZakatBeneficiaries, 'school_id': shShafii,
+      'title': 'Shafi\'i', 'content': 'Les huit catégories : pauvres, nécessiteux, collecteurs, réconciliation des cœurs, esclaves, endettés, cause d\'Allah, voyageurs.',
+      'content_ar': 'الثمانية: الفقراء والمساكين والعاملين عليها والمؤلفة قلوبهم وفي الرقاب والغارمين وفي سبيل الله وابن السبيل.',
+    });
+
+    int topMurabaha = await db.insert('topics', {
+      'category_id': catContrats,
+      'title': 'La Murabaha', 'title_en': 'Murabaha', 'title_ar': 'المرابحة',
+      'description': 'Vente à prix de revient plus marge connue — alternative au crédit à intérêt.',
+      'description_en': 'Cost-plus sale with known markup — halal credit alternative.',
+      'description_ar': 'بيع بثمن الكلفة وزيادة معلومة — بديل للقرض الربوي.',
+    });
+    await db.insert('laws', {
+      'topic_id': topMurabaha, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'Contrat valide si le prix d\'achat et la marge sont connus et acceptés au moment du contrat.',
+      'content_ar': 'صحيحة إذا عُلم الثمن والربح ووافق الطرفان عند العقد.',
+    });
+
+    // --- PHASE 7: NEW TOPICS ---
+    int topSickFasting = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'Le jeûne du malade', 'title_en': 'Fasting While Ill', 'title_ar': 'صيام المريض',
+      'description': 'Règles du jeûne pour la personne malade.',
+      'description_en': 'Fasting rules for the ill person.',
+      'description_ar': 'أحكام صيام المريض.',
+    });
+    await db.insert('laws', {
+      'topic_id': topSickFasting, 'school_id': shMaliki,
+      'title': 'Maliki', 'content': 'Si le jeûne aggrave la maladie, rompre est permis avec qada ultérieur.',
+      'content_ar': 'إن ضر بالمرض فالإفطار جائز مع القضاء.',
+    });
+
+    int topQunut = await db.insert('topics', {
+      'category_id': subPriereObligatoire,
+      'title': 'La Qunut dans la prière', 'title_en': 'Qunut in Prayer', 'title_ar': 'القنوت في الصلاة',
+      'description': 'Invocation dans la prière, notamment Witr et Fajr.',
+      'description_en': 'Supplication in prayer, especially Witr and Fajr.',
+      'description_ar': 'الدعاء في الصلاة خاصة الوتر والفجر.',
+    });
+    await db.insert('laws', {
+      'topic_id': topQunut, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'Qunut en Witr recommandé ; en Fajr seulement en cas de calamité.',
+      'content_ar': 'القنوت في الوتر مستحب؛ في الفجر عند نازلة فقط.',
+    });
+
+    int topKaffarah = await db.insert('topics', {
+      'category_id': catJeune,
+      'title': 'La kaffarah du jeûne', 'title_en': 'Kaffarah for Breaking Fast', 'title_ar': 'كفارة الفطر',
+      'description': 'Expiation pour rupture volontaire du jeûne de Ramadan.',
+      'description_en': 'Expiation for voluntarily breaking Ramadan fast.',
+      'description_ar': 'كفارة الإفطار المتعمد في رمضان.',
+    });
+    await db.insert('laws', {
+      'topic_id': topKaffarah, 'school_id': shShafii,
+      'title': 'Shafi\'i', 'content': 'Affranchir un esclave, ou jeûner 60 jours, ou nourrir 60 pauvres.',
+      'content_ar': 'عتق رقبة أو صيام ستين يوماً أو إطعام ستين مسكيناً.',
+    });
+
+    int topSiblingInheritance = await db.insert('topics', {
+      'category_id': catHeritage,
+      'title': 'L\'héritage des frères et sœurs', 'title_en': 'Inheritance of Siblings', 'title_ar': 'ميراث الإخوة والأخوات',
+      'description': 'Parts des frères et sœurs en l\'absence d\'enfants.',
+      'description_en': 'Siblings\' shares when there are no children.',
+      'description_ar': 'نصيب الإخوة عند عدم وجود أولاد.',
+    });
+    await db.insert('laws', {
+      'topic_id': topSiblingInheritance, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'Frère/soeur utérins : 1/6 chacun ; germains : plus selon présence d\'autres héritiers.',
+      'content_ar': 'الأخ الشقيق/الأخت: السدس؛ الأخ لأم: السدس مع غيره.',
+    });
+
+    int topDuha = await db.insert('topics', {
+      'category_id': subPriereObligatoire,
+      'title': 'La prière du Duha', 'title_en': 'Duha Prayer', 'title_ar': 'صلاة الضحى',
+      'description': 'Prière surécompensée entre le lever du soleil et midi.',
+      'description_en': 'Highly rewarded prayer between sunrise and noon.',
+      'description_ar': 'صلاة مثاب عليها بين الشروق والزوال.',
+    });
+    await db.insert('laws', {
+      'topic_id': topDuha, 'school_id': shShafii,
+      'title': 'Shafi\'i', 'content': 'Sunna muakkada, minimum 2 rak\'ats, idéalement 4 à 8.',
+      'content_ar': 'سنة مؤكدة ركعتان فأكثر، والأفضل أربع إلى ثمان.',
+    });
+
+    int topSalam = await db.insert('topics', {
+      'category_id': subFinance,
+      'title': 'Le contrat de Salam', 'title_en': 'Salam Contract', 'title_ar': 'عقد السلم',
+      'description': 'Vente à terme de biens non encore produits.',
+      'description_en': 'Forward sale of goods not yet produced.',
+      'description_ar': 'بيع سلم لسلعة غير موجودة عند العقد.',
+    });
+    await db.insert('laws', {
+      'topic_id': topSalam, 'school_id': shHanbali,
+      'title': 'Hanbali', 'content': 'Valide si l\'objet, le prix et le délai de livraison sont définis.',
+      'content_ar': 'صحيح بذكر المسلم فيه والثمن والأجل.',
+    });
+
+    int topMusharakah = await db.insert('topics', {
+      'category_id': subFinance,
+      'title': 'La Musharakah', 'title_en': 'Musharakah Partnership', 'title_ar': 'المشاركة',
+      'description': 'Association en capital et partage des profits/pertes.',
+      'description_en': 'Capital partnership with shared profit/loss.',
+      'description_ar': 'شركة في رأس المال والأرباح والخسائر.',
+    });
+    await db.insert('laws', {
+      'topic_id': topMusharakah, 'school_id': shMaliki,
+      'title': 'Maliki', 'content': 'Chaque associé est propriétaire de sa part ; profits selon accord ou au prorata.',
+      'content_ar': 'لكل شريك نصيبه؛ الربح حسب الشرط أو النسبة.',
+    });
+
+    int topAmanah = await db.insert('topics', {
+      'category_id': catEthique,
+      'title': 'L\'Amanah (confiance)', 'title_en': 'Amanah (Trust)', 'title_ar': 'الأمانة',
+      'description': 'Respect des dépôts et confiances confiées.',
+      'description_en': 'Honoring entrusted deposits and trusts.',
+      'description_ar': 'حفظ الأمانات والودائع.',
+    });
+    await db.insert('laws', {
+      'topic_id': topAmanah, 'school_id': shHanafi,
+      'title': 'Hanafi', 'content': 'Rendre l\'amanah est obligatoire ; la trahison est un grand péché.',
+      'content_ar': 'رد الأمانة واجب؛ خيانة الأمانة من الكبائر.',
+    });
+
+    int topHijab = await db.insert('topics', {
+      'category_id': catEthique,
+      'title': 'Les conditions du hijab', 'title_en': 'Conditions of Hijab', 'title_ar': 'شروط الحجاب',
+      'description': 'Couverture et pudeur selon les savants.',
+      'description_en': 'Covering and modesty per scholars.',
+      'description_ar': 'الستر والحياء في الشريعة.',
+    });
+    await db.insert('laws', {
+      'topic_id': topHijab, 'school_id': shShafii,
+      'title': 'Shafi\'i', 'content': 'Couvrir tout le corps sauf visage et mains ; vêtements non moulants ni transparents.',
+      'content_ar': 'ستر جميع البدن إلا الوجه والكفين؛ لباس غير شفاف ولا ضيق.',
+    });
+
+    int topJamQasr = await db.insert('topics', {
+      'category_id': subPriereVoyageur,
+      'title': 'Le jam\' et qasr', 'title_en': 'Jam\' and Qasr', 'title_ar': 'الجمع والقصر',
+      'description': 'Combiner et raccourcir les prières en voyage.',
+      'description_en': 'Combining and shortening prayers while traveling.',
+      'description_ar': 'جمع الصلاتين وقصرها للمسافر.',
+    });
+    await db.insert('laws', {
+      'topic_id': topJamQasr, 'school_id': shHanbali,
+      'title': 'Hanbali', 'content': 'Jam\' taqdim ou ta\'khir permis ; qasr pour Dhuhr, Asr et Isha.',
+      'content_ar': 'الجمع تقديماً أو تأخيراً؛ والقصر في الظهر والعصر والعشاء.',
+    });
+
+    // --- PHASE 8: EXPAND TO 100+ TOPICS ---
+    await ExtraTopicsSeed.insert(
+      db,
+      subAblutions: subAblutions,
+      subGhusl: subGhusl,
+      subPriereObligatoire: subPriereObligatoire,
+      subPriereVoyageur: subPriereVoyageur,
+      subZakat: subZakat,
+      subFinance: subFinance,
+      subContratMariage: subContratMariage,
+      subDivorce: subDivorce,
+      catJeune: catJeune,
+      catMariage: catMariage,
+      catFamille: catFamille,
+      catEthique: catEthique,
+      catEconomie: catEconomie,
+      catContrats: catContrats,
+      catJustice: catJustice,
+      catAlimentation: catAlimentation,
+      catHeritage: catHeritage,
+      catDroits: catDroits,
+      catCulte: catCulte,
+      shHanafi: shHanafi,
+      shMaliki: shMaliki,
+      shShafii: shShafii,
+      shHanbali: shHanbali,
+      shJafari: shJafari,
+    );
+
+    // Media illustrations (built-in widgets, fully offline)
+    await db.insert('media', {
+      'topic_id': topWuduConditions,
+      'type': 3,
+      'url': 'widget:wudu_zones',
+      'title': 'Zones du Wudu',
+      'description': 'Visage, bras, tête et pieds — les quatre zones essentielles.',
+    });
+    await db.insert('media', {
+      'topic_id': topGhuslObligations,
+      'type': 3,
+      'url': 'widget:ghusl_body',
+      'title': 'Corps entier',
+      'description': 'Le ghusl couvre l\'ensemble du corps.',
+    });
+    await db.insert('media', {
+      'topic_id': topZakatNisab,
+      'type': 3,
+      'url': 'widget:zakat_nisab',
+      'title': 'Seuils du Nisab',
+      'description': '85g d\'or ou 595g d\'argent — taux de 2,5%.',
+    });
+    await db.insert('media', {
+      'topic_id': topTravelPrayer,
+      'type': 3,
+      'url': 'widget:qasr_prayer',
+      'title': 'Raccourcissement (Qasr)',
+      'description': '4 rak\'ats réduites à 2 en voyage.',
+    });
+    await db.insert('media', {
+      'topic_id': topInheritanceSpouse,
+      'type': 3,
+      'url': 'widget:inheritance_spouse',
+      'title': 'Parts du conjoint',
+      'description': 'Répartition selon les règles du Farāʾiḍ.',
+    });
+    await db.insert('media', {
+      'topic_id': topHajjRites,
+      'type': 3,
+      'url': 'widget:qasr_prayer',
+      'title': 'Étapes du Hajj',
+      'description': 'Parcours du pèlerinage.',
+    });
   }
 
   Future<List<Category>> getCategories({int? parentId, Locale? locale}) async {
@@ -967,8 +1463,38 @@ class DatabaseHelper {
 
   Future<List<int>> _getRelatedTopicIds(int topicId) async {
     Database db = await database;
-    var results = await db.query('related_topics', where: 'topic_id = ?', columns: ['related_id']);
+    var results = await db.query(
+      'related_topics',
+      where: 'topic_id = ?',
+      whereArgs: [topicId],
+      columns: ['related_id'],
+    );
     return results.map((r) => r['related_id'] as int).toList();
+  }
+
+  Future<Topic?> getTopicByTitle(String title, {Locale? locale}) async {
+    Database db = await database;
+    var results = await db.query('topics', where: 'title = ?', whereArgs: [title], limit: 1);
+    if (results.isEmpty) return null;
+    final map = Map<String, dynamic>.from(results.first);
+    if (locale != null) {
+      final lang = locale.languageCode;
+      if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+      if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+    }
+    final topicId = map['id'] as int;
+    final tags = await getTagsForTopic(topicId);
+    final related = await _getRelatedTopicIds(topicId);
+    return Topic.fromMap(map, tags: tags, relatedTopicIds: related);
+  }
+
+  Future<List<Topic>> getTopicsByTitles(List<String> titles, {Locale? locale}) async {
+    final topics = <Topic>[];
+    for (final title in titles) {
+      final t = await getTopicByTitle(title, locale: locale);
+      if (t != null) topics.add(t);
+    }
+    return topics;
   }
 
   Future<Topic?> getTopicById(int topicId, {Locale? locale}) async {
@@ -1023,6 +1549,32 @@ class DatabaseHelper {
     return topics;
   }
 
+  Future<List<Topic>> getTopicsWithComparisons({Locale? locale}) async {
+    Database db = await database;
+    final results = await db.rawQuery('''
+      SELECT t.* FROM topics t
+      WHERE (
+        SELECT COUNT(DISTINCT school_id) FROM laws WHERE topic_id = t.id
+      ) >= 2
+      ORDER BY t.title ASC
+    ''');
+
+    final topics = <Topic>[];
+    for (final row in results) {
+      final map = Map<String, dynamic>.from(row);
+      if (locale != null) {
+        final lang = locale.languageCode;
+        if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+        if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+      }
+      final topicId = map['id'] as int;
+      final tags = await getTagsForTopic(topicId);
+      final related = await _getRelatedTopicIds(topicId);
+      topics.add(Topic.fromMap(map, tags: tags, relatedTopicIds: related));
+    }
+    return topics;
+  }
+
   Future<List<School>> getAllSchools({Locale? locale}) async {
     Database db = await database;
     var results = await db.query('schools');
@@ -1034,5 +1586,59 @@ class DatabaseHelper {
       }
       return School.fromMap(map);
     }).toList();
+  }
+
+  Future<int> getTopicCount() async {
+    Database db = await database;
+    final result = await db.rawQuery('SELECT COUNT(*) as count FROM topics');
+    return Sqflite.firstIntValue(result) ?? 0;
+  }
+
+  Future<Topic?> getSuggestedTopic(Set<int> readIds, {Locale? locale}) async {
+    Database db = await database;
+    final results = await db.query('topics', orderBy: 'id ASC');
+    for (final row in results) {
+      final id = row['id'] as int;
+      if (readIds.contains(id)) continue;
+      final map = Map<String, dynamic>.from(row);
+      if (locale != null) {
+        final lang = locale.languageCode;
+        if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+        if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+      }
+      final tags = await getTagsForTopic(id);
+      final related = await _getRelatedTopicIds(id);
+      return Topic.fromMap(map, tags: tags, relatedTopicIds: related);
+    }
+    return getDailyTopic(locale: locale);
+  }
+
+  Future<Topic?> getDailyTopic({Locale? locale}) async {
+    Database db = await database;
+    final results = await db.query('topics', orderBy: 'id ASC');
+    if (results.isEmpty) return null;
+
+    final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year)).inDays;
+    final index = dayOfYear % results.length;
+    final map = Map<String, dynamic>.from(results[index]);
+    if (locale != null) {
+      final lang = locale.languageCode;
+      if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+      if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+    }
+    final topicId = map['id'] as int;
+    final tags = await getTagsForTopic(topicId);
+    final related = await _getRelatedTopicIds(topicId);
+    return Topic.fromMap(map, tags: tags, relatedTopicIds: related);
+  }
+
+  Future<List<Topic>> getTopicsByIds(List<int> ids, {Locale? locale}) async {
+    if (ids.isEmpty) return [];
+    final topics = <Topic>[];
+    for (final id in ids) {
+      final topic = await getTopicById(id, locale: locale);
+      if (topic != null) topics.add(topic);
+    }
+    return topics;
   }
 }

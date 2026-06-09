@@ -34,7 +34,7 @@ class HajjTimeline extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.brown),
             ),
             const SizedBox(height: 16),
-            ...steps.map((step) => _buildTimelineStep(step['title']!, step['desc']!, steps.last == step)).toList(),
+            ...steps.map((step) => _buildTimelineStep(step['title']!, step['desc']!, steps.last == step)),
           ],
         ),
       ),

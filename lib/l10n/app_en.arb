@@ -40,5 +40,195 @@
   "hajjStep7Desc": "Sacrifice and end of Hajj rituals.",
   "relatedTopics": "Related Topics",
   "filterBySchool": "Filter by School",
-  "filterByCategory": "Filter by Category"
+  "filterByCategory": "Filter by Category",
+  "dailyTopic": "Topic of the Day",
+  "readMore": "Read more →",
+  "myLibrary": "My Library",
+  "favorites": "Favorites",
+  "readingHistory": "History",
+  "noFavorites": "No favorites yet. Tap the heart on a topic to save it here.",
+  "noHistory": "No reading history yet. Explore topics to see them here.",
+  "topicsExplored": "{read} topics explored out of {total}",
+  "@topicsExplored": {
+    "placeholders": {
+      "read": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "learnHub": "Learn",
+  "learnHubSubtitle": "Review with flashcards and test your knowledge with quizzes.",
+  "flashcards": "Flashcards",
+  "cardCount": "{count} cards",
+  "@cardCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "quiz": "Quiz",
+  "quizGeneral": "General Fiqh Quiz",
+  "quizQuestionCount": "{count} questions",
+  "@quizQuestionCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "question": "Question",
+  "answer": "Answer",
+  "tapToFlip": "Tap the card to flip",
+  "reviewAgain": "Review",
+  "knewIt": "Got it",
+  "finish": "Finish",
+  "deckComplete": "Deck complete!",
+  "deckCompleteMessage": "You reviewed all {count} cards.",
+  "@deckCompleteMessage": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "quizResults": "Quiz Results",
+  "quizScore": "{score} / {total} correct",
+  "@quizScore": {
+    "placeholders": {
+      "score": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "quizPassed": "Well done! You earned the Quiz Master badge.",
+  "quizTryAgain": "Keep studying — you can do better!",
+  "nextQuestion": "Next question",
+  "share": "Share",
+  "badges": "Badges",
+  "badgesProgress": "{unlocked} / {total} badges unlocked",
+  "@badgesProgress": {
+    "placeholders": {
+      "unlocked": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "guidedCourses": "Guided Courses",
+  "guidedCoursesDesc": "Structured 7-day paths to learn step by step.",
+  "courseProgress": "{done} / {total} days completed",
+  "@courseProgress": {
+    "placeholders": {
+      "done": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "courseCount": "{count} course(s) available",
+  "@courseCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "courseComplete": "Course completed! You earned the Graduate badge.",
+  "tools": "Tools",
+  "zakatCalculator": "Zakat Calculator",
+  "zakatCalculatorShort": "Estimate your zakat based on nisab",
+  "zakatCalculatorDesc": "Enter your wealth to check if you reach nisab (85g gold) and calculate 2.5% zakat.",
+  "goldGrams": "Gold (grams)",
+  "goldGramsHint": "e.g. 50",
+  "silverGrams": "Silver (grams)",
+  "silverGramsHint": "e.g. 200",
+  "cashAmount": "Cash & savings",
+  "cashAmountHint": "e.g. 5000",
+  "goldPricePerGram": "Gold price per gram",
+  "goldPriceHint": "Local currency",
+  "calculateZakat": "Calculate",
+  "zakatDue": "Zakat due: {amount}",
+  "@zakatDue": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "belowNisab": "Below nisab — no zakat due",
+  "zakatCalcDetail": "Gold: {gold}g · Silver: {silver}g · Cash: {cash} · Nisab ≈ {nisab}",
+  "@zakatCalcDetail": {
+    "placeholders": {
+      "gold": {"type": "String"},
+      "silver": {"type": "String"},
+      "cash": {"type": "String"},
+      "nisab": {"type": "String"}
+    }
+  },
+  "zakatRateNote": "Rate: 2.5% after one lunar year of possession.",
+  "learnMoreZakat": "Learn more about Zakat",
+  "zakatTopicHint": "Open the Nisab topic",
+  "seasonRamadan": "Ramadan Season",
+  "seasonRamadanDesc": "Featured topics for fasting and worship",
+  "seasonHajj": "Hajj Season",
+  "seasonHajjDesc": "Featured topics for pilgrimage",
+  "listenQuran": "Listen to verse",
+  "settings": "Settings",
+  "hijriDate": "Hijri date",
+  "languageSetting": "Language",
+  "themeSetting": "Theme",
+  "themeSystem": "System default",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "about": "About",
+  "appVersion": "Version {version}",
+  "@appVersion": {"placeholders": {"version": {"type": "String"}}},
+  "seasonShaaban": "Sha'ban — Prepare for Ramadan",
+  "seasonShaabanDesc": "Featured topics to prepare for the holy month",
+  "allSchools": "All schools",
+  "allCategories": "All categories",
+  "applyFilters": "Apply",
+  "dashboard": "Dashboard",
+  "explorationLevel": "Exploration: {percent}%",
+  "@explorationLevel": {"placeholders": {"percent": {"type": "int"}}},
+  "coursesCompleted": "{done} courses of {total}",
+  "@coursesCompleted": {"placeholders": {"done": {"type": "int"}, "total": {"type": "int"}}},
+  "courseProgressTitle": "Course progress",
+  "exportLibrary": "Export library",
+  "onboardingTitle1": "Offline fiqh encyclopedia",
+  "onboardingDesc1": "Browse hundreds of Islamic legal topics, organized by category and school.",
+  "onboardingTitle2": "Learn by doing",
+  "onboardingDesc2": "Flashcards, quizzes, guided courses and badges to reinforce your knowledge.",
+  "onboardingTitle3": "Track your progress",
+  "onboardingDesc3": "Favorites, personal notes and a dashboard to follow your journey.",
+  "getStarted": "Get started",
+  "skip": "Skip",
+  "myMadhhab": "My madhhab",
+  "myMadhhabDesc": "Highlight your preferred school in topic pages",
+  "myMadhhabLabel": "My school",
+  "noSchoolPreference": "No preference",
+  "dailyReminder": "Daily topic reminder",
+  "dailyReminderDesc": "Show a reminder on home until today's topic is read",
+  "dailyReminderBanner": "Today's topic — read it today",
+  "practicalCases": "Practical cases",
+  "practicalCasesDesc": "\"What if…?\" scenarios with school positions",
+  "caseCompleted": "Completed",
+  "casePending": "To solve",
+  "chooseAnswer": "Choose an answer",
+  "checkAnswer": "Check",
+  "correctAnswer": "Correct!",
+  "wrongAnswer": "Not quite — here's the explanation",
+  "finishCase": "Finish case",
+  "schoolPositions": "School positions",
+  "readingStreak": "{days} day streak",
+  "@readingStreak": {"placeholders": {"days": {"type": "int"}}},
+  "readingStreakDesc": "You're reading regularly — keep it up!",
+  "suggestedTopic": "Suggested for you",
+  "homeWidget": "Home screen widget",
+  "homeWidgetDesc": "Add the Daily Topic widget from your Android widget menu",
+  "pushNotificationTitle": "Daily topic",
+  "exportAsText": "Export as text",
+  "exportAsPdf": "Export as PDF",
+  "noneLabel": "(none)",
+  "backupData": "Data backup",
+  "backupDataDesc": "Favorites, notes, progress, badges and settings",
+  "exportBackup": "Export backup",
+  "importBackup": "Restore backup",
+  "backupRestored": "Backup restored successfully",
+  "backupFailed": "Restore failed",
+  "recentSearches": "Recent searches",
+  "clearRecentSearches": "Clear",
+  "zenMode": "Zen reading mode",
+  "readAloud": "Read aloud",
+  "increaseFont": "Increase font size",
+  "decreaseFont": "Decrease font size",
+  "compareSchools": "Compare schools",
+  "compareHubDesc": "Topics with positions from multiple madhhabs",
+  "noComparisonAvailable": "No comparison available",
+  "fullComparison": "Full comparison"
 }

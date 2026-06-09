@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../router/app_router.dart';
 import 'package:provider/provider.dart';
 import '../models/topic.dart';
 import '../models/school.dart';
 import '../models/category.dart';
 import '../services/database_helper.dart';
-import 'detail_screen.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/user_provider.dart';
 
@@ -61,6 +62,10 @@ class _SearchScreenState extends State<SearchScreen> {
       categoryId: _selectedCategoryId,
     );
 
+    if (query.isNotEmpty) {
+      await userProvider.recordRecentSearch(query);
+    }
+
     setState(() {
       _searchResults = results;
       _isSearching = false;
@@ -81,10 +86,10 @@ class _SearchScreenState extends State<SearchScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     DropdownButtonFormField<int>(
-                      value: _selectedSchoolId,
+                      initialValue: _selectedSchoolId,
                       decoration: InputDecoration(labelText: l10n.school),
                       items: [
-                        const DropdownMenuItem(value: null, child: Text("All Schools")),
+                        DropdownMenuItem(value: null, child: Text(l10n.allSchools)),
                         ..._schools.map((s) => DropdownMenuItem(value: s.id, child: Text(s.name))),
                       ],
                       onChanged: (val) {
@@ -93,10 +98,10 @@ class _SearchScreenState extends State<SearchScreen> {
                     ),
                     const SizedBox(height: 16),
                     DropdownButtonFormField<int>(
-                      value: _selectedCategoryId,
+                      initialValue: _selectedCategoryId,
                       decoration: InputDecoration(labelText: l10n.filterByCategory),
                       items: [
-                        const DropdownMenuItem(value: null, child: Text("All Categories")),
+                        DropdownMenuItem(value: null, child: Text(l10n.allCategories)),
                         ..._categories.map((c) => DropdownMenuItem(value: c.id, child: Text(c.name))),
                       ],
                       onChanged: (val) {
@@ -112,6 +117,10 @@ class _SearchScreenState extends State<SearchScreen> {
                     Navigator.pop(context);
                     _performSearch(_controller.text);
                   },
+                  child: Text(l10n.applyFilters),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
                   child: Text(l10n.close),
                 ),
               ],
@@ -119,6 +128,39 @@ class _SearchScreenState extends State<SearchScreen> {
           },
         );
       },
+    );
+  }
+
+  Widget _buildRecentSearches(BuildContext context, AppLocalizations l10n, UserProvider user) {
+    final recent = user.recentSearches;
+    if (recent.isEmpty) {
+      return Center(child: Text(l10n.searchHint, style: TextStyle(color: Colors.grey.shade600)));
+    }
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: [
+        Row(
+          children: [
+            Text(l10n.recentSearches, style: Theme.of(context).textTheme.titleMedium),
+            const Spacer(),
+            TextButton(onPressed: () => user.clearRecentSearches(), child: Text(l10n.clearRecentSearches)),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: recent.map((q) {
+            return ActionChip(
+              label: Text(q),
+              onPressed: () {
+                _controller.text = q;
+                _performSearch(q);
+              },
+            );
+          }).toList(),
+        ),
+      ],
     );
   }
 
@@ -154,30 +196,27 @@ class _SearchScreenState extends State<SearchScreen> {
           ? const Center(child: CircularProgressIndicator())
           : _searchResults.isEmpty && _controller.text.isNotEmpty
               ? Center(child: Text(l10n.noResults))
-              : ListView.builder(
-                  itemCount: _searchResults.length,
-                  itemBuilder: (context, index) {
-                    final topic = _searchResults[index];
-                    return ListTile(
-                      title: Text(
-                        topic.title,
-                        textAlign: isAr ? TextAlign.right : TextAlign.left,
-                        style: TextStyle(fontFamily: isAr ? 'Amiri' : null),
-                      ),
-                      subtitle: Text(
-                        topic.description,
-                        textAlign: isAr ? TextAlign.right : TextAlign.left,
-                        style: TextStyle(fontFamily: isAr ? 'Amiri' : null),
-                      ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => DetailScreen(topic: topic)),
+              : _searchResults.isNotEmpty
+                  ? ListView.builder(
+                      itemCount: _searchResults.length,
+                      itemBuilder: (context, index) {
+                        final topic = _searchResults[index];
+                        return ListTile(
+                          title: Text(
+                            topic.title,
+                            textAlign: isAr ? TextAlign.right : TextAlign.left,
+                            style: TextStyle(fontFamily: isAr ? 'Amiri' : null),
+                          ),
+                          subtitle: Text(
+                            topic.description,
+                            textAlign: isAr ? TextAlign.right : TextAlign.left,
+                            style: TextStyle(fontFamily: isAr ? 'Amiri' : null),
+                          ),
+                          onTap: () => context.push(AppRoutes.topic(topic.id!)),
                         );
                       },
-                    );
-                  },
-                ),
+                    )
+                  : _buildRecentSearches(context, l10n, userProvider),
     );
   }
 }

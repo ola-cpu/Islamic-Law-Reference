@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/media_item.dart';
 import '../services/database_helper.dart';
 import '../l10n/app_localizations.dart';
+import '../widgets/media_content.dart';
 
 class MediaGalleryScreen extends StatefulWidget {
   const MediaGalleryScreen({super.key});
@@ -69,7 +70,7 @@ class _MediaGalleryScreenState extends State<MediaGalleryScreen> {
                 fit: StackFit.expand,
                 children: [
                   if (media.type == MediaType.image || media.type == MediaType.infographic)
-                    Image.network(media.url, fit: BoxFit.cover, errorBuilder: (c, e, s) => const Icon(Icons.broken_image, size: 50))
+                    MediaContent(media: media, height: double.infinity)
                   else
                     Container(
                       color: Theme.of(context).colorScheme.primaryContainer,
@@ -134,7 +135,7 @@ class _MediaGalleryScreenState extends State<MediaGalleryScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (media.type == MediaType.image || media.type == MediaType.infographic)
-              Image.network(media.url, fit: BoxFit.contain)
+              MediaContent(media: media, fit: BoxFit.contain, height: 240)
             else
               Container(
                 height: 200,

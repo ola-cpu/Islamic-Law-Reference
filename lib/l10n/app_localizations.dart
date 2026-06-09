@@ -355,6 +355,780 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Filter by Category'**
   String get filterByCategory;
+
+  /// No description provided for @dailyTopic.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic of the Day'**
+  String get dailyTopic;
+
+  /// No description provided for @readMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Read more →'**
+  String get readMore;
+
+  /// No description provided for @myLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'My Library'**
+  String get myLibrary;
+
+  /// No description provided for @favorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get favorites;
+
+  /// No description provided for @readingHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get readingHistory;
+
+  /// No description provided for @noFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'No favorites yet. Tap the heart on a topic to save it here.'**
+  String get noFavorites;
+
+  /// No description provided for @noHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'No reading history yet. Explore topics to see them here.'**
+  String get noHistory;
+
+  /// No description provided for @topicsExplored.
+  ///
+  /// In en, this message translates to:
+  /// **'{read} topics explored out of {total}'**
+  String topicsExplored(int read, int total);
+
+  /// No description provided for @learnHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn'**
+  String get learnHub;
+
+  /// No description provided for @learnHubSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Review with flashcards and test your knowledge with quizzes.'**
+  String get learnHubSubtitle;
+
+  /// No description provided for @flashcards.
+  ///
+  /// In en, this message translates to:
+  /// **'Flashcards'**
+  String get flashcards;
+
+  /// No description provided for @cardCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} cards'**
+  String cardCount(int count);
+
+  /// No description provided for @quiz.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz'**
+  String get quiz;
+
+  /// No description provided for @quizGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General Fiqh Quiz'**
+  String get quizGeneral;
+
+  /// No description provided for @quizQuestionCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} questions'**
+  String quizQuestionCount(int count);
+
+  /// No description provided for @question.
+  ///
+  /// In en, this message translates to:
+  /// **'Question'**
+  String get question;
+
+  /// No description provided for @answer.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer'**
+  String get answer;
+
+  /// No description provided for @tapToFlip.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the card to flip'**
+  String get tapToFlip;
+
+  /// No description provided for @reviewAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get reviewAgain;
+
+  /// No description provided for @knewIt.
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get knewIt;
+
+  /// No description provided for @finish.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish'**
+  String get finish;
+
+  /// No description provided for @deckComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Deck complete!'**
+  String get deckComplete;
+
+  /// No description provided for @deckCompleteMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You reviewed all {count} cards.'**
+  String deckCompleteMessage(int count);
+
+  /// No description provided for @quizResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz Results'**
+  String get quizResults;
+
+  /// No description provided for @quizScore.
+  ///
+  /// In en, this message translates to:
+  /// **'{score} / {total} correct'**
+  String quizScore(int score, int total);
+
+  /// No description provided for @quizPassed.
+  ///
+  /// In en, this message translates to:
+  /// **'Well done! You earned the Quiz Master badge.'**
+  String get quizPassed;
+
+  /// No description provided for @quizTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep studying — you can do better!'**
+  String get quizTryAgain;
+
+  /// No description provided for @nextQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Next question'**
+  String get nextQuestion;
+
+  /// No description provided for @share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get share;
+
+  /// No description provided for @badges.
+  ///
+  /// In en, this message translates to:
+  /// **'Badges'**
+  String get badges;
+
+  /// No description provided for @badgesProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{unlocked} / {total} badges unlocked'**
+  String badgesProgress(int unlocked, int total);
+
+  /// No description provided for @guidedCourses.
+  ///
+  /// In en, this message translates to:
+  /// **'Guided Courses'**
+  String get guidedCourses;
+
+  /// No description provided for @guidedCoursesDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Structured 7-day paths to learn step by step.'**
+  String get guidedCoursesDesc;
+
+  /// No description provided for @courseProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} / {total} days completed'**
+  String courseProgress(int done, int total);
+
+  /// No description provided for @courseCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} course(s) available'**
+  String courseCount(int count);
+
+  /// No description provided for @courseComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Course completed! You earned the Graduate badge.'**
+  String get courseComplete;
+
+  /// No description provided for @tools.
+  ///
+  /// In en, this message translates to:
+  /// **'Tools'**
+  String get tools;
+
+  /// No description provided for @zakatCalculator.
+  ///
+  /// In en, this message translates to:
+  /// **'Zakat Calculator'**
+  String get zakatCalculator;
+
+  /// No description provided for @zakatCalculatorShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimate your zakat based on nisab'**
+  String get zakatCalculatorShort;
+
+  /// No description provided for @zakatCalculatorDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your wealth to check if you reach nisab (85g gold) and calculate 2.5% zakat.'**
+  String get zakatCalculatorDesc;
+
+  /// No description provided for @goldGrams.
+  ///
+  /// In en, this message translates to:
+  /// **'Gold (grams)'**
+  String get goldGrams;
+
+  /// No description provided for @goldGramsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 50'**
+  String get goldGramsHint;
+
+  /// No description provided for @silverGrams.
+  ///
+  /// In en, this message translates to:
+  /// **'Silver (grams)'**
+  String get silverGrams;
+
+  /// No description provided for @silverGramsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 200'**
+  String get silverGramsHint;
+
+  /// No description provided for @cashAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash & savings'**
+  String get cashAmount;
+
+  /// No description provided for @cashAmountHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 5000'**
+  String get cashAmountHint;
+
+  /// No description provided for @goldPricePerGram.
+  ///
+  /// In en, this message translates to:
+  /// **'Gold price per gram'**
+  String get goldPricePerGram;
+
+  /// No description provided for @goldPriceHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Local currency'**
+  String get goldPriceHint;
+
+  /// No description provided for @calculateZakat.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculate'**
+  String get calculateZakat;
+
+  /// No description provided for @zakatDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Zakat due: {amount}'**
+  String zakatDue(String amount);
+
+  /// No description provided for @belowNisab.
+  ///
+  /// In en, this message translates to:
+  /// **'Below nisab — no zakat due'**
+  String get belowNisab;
+
+  /// No description provided for @zakatCalcDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Gold: {gold}g · Silver: {silver}g · Cash: {cash} · Nisab ≈ {nisab}'**
+  String zakatCalcDetail(String gold, String silver, String cash, String nisab);
+
+  /// No description provided for @zakatRateNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate: 2.5% after one lunar year of possession.'**
+  String get zakatRateNote;
+
+  /// No description provided for @learnMoreZakat.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn more about Zakat'**
+  String get learnMoreZakat;
+
+  /// No description provided for @zakatTopicHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the Nisab topic'**
+  String get zakatTopicHint;
+
+  /// No description provided for @seasonRamadan.
+  ///
+  /// In en, this message translates to:
+  /// **'Ramadan Season'**
+  String get seasonRamadan;
+
+  /// No description provided for @seasonRamadanDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured topics for fasting and worship'**
+  String get seasonRamadanDesc;
+
+  /// No description provided for @seasonHajj.
+  ///
+  /// In en, this message translates to:
+  /// **'Hajj Season'**
+  String get seasonHajj;
+
+  /// No description provided for @seasonHajjDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured topics for pilgrimage'**
+  String get seasonHajjDesc;
+
+  /// No description provided for @listenQuran.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen to verse'**
+  String get listenQuran;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @hijriDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Hijri date'**
+  String get hijriDate;
+
+  /// No description provided for @languageSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get languageSetting;
+
+  /// No description provided for @themeSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get themeSetting;
+
+  /// No description provided for @themeSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System default'**
+  String get themeSystem;
+
+  /// No description provided for @themeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get themeLight;
+
+  /// No description provided for @themeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get themeDark;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @appVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version}'**
+  String appVersion(String version);
+
+  /// No description provided for @seasonShaaban.
+  ///
+  /// In en, this message translates to:
+  /// **'Sha\'ban — Prepare for Ramadan'**
+  String get seasonShaaban;
+
+  /// No description provided for @seasonShaabanDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured topics to prepare for the holy month'**
+  String get seasonShaabanDesc;
+
+  /// No description provided for @allSchools.
+  ///
+  /// In en, this message translates to:
+  /// **'All schools'**
+  String get allSchools;
+
+  /// No description provided for @allCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'All categories'**
+  String get allCategories;
+
+  /// No description provided for @applyFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get applyFilters;
+
+  /// No description provided for @dashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Dashboard'**
+  String get dashboard;
+
+  /// No description provided for @explorationLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Exploration: {percent}%'**
+  String explorationLevel(int percent);
+
+  /// No description provided for @coursesCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} courses of {total}'**
+  String coursesCompleted(int done, int total);
+
+  /// No description provided for @courseProgressTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Course progress'**
+  String get courseProgressTitle;
+
+  /// No description provided for @exportLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Export library'**
+  String get exportLibrary;
+
+  /// No description provided for @onboardingTitle1.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline fiqh encyclopedia'**
+  String get onboardingTitle1;
+
+  /// No description provided for @onboardingDesc1.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse hundreds of Islamic legal topics, organized by category and school.'**
+  String get onboardingDesc1;
+
+  /// No description provided for @onboardingTitle2.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn by doing'**
+  String get onboardingTitle2;
+
+  /// No description provided for @onboardingDesc2.
+  ///
+  /// In en, this message translates to:
+  /// **'Flashcards, quizzes, guided courses and badges to reinforce your knowledge.'**
+  String get onboardingDesc2;
+
+  /// No description provided for @onboardingTitle3.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your progress'**
+  String get onboardingTitle3;
+
+  /// No description provided for @onboardingDesc3.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites, personal notes and a dashboard to follow your journey.'**
+  String get onboardingDesc3;
+
+  /// No description provided for @getStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get getStarted;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @myMadhhab.
+  ///
+  /// In en, this message translates to:
+  /// **'My madhhab'**
+  String get myMadhhab;
+
+  /// No description provided for @myMadhhabDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Highlight your preferred school in topic pages'**
+  String get myMadhhabDesc;
+
+  /// No description provided for @myMadhhabLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'My school'**
+  String get myMadhhabLabel;
+
+  /// No description provided for @noSchoolPreference.
+  ///
+  /// In en, this message translates to:
+  /// **'No preference'**
+  String get noSchoolPreference;
+
+  /// No description provided for @dailyReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily topic reminder'**
+  String get dailyReminder;
+
+  /// No description provided for @dailyReminderDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Show a reminder on home until today\'s topic is read'**
+  String get dailyReminderDesc;
+
+  /// No description provided for @dailyReminderBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s topic — read it today'**
+  String get dailyReminderBanner;
+
+  /// No description provided for @practicalCases.
+  ///
+  /// In en, this message translates to:
+  /// **'Practical cases'**
+  String get practicalCases;
+
+  /// No description provided for @practicalCasesDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'\"What if…?\" scenarios with school positions'**
+  String get practicalCasesDesc;
+
+  /// No description provided for @caseCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get caseCompleted;
+
+  /// No description provided for @casePending.
+  ///
+  /// In en, this message translates to:
+  /// **'To solve'**
+  String get casePending;
+
+  /// No description provided for @chooseAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose an answer'**
+  String get chooseAnswer;
+
+  /// No description provided for @checkAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Check'**
+  String get checkAnswer;
+
+  /// No description provided for @correctAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct!'**
+  String get correctAnswer;
+
+  /// No description provided for @wrongAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite — here\'s the explanation'**
+  String get wrongAnswer;
+
+  /// No description provided for @finishCase.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish case'**
+  String get finishCase;
+
+  /// No description provided for @schoolPositions.
+  ///
+  /// In en, this message translates to:
+  /// **'School positions'**
+  String get schoolPositions;
+
+  /// No description provided for @readingStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} day streak'**
+  String readingStreak(int days);
+
+  /// No description provided for @readingStreakDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re reading regularly — keep it up!'**
+  String get readingStreakDesc;
+
+  /// No description provided for @suggestedTopic.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested for you'**
+  String get suggestedTopic;
+
+  /// No description provided for @homeWidget.
+  ///
+  /// In en, this message translates to:
+  /// **'Home screen widget'**
+  String get homeWidget;
+
+  /// No description provided for @homeWidgetDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Add the Daily Topic widget from your Android widget menu'**
+  String get homeWidgetDesc;
+
+  /// No description provided for @pushNotificationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily topic'**
+  String get pushNotificationTitle;
+
+  /// No description provided for @exportAsText.
+  ///
+  /// In en, this message translates to:
+  /// **'Export as text'**
+  String get exportAsText;
+
+  /// No description provided for @exportAsPdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Export as PDF'**
+  String get exportAsPdf;
+
+  /// No description provided for @noneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'(none)'**
+  String get noneLabel;
+
+  /// No description provided for @backupData.
+  ///
+  /// In en, this message translates to:
+  /// **'Data backup'**
+  String get backupData;
+
+  /// No description provided for @backupDataDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites, notes, progress, badges and settings'**
+  String get backupDataDesc;
+
+  /// No description provided for @exportBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Export backup'**
+  String get exportBackup;
+
+  /// No description provided for @importBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore backup'**
+  String get importBackup;
+
+  /// No description provided for @backupRestored.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup restored successfully'**
+  String get backupRestored;
+
+  /// No description provided for @backupFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore failed'**
+  String get backupFailed;
+
+  /// No description provided for @recentSearches.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent searches'**
+  String get recentSearches;
+
+  /// No description provided for @clearRecentSearches.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clearRecentSearches;
+
+  /// No description provided for @zenMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Zen reading mode'**
+  String get zenMode;
+
+  /// No description provided for @readAloud.
+  ///
+  /// In en, this message translates to:
+  /// **'Read aloud'**
+  String get readAloud;
+
+  /// No description provided for @increaseFont.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase font size'**
+  String get increaseFont;
+
+  /// No description provided for @decreaseFont.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease font size'**
+  String get decreaseFont;
+
+  /// No description provided for @compareSchools.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare schools'**
+  String get compareSchools;
+
+  /// No description provided for @compareHubDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics with positions from multiple madhhabs'**
+  String get compareHubDesc;
+
+  /// No description provided for @noComparisonAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No comparison available'**
+  String get noComparisonAvailable;
+
+  /// No description provided for @fullComparison.
+  ///
+  /// In en, this message translates to:
+  /// **'Full comparison'**
+  String get fullComparison;
 }
 
 class _AppLocalizationsDelegate

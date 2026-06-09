@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../router/app_router.dart';
 import 'package:provider/provider.dart';
 import '../models/topic.dart';
 import '../services/database_helper.dart';
-import 'detail_screen.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/user_provider.dart';
 
@@ -35,10 +36,7 @@ class TopicListScreen extends StatelessWidget {
               subtitle: Text(topic.description),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DetailScreen(topic: topic)),
-                );
+                context.push(AppRoutes.topic(topic.id!));
               },
             );
           },

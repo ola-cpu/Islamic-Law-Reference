@@ -133,4 +133,430 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get filterByCategory => 'تصفية حسب الفئة';
+
+  @override
+  String get dailyTopic => 'موضوع اليوم';
+
+  @override
+  String get readMore => 'اقرأ المزيد ←';
+
+  @override
+  String get myLibrary => 'مكتبتي';
+
+  @override
+  String get favorites => 'المفضلة';
+
+  @override
+  String get readingHistory => 'السجل';
+
+  @override
+  String get noFavorites =>
+      'لا توجد مفضلات بعد. اضغط على القلب في أي موضوع لحفظه هنا.';
+
+  @override
+  String get noHistory => 'لا يوجد سجل قراءة بعد. استكشف المواضيع لتظهر هنا.';
+
+  @override
+  String topicsExplored(int read, int total) {
+    return '$read مواضيع مستكشفة من $total';
+  }
+
+  @override
+  String get learnHub => 'تعلّم';
+
+  @override
+  String get learnHubSubtitle => 'راجع بالبطاقات واختبر معلوماتك بالاختبارات.';
+
+  @override
+  String get flashcards => 'بطاقات';
+
+  @override
+  String cardCount(int count) {
+    return '$count بطاقات';
+  }
+
+  @override
+  String get quiz => 'اختبار';
+
+  @override
+  String get quizGeneral => 'اختبار الفقه العام';
+
+  @override
+  String quizQuestionCount(int count) {
+    return '$count أسئلة';
+  }
+
+  @override
+  String get question => 'سؤال';
+
+  @override
+  String get answer => 'جواب';
+
+  @override
+  String get tapToFlip => 'اضغط على البطاقة للقلب';
+
+  @override
+  String get reviewAgain => 'مراجعة';
+
+  @override
+  String get knewIt => 'أعرف';
+
+  @override
+  String get finish => 'إنهاء';
+
+  @override
+  String get deckComplete => 'اكتملت المجموعة!';
+
+  @override
+  String deckCompleteMessage(int count) {
+    return 'راجعت جميع البطاقات ($count).';
+  }
+
+  @override
+  String get quizResults => 'نتائج الاختبار';
+
+  @override
+  String quizScore(int score, int total) {
+    return '$score / $total صحيحة';
+  }
+
+  @override
+  String get quizPassed => 'أحسنت! حصلت على شارة بطل الاختبار.';
+
+  @override
+  String get quizTryAgain => 'واصل الدراسة — يمكنك التحسن!';
+
+  @override
+  String get nextQuestion => 'السؤال التالي';
+
+  @override
+  String get share => 'مشاركة';
+
+  @override
+  String get badges => 'الشارات';
+
+  @override
+  String badgesProgress(int unlocked, int total) {
+    return '$unlocked / $total شارات مفتوحة';
+  }
+
+  @override
+  String get guidedCourses => 'مسارات موجهة';
+
+  @override
+  String get guidedCoursesDesc => 'مسارات 7 أيام للتعلم خطوة بخطوة.';
+
+  @override
+  String courseProgress(int done, int total) {
+    return '$done / $total أيام مكتملة';
+  }
+
+  @override
+  String courseCount(int count) {
+    return '$count مسار متاح';
+  }
+
+  @override
+  String get courseComplete => 'اكتمل المسار! حصلت على شارة الخريج.';
+
+  @override
+  String get tools => 'أدوات';
+
+  @override
+  String get zakatCalculator => 'حاسبة الزكاة';
+
+  @override
+  String get zakatCalculatorShort => 'قدّر زكاتك حسب النصاب';
+
+  @override
+  String get zakatCalculatorDesc =>
+      'أدخل ثروتك للتحقق من النصاب (85غ ذهب) وحساب 2.5%.';
+
+  @override
+  String get goldGrams => 'الذهب (غرام)';
+
+  @override
+  String get goldGramsHint => 'مثال: 50';
+
+  @override
+  String get silverGrams => 'الفضة (غرام)';
+
+  @override
+  String get silverGramsHint => 'مثال: 200';
+
+  @override
+  String get cashAmount => 'النقد والادخار';
+
+  @override
+  String get cashAmountHint => 'مثال: 5000';
+
+  @override
+  String get goldPricePerGram => 'سعر الذهب للغرام';
+
+  @override
+  String get goldPriceHint => 'العملة المحلية';
+
+  @override
+  String get calculateZakat => 'احسب';
+
+  @override
+  String zakatDue(String amount) {
+    return 'الزكاة المستحقة: $amount';
+  }
+
+  @override
+  String get belowNisab => 'أقل من النصاب — لا زكاة';
+
+  @override
+  String zakatCalcDetail(
+    String gold,
+    String silver,
+    String cash,
+    String nisab,
+  ) {
+    return 'ذهب: $goldغ · فضة: $silverغ · نقد: $cash · النصاب ≈ $nisab';
+  }
+
+  @override
+  String get zakatRateNote => 'النسبة: 2.5% بعد حول كامل.';
+
+  @override
+  String get learnMoreZakat => 'المزيد عن الزكاة';
+
+  @override
+  String get zakatTopicHint => 'فتح موضوع النصاب';
+
+  @override
+  String get seasonRamadan => 'موسم رمضان';
+
+  @override
+  String get seasonRamadanDesc => 'مواضيع الصيام والعبادة';
+
+  @override
+  String get seasonHajj => 'موسم الحج';
+
+  @override
+  String get seasonHajjDesc => 'مواضيع الحج';
+
+  @override
+  String get listenQuran => 'استماع للآية';
+
+  @override
+  String get settings => 'الإعدادات';
+
+  @override
+  String get hijriDate => 'التاريخ الهجري';
+
+  @override
+  String get languageSetting => 'اللغة';
+
+  @override
+  String get themeSetting => 'المظهر';
+
+  @override
+  String get themeSystem => 'النظام';
+
+  @override
+  String get themeLight => 'فاتح';
+
+  @override
+  String get themeDark => 'داكن';
+
+  @override
+  String get about => 'حول التطبيق';
+
+  @override
+  String appVersion(String version) {
+    return 'الإصدار $version';
+  }
+
+  @override
+  String get seasonShaaban => 'شعبان — استعد لرمضان';
+
+  @override
+  String get seasonShaabanDesc => 'مواضيع للتحضير للشهر الفضيل';
+
+  @override
+  String get allSchools => 'جميع المذاهب';
+
+  @override
+  String get allCategories => 'جميع الفئات';
+
+  @override
+  String get applyFilters => 'تطبيق';
+
+  @override
+  String get dashboard => 'لوحة التقدم';
+
+  @override
+  String explorationLevel(int percent) {
+    return 'الاستكشاف: $percent٪';
+  }
+
+  @override
+  String coursesCompleted(int done, int total) {
+    return '$done مسار من $total';
+  }
+
+  @override
+  String get courseProgressTitle => 'تقدم المسارات';
+
+  @override
+  String get exportLibrary => 'تصدير المكتبة';
+
+  @override
+  String get onboardingTitle1 => 'موسوعة فقهية دون اتصال';
+
+  @override
+  String get onboardingDesc1 =>
+      'استكشف مئات المواضيع الفقهية الإسلامية، مصنّفة حسب الفئة والمذهب.';
+
+  @override
+  String get onboardingTitle2 => 'تعلّم بالممارسة';
+
+  @override
+  String get onboardingDesc2 =>
+      'بطاقات، اختبارات، مسارات موجهة وشارات لتثبيت معرفتك.';
+
+  @override
+  String get onboardingTitle3 => 'تتبّع تقدمك';
+
+  @override
+  String get onboardingDesc3 =>
+      'المفضلة، الملاحظات الشخصية ولوحة التقدم لمتابعة رحلتك.';
+
+  @override
+  String get getStarted => 'ابدأ';
+
+  @override
+  String get skip => 'تخطّ';
+
+  @override
+  String get myMadhhab => 'مذهبي';
+
+  @override
+  String get myMadhhabDesc => 'إبراز مذهبك المفضل في صفحات المواضيع';
+
+  @override
+  String get myMadhhabLabel => 'مذهبي';
+
+  @override
+  String get noSchoolPreference => 'بلا تفضيل';
+
+  @override
+  String get dailyReminder => 'تذكير موضوع اليوم';
+
+  @override
+  String get dailyReminderDesc => 'عرض تذكير في الرئيسية حتى قراءة موضوع اليوم';
+
+  @override
+  String get dailyReminderBanner => 'موضوع اليوم — اقرأه اليوم';
+
+  @override
+  String get practicalCases => 'حالات عملية';
+
+  @override
+  String get practicalCasesDesc => 'سيناريوهات « ماذا لو؟ » مع مواقف المذاهب';
+
+  @override
+  String get caseCompleted => 'مكتمل';
+
+  @override
+  String get casePending => 'للحل';
+
+  @override
+  String get chooseAnswer => 'اختر إجابة';
+
+  @override
+  String get checkAnswer => 'تحقق';
+
+  @override
+  String get correctAnswer => 'إجابة صحيحة!';
+
+  @override
+  String get wrongAnswer => 'ليست دقيقة — إليك التفسير';
+
+  @override
+  String get finishCase => 'إنهاء الحالة';
+
+  @override
+  String get schoolPositions => 'مواقف المذاهب';
+
+  @override
+  String readingStreak(int days) {
+    return '$days أيام متتالية';
+  }
+
+  @override
+  String get readingStreakDesc => 'أنت تقرأ بانتظام — واصل!';
+
+  @override
+  String get suggestedTopic => 'موضوع مقترح لك';
+
+  @override
+  String get homeWidget => 'ودجت الشاشة الرئيسية';
+
+  @override
+  String get homeWidgetDesc =>
+      'أضف ودجت «موضوع اليوم» من قائمة الودجات في أندرويد';
+
+  @override
+  String get pushNotificationTitle => 'موضوع اليوم';
+
+  @override
+  String get exportAsText => 'تصدير كنص';
+
+  @override
+  String get exportAsPdf => 'تصدير PDF';
+
+  @override
+  String get noneLabel => '(لا شيء)';
+
+  @override
+  String get backupData => 'نسخ احتياطي للبيانات';
+
+  @override
+  String get backupDataDesc => 'المفضلة والملاحظات والتقدم والشارات والإعدادات';
+
+  @override
+  String get exportBackup => 'تصدير النسخة الاحتياطية';
+
+  @override
+  String get importBackup => 'استعادة نسخة احتياطية';
+
+  @override
+  String get backupRestored => 'تمت الاستعادة بنجاح';
+
+  @override
+  String get backupFailed => 'فشلت الاستعادة';
+
+  @override
+  String get recentSearches => 'عمليات البحث الأخيرة';
+
+  @override
+  String get clearRecentSearches => 'مسح';
+
+  @override
+  String get zenMode => 'وضع القراءة الهادئة';
+
+  @override
+  String get readAloud => 'قراءة بصوت عالٍ';
+
+  @override
+  String get increaseFont => 'تكبير الخط';
+
+  @override
+  String get decreaseFont => 'تصغير الخط';
+
+  @override
+  String get compareSchools => 'مقارنة المذاهب';
+
+  @override
+  String get compareHubDesc => 'مواضيع بمواقف من عدة مذاهب';
+
+  @override
+  String get noComparisonAvailable => 'لا توجد مقارنة متاحة';
+
+  @override
+  String get fullComparison => 'مقارنة كاملة';
 }

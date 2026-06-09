@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
+import '../router/app_router.dart';
 import '../models/topic.dart';
 import '../models/law.dart';
 import '../models/source.dart';
@@ -8,7 +11,13 @@ import '../models/media_item.dart';
 import '../services/database_helper.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/user_provider.dart';
+import '../widgets/media_content.dart';
+import '../widgets/interactive_diagrams.dart';
+import '../widgets/quran_audio_button.dart';
+import '../data/school_constants.dart';
 import 'hajj_timeline.dart';
+import 'zen_reader_screen.dart';
+import 'school_comparison_screen.dart';
 
 class DetailScreen extends StatefulWidget {
   final Topic topic;
@@ -33,12 +42,45 @@ class _DetailScreenState extends State<DetailScreen> {
     _lawsFuture = DatabaseHelper().getLawsByTopic(widget.topic.id!, locale: userProvider.locale);
     _mediaFuture = DatabaseHelper().getMediaForTopic(widget.topic.id!);
     _relatedTopicsFuture = DatabaseHelper().getRelatedTopics(widget.topic.id!, locale: userProvider.locale);
+    userProvider.recordTopicRead(widget.topic.id!);
+    _markDailyIfNeeded(userProvider);
+  }
+
+  Future<void> _markDailyIfNeeded(UserProvider userProvider) async {
+    final daily = await DatabaseHelper().getDailyTopic(locale: userProvider.locale);
+    if (daily?.id == widget.topic.id) {
+      await userProvider.markDailyTopicRead();
+    }
   }
 
   @override
   void dispose() {
     _noteController.dispose();
     super.dispose();
+  }
+
+  Future<void> _shareTopic(BuildContext context, AppLocalizations l10n) async {
+    final laws = await _lawsFuture;
+    final buffer = StringBuffer()
+      ..writeln('📖 ${widget.topic.title}')
+      ..writeln()
+      ..writeln(widget.topic.description);
+
+    if (laws.isNotEmpty) {
+      buffer
+        ..writeln()
+        ..writeln('— ${laws.first.title}')
+        ..writeln(laws.first.content);
+    }
+
+    buffer
+      ..writeln()
+      ..writeln('— ${l10n.appTitle}');
+
+    await SharePlus.instance.share(ShareParams(text: buffer.toString()));
+    if (context.mounted) {
+      await Provider.of<UserProvider>(context, listen: false).recordShare();
+    }
   }
 
   @override
@@ -51,6 +93,25 @@ class _DetailScreenState extends State<DetailScreen> {
       appBar: AppBar(
         title: Text(widget.topic.title),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.chrome_reader_mode),
+            tooltip: l10n.zenMode,
+            onPressed: () async {
+              final laws = await _lawsFuture;
+              if (!context.mounted) return;
+              await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ZenReaderScreen(topic: widget.topic, laws: laws),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.share),
+            tooltip: l10n.share,
+            onPressed: () => _shareTopic(context, l10n),
+          ),
           IconButton(
             icon: Icon(
               userProvider.isFavorite(widget.topic.id!) ? Icons.favorite : Icons.favorite_border,
@@ -97,7 +158,15 @@ class _DetailScreenState extends State<DetailScreen> {
             const SizedBox(height: 20),
             _buildMediaSection(l10n),
             const SizedBox(height: 20),
-            if (widget.topic.title.toLowerCase().contains('hajj') || widget.topic.title.toLowerCase().contains('pèlerinage') || widget.topic.title.toLowerCase().contains('pilgrimage')) ...[
+            if (topicShowsWuduDiagram(widget.topic.title)) ...[
+              const InteractiveWuduDiagram(),
+              const SizedBox(height: 20),
+            ],
+            if (topicShowsInheritanceDiagram(widget.topic.title)) ...[
+              const InteractiveInheritanceDiagram(),
+              const SizedBox(height: 20),
+            ],
+            if (widget.topic.title.toLowerCase().contains('hajj') || widget.topic.title.toLowerCase().contains('pèlerinage') || widget.topic.title.toLowerCase().contains('pilgrimage') || widget.topic.title.contains('rites du Hajj')) ...[
                const HajjTimeline(),
                const SizedBox(height: 20),
             ],
@@ -112,8 +181,15 @@ class _DetailScreenState extends State<DetailScreen> {
                 if (!snapshot.hasData || snapshot.data!.isEmpty) {
                   return Text(l10n.noLaws);
                 }
+                final laws = List<Law>.from(snapshot.data!);
+                final preferred = userProvider.preferredSchool;
+                if (preferred != null) {
+                  laws.sort((a, b) {
+                    return _isPreferredLaw(b, preferred).compareTo(_isPreferredLaw(a, preferred));
+                  });
+                }
                 return Column(
-                  children: snapshot.data!.map((law) => _buildLawCard(law, l10n)).toList(),
+                  children: laws.map((law) => _buildLawCard(law, l10n, userProvider)).toList(),
                 );
               },
             ),
@@ -179,12 +255,7 @@ class _DetailScreenState extends State<DetailScreen> {
             ...snapshot.data!.map((topic) => ListTile(
               title: Text(topic.title),
               leading: const Icon(Icons.link),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DetailScreen(topic: topic)),
-                );
-              },
+              onTap: () => context.push(AppRoutes.topic(topic.id!)),
             )),
           ],
         );
@@ -200,12 +271,31 @@ class _DetailScreenState extends State<DetailScreen> {
         return Card(
           elevation: 0,
           color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.5),
-          child: ListTile(
-            leading: const Icon(Icons.compare_arrows),
-            title: Text(l10n.comparisonTable),
-            subtitle: Text(l10n.legalOpinion),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => _showComparisonDialog(context, snapshot.data!, l10n),
+          child: Column(
+            children: [
+              ListTile(
+                leading: const Icon(Icons.compare_arrows),
+                title: Text(l10n.comparisonTable),
+                subtitle: Text(l10n.legalOpinion),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => _showComparisonDialog(context, snapshot.data!, l10n),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton.icon(
+                  icon: const Icon(Icons.open_in_full, size: 18),
+                  label: Text(l10n.fullComparison),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SchoolComparisonScreen(topic: widget.topic),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         );
       },
@@ -213,6 +303,7 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   void _showComparisonDialog(BuildContext context, List<Law> laws, AppLocalizations l10n) {
+    Provider.of<UserProvider>(context, listen: false).recordComparisonViewed();
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -334,7 +425,7 @@ class _DetailScreenState extends State<DetailScreen> {
               style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            ...snapshot.data!.map((media) => _buildMediaWidget(media, l10n)).toList(),
+            ...snapshot.data!.map((media) => _buildMediaWidget(media, l10n)),
           ],
         );
       },
@@ -344,10 +435,11 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget _buildMediaWidget(MediaItem media, AppLocalizations l10n) {
      return Card(
        clipBehavior: Clip.antiAlias,
+       margin: const EdgeInsets.only(bottom: 12),
        child: Column(
          children: [
            if (media.type == MediaType.image || media.type == MediaType.infographic)
-             Image.network(media.url, fit: BoxFit.cover, errorBuilder: (c, e, s) => const Icon(Icons.broken_image, size: 50)),
+             MediaContent(media: media),
            ListTile(
              title: Text(media.title ?? l10n.illustration),
              subtitle: media.description != null ? Text(media.description!) : null,
@@ -413,20 +505,47 @@ class _DetailScreenState extends State<DetailScreen> {
     }
   }
 
-  Widget _buildLawCard(Law law, AppLocalizations l10n) {
+  int _isPreferredLaw(Law law, String preferredSlug) {
+    return _lawMatchesSchool(law, preferredSlug) ? 1 : 0;
+  }
+
+  bool _lawMatchesSchool(Law law, String preferredSlug) {
+    final title = law.title.toLowerCase();
+    switch (preferredSlug) {
+      case SchoolSlugs.hanafi:
+        return title.contains('hanafi');
+      case SchoolSlugs.maliki:
+        return title.contains('maliki');
+      case SchoolSlugs.shafii:
+        return title.contains('shafi');
+      case SchoolSlugs.hanbali:
+        return title.contains('hanbali');
+      case SchoolSlugs.jafari:
+        return title.contains('ja\'fari') || title.contains('jafari');
+      default:
+        return false;
+    }
+  }
+
+  Widget _buildLawCard(Law law, AppLocalizations l10n, UserProvider userProvider) {
     return FutureBuilder<School?>(
       future: DatabaseHelper().getSchoolById(law.schoolId),
       builder: (context, schoolSnapshot) {
         final schoolName = schoolSnapshot.data?.name;
         final localizedSchoolName = _getLocalizedSchoolName(schoolName, l10n);
         final schoolColor = _getSchoolColor(schoolName);
+        final isPreferred = userProvider.preferredSchool != null &&
+            SchoolSlugs.fromDbName(schoolName) == userProvider.preferredSchool;
 
         return Card(
           margin: const EdgeInsets.symmetric(vertical: 12),
-          elevation: 4,
+          elevation: isPreferred ? 6 : 4,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
-            side: BorderSide(color: schoolColor.withOpacity(0.3), width: 2),
+            side: BorderSide(
+              color: isPreferred ? schoolColor : schoolColor.withOpacity(0.3),
+              width: isPreferred ? 3 : 2,
+            ),
           ),
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -450,7 +569,15 @@ class _DetailScreenState extends State<DetailScreen> {
                         ),
                       ),
                     ),
-                    Icon(Icons.gavel, color: schoolColor),
+                    if (isPreferred)
+                      Chip(
+                        label: Text(l10n.myMadhhabLabel, style: const TextStyle(fontSize: 11)),
+                        backgroundColor: schoolColor.withValues(alpha: 0.15),
+                        side: BorderSide(color: schoolColor),
+                        padding: EdgeInsets.zero,
+                      )
+                    else
+                      Icon(Icons.gavel, color: schoolColor),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -528,7 +655,7 @@ class _DetailScreenState extends State<DetailScreen> {
               margin: const EdgeInsets.only(bottom: 12),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
+                color: Theme.of(context).colorScheme.surfaceContainerHighest.withOpacity(0.3),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(
@@ -544,6 +671,11 @@ class _DetailScreenState extends State<DetailScreen> {
                           style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blueGrey),
                         ),
                       ),
+                      if (source.type == 0 && (source.textAr ?? source.text).isNotEmpty)
+                        QuranAudioButton(
+                          text: source.textAr ?? source.text,
+                          tooltip: l10n.listenQuran,
+                        ),
                     ],
                   ),
                   if (source.textAr != null) ...[
