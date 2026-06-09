@@ -18,7 +18,10 @@ class TopicListScreen extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final userProvider = Provider.of<UserProvider>(context);
     return FutureBuilder<List<Topic>>(
-      future: DatabaseHelper().getTopicsByCategory(categoryId, locale: userProvider.locale),
+      future: () async {
+        final topics = await DatabaseHelper().getTopicsByCategory(categoryId, locale: userProvider.locale);
+        return userProvider.filterTopicsByMadhhab(topics);
+      }(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

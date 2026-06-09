@@ -1,0 +1,1255 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "L'intention du jeûne (Niyya)",
+      "title_en": "Intention of Fasting",
+      "title_ar": "نية الصوم",
+      "title_ru": "Intention of Fasting",
+      "title_zh": "Intention of Fasting",
+      "description_fr": "Formulation intérieure du jeûne.",
+      "description_en": "Inner formulation of fasting.",
+      "description_ar": "Inner formulation of fasting.",
+      "description_ru": "Inner formulation of fasting.",
+      "description_zh": "Inner formulation of fasting.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Avant l'aube pour Ramadan ; flexible pour les surérogatoires.",
+          "content_en": "Avant l'aube pour Ramadan ; flexible pour les surérogatoires."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Intention la veille au soir pour le jeûne obligatoire.",
+          "content_en": "Intention la veille au soir pour le jeûne obligatoire."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Ce qui annule le jeûne",
+      "title_en": "Nullifiers of Fasting",
+      "title_ar": "مفطرات الصوم",
+      "title_ru": "Nullifiers of Fasting",
+      "title_zh": "Nullifiers of Fasting",
+      "description_fr": "Actes qui rompent le jeûne.",
+      "description_en": "Acts that break the fast.",
+      "description_ar": "Acts that break the fast.",
+      "description_ru": "Acts that break the fast.",
+      "description_zh": "Acts that break the fast.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Nourriture, boisson, rapports, vomissement volontaire.",
+          "content_en": "Nourriture, boisson, rapports, vomissement volontaire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même liste ; insufflation délibérée selon avis.",
+          "content_en": "Même liste ; insufflation délibérée selon avis."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne du Ramadan",
+      "title_en": "Ramadan Fasting",
+      "title_ar": "صوم رمضان",
+      "title_ru": "Ramadan Fasting",
+      "title_zh": "Ramadan Fasting",
+      "description_fr": "Jeûne obligatoire du neuvième mois.",
+      "description_en": "Obligatory fast of the ninth month.",
+      "description_ar": "Obligatory fast of the ninth month.",
+      "description_ru": "Obligatory fast of the ninth month.",
+      "description_zh": "Obligatory fast of the ninth month.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pilier de l'Islam ; qada et kaffara si rompu sans excuse.",
+          "content_en": "Pilier de l'Islam ; qada et kaffara si rompu sans excuse."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Obligation pour tout musulman pubère valide.",
+          "content_en": "Obligation pour tout musulman pubère valide."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne du malade",
+      "title_en": "Fasting of the Sick",
+      "title_ar": "صوم المريض",
+      "title_ru": "Fasting of the Sick",
+      "title_zh": "Fasting of the Sick",
+      "description_fr": "Facilitation pour le malade.",
+      "description_en": "Concession for the ill.",
+      "description_ar": "Concession for the ill.",
+      "description_ru": "Concession for the ill.",
+      "description_zh": "Concession for the ill.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Rompre permis ; qada après guérison.",
+          "content_en": "Rompre permis ; qada après guérison."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Crainte d'aggravation : rompre obligatoire.",
+          "content_en": "Crainte d'aggravation : rompre obligatoire."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne du voyageur",
+      "title_en": "Fasting While Traveling",
+      "title_ar": "صوم المسافر",
+      "title_ru": "Fasting While Traveling",
+      "title_zh": "Fasting While Traveling",
+      "description_fr": "Option de rompre en voyage.",
+      "description_en": "Option to break fast while traveling.",
+      "description_ar": "Option to break fast while traveling.",
+      "description_ru": "Option to break fast while traveling.",
+      "description_zh": "Option to break fast while traveling.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Rompre permis ; qada plus tard recommandé.",
+          "content_en": "Rompre permis ; qada plus tard recommandé."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Facilitation forte ; jeûner possible si pas de gêne.",
+          "content_en": "Facilitation forte ; jeûner possible si pas de gêne."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne de la femme enceinte",
+      "title_en": "Pregnant Woman's Fast",
+      "title_ar": "صوم الحامل",
+      "title_ru": "Pregnant Woman's Fast",
+      "title_zh": "Pregnant Woman's Fast",
+      "description_fr": "Règles pour la femme enceinte ou allaitante.",
+      "description_en": "Rules for pregnant or nursing women.",
+      "description_ar": "Rules for pregnant or nursing women.",
+      "description_ru": "Rules for pregnant or nursing women.",
+      "description_zh": "Rules for pregnant or nursing women.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Rompre si danger pour elle ou l'enfant ; qada seulement.",
+          "content_en": "Rompre si danger pour elle ou l'enfant ; qada seulement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même facilité ; fidya si crainte permanente.",
+          "content_en": "Même facilité ; fidya si crainte permanente."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne des personnes âgées",
+      "title_en": "Elderly Person's Fast",
+      "title_ar": "صوم الكبير",
+      "title_ru": "Elderly Person's Fast",
+      "title_zh": "Elderly Person's Fast",
+      "description_fr": "Incapacité permanente de jeûner.",
+      "description_en": "Permanent inability to fast.",
+      "description_ar": "Permanent inability to fast.",
+      "description_ru": "Permanent inability to fast.",
+      "description_zh": "Permanent inability to fast.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Fidya : nourrir un pauvre par jour manqué.",
+          "content_en": "Fidya : nourrir un pauvre par jour manqué."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même fidya si rétablissement impossible.",
+          "content_en": "Même fidya si rétablissement impossible."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Kaffara du jeûne",
+      "title_en": "Expiation for Breaking Fast",
+      "title_ar": "كفارة الصوم",
+      "title_ru": "Expiation for Breaking Fast",
+      "title_zh": "Expiation for Breaking Fast",
+      "description_fr": "Pénitence pour rupture illicite en Ramadan.",
+      "description_en": "Expiation for unlawful breaking in Ramadan.",
+      "description_ar": "Expiation for unlawful breaking in Ramadan.",
+      "description_ru": "Expiation for unlawful breaking in Ramadan.",
+      "description_zh": "Expiation for unlawful breaking in Ramadan.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Affranchir esclave, ou jeûner 60 jours, ou nourrir 60 pauvres.",
+          "content_en": "Affranchir esclave, ou jeûner 60 jours, ou nourrir 60 pauvres."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ordre hiérarchique selon capacité.",
+          "content_en": "Ordre hiérarchique selon capacité."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne des jours blancs",
+      "title_en": "White Days Fasting",
+      "title_ar": "صيام الأيام البيض",
+      "title_ru": "White Days Fasting",
+      "title_zh": "White Days Fasting",
+      "description_fr": "Jeûne des 13, 14 et 15 de chaque mois.",
+      "description_en": "Fasting 13th, 14th, 15th of each month.",
+      "description_ar": "Fasting 13th, 14th, 15th of each month.",
+      "description_ru": "Fasting 13th, 14th, 15th of each month.",
+      "description_zh": "Fasting 13th, 14th, 15th of each month.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna recommandée chaque mois lunaire.",
+          "content_en": "Sunna recommandée chaque mois lunaire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Comme jeûne de Shawwal en mérite.",
+          "content_en": "Comme jeûne de Shawwal en mérite."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne de Ashura",
+      "title_en": "Ashura Fasting",
+      "title_ar": "صيام عاشوراء",
+      "title_ru": "Ashura Fasting",
+      "title_zh": "Ashura Fasting",
+      "description_fr": "Jeûne du 10 Muharram.",
+      "description_en": "Fasting the 10th of Muharram.",
+      "description_ar": "Fasting the 10th of Muharram.",
+      "description_ru": "Fasting the 10th of Muharram.",
+      "description_zh": "Fasting the 10th of Muharram.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna ; jeûner 9 et 10 ou 10 et 11.",
+          "content_en": "Sunna ; jeûner 9 et 10 ou 10 et 11."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Commémoration de la délivrance de Musa.",
+          "content_en": "Commémoration de la délivrance de Musa."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne de Shawwal",
+      "title_en": "Six Days of Shawwal",
+      "title_ar": "صيام ستة من شوال",
+      "title_ru": "Six Days of Shawwal",
+      "title_zh": "Six Days of Shawwal",
+      "description_fr": "Six jours après l'Aïd al-Fitr.",
+      "description_en": "Six days after Eid al-Fitr.",
+      "description_ar": "Six days after Eid al-Fitr.",
+      "description_ru": "Six days after Eid al-Fitr.",
+      "description_zh": "Six days after Eid al-Fitr.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Équivalent à jeûne de l'année (hadith).",
+          "content_en": "Équivalent à jeûne de l'année (hadith)."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sunna muakkada séparément ou consécutivement.",
+          "content_en": "Sunna muakkada séparément ou consécutivement."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne de David (un jour sur deux)",
+      "title_en": "Fast of Dawud",
+      "title_ar": "صوم داود",
+      "title_ru": "Fast of Dawud",
+      "title_zh": "Fast of Dawud",
+      "description_fr": "Jeûne alterné surérogatoire.",
+      "description_en": "Alternate-day supererogatory fast.",
+      "description_ar": "Alternate-day supererogatory fast.",
+      "description_ru": "Alternate-day supererogatory fast.",
+      "description_zh": "Alternate-day supererogatory fast.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Meilleur jeûne surérogatoire selon hadith.",
+          "content_en": "Meilleur jeûne surérogatoire selon hadith."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Un jour jeûne, un jour mange.",
+          "content_en": "Un jour jeûne, un jour mange."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Suhur",
+      "title_en": "Pre-dawn Meal (Suhur)",
+      "title_ar": "السحور",
+      "title_ru": "Pre-dawn Meal (Suhur)",
+      "title_zh": "Pre-dawn Meal (Suhur)",
+      "description_fr": "Repas avant l'aube du jeûne.",
+      "description_en": "Meal before dawn when fasting.",
+      "description_ar": "Meal before dawn when fasting.",
+      "description_ru": "Meal before dawn when fasting.",
+      "description_zh": "Meal before dawn when fasting.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna fortement recommandée ; bénédiction.",
+          "content_en": "Sunna fortement recommandée ; bénédiction."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même si tard ; ne pas omettre par paresse.",
+          "content_en": "Même si tard ; ne pas omettre par paresse."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "L'Iftar",
+      "title_en": "Breaking the Fast",
+      "title_ar": "الإفطار",
+      "title_ru": "Breaking the Fast",
+      "title_zh": "Breaking the Fast",
+      "description_fr": "Rupture du jeûne au coucher du soleil.",
+      "description_en": "Breaking fast at sunset.",
+      "description_ar": "Breaking fast at sunset.",
+      "description_ru": "Breaking fast at sunset.",
+      "description_zh": "Breaking fast at sunset.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Avec dattes et eau ; hâter l'iftar sunna.",
+          "content_en": "Avec dattes et eau ; hâter l'iftar sunna."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Inviter les jeûneurs : grande récompense.",
+          "content_en": "Inviter les jeûneurs : grande récompense."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne en cas de doute sur le mois",
+      "title_en": "Fasting Day of Doubt",
+      "title_ar": "صوم يوم الشك",
+      "title_ru": "Fasting Day of Doubt",
+      "title_zh": "Fasting Day of Doubt",
+      "description_fr": "Jeûner le 30 Sha'ban par doute.",
+      "description_en": "Fasting 30th Sha'ban out of doubt.",
+      "description_ar": "Fasting 30th Sha'ban out of doubt.",
+      "description_ru": "Fasting 30th Sha'ban out of doubt.",
+      "description_zh": "Fasting 30th Sha'ban out of doubt.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit de jeûner le jour de doute.",
+          "content_en": "Interdit de jeûner le jour de doute."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même interdiction malikite.",
+          "content_en": "Même interdiction malikite."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne des vœux (Nadhr)",
+      "title_en": "Vow Fasting",
+      "title_ar": "صوم النذر",
+      "title_ru": "Vow Fasting",
+      "title_zh": "Vow Fasting",
+      "description_fr": "Jeûne accompli par vœu personnel.",
+      "description_en": "Fasting fulfilled by personal vow.",
+      "description_ar": "Fasting fulfilled by personal vow.",
+      "description_ru": "Fasting fulfilled by personal vow.",
+      "description_zh": "Fasting fulfilled by personal vow.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Obligatoire une fois voué ; qada si manqué.",
+          "content_en": "Obligatoire une fois voué ; qada si manqué."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Nadhr lié à obéissance valide seulement.",
+          "content_en": "Nadhr lié à obéissance valide seulement."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne en expiation (Kaffara)",
+      "title_en": "Expiation Fasts",
+      "title_ar": "صوم الكفارة",
+      "title_ru": "Expiation Fasts",
+      "title_zh": "Expiation Fasts",
+      "description_fr": "Jeûnes de pénitence diverses.",
+      "description_en": "Various penitential fasts.",
+      "description_ar": "Various penitential fasts.",
+      "description_ru": "Various penitential fasts.",
+      "description_zh": "Various penitential fasts.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Dhihar, meurtre involontaire, rupture serment.",
+          "content_en": "Dhihar, meurtre involontaire, rupture serment."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Deux mois consécutifs pour certains cas.",
+          "content_en": "Deux mois consécutifs pour certains cas."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Les conditions du Hajj",
+      "title_en": "Conditions of Hajj",
+      "title_ar": "شروط وجوب الحج",
+      "title_ru": "Conditions of Hajj",
+      "title_zh": "Conditions of Hajj",
+      "description_fr": "Qui doit accomplir le pèlerinage.",
+      "description_en": "Who must perform Hajj.",
+      "description_ar": "Who must perform Hajj.",
+      "description_ru": "Who must perform Hajj.",
+      "description_zh": "Who must perform Hajj.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Musulman, pubère, sain, capacité physique et financière.",
+          "content_en": "Musulman, pubère, sain, capacité physique et financière."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Une fois dans la vie si conditions réunies.",
+          "content_en": "Une fois dans la vie si conditions réunies."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Les piliers du Hajj",
+      "title_en": "Pillars of Hajj",
+      "title_ar": "أركان الحج",
+      "title_ru": "Pillars of Hajj",
+      "title_zh": "Pillars of Hajj",
+      "description_fr": "Actes indispensables du pèlerinage.",
+      "description_en": "Indispensable acts of pilgrimage.",
+      "description_ar": "Indispensable acts of pilgrimage.",
+      "description_ru": "Indispensable acts of pilgrimage.",
+      "description_zh": "Indispensable acts of pilgrimage.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ihram, station Arafat, tawaf al-ifada, sa'y.",
+          "content_en": "Ihram, station Arafat, tawaf al-ifada, sa'y."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mêmes piliers ; omission = hajj invalide.",
+          "content_en": "Mêmes piliers ; omission = hajj invalide."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Les obligations du Hajj (Wajibat)",
+      "title_en": "Obligations of Hajj",
+      "title_ar": "واجبات الحج",
+      "title_ru": "Obligations of Hajj",
+      "title_zh": "Obligations of Hajj",
+      "description_fr": "Actes obligatoires sans lesquels expiation.",
+      "description_en": "Mandatory acts with expiation if missed.",
+      "description_ar": "Mandatory acts with expiation if missed.",
+      "description_ru": "Mandatory acts with expiation if missed.",
+      "description_zh": "Mandatory acts with expiation if missed.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mina, lapidation, sacrifice, tawaf wada.",
+          "content_en": "Mina, lapidation, sacrifice, tawaf wada."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Délaissement de wajib : dam (sacrifice).",
+          "content_en": "Délaissement de wajib : dam (sacrifice)."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "L'Ihram",
+      "title_en": "State of Ihram",
+      "title_ar": "الإحرام",
+      "title_ru": "State of Ihram",
+      "title_zh": "State of Ihram",
+      "description_fr": "Entrée en sacralité du pèlerinage.",
+      "description_en": "Entering pilgrimage sanctity.",
+      "description_ar": "Entering pilgrimage sanctity.",
+      "description_ru": "Entering pilgrimage sanctity.",
+      "description_zh": "Entering pilgrimage sanctity.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Intention et talbiya ; interdictions vestimentaires.",
+          "content_en": "Intention et talbiya ; interdictions vestimentaires."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Interdits : parfum, couture, rapports.",
+          "content_en": "Interdits : parfum, couture, rapports."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Tawaf",
+      "title_en": "Circumambulation (Tawaf)",
+      "title_ar": "الطواف",
+      "title_ru": "Circumambulation (Tawaf)",
+      "title_zh": "Circumambulation (Tawaf)",
+      "description_fr": "Sept tours autour de la Kaaba.",
+      "description_en": "Seven circuits around the Kaaba.",
+      "description_ar": "Seven circuits around the Kaaba.",
+      "description_ru": "Seven circuits around the Kaaba.",
+      "description_zh": "Seven circuits around the Kaaba.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pilier ; commence à la Pierre Noire.",
+          "content_en": "Pilier ; commence à la Pierre Noire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Chaque tour : Kaaba à gauche.",
+          "content_en": "Chaque tour : Kaaba à gauche."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Sa'y",
+      "title_en": "Sa'y Between Safa and Marwa",
+      "title_ar": "السعي",
+      "title_ru": "Sa'y Between Safa and Marwa",
+      "title_zh": "Sa'y Between Safa and Marwa",
+      "description_fr": "Parcours entre Safa et Marwa.",
+      "description_en": "Walking between Safa and Marwa.",
+      "description_ar": "Walking between Safa and Marwa.",
+      "description_ru": "Walking between Safa and Marwa.",
+      "description_zh": "Walking between Safa and Marwa.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sept allers-retours après tawaf.",
+          "content_en": "Sept allers-retours après tawaf."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Commence à Safa, termine à Marwa.",
+          "content_en": "Commence à Safa, termine à Marwa."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "La station à Arafat",
+      "title_en": "Standing at Arafat",
+      "title_ar": "الوقوف بعرفات",
+      "title_ru": "Standing at Arafat",
+      "title_zh": "Standing at Arafat",
+      "description_fr": "Jour essentiel du Hajj.",
+      "description_en": "Essential day of Hajj.",
+      "description_ar": "Essential day of Hajj.",
+      "description_ru": "Essential day of Hajj.",
+      "description_zh": "Essential day of Hajj.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Du zénith au coucher du soleil le 9 Dhul Hijja.",
+          "content_en": "Du zénith au coucher du soleil le 9 Dhul Hijja."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pilier ; sermon et invocation.",
+          "content_en": "Pilier ; sermon et invocation."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "La nuit à Muzdalifa",
+      "title_en": "Night at Muzdalifa",
+      "title_ar": "المبيت بمزدلفة",
+      "title_ru": "Night at Muzdalifa",
+      "title_zh": "Night at Muzdalifa",
+      "description_fr": "Séjour entre Arafat et Mina.",
+      "description_en": "Stay between Arafat and Mina.",
+      "description_ar": "Stay between Arafat and Mina.",
+      "description_ru": "Stay between Arafat and Mina.",
+      "description_zh": "Stay between Arafat and Mina.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Wajib ; collecte des cailloux.",
+          "content_en": "Wajib ; collecte des cailloux."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Prière Maghrib et Isha combinées.",
+          "content_en": "Prière Maghrib et Isha combinées."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "La lapidation des stèles (Jamrat)",
+      "title_en": "Stoning the Pillars",
+      "title_ar": "رمي الجمرات",
+      "title_ru": "Stoning the Pillars",
+      "title_zh": "Stoning the Pillars",
+      "description_fr": "Lapidation rituelle à Mina.",
+      "description_en": "Ritual stoning at Mina.",
+      "description_ar": "Ritual stoning at Mina.",
+      "description_ru": "Ritual stoning at Mina.",
+      "description_zh": "Ritual stoning at Mina.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "11, 12 et 13 Dhul Hijja ; sept cailloux.",
+          "content_en": "11, 12 et 13 Dhul Hijja ; sept cailloux."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ordre : jamra al-aqaba puis petites.",
+          "content_en": "Ordre : jamra al-aqaba puis petites."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le sacrifice du Hajj (Hady)",
+      "title_en": "Hajj Sacrifice",
+      "title_ar": "هدي الحج",
+      "title_ru": "Hajj Sacrifice",
+      "title_zh": "Hajj Sacrifice",
+      "description_fr": "Offrande durant le pèlerinage.",
+      "description_en": "Offering during pilgrimage.",
+      "description_ar": "Offering during pilgrimage.",
+      "description_ru": "Offering during pilgrimage.",
+      "description_zh": "Offering during pilgrimage.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Wajib pour tamattu' et qiran.",
+          "content_en": "Wajib pour tamattu' et qiran."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Distribuer la viande aux pauvres.",
+          "content_en": "Distribuer la viande aux pauvres."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Tawaf al-Wada",
+      "title_en": "Farewell Tawaf",
+      "title_ar": "طواف الوداع",
+      "title_ru": "Farewell Tawaf",
+      "title_zh": "Farewell Tawaf",
+      "description_fr": "Dernier tawaf avant de quitter La Mecque.",
+      "description_en": "Final tawaf before leaving Mecca.",
+      "description_ar": "Final tawaf before leaving Mecca.",
+      "description_ru": "Final tawaf before leaving Mecca.",
+      "description_zh": "Final tawaf before leaving Mecca.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Wajib sauf les menstruées.",
+          "content_en": "Wajib sauf les menstruées."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Oubli : dam requis.",
+          "content_en": "Oubli : dam requis."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "L'Umra",
+      "title_en": "Minor Pilgrimage (Umra)",
+      "title_ar": "العمرة",
+      "title_ru": "Minor Pilgrimage (Umra)",
+      "title_zh": "Minor Pilgrimage (Umra)",
+      "description_fr": "Petit pèlerinage à tout moment.",
+      "description_en": "Lesser pilgrimage any time of year.",
+      "description_ar": "Lesser pilgrimage any time of year.",
+      "description_ru": "Lesser pilgrimage any time of year.",
+      "description_zh": "Lesser pilgrimage any time of year.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ihram, tawaf, sa'y, rasage ou coupe.",
+          "content_en": "Ihram, tawaf, sa'y, rasage ou coupe."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sunna forte une fois dans la vie.",
+          "content_en": "Sunna forte une fois dans la vie."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Hajj Tamattu'",
+      "title_en": "Hajj Tamattu'",
+      "title_ar": "الحج تمتع",
+      "title_ru": "Hajj Tamattu'",
+      "title_zh": "Hajj Tamattu'",
+      "description_fr": "Umra puis Hajj avec relâchement.",
+      "description_en": "Umra then Hajj with relaxation.",
+      "description_ar": "Umra then Hajj with relaxation.",
+      "description_ru": "Umra then Hajj with relaxation.",
+      "description_zh": "Umra then Hajj with relaxation.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sacrifice hady obligatoire.",
+          "content_en": "Sacrifice hady obligatoire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ihram séparé pour Umra et Hajj.",
+          "content_en": "Ihram séparé pour Umra et Hajj."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Hajj Qiran",
+      "title_en": "Hajj Qiran",
+      "title_ar": "الحج قران",
+      "title_ru": "Hajj Qiran",
+      "title_zh": "Hajj Qiran",
+      "description_fr": "Umra et Hajj combinés sans retour.",
+      "description_en": "Combined Umra and Hajj without return.",
+      "description_ar": "Combined Umra and Hajj without return.",
+      "description_ru": "Combined Umra and Hajj without return.",
+      "description_zh": "Combined Umra and Hajj without return.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Un ihram pour les deux ; hady wajib.",
+          "content_en": "Un ihram pour les deux ; hady wajib."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sacrifice obligatoire.",
+          "content_en": "Sacrifice obligatoire."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Hajj Ifrad",
+      "title_en": "Hajj Ifrad",
+      "title_ar": "الحج إفراد",
+      "title_ru": "Hajj Ifrad",
+      "title_zh": "Hajj Ifrad",
+      "description_fr": "Hajj seul sans Umra préalable.",
+      "description_en": "Hajj only without prior Umra.",
+      "description_ar": "Hajj only without prior Umra.",
+      "description_ru": "Hajj only without prior Umra.",
+      "description_zh": "Hajj only without prior Umra.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas de hady obligatoire.",
+          "content_en": "Pas de hady obligatoire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ihram pour Hajj uniquement.",
+          "content_en": "Ihram pour Hajj uniquement."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "L'I'tikaf",
+      "title_en": "Spiritual Retreat (I'tikaf)",
+      "title_ar": "الاعتكاف",
+      "title_ru": "Spiritual Retreat (I'tikaf)",
+      "title_zh": "Spiritual Retreat (I'tikaf)",
+      "description_fr": "Retraite spirituelle en mosquée.",
+      "description_en": "Spiritual retreat in mosque.",
+      "description_ar": "Spiritual retreat in mosque.",
+      "description_ru": "Spiritual retreat in mosque.",
+      "description_zh": "Spiritual retreat in mosque.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna les dix derniers jours de Ramadan.",
+          "content_en": "Sunna les dix derniers jours de Ramadan."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Niyyah et permanence sauf besoins.",
+          "content_en": "Niyyah et permanence sauf besoins."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Nisab de la Zakat",
+      "title_en": "Zakat Nisab Threshold",
+      "title_ar": "نصاب الزكاة",
+      "title_ru": "Zakat Nisab Threshold",
+      "title_zh": "Zakat Nisab Threshold",
+      "description_fr": "Seuil minimum de richesse imposable.",
+      "description_en": "Minimum wealth threshold for zakat.",
+      "description_ar": "Minimum wealth threshold for zakat.",
+      "description_ru": "Minimum wealth threshold for zakat.",
+      "description_zh": "Minimum wealth threshold for zakat.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Équivalent 85g or ou 595g argent.",
+          "content_en": "Équivalent 85g or ou 595g argent."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Possession un an lunaire (hawl).",
+          "content_en": "Possession un an lunaire (hawl)."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Les huit catégories de bénéficiaires",
+      "title_en": "Eight Zakat Recipients",
+      "title_ar": "مصارف الزكاة",
+      "title_ru": "Eight Zakat Recipients",
+      "title_zh": "Eight Zakat Recipients",
+      "description_fr": "À qui distribuer la zakat.",
+      "description_en": "Who may receive zakat.",
+      "description_ar": "Who may receive zakat.",
+      "description_ru": "Who may receive zakat.",
+      "description_zh": "Who may receive zakat.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Coran 9:60 : pauvres, nécessiteux, collecteurs, etc.",
+          "content_en": "Coran 9:60 : pauvres, nécessiteux, collecteurs, etc."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Interdit aux riches et ascendants/descendants.",
+          "content_en": "Interdit aux riches et ascendants/descendants."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "La Zakat al-Fitr",
+      "title_en": "Zakat al-Fitr",
+      "title_ar": "زكاة الفطر",
+      "title_ru": "Zakat al-Fitr",
+      "title_zh": "Zakat al-Fitr",
+      "description_fr": "Aumône de rupture du jeûne.",
+      "description_en": "Charity before Eid al-Fitr.",
+      "description_ar": "Charity before Eid al-Fitr.",
+      "description_ru": "Charity before Eid al-Fitr.",
+      "description_zh": "Charity before Eid al-Fitr.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Un sa' de nourriture par personne du foyer.",
+          "content_en": "Un sa' de nourriture par personne du foyer."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Avant prière de l'Aïd.",
+          "content_en": "Avant prière de l'Aïd."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Zakat sur les troupeaux",
+      "title_en": "Zakat on Livestock",
+      "title_ar": "زكاة الأنعام",
+      "title_ru": "Zakat on Livestock",
+      "title_zh": "Zakat on Livestock",
+      "description_fr": "Aumône sur chameaux, bovins, ovins.",
+      "description_en": "Charity on grazing livestock.",
+      "description_ar": "Charity on grazing livestock.",
+      "description_ru": "Charity on grazing livestock.",
+      "description_zh": "Charity on grazing livestock.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Seuils spécifiques par espèce.",
+          "content_en": "Seuils spécifiques par espèce."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pasture libre condition hanafite.",
+          "content_en": "Pasture libre condition hanafite."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Zakat sur les récoltes",
+      "title_en": "Zakat on Crops",
+      "title_ar": "زكاة الزروع",
+      "title_ru": "Zakat on Crops",
+      "title_zh": "Zakat on Crops",
+      "description_fr": "Dîme sur production agricole.",
+      "description_en": "Tithe on agricultural produce.",
+      "description_ar": "Tithe on agricultural produce.",
+      "description_ru": "Tithe on agricultural produce.",
+      "description_zh": "Tithe on agricultural produce.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "10% irrigation naturelle, 5% artificielle.",
+          "content_en": "10% irrigation naturelle, 5% artificielle."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "À la récolte si seuil atteint.",
+          "content_en": "À la récolte si seuil atteint."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Zakat sur le commerce",
+      "title_en": "Zakat on Trade Goods",
+      "title_ar": "زكاة عروض التجارة",
+      "title_ru": "Zakat on Trade Goods",
+      "title_zh": "Zakat on Trade Goods",
+      "description_fr": "Calcul sur stocks marchands.",
+      "description_en": "Calculation on merchandise.",
+      "description_ar": "Calculation on merchandise.",
+      "description_ru": "Calculation on merchandise.",
+      "description_zh": "Calculation on merchandise.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "2,5% de valeur après un an.",
+          "content_en": "2,5% de valeur après un an."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Inventaire annuel des biens liquides.",
+          "content_en": "Inventaire annuel des biens liquides."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Zakat sur l'or et l'argent",
+      "title_en": "Zakat on Gold and Silver",
+      "title_ar": "زكاة الذهب والفضة",
+      "title_ru": "Zakat on Gold and Silver",
+      "title_zh": "Zakat on Gold and Silver",
+      "description_fr": "Aumône sur métaux précieux.",
+      "description_en": "Charity on precious metals.",
+      "description_ar": "Charity on precious metals.",
+      "description_ru": "Charity on precious metals.",
+      "description_zh": "Charity on precious metals.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "2,5% si nisab atteint un an.",
+          "content_en": "2,5% si nisab atteint un an."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Bijoux portés : débattu ; prudent de payer.",
+          "content_en": "Bijoux portés : débattu ; prudent de payer."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le sacrifice (Udhiyah)",
+      "title_en": "Udhiyah Sacrifice",
+      "title_ar": "الأضحية",
+      "title_ru": "Udhiyah Sacrifice",
+      "title_zh": "Udhiyah Sacrifice",
+      "description_fr": "Sacrifice de l'Aïd al-Adha.",
+      "description_en": "Sacrifice on Eid al-Adha.",
+      "description_ar": "Sacrifice on Eid al-Adha.",
+      "description_ru": "Sacrifice on Eid al-Adha.",
+      "description_zh": "Sacrifice on Eid al-Adha.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna muakkada pour celui qui peut.",
+          "content_en": "Sunna muakkada pour celui qui peut."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Viande distribuée : tiers pauvres minimum.",
+          "content_en": "Viande distribuée : tiers pauvres minimum."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Hajj par procuration",
+      "title_en": "Hajj by Proxy",
+      "title_ar": "الحج عن الغير",
+      "title_ru": "Hajj by Proxy",
+      "title_zh": "Hajj by Proxy",
+      "description_fr": "Accomplir le Hajj pour un autre.",
+      "description_en": "Performing Hajj on behalf of another.",
+      "description_ar": "Performing Hajj on behalf of another.",
+      "description_ru": "Performing Hajj on behalf of another.",
+      "description_zh": "Performing Hajj on behalf of another.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si le mandant ne peut plus voyager.",
+          "content_en": "Permis si le mandant ne peut plus voyager."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Une fois dans la vie suffit pour le mandant.",
+          "content_en": "Une fois dans la vie suffit pour le mandant."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Les interdits de l'Ihram",
+      "title_en": "Ihram Prohibitions",
+      "title_ar": "محظورات الإحرام",
+      "title_ru": "Ihram Prohibitions",
+      "title_zh": "Ihram Prohibitions",
+      "description_fr": "Ce qui est interdit en état d'ihram.",
+      "description_en": "What is forbidden in ihram.",
+      "description_ar": "What is forbidden in ihram.",
+      "description_ru": "What is forbidden in ihram.",
+      "description_zh": "What is forbidden in ihram.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Parfum, chasse, mariage, rapports.",
+          "content_en": "Parfum, chasse, mariage, rapports."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Couper ongles/cheveux avant expiation.",
+          "content_en": "Couper ongles/cheveux avant expiation."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne du pèlerin à Mina",
+      "title_en": "Fasting at Mina",
+      "title_ar": "صيام الحاج بمنى",
+      "title_ru": "Fasting at Mina",
+      "title_zh": "Fasting at Mina",
+      "description_fr": "Jeûner les jours de tashreeq.",
+      "description_en": "Fasting the days of tashreeq.",
+      "description_ar": "Fasting the days of tashreeq.",
+      "description_ru": "Fasting the days of tashreeq.",
+      "description_zh": "Fasting the days of tashreeq.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Déconseillé sans besoin.",
+          "content_en": "Déconseillé sans besoin."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mieux vaut manger et louer Allah.",
+          "content_en": "Mieux vaut manger et louer Allah."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Les piliers du mariage (Arkan al-Nikah)",
+      "title_en": "Pillars of Marriage",
+      "title_ar": "أركان النكاح",
+      "title_ru": "Pillars of Marriage",
+      "title_zh": "Pillars of Marriage",
+      "description_fr": "Éléments constitutifs du contrat de mariage.",
+      "description_en": "Constituent elements of marriage contract.",
+      "description_ar": "Constituent elements of marriage contract.",
+      "description_ru": "Constituent elements of marriage contract.",
+      "description_zh": "Constituent elements of marriage contract.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Offre, acceptation, témoins, Mahr, absence d'empêchement.",
+          "content_en": "Offre, acceptation, témoins, Mahr, absence d'empêchement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même structure ; wali selon école.",
+          "content_en": "Même structure ; wali selon école."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le rôle du Wali",
+      "title_en": "Role of the Guardian (Wali)",
+      "title_ar": "الولي في النكاح",
+      "title_ru": "Role of the Guardian (Wali)",
+      "title_zh": "Role of the Guardian (Wali)",
+      "description_fr": "Représentant de la fiancée.",
+      "description_en": "Bride's representative in marriage.",
+      "description_ar": "Bride's representative in marriage.",
+      "description_ru": "Bride's representative in marriage.",
+      "description_zh": "Bride's representative in marriage.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Obligatoire pour la vierge selon majorité.",
+          "content_en": "Obligatoire pour la vierge selon majorité."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Père puis proches masculins par ordre.",
+          "content_en": "Père puis proches masculins par ordre."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La dot (Mahr)",
+      "title_en": "Bridal Gift (Mahr)",
+      "title_ar": "المهر",
+      "title_ru": "Bridal Gift (Mahr)",
+      "title_zh": "Bridal Gift (Mahr)",
+      "description_fr": "Don obligatoire de l'époux à l'épouse.",
+      "description_en": "Mandatory gift from husband to wife.",
+      "description_ar": "Mandatory gift from husband to wife.",
+      "description_ru": "Mandatory gift from husband to wife.",
+      "description_zh": "Mandatory gift from husband to wife.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Propriété exclusive de l'épouse ; fixé à l'avance.",
+          "content_en": "Propriété exclusive de l'épouse ; fixé à l'avance."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mahr mithl si non stipulé.",
+          "content_en": "Mahr mithl si non stipulé."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Les empêchements permanents au mariage",
+      "title_en": "Permanent Marriage Impediments",
+      "title_ar": "الموانع الأبدية",
+      "title_ru": "Permanent Marriage Impediments",
+      "title_zh": "Permanent Marriage Impediments",
+      "description_fr": "Qui ne peut jamais épouser qui.",
+      "description_en": "Who can never marry whom.",
+      "description_ar": "Who can never marry whom.",
+      "description_ru": "Who can never marry whom.",
+      "description_zh": "Who can never marry whom.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mère, fille, sœur, tante, nièce, belle-fille, etc.",
+          "content_en": "Mère, fille, sœur, tante, nièce, belle-fille, etc."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Consanguinité et allaitement permanents.",
+          "content_en": "Consanguinité et allaitement permanents."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Les empêchements temporaires",
+      "title_en": "Temporary Marriage Impediments",
+      "title_ar": "الموانع المؤقتة",
+      "title_ru": "Temporary Marriage Impediments",
+      "title_zh": "Temporary Marriage Impediments",
+      "description_fr": "Interdictions provisoires.",
+      "description_en": "Provisional prohibitions.",
+      "description_ar": "Provisional prohibitions.",
+      "description_ru": "Provisional prohibitions.",
+      "description_zh": "Provisional prohibitions.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Quatre épouses simultanées ; iddah de la veuve.",
+          "content_en": "Quatre épouses simultanées ; iddah de la veuve."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mariage simultané à deux sœurs interdit.",
+          "content_en": "Mariage simultané à deux sœurs interdit."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le mariage avec les gens du Livre",
+      "title_en": "Marriage to People of the Book",
+      "title_ar": "الزواج من أهل الكتاب",
+      "title_ru": "Marriage to People of the Book",
+      "title_zh": "Marriage to People of the Book",
+      "description_fr": "Union avec chrétienne ou juive.",
+      "description_en": "Marriage to Christian or Jewish woman.",
+      "description_ar": "Marriage to Christian or Jewish woman.",
+      "description_ru": "Marriage to Christian or Jewish woman.",
+      "description_zh": "Marriage to Christian or Jewish woman.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis pour homme musulman avec conditions.",
+          "content_en": "Permis pour homme musulman avec conditions."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Interdit à la femme musulmane hors Islam.",
+          "content_en": "Interdit à la femme musulmane hors Islam."
+        }
+      ]
+    }
+  ]
+}

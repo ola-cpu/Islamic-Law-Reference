@@ -1,0 +1,1255 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du Jumu'a (vendredi)",
+      "title_en": "Friday Prayer (Jumu'a)",
+      "title_ar": "صلاة الجمعة",
+      "title_ru": "Friday Prayer (Jumu'a)",
+      "title_zh": "Friday Prayer (Jumu'a)",
+      "description_fr": "Prière hebdomadaire en congregation le vendredi.",
+      "description_en": "Weekly congregational Friday prayer.",
+      "description_ar": "Weekly congregational Friday prayer.",
+      "description_ru": "Weekly congregational Friday prayer.",
+      "description_zh": "Weekly congregational Friday prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Obligatoire pour l'homme libre, pubère, résident et valide.",
+          "content_en": "Obligatoire pour l'homme libre, pubère, résident et valide."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Khutba puis deux rak'ats ; absence sans excuse décriée.",
+          "content_en": "Khutba puis deux rak'ats ; absence sans excuse décriée."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Les conditions de validité de la prière",
+      "title_en": "Validity Conditions of Prayer",
+      "title_ar": "شروط صحة الصلاة",
+      "title_ru": "Validity Conditions of Prayer",
+      "title_zh": "Validity Conditions of Prayer",
+      "description_fr": "Prérequis pour que la salat soit acceptée.",
+      "description_en": "Prerequisites for valid prayer.",
+      "description_ar": "Prerequisites for valid prayer.",
+      "description_ru": "Prerequisites for valid prayer.",
+      "description_zh": "Prerequisites for valid prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Islam, discernement, pureté rituelle, couverture, direction, temps.",
+          "content_en": "Islam, discernement, pureté rituelle, couverture, direction, temps."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mêmes fondements ; intention explicite selon Malik.",
+          "content_en": "Mêmes fondements ; intention explicite selon Malik."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Les piliers de la prière (Arkan)",
+      "title_en": "Pillars of Prayer (Arkan)",
+      "title_ar": "أركان الصلاة",
+      "title_ru": "Pillars of Prayer (Arkan)",
+      "title_zh": "Pillars of Prayer (Arkan)",
+      "description_fr": "Actes sans lesquels la prière est nulle.",
+      "description_en": "Acts without which prayer is void.",
+      "description_ar": "Acts without which prayer is void.",
+      "description_ru": "Acts without which prayer is void.",
+      "description_zh": "Acts without which prayer is void.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Debout, takbir, récitation, ruku, sujud, assise finale, salam, ordre.",
+          "content_en": "Debout, takbir, récitation, ruku, sujud, assise finale, salam, ordre."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Qiyam, takbir, Fatiha, ruku, sujud, tashahhud, salam.",
+          "content_en": "Qiyam, takbir, Fatiha, ruku, sujud, tashahhud, salam."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Les obligations de la prière (Wajibat)",
+      "title_en": "Obligations of Prayer",
+      "title_ar": "واجبات الصلاة",
+      "title_ru": "Obligations of Prayer",
+      "title_zh": "Obligations of Prayer",
+      "description_fr": "Actes obligatoires distincts des piliers.",
+      "description_en": "Mandatory acts distinct from pillars.",
+      "description_ar": "Mandatory acts distinct from pillars.",
+      "description_ru": "Mandatory acts distinct from pillars.",
+      "description_zh": "Mandatory acts distinct from pillars.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Récitation audible ou secrète selon prière ; tashahhud premier.",
+          "content_en": "Récitation audible ou secrète selon prière ; tashahhud premier."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Tous les takbirs ; lecture à voix basse ou haute selon règles.",
+          "content_en": "Tous les takbirs ; lecture à voix basse ou haute selon règles."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Les sunan de la prière",
+      "title_en": "Sunnahs of Prayer",
+      "title_ar": "سنن الصلاة",
+      "title_ru": "Sunnahs of Prayer",
+      "title_zh": "Sunnahs of Prayer",
+      "description_fr": "Actes recommandés qui complètent la salat.",
+      "description_en": "Recommended acts completing prayer.",
+      "description_ar": "Recommended acts completing prayer.",
+      "description_ru": "Recommended acts completing prayer.",
+      "description_zh": "Recommended acts completing prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Raising hands au takbir ; douas entre les prosternations.",
+          "content_en": "Raising hands au takbir ; douas entre les prosternations."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mains au niveau des oreilles ; doua entre les deux sujud.",
+          "content_en": "Mains au niveau des oreilles ; doua entre les deux sujud."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière en congregation (Jama'a)",
+      "title_en": "Congregational Prayer",
+      "title_ar": "صلاة الجماعة",
+      "title_ru": "Congregational Prayer",
+      "title_zh": "Congregational Prayer",
+      "description_fr": "Mérite et conditions de la prière en groupe.",
+      "description_en": "Merit and rules of group prayer.",
+      "description_ar": "Merit and rules of group prayer.",
+      "description_ru": "Merit and rules of group prayer.",
+      "description_zh": "Merit and rules of group prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Vingt-sept degrés supérieurs à la prière seul (hadith).",
+          "content_en": "Vingt-sept degrés supérieurs à la prière seul (hadith)."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Recommandée ; imam doit être juste et compétent.",
+          "content_en": "Recommandée ; imam doit être juste et compétent."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Le rôle et les devoirs de l'imam",
+      "title_en": "Duties of the Imam",
+      "title_ar": "واجبات الإمام",
+      "title_ru": "Duties of the Imam",
+      "title_zh": "Duties of the Imam",
+      "description_fr": "Qualités requises pour diriger la prière.",
+      "description_en": "Qualities required to lead prayer.",
+      "description_ar": "Qualities required to lead prayer.",
+      "description_ru": "Qualities required to lead prayer.",
+      "description_zh": "Qualities required to lead prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Juste, mémorise Fatiha, connaît les règles essentielles.",
+          "content_en": "Juste, mémorise Fatiha, connaît les règles essentielles."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Voix audible ; ne prolonge pas au détriment des fidèles.",
+          "content_en": "Voix audible ; ne prolonge pas au détriment des fidèles."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du suiveur (Ma'mum)",
+      "title_en": "Prayer of the Follower",
+      "title_ar": "صلاة المأموم",
+      "title_ru": "Prayer of the Follower",
+      "title_zh": "Prayer of the Follower",
+      "description_fr": "Règles de celui qui prie derrière l'imam.",
+      "description_en": "Rules for one praying behind the imam.",
+      "description_ar": "Rules for one praying behind the imam.",
+      "description_ru": "Rules for one praying behind the imam.",
+      "description_zh": "Rules for one praying behind the imam.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Suit l'imam ; ne précède pas ses mouvements.",
+          "content_en": "Suit l'imam ; ne précède pas ses mouvements."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ne se lève avant l'imam ; suit sans retarder.",
+          "content_en": "Ne se lève avant l'imam ; suit sans retarder."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière sur un siège",
+      "title_en": "Praying While Seated",
+      "title_ar": "الصلاة على الكرسي",
+      "title_ru": "Praying While Seated",
+      "title_zh": "Praying While Seated",
+      "description_fr": "Prière assise par incapacité physique.",
+      "description_en": "Prayer seated due to inability.",
+      "description_ar": "Prayer seated due to inability.",
+      "description_ru": "Prayer seated due to inability.",
+      "description_zh": "Prayer seated due to inability.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permise si debout est impossible ; gestes par signes si besoin.",
+          "content_en": "Permise si debout est impossible ; gestes par signes si besoin."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même règle ; prière valide avec gestes adaptés.",
+          "content_en": "Même règle ; prière valide avec gestes adaptés."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière en voyage (Qasr et Jam')",
+      "title_en": "Travel Prayer (Qasr & Jam')",
+      "title_ar": "صلاة السفر",
+      "title_ru": "Travel Prayer (Qasr & Jam')",
+      "title_zh": "Travel Prayer (Qasr & Jam')",
+      "description_fr": "Raccourcissement et combinaison en voyage.",
+      "description_en": "Shortening and combining while traveling.",
+      "description_ar": "Shortening and combining while traveling.",
+      "description_ru": "Shortening and combining while traveling.",
+      "description_zh": "Shortening and combining while traveling.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Qasr des prières à quatre rak'ats ; Jam' permis selon conditions.",
+          "content_en": "Qasr des prières à quatre rak'ats ; Jam' permis selon conditions."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Distance et intention de voyage requises.",
+          "content_en": "Distance et intention de voyage requises."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du malade",
+      "title_en": "Prayer of the Sick",
+      "title_ar": "صلاة المريض",
+      "title_ru": "Prayer of the Sick",
+      "title_zh": "Prayer of the Sick",
+      "description_fr": "Adaptations pour l'invalide ou le malade.",
+      "description_en": "Adaptations for the ill or injured.",
+      "description_ar": "Adaptations for the ill or injured.",
+      "description_ru": "Adaptations for the ill or injured.",
+      "description_zh": "Adaptations for the ill or injured.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prière assise, couchée ou par signes selon capacité.",
+          "content_en": "Prière assise, couchée ou par signes selon capacité."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Facilitation maximale sans annuler l'obligation.",
+          "content_en": "Facilitation maximale sans annuler l'obligation."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière de la peur (Salat al-Khawf)",
+      "title_en": "Fear Prayer",
+      "title_ar": "صلاة الخوف",
+      "title_ru": "Fear Prayer",
+      "title_zh": "Fear Prayer",
+      "description_fr": "Prière en situation de combat.",
+      "description_en": "Prayer during combat.",
+      "description_ar": "Prayer during combat.",
+      "description_ru": "Prayer during combat.",
+      "description_zh": "Prayer during combat.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Formes multiples selon disposition des troupes.",
+          "content_en": "Formes multiples selon disposition des troupes."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Une rangée prie, l'autre garde.",
+          "content_en": "Une rangée prie, l'autre garde."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière de l'éclipse (Kusuf)",
+      "title_en": "Solar Eclipse Prayer",
+      "title_ar": "صلاة الكسوف",
+      "title_ru": "Solar Eclipse Prayer",
+      "title_zh": "Solar Eclipse Prayer",
+      "description_fr": "Prière sunna lors d'éclipse solaire.",
+      "description_en": "Sunnah prayer during solar eclipse.",
+      "description_ar": "Sunnah prayer during solar eclipse.",
+      "description_ru": "Sunnah prayer during solar eclipse.",
+      "description_zh": "Sunnah prayer during solar eclipse.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Deux rak'ats avec deux ruku par rak'a selon hanafis.",
+          "content_en": "Deux rak'ats avec deux ruku par rak'a selon hanafis."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Rappel à la miséricorde et prière longue.",
+          "content_en": "Rappel à la miséricorde et prière longue."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière de l'éclipse lunaire (Khusuf)",
+      "title_en": "Lunar Eclipse Prayer",
+      "title_ar": "صلاة الخسوف",
+      "title_ru": "Lunar Eclipse Prayer",
+      "title_zh": "Lunar Eclipse Prayer",
+      "description_fr": "Prière recommandée à l'éclipse de lune.",
+      "description_en": "Recommended prayer at lunar eclipse.",
+      "description_ar": "Recommended prayer at lunar eclipse.",
+      "description_ru": "Recommended prayer at lunar eclipse.",
+      "description_zh": "Recommended prayer at lunar eclipse.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna muakkada ; deux rak'ats.",
+          "content_en": "Sunna muakkada ; deux rak'ats."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même recommandation ; invocation abondante.",
+          "content_en": "Même recommandation ; invocation abondante."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière pour la pluie (Istisqa)",
+      "title_en": "Rain Prayer (Istisqa)",
+      "title_ar": "صلاة الاستسقاء",
+      "title_ru": "Rain Prayer (Istisqa)",
+      "title_zh": "Rain Prayer (Istisqa)",
+      "description_fr": "Demande de pluie en période de sécheresse.",
+      "description_en": "Prayer for rain in drought.",
+      "description_ar": "Prayer for rain in drought.",
+      "description_ru": "Prayer for rain in drought.",
+      "description_zh": "Prayer for rain in drought.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Deux rak'ats en congregation ; inversion du manteau (sunna).",
+          "content_en": "Deux rak'ats en congregation ; inversion du manteau (sunna)."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sortie en masse ; douas et repentir.",
+          "content_en": "Sortie en masse ; douas et repentir."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du Witr",
+      "title_en": "Witr Prayer",
+      "title_ar": "صلاة الوتر",
+      "title_ru": "Witr Prayer",
+      "title_zh": "Witr Prayer",
+      "description_fr": "Prière impaire après Isha.",
+      "description_en": "Odd-numbered prayer after Isha.",
+      "description_ar": "Odd-numbered prayer after Isha.",
+      "description_ru": "Odd-numbered prayer after Isha.",
+      "description_zh": "Odd-numbered prayer after Isha.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Wajib selon Abu Hanifa ; min 1, max 11 rak'ats.",
+          "content_en": "Wajib selon Abu Hanifa ; min 1, max 11 rak'ats."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sunna muakkada ; trois rak'ats avec qunut possible.",
+          "content_en": "Sunna muakkada ; trois rak'ats avec qunut possible."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du Tarawih",
+      "title_en": "Tarawih Prayer",
+      "title_ar": "صلاة التراويح",
+      "title_ru": "Tarawih Prayer",
+      "title_zh": "Tarawih Prayer",
+      "description_fr": "Prière nocturne du Ramadan.",
+      "description_en": "Night prayer in Ramadan.",
+      "description_ar": "Night prayer in Ramadan.",
+      "description_ru": "Night prayer in Ramadan.",
+      "description_zh": "Night prayer in Ramadan.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna pour la communauté ; vingt rak'ats en congregation.",
+          "content_en": "Sunna pour la communauté ; vingt rak'ats en congregation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Onze rak'ats ou vingt selon mosquée ; sunna forte.",
+          "content_en": "Onze rak'ats ou vingt selon mosquée ; sunna forte."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du Tahajjud",
+      "title_en": "Tahajjud Prayer",
+      "title_ar": "صلاة التهجد",
+      "title_ru": "Tahajjud Prayer",
+      "title_zh": "Tahajjud Prayer",
+      "description_fr": "Prière nocturne surécompensée.",
+      "description_en": "Highly rewarded night prayer.",
+      "description_ar": "Highly rewarded night prayer.",
+      "description_ru": "Highly rewarded night prayer.",
+      "description_zh": "Highly rewarded night prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Entre Isha et Fajr ; par paires puis witr.",
+          "content_en": "Entre Isha et Fajr ; par paires puis witr."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sunna muakkada pour qui peut se lever.",
+          "content_en": "Sunna muakkada pour qui peut se lever."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du Duha",
+      "title_en": "Duha Prayer",
+      "title_ar": "صلاة الضحى",
+      "title_ru": "Duha Prayer",
+      "title_zh": "Duha Prayer",
+      "description_fr": "Prière de la matinée.",
+      "description_en": "Mid-morning prayer.",
+      "description_ar": "Mid-morning prayer.",
+      "description_ru": "Mid-morning prayer.",
+      "description_zh": "Mid-morning prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna ; deux à huit rak'ats après le lever du soleil.",
+          "content_en": "Sunna ; deux à huit rak'ats après le lever du soleil."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Charité pour chaque articulation (hadith).",
+          "content_en": "Charité pour chaque articulation (hadith)."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière de l'Istikhara",
+      "title_en": "Istikhara Prayer",
+      "title_ar": "صلاة الاستخارة",
+      "title_ru": "Istikhara Prayer",
+      "title_zh": "Istikhara Prayer",
+      "description_fr": "Demander la guidance divine.",
+      "description_en": "Seeking divine guidance.",
+      "description_ar": "Seeking divine guidance.",
+      "description_ru": "Seeking divine guidance.",
+      "description_zh": "Seeking divine guidance.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Deux rak'ats puis doua spécifique du Prophète ﷺ.",
+          "content_en": "Deux rak'ats puis doua spécifique du Prophète ﷺ."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même procédure ; confiance dans le résultat.",
+          "content_en": "Même procédure ; confiance dans le résultat."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière funéraire (Salat al-Janaza)",
+      "title_en": "Funeral Prayer",
+      "title_ar": "صلاة الجنازة",
+      "title_ru": "Funeral Prayer",
+      "title_zh": "Funeral Prayer",
+      "description_fr": "Prière sur le défunt.",
+      "description_en": "Prayer over the deceased.",
+      "description_ar": "Prayer over the deceased.",
+      "description_ru": "Prayer over the deceased.",
+      "description_zh": "Prayer over the deceased.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Quatre takbirs ; pas de ruku ni sujud.",
+          "content_en": "Quatre takbirs ; pas de ruku ni sujud."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Fard kifaya ; douas pour le mort.",
+          "content_en": "Fard kifaya ; douas pour le mort."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Le rattrapage des prières (Qada)",
+      "title_en": "Making Up Missed Prayers",
+      "title_ar": "قضاء الصلاة",
+      "title_ru": "Making Up Missed Prayers",
+      "title_zh": "Making Up Missed Prayers",
+      "description_fr": "Rattraper les prières manquées.",
+      "description_en": "Making up missed prayers.",
+      "description_ar": "Making up missed prayers.",
+      "description_ru": "Making up missed prayers.",
+      "description_zh": "Making up missed prayers.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Obligation de qada ; ordre chronologique recommandé.",
+          "content_en": "Obligation de qada ; ordre chronologique recommandé."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ne pas négliger le qada ; priorité aux plus anciennes.",
+          "content_en": "Ne pas négliger le qada ; priorité aux plus anciennes."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du vendredi : la Khutba",
+      "title_en": "Friday Sermon (Khutba)",
+      "title_ar": "خطبة الجمعة",
+      "title_ru": "Friday Sermon (Khutba)",
+      "title_zh": "Friday Sermon (Khutba)",
+      "description_fr": "Discours précédant la prière du vendredi.",
+      "description_en": "Sermon before Friday prayer.",
+      "description_ar": "Sermon before Friday prayer.",
+      "description_ru": "Sermon before Friday prayer.",
+      "description_zh": "Sermon before Friday prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Condition de validité du Jumu'a hanafite.",
+          "content_en": "Condition de validité du Jumu'a hanafite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Khutba en arabe avec règles de forme.",
+          "content_en": "Khutba en arabe avec règles de forme."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "L'appel à la prière (Adhan)",
+      "title_en": "Call to Prayer (Adhan)",
+      "title_ar": "الأذان",
+      "title_ru": "Call to Prayer (Adhan)",
+      "title_zh": "Call to Prayer (Adhan)",
+      "description_fr": "Formules et mérites de l'adhan.",
+      "description_en": "Formulas and merit of adhan.",
+      "description_ar": "Formulas and merit of adhan.",
+      "description_ru": "Formulas and merit of adhan.",
+      "description_zh": "Formulas and merit of adhan.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna pour les cinq prières ; répéter après le muezzin.",
+          "content_en": "Sunna pour les cinq prières ; répéter après le muezzin."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mérite élevé ; douas après l'adhan.",
+          "content_en": "Mérite élevé ; douas après l'adhan."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "L'Iqama",
+      "title_en": "Iqama",
+      "title_ar": "الإقامة",
+      "title_ru": "Iqama",
+      "title_zh": "Iqama",
+      "description_fr": "Second appel avant le début de la prière.",
+      "description_en": "Second call before prayer begins.",
+      "description_ar": "Second call before prayer begins.",
+      "description_ru": "Second call before prayer begins.",
+      "description_zh": "Second call before prayer begins.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Obligation avant la prière en congregation.",
+          "content_en": "Obligation avant la prière en congregation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Formules plus courtes que l'adhan.",
+          "content_en": "Formules plus courtes que l'adhan."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prosternation de récitation (Sujud al-Tilawa)",
+      "title_en": "Prostration of Recitation",
+      "title_ar": "سجود التلاوة",
+      "title_ru": "Prostration of Recitation",
+      "title_zh": "Prostration of Recitation",
+      "description_fr": "Sujud lors d'un verset de prosternation.",
+      "description_en": "Prostration upon reciting a verse of prostration.",
+      "description_ar": "Prostration upon reciting a verse of prostration.",
+      "description_ru": "Prostration upon reciting a verse of prostration.",
+      "description_zh": "Prostration upon reciting a verse of prostration.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna pour qui lit ou entend le verset.",
+          "content_en": "Sunna pour qui lit ou entend le verset."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Un sujud suffit ; takbir à l'entrée et sortie.",
+          "content_en": "Un sujud suffit ; takbir à l'entrée et sortie."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prosternation de gratitude (Sujud al-Shukr)",
+      "title_en": "Prostration of Gratitude",
+      "title_ar": "سجود الشكر",
+      "title_ru": "Prostration of Gratitude",
+      "title_zh": "Prostration of Gratitude",
+      "description_fr": "Prosternation pour remercier Allah.",
+      "description_en": "Prostration to thank Allah.",
+      "description_ar": "Prostration to thank Allah.",
+      "description_ru": "Prostration to thank Allah.",
+      "description_zh": "Prostration to thank Allah.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permise sans wudu selon avis hanafi (débattu).",
+          "content_en": "Permise sans wudu selon avis hanafi (débattu)."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sunna lors d'une bonne nouvelle.",
+          "content_en": "Sunna lors d'une bonne nouvelle."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Le Sutra dans la prière",
+      "title_en": "Sutra in Prayer",
+      "title_ar": "السترة في الصلاة",
+      "title_ru": "Sutra in Prayer",
+      "title_zh": "Sutra in Prayer",
+      "description_fr": "Barrière devant le prieur.",
+      "description_en": "Barrier placed before the worshipper.",
+      "description_ar": "Barrier placed before the worshipper.",
+      "description_ru": "Barrier placed before the worshipper.",
+      "description_zh": "Barrier placed before the worshipper.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna ; empêcher le passage proche.",
+          "content_en": "Sunna ; empêcher le passage proche."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Objet d'environ un mètre devant soi.",
+          "content_en": "Objet d'environ un mètre devant soi."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière avec chaussures",
+      "title_en": "Praying with Footwear",
+      "title_ar": "الصلاة بالنعال",
+      "title_ru": "Praying with Footwear",
+      "title_zh": "Praying with Footwear",
+      "description_fr": "Validité de la prière en chaussures.",
+      "description_en": "Validity of prayer while wearing shoes.",
+      "description_ar": "Validity of prayer while wearing shoes.",
+      "description_ru": "Validity of prayer while wearing shoes.",
+      "description_zh": "Validity of prayer while wearing shoes.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permise si propres et autorisées.",
+          "content_en": "Permise si propres et autorisées."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même règle ; retirer si souillées.",
+          "content_en": "Même règle ; retirer si souillées."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière en retard (Fajr après le lever)",
+      "title_en": "Late Fajr Prayer",
+      "title_ar": "صلاة الفجر بعد الوقت",
+      "title_ru": "Late Fajr Prayer",
+      "title_zh": "Late Fajr Prayer",
+      "description_fr": "Prier Fajr après l'heure légale.",
+      "description_en": "Praying Fajr after its time.",
+      "description_ar": "Praying Fajr after its time.",
+      "description_ru": "Praying Fajr after its time.",
+      "description_zh": "Praying Fajr after its time.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Qada obligatoire si manquée intentionnellement.",
+          "content_en": "Qada obligatoire si manquée intentionnellement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Péché de retard ; qada immédiat.",
+          "content_en": "Péché de retard ; qada immédiat."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière sur le bateau ou avion",
+      "title_en": "Prayer on Ship or Plane",
+      "title_ar": "الصلاة في السفينة والطائرة",
+      "title_ru": "Prayer on Ship or Plane",
+      "title_zh": "Prayer on Ship or Plane",
+      "description_fr": "Direction et posture en transport.",
+      "description_en": "Facing qibla and posture while traveling.",
+      "description_ar": "Facing qibla and posture while traveling.",
+      "description_ru": "Facing qibla and posture while traveling.",
+      "description_zh": "Facing qibla and posture while traveling.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Qibla si possible ; sinon approximation.",
+          "content_en": "Qibla si possible ; sinon approximation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Combinaison des prières en voyage long.",
+          "content_en": "Combinaison des prières en voyage long."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière des femmes",
+      "title_en": "Women's Prayer Rules",
+      "title_ar": "صلاة النساء",
+      "title_ru": "Women's Prayer Rules",
+      "title_zh": "Women's Prayer Rules",
+      "description_fr": "Spécificités juridiques pour la femme.",
+      "description_en": "Jurisprudential specifics for women.",
+      "description_ar": "Jurisprudential specifics for women.",
+      "description_ru": "Jurisprudential specifics for women.",
+      "description_zh": "Jurisprudential specifics for women.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mêmes piliers ; rang derrière les hommes.",
+          "content_en": "Mêmes piliers ; rang derrière les hommes."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Voix basse ; pas de voix forte en récitation.",
+          "content_en": "Voix basse ; pas de voix forte en récitation."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière en groupe à la maison",
+      "title_en": "Home Congregational Prayer",
+      "title_ar": "الجماعة في البيت",
+      "title_ru": "Home Congregational Prayer",
+      "title_zh": "Home Congregational Prayer",
+      "description_fr": "Imam et famille à domicile.",
+      "description_en": "Leading family in prayer at home.",
+      "description_ar": "Leading family in prayer at home.",
+      "description_ru": "Leading family in prayer at home.",
+      "description_zh": "Leading family in prayer at home.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permise ; homme prie avec femmes derrière.",
+          "content_en": "Permise ; homme prie avec femmes derrière."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mérite de jama'a même à la maison.",
+          "content_en": "Mérite de jama'a même à la maison."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Les actes nuls dans la prière (Mufsidat)",
+      "title_en": "Nullifiers During Prayer",
+      "title_ar": "مبطلات الصلاة",
+      "title_ru": "Nullifiers During Prayer",
+      "title_zh": "Nullifiers During Prayer",
+      "description_fr": "Ce qui annule la prière en cours.",
+      "description_en": "What breaks prayer in progress.",
+      "description_ar": "What breaks prayer in progress.",
+      "description_ru": "What breaks prayer in progress.",
+      "description_zh": "What breaks prayer in progress.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Parler volontairement, rire, nourriture, impureté majeure.",
+          "content_en": "Parler volontairement, rire, nourriture, impureté majeure."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mêmes nullificateurs majeurs.",
+          "content_en": "Mêmes nullificateurs majeurs."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Les actes détestables (Makruhat)",
+      "title_en": "Disliked Acts in Prayer",
+      "title_ar": "مكروهات الصلاة",
+      "title_ru": "Disliked Acts in Prayer",
+      "title_zh": "Disliked Acts in Prayer",
+      "description_fr": "Gestes à éviter sans annuler la prière.",
+      "description_en": "Acts to avoid without nullifying prayer.",
+      "description_ar": "Acts to avoid without nullifying prayer.",
+      "description_ru": "Acts to avoid without nullifying prayer.",
+      "description_zh": "Acts to avoid without nullifying prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Regarder autour ; mains sur les hanches au qiyam.",
+          "content_en": "Regarder autour ; mains sur les hanches au qiyam."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mouvements excessifs et futilités.",
+          "content_en": "Mouvements excessifs et futilités."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du musafir qui s'installe",
+      "title_en": "Traveler Who Settles",
+      "title_ar": "المسافر إذا أقام",
+      "title_ru": "Traveler Who Settles",
+      "title_zh": "Traveler Who Settles",
+      "description_fr": "Fin du statut de voyageur.",
+      "description_en": "End of traveler status.",
+      "description_ar": "End of traveler status.",
+      "description_ru": "End of traveler status.",
+      "description_zh": "End of traveler status.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Résidence prévue ≥15 jours : prière complète hanafite.",
+          "content_en": "Résidence prévue ≥15 jours : prière complète hanafite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dix jours ou intention de demeure : qasr cesse.",
+          "content_en": "Dix jours ou intention de demeure : qasr cesse."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du gardien de mosquée",
+      "title_en": "Mosque Caretaker Prayer",
+      "title_ar": "صلاة خادم المسجد",
+      "title_ru": "Mosque Caretaker Prayer",
+      "title_zh": "Mosque Caretaker Prayer",
+      "description_fr": "Règles pour celui qui sert la mosquée.",
+      "description_en": "Rules for mosque servants.",
+      "description_ar": "Rules for mosque servants.",
+      "description_ru": "Rules for mosque servants.",
+      "description_zh": "Rules for mosque servants.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Priorité à la mosquée ; i'tikaf facilité.",
+          "content_en": "Priorité à la mosquée ; i'tikaf facilité."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Respect des lieux et des horaires.",
+          "content_en": "Respect des lieux et des horaires."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du vendeur en magasin",
+      "title_en": "Merchant's Prayer at Work",
+      "title_ar": "صلاة التاجر",
+      "title_ru": "Merchant's Prayer at Work",
+      "title_zh": "Merchant's Prayer at Work",
+      "description_fr": "Concilier commerce et salat.",
+      "description_en": "Balancing trade and prayer.",
+      "description_ar": "Balancing trade and prayer.",
+      "description_ru": "Balancing trade and prayer.",
+      "description_zh": "Balancing trade and prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Fermer boutique pour la prière obligatoire.",
+          "content_en": "Fermer boutique pour la prière obligatoire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ne pas retarder la prière pour profit.",
+          "content_en": "Ne pas retarder la prière pour profit."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière en période de menstrues",
+      "title_en": "Prayer During Menstruation",
+      "title_ar": "الصلاة في الحيض",
+      "title_ru": "Prayer During Menstruation",
+      "title_zh": "Prayer During Menstruation",
+      "description_fr": "Absence d'obligation de salat.",
+      "description_en": "No obligation of prayer during menses.",
+      "description_ar": "No obligation of prayer during menses.",
+      "description_ru": "No obligation of prayer during menses.",
+      "description_zh": "No obligation of prayer during menses.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas de prière ni jeûne ; qada du jeûne seulement.",
+          "content_en": "Pas de prière ni jeûne ; qada du jeûne seulement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Douas et dhikr permis.",
+          "content_en": "Douas et dhikr permis."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière après une fausse couche",
+      "title_en": "Prayer After Miscarriage",
+      "title_ar": "الصلاة بعد الإجهاض",
+      "title_ru": "Prayer After Miscarriage",
+      "title_zh": "Prayer After Miscarriage",
+      "description_fr": "Statut rituel et reprise de la prière.",
+      "description_en": "Ritual status and resuming prayer.",
+      "description_ar": "Ritual status and resuming prayer.",
+      "description_ru": "Ritual status and resuming prayer.",
+      "description_zh": "Ritual status and resuming prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ghusl si perte de sang en quantité nifas.",
+          "content_en": "Ghusl si perte de sang en quantité nifas."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Reprise après purification selon durée.",
+          "content_en": "Reprise après purification selon durée."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du nouveau converti",
+      "title_en": "New Muslim's Prayer",
+      "title_ar": "صلاة المسلم الجديد",
+      "title_ru": "New Muslim's Prayer",
+      "title_zh": "New Muslim's Prayer",
+      "description_fr": "Apprentissage progressif de la salat.",
+      "description_en": "Gradual learning of prayer.",
+      "description_ar": "Gradual learning of prayer.",
+      "description_ru": "Gradual learning of prayer.",
+      "description_zh": "Gradual learning of prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Obligation immédiate ; apprentissage des piliers.",
+          "content_en": "Obligation immédiate ; apprentissage des piliers."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Facilitation et enseignement patient.",
+          "content_en": "Facilitation et enseignement patient."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière de l'enfant pubère",
+      "title_en": "Prayer of the Pubescent Child",
+      "title_ar": "صلاة البالغ",
+      "title_ru": "Prayer of the Pubescent Child",
+      "title_zh": "Prayer of the Pubescent Child",
+      "description_fr": "Début de l'obligation pour l'enfant.",
+      "description_en": "Start of obligation for the child.",
+      "description_ar": "Start of obligation for the child.",
+      "description_ru": "Start of obligation for the child.",
+      "description_zh": "Start of obligation for the child.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "À partir de la puberté ou 15 ans lunaires.",
+          "content_en": "À partir de la puberté ou 15 ans lunaires."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Responsabilité complète des actes d'adoration.",
+          "content_en": "Responsabilité complète des actes d'adoration."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière en cas de doute (Shakk)",
+      "title_en": "Prayer with Doubt",
+      "title_ar": "الشك في الصلاة",
+      "title_ru": "Prayer with Doubt",
+      "title_zh": "Prayer with Doubt",
+      "description_fr": "Que faire en cas d'incertitude sur le nombre de rak'ats.",
+      "description_en": "Handling doubt about rak'at count.",
+      "description_ar": "Handling doubt about rak'at count.",
+      "description_ru": "Handling doubt about rak'at count.",
+      "description_zh": "Handling doubt about rak'at count.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Principe de certitude (yaqin) puis nombre le plus bas.",
+          "content_en": "Principe de certitude (yaqin) puis nombre le plus bas."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sujud sahw ou reconstruction selon cas.",
+          "content_en": "Sujud sahw ou reconstruction selon cas."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Le Sujud al-Sahw",
+      "title_en": "Prostration of Forgetfulness",
+      "title_ar": "سجود السهو",
+      "title_ru": "Prostration of Forgetfulness",
+      "title_zh": "Prostration of Forgetfulness",
+      "description_fr": "Rattrapement des oublis dans la prière.",
+      "description_en": "Compensation for mistakes in prayer.",
+      "description_ar": "Compensation for mistakes in prayer.",
+      "description_ru": "Compensation for mistakes in prayer.",
+      "description_zh": "Compensation for mistakes in prayer.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Deux sujud avant salam pour oubli wajib.",
+          "content_en": "Deux sujud avant salam pour oubli wajib."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Avant ou après salam selon type d'oubli.",
+          "content_en": "Avant ou après salam selon type d'oubli."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du Tawaf",
+      "title_en": "Prayer After Tawaf",
+      "title_ar": "صلاة الطواف",
+      "title_ru": "Prayer After Tawaf",
+      "title_zh": "Prayer After Tawaf",
+      "description_fr": "Deux rak'ats derrière Maqam Ibrahim.",
+      "description_en": "Two rak'ats behind Maqam Ibrahim.",
+      "description_ar": "Two rak'ats behind Maqam Ibrahim.",
+      "description_ru": "Two rak'ats behind Maqam Ibrahim.",
+      "description_zh": "Two rak'ats behind Maqam Ibrahim.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna après chaque tawaf au Hajj ou Umra.",
+          "content_en": "Sunna après chaque tawaf au Hajj ou Umra."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Effectuée si possible derrière le maqam.",
+          "content_en": "Effectuée si possible derrière le maqam."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière à Mina et Arafat",
+      "title_en": "Prayer at Mina and Arafat",
+      "title_ar": "صلاة منى وعرفات",
+      "title_ru": "Prayer at Mina and Arafat",
+      "title_zh": "Prayer at Mina and Arafat",
+      "description_fr": "Règles pendant le Hajj.",
+      "description_en": "Prayer rules during Hajj.",
+      "description_ar": "Prayer rules during Hajj.",
+      "description_ru": "Prayer rules during Hajj.",
+      "description_zh": "Prayer rules during Hajj.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Qasr et jam' pour le hajj en déplacement.",
+          "content_en": "Qasr et jam' pour le hajj en déplacement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dhuhr et Asr combinées à Arafat (hadith).",
+          "content_en": "Dhuhr et Asr combinées à Arafat (hadith)."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du vendredi pour la femme",
+      "title_en": "Friday Prayer for Women",
+      "title_ar": "جمة النساء",
+      "title_ru": "Friday Prayer for Women",
+      "title_zh": "Friday Prayer for Women",
+      "description_fr": "Obligation ou recommandation pour les femmes.",
+      "description_en": "Obligation or recommendation for women.",
+      "description_ar": "Obligation or recommendation for women.",
+      "description_ru": "Obligation or recommendation for women.",
+      "description_zh": "Obligation or recommendation for women.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Non obligatoire mais permise et récompensée.",
+          "content_en": "Non obligatoire mais permise et récompensée."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sunna ; peut prier à domicile.",
+          "content_en": "Sunna ; peut prier à domicile."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du Eid al-Fitr",
+      "title_en": "Eid al-Fitr Prayer",
+      "title_ar": "صلاة عيد الفطر",
+      "title_ru": "Eid al-Fitr Prayer",
+      "title_zh": "Eid al-Fitr Prayer",
+      "description_fr": "Prière de l'Aïd du rupture du jeûne.",
+      "description_en": "Festival prayer at end of Ramadan.",
+      "description_ar": "Festival prayer at end of Ramadan.",
+      "description_ru": "Festival prayer at end of Ramadan.",
+      "description_zh": "Festival prayer at end of Ramadan.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna ; deux rak'ats avec takbirs supplémentaires.",
+          "content_en": "Sunna ; deux rak'ats avec takbirs supplémentaires."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Khutba après la prière.",
+          "content_en": "Khutba après la prière."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du Eid al-Adha",
+      "title_en": "Eid al-Adha Prayer",
+      "title_ar": "صلاة عيد الأضحى",
+      "title_ru": "Eid al-Adha Prayer",
+      "title_zh": "Eid al-Adha Prayer",
+      "description_fr": "Prière du jour du sacrifice.",
+      "description_en": "Festival prayer on sacrifice day.",
+      "description_ar": "Festival prayer on sacrifice day.",
+      "description_ru": "Festival prayer on sacrifice day.",
+      "description_zh": "Festival prayer on sacrifice day.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Même forme que Fitr ; après lever du soleil.",
+          "content_en": "Même forme que Fitr ; après lever du soleil."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Takbirs de l'Aïd puis khutba.",
+          "content_en": "Takbirs de l'Aïd puis khutba."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Les piliers du jeûne",
+      "title_en": "Pillars of Fasting",
+      "title_ar": "أركان الصوم",
+      "title_ru": "Pillars of Fasting",
+      "title_zh": "Pillars of Fasting",
+      "description_fr": "Éléments constitutifs du jeûne valide.",
+      "description_en": "Constituent elements of valid fasting.",
+      "description_ar": "Constituent elements of valid fasting.",
+      "description_ru": "Constituent elements of valid fasting.",
+      "description_zh": "Constituent elements of valid fasting.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Islam, intention, abstention de nourriture et rapports de l'aube au coucher.",
+          "content_en": "Islam, intention, abstention de nourriture et rapports de l'aube au coucher."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mêmes piliers ; intention chaque nuit pour Ramadan.",
+          "content_en": "Mêmes piliers ; intention chaque nuit pour Ramadan."
+        }
+      ]
+    }
+  ]
+}

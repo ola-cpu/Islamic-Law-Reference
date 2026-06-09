@@ -12,8 +12,9 @@ import '../models/topic.dart';
 import '../services/export_service.dart';
 
 import '../data/guided_courses.dart';
-
 import '../router/app_router.dart';
+import '../services/skill_tree_service.dart';
+import '../widgets/skill_tree_widget.dart';
 
 
 
@@ -37,6 +38,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   Topic? _suggestedTopic;
 
+  List<SkillNode> _skillNodes = [];
+
 
 
   @override
@@ -56,19 +59,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
     final user = Provider.of<UserProvider>(context, listen: false);
 
     final stats = await DashboardStats.load(user);
-
     final topic = await user.getSuggestedTopic();
+    final skills = await SkillTreeService.load(user);
 
     if (mounted) {
-
       setState(() {
-
         _stats = stats;
-
         _suggestedTopic = topic;
-
+        _skillNodes = skills;
       });
-
     }
 
   }
@@ -90,11 +89,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
     if (_stats == null) {
 
       return Scaffold(
-
-        appBar: AppBar(title: Text(l10n.dashboard)),
-
+        appBar: AppBar(
+          title: Text(l10n.dashboard),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.settings),
+              onPressed: () => context.push(AppRoutes.settings),
+            ),
+          ],
+        ),
         body: const Center(child: CircularProgressIndicator()),
-
       );
 
     }
@@ -107,7 +111,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     return Scaffold(
 
-      appBar: AppBar(title: Text(l10n.dashboard)),
+      appBar: AppBar(
+        title: Text(l10n.dashboard),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: l10n.settings,
+            onPressed: () => context.push(AppRoutes.settings),
+          ),
+        ],
+      ),
 
       body: ListView(
 
@@ -227,7 +240,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
 
           const SizedBox(height: 24),
-
+          SkillTreeWidget(nodes: _skillNodes),
+          const SizedBox(height: 24),
           Text(l10n.courseProgressTitle, style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
 
           const SizedBox(height: 8),

@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du voyageur (Qasr)",
+      "title_en": "Traveler's prayer (Qasr)",
+      "title_ar": "صلاة المسافر (قصر)",
+      "title_ru": "Молитва путника (Каср)",
+      "title_zh": "旅行者礼拜（缩短）",
+      "description_fr": "Raccourcissement des prières à quatre unités pendant le voyage.",
+      "description_en": "Shortening four-unit prayers while traveling.",
+      "description_ar": "قصر الصلاة الرباعية في السفر.",
+      "description_ru": "Сокращение четырёхракатных молитв в пути.",
+      "description_zh": "旅行中四拜礼拜可缩短为两拜。",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Le voyageur raccourcit Dhuhr, Asr et Isha à 2 rak'ats au-delà de 77 km environ.",
+          "content_en": "Traveler shortens Dhuhr, Asr and Isha to 2 rak'ats beyond ~77 km.",
+          "sources": [{"type": 1, "reference": "Hadith — Sahih Muslim", "text": "الصلاة في السفر نصف الصلاة", "authenticity": 0, "citation": "Muslim 685", "isnad": "Muslim ← Zurara ← Abu Hurayra"}]
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Le Qasr s'applique avec l'intention du voyage et la distance prescrite.",
+          "content_en": "Qasr applies with travel intention and required distance."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du craintif (Khawf)",
+      "title_en": "Fear prayer (Khawf)",
+      "title_ar": "صلاة الخوف",
+      "title_ru": "Молитва страха",
+      "title_zh": "恐惧礼拜",
+      "description_fr": "Prière en situation de combat ou de danger.",
+      "description_en": "Prayer during combat or danger.",
+      "description_ar": "صلاة أثناء القتال أو الخوف.",
+      "laws": [
+        {"school": "Hanafi", "content_fr": "Formes multiples selon l'organisation des troupes.", "content_en": "Multiple formations depending on troop arrangement."},
+        {"school": "Shafi'i", "content_fr": "Une unité prie debout, l'autre face à l'ennemi.", "content_en": "One unit prays standing, the other faces the enemy."}
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Jeûne du jour de doute (Yawm al-Shak)",
+      "title_en": "Day of doubt fasting",
+      "title_ar": "صوم يوم الشك",
+      "description_fr": "Interdiction de jeûner le 30e jour de Sha'ban par simple doute.",
+      "description_en": "Prohibition of fasting the 30th of Sha'ban out of mere doubt.",
+      "laws": [
+        {"school": "Maliki", "content_fr": "Il est interdit de jeûner le jour de doute.", "content_en": "Fasting the day of doubt is forbidden."},
+        {"school": "Hanbali", "content_fr": "Même règle — éviter d'anticiper Ramadan sans certitude.", "content_en": "Same rule — avoid anticipating Ramadan without certainty."}
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La Zakât al-Fitr",
+      "title_en": "Zakat al-Fitr",
+      "title_ar": "زكاة الفطر",
+      "description_fr": "Aumône obligatoire avant la prière de l'Aïd al-Fitr.",
+      "description_en": "Mandatory charity before Eid al-Fitr prayer.",
+      "laws": [
+        {"school": "Hanafi", "content_fr": "Environ 2,5 kg de blé ou équivalent par personne.", "content_en": "About 2.5 kg of wheat or equivalent per person."},
+        {"school": "Shafi'i", "content_fr": "Doit être donnée avant la prière de l'Aïd.", "content_en": "Must be given before Eid prayer."}
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le droit de visite des grands-parents",
+      "title_en": "Grandparents' visitation rights",
+      "title_ar": "حق الزيارة للأجداد",
+      "description_fr": "Maintien des liens familiaux après divorce.",
+      "description_en": "Maintaining family ties after divorce.",
+      "laws": [
+        {"school": "Maliki", "content_fr": "Les grands-parents ont droit à la visite si cela sert l'intérêt de l'enfant.", "content_en": "Grandparents may visit when in the child's interest."},
+        {"school": "Hanafi", "content_fr": "Le maintien du silat ar-rahim est recommandé fortement.", "content_en": "Maintaining kinship ties is strongly recommended."}
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le témoignage en justice islamique",
+      "title_en": "Testimony in Islamic courts",
+      "title_ar": "الشهادة في القضاء",
+      "description_fr": "Conditions de validité du shahada.",
+      "description_en": "Validity conditions for testimony.",
+      "laws": [
+        {"school": "Hanafi", "content_fr": "Deux hommes ou un homme et deux femmes pour les contrats.", "content_en": "Two men or one man and two women for contracts."},
+        {"school": "Maliki", "content_fr": "Témoin adulte, libre, musulman (en général).", "content_en": "Adult, free, Muslim witness (generally)."}
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "La gratitude (Shukr)",
+      "title_en": "Gratitude (Shukr)",
+      "title_ar": "الشكر",
+      "description_fr": "Reconnaissance envers Allah et les créatures.",
+      "description_en": "Thankfulness to Allah and creation.",
+      "laws": [
+        {"school": "Hanafi", "content_fr": "Shukr par le cœur, la langue et les actes.", "content_en": "Gratitude by heart, tongue and deeds."},
+        {"school": "Ja'fari", "content_fr": "Reconnaître la grâce et l'utiliser dans l'obéissance.", "content_en": "Recognize blessings and use them in obedience."}
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le contrat de travail en Islam",
+      "title_en": "Employment contract in Islam",
+      "title_ar": "عقد العمل",
+      "description_fr": "Ijara et droits du salarié.",
+      "description_en": "Ijara and employee rights.",
+      "laws": [
+        {"school": "Hanafi", "content_fr": "Le salaire doit être connu et le travail défini.", "content_en": "Wage and work must be defined."},
+        {"school": "Maliki", "content_fr": "Payer le salaire dès que le travail est accompli.", "content_en": "Pay wage once work is completed."}
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le bail agricole (Muzara'a)",
+      "title_en": "Agricultural lease (Muzara'a)",
+      "title_ar": "المزارعة",
+      "description_fr": "Partage de récolte entre propriétaire et cultivateur.",
+      "description_en": "Crop sharing between owner and cultivator.",
+      "laws": [
+        {"school": "Hanafi", "content_fr": "Partage connu de la récolte, pas de revenu fixe incertain.", "content_en": "Known share of crop, not uncertain fixed rent."},
+        {"school": "Shafi'i", "content_fr": "Contrat valide si la part est déterminée.", "content_en": "Valid if share is determined."}
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des personnes handicapées",
+      "title_en": "Rights of people with disabilities",
+      "title_ar": "حقوق ذوي الإعاقة",
+      "description_fr": "Accessibilité et dignité dans la communauté.",
+      "description_en": "Accessibility and dignity in the community.",
+      "laws": [
+        {"school": "Maliki", "content_fr": "Faciliter l'accès aux mosquées et aux enseignements.", "content_en": "Facilitate mosque and learning access."},
+        {"school": "Hanafi", "content_fr": "Pas de discrimination dans la vie sociale et religieuse.", "content_en": "No discrimination in social and religious life."}
+      ]
+    }
+  ]
+}

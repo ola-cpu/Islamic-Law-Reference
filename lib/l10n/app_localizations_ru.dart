@@ -563,4 +563,253 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get fullComparison => 'Полное сравнение';
+
+  @override
+  String get navHome => 'Главная';
+
+  @override
+  String get navLearn => 'Обучение';
+
+  @override
+  String get navSearch => 'Поиск';
+
+  @override
+  String get navLibrary => 'Библиотека';
+
+  @override
+  String get navProfile => 'Профиль';
+
+  @override
+  String get continueReading => 'Продолжить чтение';
+
+  @override
+  String get dailyQuestion => 'Вопрос дня';
+
+  @override
+  String get experienceLevel => 'Уровень';
+
+  @override
+  String get experienceLevelDesc => 'Настройка отображения тем';
+
+  @override
+  String get beginnerMode => 'Режим новичка';
+
+  @override
+  String get beginnerModeDesc => 'Кратко и одна школа';
+
+  @override
+  String get studentMode => 'Режим студента';
+
+  @override
+  String get studentModeDesc => 'Полное сравнение и источники';
+
+  @override
+  String get beginnerModeActive => 'Режим новичка';
+
+  @override
+  String get showAllSchools => 'Все школы';
+
+  @override
+  String get methodology => 'Методология';
+
+  @override
+  String get methodologyShort => 'Источники и ограничения';
+
+  @override
+  String get methodologyTitle => 'Наш подход';
+
+  @override
+  String get methodologyBody =>
+      'Позиции взяты из признанных руководств пяти мазхабов. Приложение не заменяет учёного.';
+
+  @override
+  String get methodologySources => 'Источники';
+
+  @override
+  String get methodologySourcesBody =>
+      'Хадисы классифицируются при наличии данных.';
+
+  @override
+  String get askScholar => 'Спросить учёного';
+
+  @override
+  String get askScholarDesc =>
+      'Для личной фетвы используйте признанную платформу:';
+
+  @override
+  String get disclaimerGeneral =>
+      'Приложение образовательное. Для сложных случаев обратитесь к учёному.';
+
+  @override
+  String get sensitiveTopicDisclaimer =>
+      'Деликатная тема — проконсультируйтесь с учёным.';
+
+  @override
+  String get sourceReference => 'Ссылка';
+
+  @override
+  String get skillTree => 'Дерево навыков';
+
+  @override
+  String skillProgress(int read, int total) {
+    return '$read/$total тем';
+  }
+
+  @override
+  String get srsMode => 'Интервальное повторение';
+
+  @override
+  String get examMode => 'Режим экзамена';
+
+  @override
+  String get examModeDesc => 'Без мгновенной проверки';
+
+  @override
+  String get consensusOnly => 'Только консенсус';
+
+  @override
+  String get noConsensusFound => 'Консенсус не найден';
+
+  @override
+  String get scenarioFinder => 'Найти сценарий';
+
+  @override
+  String get scenarioFinderDesc => 'Опишите ситуацию';
+
+  @override
+  String get scenarioFinderHint => 'Напр.: пост, путешествие…';
+
+  @override
+  String get noScenariosFound => 'Сценарии не найдены';
+
+  @override
+  String get exportCertificate => 'Экспорт сертификата';
+
+  @override
+  String get certificateTitle => 'Сертификат курса';
+
+  @override
+  String get certificateDate => 'Дата:';
+
+  @override
+  String get situationAdvisor => 'Советник по ситуации';
+
+  @override
+  String get situationAdvisorDesc => 'Опишите случай — темы и сценарии';
+
+  @override
+  String get situationAdvisorHint => 'Напр.: путешествие в Рамадан…';
+
+  @override
+  String get situationAdvisorEmpty => 'Опишите ситуацию';
+
+  @override
+  String get analyzeSituation => 'Анализ';
+
+  @override
+  String get noSituationMatches => 'Нет предложений';
+
+  @override
+  String get encyclopediaExam => 'Экзамен по энциклопедии';
+
+  @override
+  String get encyclopediaExamDesc => '10 тем, таймер, самооценка';
+
+  @override
+  String get examTopicPrompt => 'Знаете эту тему?';
+
+  @override
+  String get revealAnswer => 'Показать ответ';
+
+  @override
+  String get readFullTopic => 'Читать полностью';
+
+  @override
+  String get needStudy => 'Нужно изучить';
+
+  @override
+  String get examResults => 'Результаты';
+
+  @override
+  String examKnownCount(int known, int total) {
+    return '$known / $total освоено';
+  }
+
+  @override
+  String get noExamTopics => 'Недостаточно тем';
+
+  @override
+  String get exportComparisonPdf => 'Экспорт сравнения PDF';
+
+  @override
+  String get encryptedSync => 'Шифрованная синхронизация';
+
+  @override
+  String get encryptedSyncDesc => 'AES для iCloud/Drive';
+
+  @override
+  String get exportEncryptedBackup => 'Экспорт шифр. копии';
+
+  @override
+  String get importEncryptedBackup => 'Импорт шифр. копии';
+
+  @override
+  String get enterPassphrase => 'Пароль';
+
+  @override
+  String get passphrase => 'Пароль (8+ симв.)';
+
+  @override
+  String get confirmPassphrase => 'Подтвердить';
+
+  @override
+  String get encryptedSyncFailed => 'Ошибка пароля';
+
+  @override
+  String get cancel => 'Отмена';
+
+  @override
+  String get confirm => 'ОК';
+
+  @override
+  String get homeWidgetDescIos => 'Виджет iOS и Android';
+
+  @override
+  String get verifiedContent => 'Проверенный контент';
+
+  @override
+  String get isnadChain => 'Цепочка передатчиков (иснад)';
+
+  @override
+  String get disclaimerHomeBanner =>
+      'Образовательный инструмент — не заменяет фетву учёного. См. методологию.';
+
+  @override
+  String get liteMode => 'Лёгкий режим';
+
+  @override
+  String get liteModeDesc =>
+      'Меньше анимаций для слабых устройств и доступности';
+
+  @override
+  String get globalMadhhabFilter => 'Глобальный фильтр мазхаба';
+
+  @override
+  String get globalMadhhabFilterDesc => 'Скрывать темы без позиции вашей школы';
+
+  @override
+  String get ijmaSection => 'Иджма (консенсус)';
+
+  @override
+  String get ijmaSectionDesc =>
+      'Четыре основных суннитских мазхаба согласны по этому вопросу.';
+
+  @override
+  String get divergenceTimeline => 'Хронология расхождений';
+
+  @override
+  String get contextualShortcuts => 'Быстрые ссылки';
+
+  @override
+  String get shortcutZakat => 'Калькулятор закята';
 }

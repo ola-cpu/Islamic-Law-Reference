@@ -105,7 +105,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> with SingleTickerProv
           IconButton(
             icon: const Icon(Icons.insights),
             tooltip: l10n.dashboard,
-            onPressed: () => context.push(AppRoutes.dashboard),
+            onPressed: () => context.push(AppRoutes.profile),
           ),
           IconButton(
             icon: const Icon(Icons.upload),

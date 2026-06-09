@@ -1,0 +1,1255 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les animaux licites",
+      "title_en": "Lawful Animals",
+      "title_ar": "الحيوانات الحلال",
+      "title_ru": "Lawful Animals",
+      "title_zh": "Lawful Animals",
+      "description_fr": "Bêtes permises à la consommation.",
+      "description_en": "Animals permitted for consumption.",
+      "description_ar": "Animals permitted for consumption.",
+      "description_ru": "Animals permitted for consumption.",
+      "description_zh": "Animals permitted for consumption.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ruminants égorgés, volaille, poisson.",
+          "content_en": "Ruminants égorgés, volaille, poisson."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Chasse et élevage licites.",
+          "content_en": "Chasse et élevage licites."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les animaux interdits",
+      "title_en": "Forbidden Animals",
+      "title_ar": "الحيوانات المحرمة",
+      "title_ru": "Forbidden Animals",
+      "title_zh": "Forbidden Animals",
+      "description_fr": "Porc, carnivores, etc.",
+      "description_en": "Pork, predators, etc.",
+      "description_ar": "Pork, predators, etc.",
+      "description_ru": "Pork, predators, etc.",
+      "description_zh": "Pork, predators, etc.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Porc, charogniers, oiseaux à serres.",
+          "content_en": "Porc, charogniers, oiseaux à serres."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Bêtes non égorgées rituellement.",
+          "content_en": "Bêtes non égorgées rituellement."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "L'égorgement rituel (Dhabih)",
+      "title_en": "Ritual Slaughter",
+      "title_ar": "الذبح",
+      "title_ru": "Ritual Slaughter",
+      "title_zh": "Ritual Slaughter",
+      "description_fr": "Conditions de la viande halal.",
+      "description_en": "Conditions for halal meat.",
+      "description_ar": "Conditions for halal meat.",
+      "description_ru": "Conditions for halal meat.",
+      "description_zh": "Conditions for halal meat.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Musulman ou gens du Livre ; trachée et carotides.",
+          "content_en": "Musulman ou gens du Livre ; trachée et carotides."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Nom d'Allah prononcé.",
+          "content_en": "Nom d'Allah prononcé."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "La viande des gens du Livre",
+      "title_en": "Meat of People of the Book",
+      "title_ar": "لحم أهل الكتاب",
+      "title_ru": "Meat of People of the Book",
+      "title_zh": "Meat of People of the Book",
+      "description_fr": "Consommation de leur abattage.",
+      "description_en": "Eating their slaughter.",
+      "description_ar": "Eating their slaughter.",
+      "description_ru": "Eating their slaughter.",
+      "description_zh": "Eating their slaughter.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis selon majorité si égorgement.",
+          "content_en": "Permis selon majorité si égorgement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Vérifier pratique actuelle.",
+          "content_en": "Vérifier pratique actuelle."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "L'alcool (Khamr)",
+      "title_en": "Intoxicants (Khamr)",
+      "title_ar": "الخمر",
+      "title_ru": "Intoxicants (Khamr)",
+      "title_zh": "Intoxicants (Khamr)",
+      "description_fr": "Boissons enivrantes.",
+      "description_en": "Intoxicating drinks.",
+      "description_ar": "Intoxicating drinks.",
+      "description_ru": "Intoxicating drinks.",
+      "description_zh": "Intoxicating drinks.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mère de tous les vices ; interdit absolu.",
+          "content_en": "Mère de tous les vices ; interdit absolu."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Toute quantité enivrante en masse.",
+          "content_en": "Toute quantité enivrante en masse."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les drogues et stupéfiants",
+      "title_en": "Drugs and Narcotics",
+      "title_ar": "المخدرات",
+      "title_ru": "Drugs and Narcotics",
+      "title_zh": "Drugs and Narcotics",
+      "description_fr": "Substances intoxicantes.",
+      "description_en": "Intoxicating substances.",
+      "description_ar": "Intoxicating substances.",
+      "description_ru": "Intoxicating substances.",
+      "description_zh": "Intoxicating substances.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Haram par analogie au khamr.",
+          "content_en": "Haram par analogie au khamr."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Nuit à corps et société.",
+          "content_en": "Nuit à corps et société."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le tabac et le vapotage",
+      "title_en": "Tobacco and Vaping",
+      "title_ar": "التدخين",
+      "title_ru": "Tobacco and Vaping",
+      "title_zh": "Tobacco and Vaping",
+      "description_fr": "Consommation de tabac.",
+      "description_en": "Tobacco consumption.",
+      "description_ar": "Tobacco consumption.",
+      "description_ru": "Tobacco consumption.",
+      "description_zh": "Tobacco consumption.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Makruh à haram ; nocif.",
+          "content_en": "Makruh à haram ; nocif."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Éviter par précaution.",
+          "content_en": "Éviter par précaution."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "La nourriture obtenue par haram",
+      "title_en": "Food from Unlawful Means",
+      "title_ar": "الطعام الحرام",
+      "title_ru": "Food from Unlawful Means",
+      "title_zh": "Food from Unlawful Means",
+      "description_fr": "Revenus illicites pour nourriture.",
+      "description_en": "Unlawful income for food.",
+      "description_ar": "Unlawful income for food.",
+      "description_ru": "Unlawful income for food.",
+      "description_zh": "Unlawful income for food.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Éviter ; repentance requise.",
+          "content_en": "Éviter ; repentance requise."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Purifier revenus avant dépense.",
+          "content_en": "Purifier revenus avant dépense."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le poison et substances nocives",
+      "title_en": "Poison and Harmful Substances",
+      "title_ar": "السم",
+      "title_ru": "Poison and Harmful Substances",
+      "title_zh": "Poison and Harmful Substances",
+      "description_fr": "Interdit de nuire à soi.",
+      "description_en": "Forbidden to harm oneself.",
+      "description_ar": "Forbidden to harm oneself.",
+      "description_ru": "Forbidden to harm oneself.",
+      "description_zh": "Forbidden to harm oneself.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas de suicide ni autodestruction.",
+          "content_en": "Pas de suicide ni autodestruction."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Manger ce qui tue interdit.",
+          "content_en": "Manger ce qui tue interdit."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les produits génétiquement modifiés",
+      "title_en": "Genetically Modified Food",
+      "title_ar": "الأغذية المعدلة",
+      "title_ru": "Genetically Modified Food",
+      "title_zh": "Genetically Modified Food",
+      "description_fr": "OGM et fiqh.",
+      "description_en": "GMO and fiqh.",
+      "description_ar": "GMO and fiqh.",
+      "description_ru": "GMO and fiqh.",
+      "description_zh": "GMO and fiqh.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si pas d'ingrédient haram.",
+          "content_en": "Permis si pas d'ingrédient haram."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Étiquetage et transparence.",
+          "content_en": "Étiquetage et transparence."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les additifs alimentaires",
+      "title_en": "Food Additives",
+      "title_ar": "المضافات الغذائية",
+      "title_ru": "Food Additives",
+      "title_zh": "Food Additives",
+      "description_fr": "E-numéros et gélatine.",
+      "description_en": "E-numbers and gelatin.",
+      "description_ar": "E-numbers and gelatin.",
+      "description_ru": "E-numbers and gelatin.",
+      "description_zh": "E-numbers and gelatin.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Vérifier source animale.",
+          "content_en": "Vérifier source animale."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Porcine gelatin haram.",
+          "content_en": "Porcine gelatin haram."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "La gélatine et l'émulsifiant",
+      "title_en": "Gelatin and Emulsifiers",
+      "title_ar": "الجيلاتين",
+      "title_ru": "Gelatin and Emulsifiers",
+      "title_zh": "Gelatin and Emulsifiers",
+      "description_fr": "Origine porcine ou bovine.",
+      "description_en": "Pork or beef origin.",
+      "description_ar": "Pork or beef origin.",
+      "description_ru": "Pork or beef origin.",
+      "description_zh": "Pork or beef origin.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Porcine haram ; bovine halal si égorgée.",
+          "content_en": "Porcine haram ; bovine halal si égorgée."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Certification halal recommandée.",
+          "content_en": "Certification halal recommandée."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le sang et dérivés",
+      "title_en": "Blood and Derivatives",
+      "title_ar": "الدم",
+      "title_ru": "Blood and Derivatives",
+      "title_zh": "Blood and Derivatives",
+      "description_fr": "Consommation du sang.",
+      "description_en": "Consuming blood.",
+      "description_ar": "Consuming blood.",
+      "description_ru": "Consuming blood.",
+      "description_zh": "Consuming blood.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit explicite.",
+          "content_en": "Interdit explicite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sang drainé à l'abattage.",
+          "content_en": "Sang drainé à l'abattage."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les fruits de mer",
+      "title_en": "Seafood",
+      "title_ar": "أكل البحر",
+      "title_ru": "Seafood",
+      "title_zh": "Seafood",
+      "description_fr": "Poissons et crustacés.",
+      "description_en": "Fish and seafood.",
+      "description_ar": "Fish and seafood.",
+      "description_ru": "Fish and seafood.",
+      "description_zh": "Fish and seafood.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Hanafi : poisson seul ; autres écoles plus larges.",
+          "content_en": "Hanafi : poisson seul ; autres écoles plus larges."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mort naturelle en mer permise.",
+          "content_en": "Mort naturelle en mer permise."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les insectes comestibles",
+      "title_en": "Edible Insects",
+      "title_ar": "الحشرات",
+      "title_ru": "Edible Insects",
+      "title_zh": "Edible Insects",
+      "description_fr": "Consommation d'insectes.",
+      "description_en": "Eating insects.",
+      "description_ar": "Eating insects.",
+      "description_ru": "Eating insects.",
+      "description_zh": "Eating insects.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Hanafi : dégoût ; permis selon autres si bénéfice.",
+          "content_en": "Hanafi : dégoût ; permis selon autres si bénéfice."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Locustes permises explicitement.",
+          "content_en": "Locustes permises explicitement."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "La chasse (Sayd)",
+      "title_en": "Hunting",
+      "title_ar": "الصيد",
+      "title_ru": "Hunting",
+      "title_zh": "Hunting",
+      "description_fr": "Règles de la chasse.",
+      "description_en": "Rules of hunting.",
+      "description_ar": "Rules of hunting.",
+      "description_ru": "Rules of hunting.",
+      "description_zh": "Rules of hunting.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Animal sauvage égorgé ou tué par chien dressé.",
+          "content_en": "Animal sauvage égorgé ou tué par chien dressé."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Nom d'Allah à l'envoi du chien.",
+          "content_en": "Nom d'Allah à l'envoi du chien."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "La pêche",
+      "title_en": "Fishing",
+      "title_ar": "السمك",
+      "title_ru": "Fishing",
+      "title_zh": "Fishing",
+      "description_fr": "Pêche et consommation.",
+      "description_en": "Fishing and consumption.",
+      "description_ar": "Fishing and consumption.",
+      "description_ru": "Fishing and consumption.",
+      "description_zh": "Fishing and consumption.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mort en eau suffit pour poisson.",
+          "content_en": "Mort en eau suffit pour poisson."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'égorgement requis.",
+          "content_en": "Pas d'égorgement requis."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les œufs et produits laitiers",
+      "title_en": "Eggs and Dairy",
+      "title_ar": "البيض واللبن",
+      "title_ru": "Eggs and Dairy",
+      "title_zh": "Eggs and Dairy",
+      "description_fr": "Produits non égorgés.",
+      "description_en": "Non-slaughtered products.",
+      "description_ar": "Non-slaughtered products.",
+      "description_ru": "Non-slaughtered products.",
+      "description_zh": "Non-slaughtered products.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si animal halal.",
+          "content_en": "Permis si animal halal."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Vérifier alimentation animale.",
+          "content_en": "Vérifier alimentation animale."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le jeûneur et la nourriture oubliée",
+      "title_en": "Forgotten Food While Fasting",
+      "title_ar": "أكل الناسي",
+      "title_ru": "Forgotten Food While Fasting",
+      "title_zh": "Forgotten Food While Fasting",
+      "description_fr": "Manger par oubli en jeûne.",
+      "description_en": "Eating forgetfully while fasting.",
+      "description_ar": "Eating forgetfully while fasting.",
+      "description_ru": "Eating forgetfully while fasting.",
+      "description_zh": "Eating forgetfully while fasting.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Jeûne valide ; continuer.",
+          "content_en": "Jeûne valide ; continuer."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Allah a nourri, finir jeûne.",
+          "content_en": "Allah a nourri, finir jeûne."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "L'hospitalité et la nourriture",
+      "title_en": "Hospitality and Food",
+      "title_ar": "إطعام الطعام",
+      "title_ru": "Hospitality and Food",
+      "title_zh": "Hospitality and Food",
+      "description_fr": "Offrir à manger.",
+      "description_en": "Offering food.",
+      "description_ar": "Offering food.",
+      "description_ru": "Offering food.",
+      "description_zh": "Offering food.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Aumône et sunna.",
+          "content_en": "Aumône et sunna."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Accepter invitation sans mépris.",
+          "content_en": "Accepter invitation sans mépris."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Jeûner sans suhur par paresse",
+      "title_en": "Skipping Suhur from Laziness",
+      "title_ar": "ترك السحور",
+      "title_ru": "Skipping Suhur from Laziness",
+      "title_zh": "Skipping Suhur from Laziness",
+      "description_fr": "Omettre le suhur.",
+      "description_en": "Omitting pre-dawn meal.",
+      "description_ar": "Omitting pre-dawn meal.",
+      "description_ru": "Omitting pre-dawn meal.",
+      "description_zh": "Omitting pre-dawn meal.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Déconseillé fortement.",
+          "content_en": "Déconseillé fortement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Bénédiction du suhur.",
+          "content_en": "Bénédiction du suhur."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "La pureté des ustensiles",
+      "title_en": "Purity of Utensils",
+      "title_ar": "طهارة الأواني",
+      "title_ru": "Purity of Utensils",
+      "title_zh": "Purity of Utensils",
+      "description_fr": "Vaisselle touchée par impureté.",
+      "description_en": "Utensils touched by impurity.",
+      "description_ar": "Utensils touched by impurity.",
+      "description_ru": "Utensils touched by impurity.",
+      "description_zh": "Utensils touched by impurity.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Laver sept fois si chien.",
+          "content_en": "Laver sept fois si chien."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Eau purifie sauf impureté majeure.",
+          "content_en": "Eau purifie sauf impureté majeure."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Manger avec la main droite",
+      "title_en": "Eating with Right Hand",
+      "title_ar": "الأكل باليمين",
+      "title_ru": "Eating with Right Hand",
+      "title_zh": "Eating with Right Hand",
+      "description_fr": "Sunna alimentaire.",
+      "description_en": "Dietary sunna.",
+      "description_ar": "Dietary sunna.",
+      "description_ru": "Dietary sunna.",
+      "description_zh": "Dietary sunna.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Main droite pour manger et boire.",
+          "content_en": "Main droite pour manger et boire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Gauche pour souffler nez etc.",
+          "content_en": "Gauche pour souffler nez etc."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le nom d'Allah avant manger",
+      "title_en": "Bismillah Before Eating",
+      "title_ar": "التسمية",
+      "title_ru": "Bismillah Before Eating",
+      "title_zh": "Bismillah Before Eating",
+      "description_fr": "Invocation avant repas.",
+      "description_en": "Invocation before meal.",
+      "description_ar": "Invocation before meal.",
+      "description_ru": "Invocation before meal.",
+      "description_zh": "Invocation before meal.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Bismillah ; si oubli au début, au milieu.",
+          "content_en": "Bismillah ; si oubli au début, au milieu."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Shaytan mange avec celui qui omet.",
+          "content_en": "Shaytan mange avec celui qui omet."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le gaspillage alimentaire",
+      "title_en": "Food Waste",
+      "title_ar": "إسراف الطعام",
+      "title_ru": "Food Waste",
+      "title_zh": "Food Waste",
+      "description_fr": "Israf dans la nourriture.",
+      "description_en": "Extravagance in food.",
+      "description_ar": "Extravagance in food.",
+      "description_ru": "Extravagance in food.",
+      "description_zh": "Extravagance in food.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Manger sans excès.",
+          "content_en": "Manger sans excès."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Partager surplus aux pauvres.",
+          "content_en": "Partager surplus aux pauvres."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le jeûne et les médicaments",
+      "title_en": "Fasting and Medication",
+      "title_ar": "الدواء في الصوم",
+      "title_ru": "Fasting and Medication",
+      "title_zh": "Fasting and Medication",
+      "description_fr": "Prendre médicament en jeûne.",
+      "description_en": "Taking medicine while fasting.",
+      "description_ar": "Taking medicine while fasting.",
+      "description_ru": "Taking medicine while fasting.",
+      "description_zh": "Taking medicine while fasting.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Injection sans nutrition ne rompt pas selon majorité.",
+          "content_en": "Injection sans nutrition ne rompt pas selon majorité."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sirop et gouttes : rompent selon avis.",
+          "content_en": "Sirop et gouttes : rompent selon avis."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les transfusions sanguines",
+      "title_en": "Blood Transfusions",
+      "title_ar": "نقل الدم",
+      "title_ru": "Blood Transfusions",
+      "title_zh": "Blood Transfusions",
+      "description_fr": "Recevoir du sang.",
+      "description_en": "Receiving blood.",
+      "description_ar": "Receiving blood.",
+      "description_ru": "Receiving blood.",
+      "description_zh": "Receiving blood.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis en nécessité.",
+          "content_en": "Permis en nécessité."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de consommation de sang.",
+          "content_en": "Pas de consommation de sang."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les organes et greffes",
+      "title_en": "Organ Transplants",
+      "title_ar": "زراعة الأعضاء",
+      "title_ru": "Organ Transplants",
+      "title_zh": "Organ Transplants",
+      "description_fr": "Don d'organes.",
+      "description_en": "Organ donation.",
+      "description_ar": "Organ donation.",
+      "description_ru": "Organ donation.",
+      "description_zh": "Organ donation.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis pour sauver vie avec conditions.",
+          "content_en": "Permis pour sauver vie avec conditions."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de commerce d'organes.",
+          "content_en": "Pas de commerce d'organes."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "La nourriture en avion",
+      "title_en": "Airline Food",
+      "title_ar": "طعام الطائرة",
+      "title_ru": "Airline Food",
+      "title_zh": "Airline Food",
+      "description_fr": "Repas servis en vol.",
+      "description_en": "Meals served in flight.",
+      "description_ar": "Meals served in flight.",
+      "description_ru": "Meals served in flight.",
+      "description_zh": "Meals served in flight.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Demander halal si possible.",
+          "content_en": "Demander halal si possible."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Jeûneur évite nourriture.",
+          "content_en": "Jeûneur évite nourriture."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les repas d'entreprise",
+      "title_en": "Corporate Meals",
+      "title_ar": "وجبات العمل",
+      "title_ru": "Corporate Meals",
+      "title_zh": "Corporate Meals",
+      "description_fr": "Déjeuners professionnels.",
+      "description_en": "Professional lunches.",
+      "description_ar": "Professional lunches.",
+      "description_ru": "Professional lunches.",
+      "description_zh": "Professional lunches.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Éviter alcool et porc.",
+          "content_en": "Éviter alcool et porc."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Payer sa part si doute.",
+          "content_en": "Payer sa part si doute."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les certifications halal",
+      "title_en": "Halal Certification",
+      "title_ar": "شهادة الحلال",
+      "title_ru": "Halal Certification",
+      "title_zh": "Halal Certification",
+      "description_fr": "Labels halal fiables.",
+      "description_en": "Reliable halal labels.",
+      "description_ar": "Reliable halal labels.",
+      "description_ru": "Reliable halal labels.",
+      "description_zh": "Reliable halal labels.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Organismes reconnus.",
+          "content_en": "Organismes reconnus."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Vérifier abattage et traçabilité.",
+          "content_en": "Vérifier abattage et traçabilité."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le véganisme et le fiqh",
+      "title_en": "Veganism and Fiqh",
+      "title_ar": "النباتية",
+      "title_ru": "Veganism and Fiqh",
+      "title_zh": "Veganism and Fiqh",
+      "description_fr": "Régime végétal strict.",
+      "description_en": "Strict plant-based diet.",
+      "description_ar": "Strict plant-based diet.",
+      "description_ru": "Strict plant-based diet.",
+      "description_zh": "Strict plant-based diet.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis ; pas obligation.",
+          "content_en": "Permis ; pas obligation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Attention alcool caché et gélatine.",
+          "content_en": "Attention alcool caché et gélatine."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les œufs fécondés",
+      "title_en": "Fertilized Eggs",
+      "title_ar": "البيض المخصب",
+      "title_ru": "Fertilized Eggs",
+      "title_zh": "Fertilized Eggs",
+      "description_fr": "Consommation d'œufs fécondés.",
+      "description_en": "Eating fertilized eggs.",
+      "description_ar": "Eating fertilized eggs.",
+      "description_ru": "Eating fertilized eggs.",
+      "description_zh": "Eating fertilized eggs.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis avant formation.",
+          "content_en": "Permis avant formation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Interruption = débattu.",
+          "content_en": "Interruption = débattu."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le cannibalisme et extrêmes",
+      "title_en": "Cannibalism",
+      "title_ar": "أكل لحم البشر",
+      "title_ru": "Cannibalism",
+      "title_zh": "Cannibalism",
+      "description_fr": "Interdit absolu.",
+      "description_en": "Absolutely forbidden.",
+      "description_ar": "Absolutely forbidden.",
+      "description_ru": "Absolutely forbidden.",
+      "description_zh": "Absolutely forbidden.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Même en extrême nécessité débattu.",
+          "content_en": "Même en extrême nécessité débattu."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dignité humaine sacrée.",
+          "content_en": "Dignité humaine sacrée."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "L'eau et sa pureté",
+      "title_en": "Water and Purity",
+      "title_ar": "طهارة الماء",
+      "title_ru": "Water and Purity",
+      "title_zh": "Water and Purity",
+      "description_fr": "Eau pour ablutions.",
+      "description_en": "Water for ablution.",
+      "description_ar": "Water for ablution.",
+      "description_ru": "Water for ablution.",
+      "description_zh": "Water for ablution.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pure sauf changement de nature.",
+          "content_en": "Pure sauf changement de nature."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Grandes quantités restent pures.",
+          "content_en": "Grandes quantités restent pures."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les boissons énergisantes",
+      "title_en": "Energy Drinks",
+      "title_ar": "مشروبات الطاقة",
+      "title_ru": "Energy Drinks",
+      "title_zh": "Energy Drinks",
+      "description_fr": "Taurine et caféine.",
+      "description_en": "Taurine and caffeine.",
+      "description_ar": "Taurine and caffeine.",
+      "description_ru": "Taurine and caffeine.",
+      "description_zh": "Taurine and caffeine.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si pas intoxicant.",
+          "content_en": "Permis si pas intoxicant."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Modération recommandée.",
+          "content_en": "Modération recommandée."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le café et le thé",
+      "title_en": "Coffee and Tea",
+      "title_ar": "القهوة والشاي",
+      "title_ru": "Coffee and Tea",
+      "title_zh": "Coffee and Tea",
+      "description_fr": "Boissons stimulantes.",
+      "description_en": "Stimulating beverages.",
+      "description_ar": "Stimulating beverages.",
+      "description_ru": "Stimulating beverages.",
+      "description_zh": "Stimulating beverages.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis.",
+          "content_en": "Permis."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Éviter excès et dépendance.",
+          "content_en": "Éviter excès et dépendance."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les plats à emporter mixtes",
+      "title_en": "Mixed Takeaway Food",
+      "title_ar": "الوجبات المختلطة",
+      "title_ru": "Mixed Takeaway Food",
+      "title_zh": "Mixed Takeaway Food",
+      "description_fr": "Restaurants non halal.",
+      "description_en": "Non-halal restaurants.",
+      "description_ar": "Non-halal restaurants.",
+      "description_ru": "Non-halal restaurants.",
+      "description_zh": "Non-halal restaurants.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Éviter contamination.",
+          "content_en": "Éviter contamination."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Plats végétariens si pas de contact porc.",
+          "content_en": "Plats végétariens si pas de contact porc."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Les conditions du contrat valide",
+      "title_en": "Valid Contract Conditions",
+      "title_ar": "شروط صحة العقد",
+      "title_ru": "Valid Contract Conditions",
+      "title_zh": "Valid Contract Conditions",
+      "description_fr": "Consentement, objet, parties.",
+      "description_en": "Consent, object, parties.",
+      "description_ar": "Consent, object, parties.",
+      "description_ru": "Consent, object, parties.",
+      "description_zh": "Consent, object, parties.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Offre, acceptation, capacité juridique.",
+          "content_en": "Offre, acceptation, capacité juridique."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Objet licite et déterminé.",
+          "content_en": "Objet licite et déterminé."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le Gharar (incertitude)",
+      "title_en": "Gharar (Uncertainty)",
+      "title_ar": "الغرر",
+      "title_ru": "Gharar (Uncertainty)",
+      "title_zh": "Gharar (Uncertainty)",
+      "description_fr": "Interdiction de l'incertitude excessive.",
+      "description_en": "Excessive uncertainty forbidden.",
+      "description_ar": "Excessive uncertainty forbidden.",
+      "description_ru": "Excessive uncertainty forbidden.",
+      "description_zh": "Excessive uncertainty forbidden.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Vente de poisson dans l'eau nulle.",
+          "content_en": "Vente de poisson dans l'eau nulle."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Prix et objet connus.",
+          "content_en": "Prix et objet connus."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente (Bay')",
+      "title_en": "Sale Contract (Bay')",
+      "title_ar": "البيع",
+      "title_ru": "Sale Contract (Bay')",
+      "title_zh": "Sale Contract (Bay')",
+      "description_fr": "Échange de bien contre prix.",
+      "description_en": "Exchange of goods for price.",
+      "description_ar": "Exchange of goods for price.",
+      "description_ru": "Exchange of goods for price.",
+      "description_zh": "Exchange of goods for price.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Propriété du vendeur requise.",
+          "content_en": "Propriété du vendeur requise."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Livraison et paiement selon termes.",
+          "content_en": "Livraison et paiement selon termes."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente à terme",
+      "title_en": "Deferred Delivery Sale",
+      "title_ar": "بيع الأجل",
+      "title_ru": "Deferred Delivery Sale",
+      "title_zh": "Deferred Delivery Sale",
+      "description_fr": "Livraison ou paiement différé.",
+      "description_en": "Deferred delivery or payment.",
+      "description_ar": "Deferred delivery or payment.",
+      "description_ru": "Deferred delivery or payment.",
+      "description_zh": "Deferred delivery or payment.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si spécifications claires.",
+          "content_en": "Permis si spécifications claires."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de riba sur délai.",
+          "content_en": "Pas de riba sur délai."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente sous condition",
+      "title_en": "Conditional Sale",
+      "title_ar": "البيع المعلق",
+      "title_ru": "Conditional Sale",
+      "title_zh": "Conditional Sale",
+      "description_fr": "Clause suspensive ou résolutoire.",
+      "description_en": "Suspensive or resolutory clause.",
+      "description_ar": "Suspensive or resolutory clause.",
+      "description_ru": "Suspensive or resolutory clause.",
+      "description_zh": "Suspensive or resolutory clause.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Licite si ne contredit pas le contrat.",
+          "content_en": "Licite si ne contredit pas le contrat."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ex : vente si inspection satisfaisante.",
+          "content_en": "Ex : vente si inspection satisfaisante."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente forcée",
+      "title_en": "Forced Sale",
+      "title_ar": "البيع قيد الإكراه",
+      "title_ru": "Forced Sale",
+      "title_zh": "Forced Sale",
+      "description_fr": "Contrat sous contrainte.",
+      "description_en": "Contract under duress.",
+      "description_ar": "Contract under duress.",
+      "description_ru": "Contract under duress.",
+      "description_zh": "Contract under duress.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Annulable.",
+          "content_en": "Annulable."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Consentement libre requis.",
+          "content_en": "Consentement libre requis."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de louage (Ijara)",
+      "title_en": "Lease Contract",
+      "title_ar": "عقد الإجارة",
+      "title_ru": "Lease Contract",
+      "title_zh": "Lease Contract",
+      "description_fr": "Location d'usage ou de service.",
+      "description_en": "Lease of use or service.",
+      "description_ar": "Lease of use or service.",
+      "description_ru": "Lease of use or service.",
+      "description_zh": "Lease of use or service.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Durée et loyer définis.",
+          "content_en": "Durée et loyer définis."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Usure du bien normal sauf accord.",
+          "content_en": "Usure du bien normal sauf accord."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de travail",
+      "title_en": "Employment Contract",
+      "title_ar": "عقد العمل",
+      "title_ru": "Employment Contract",
+      "title_zh": "Employment Contract",
+      "description_fr": "Ijara pour service humain.",
+      "description_en": "Ijara for human service.",
+      "description_ar": "Ijara for human service.",
+      "description_ru": "Ijara for human service.",
+      "description_zh": "Ijara for human service.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Salaire et tâches définis.",
+          "content_en": "Salaire et tâches définis."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'esclavage ni servitude abusive.",
+          "content_en": "Pas d'esclavage ni servitude abusive."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de mandat (Wakala)",
+      "title_en": "Agency Contract (Wakala)",
+      "title_ar": "الوكالة",
+      "title_ru": "Agency Contract (Wakala)",
+      "title_zh": "Agency Contract (Wakala)",
+      "description_fr": "Représentation pour transaction.",
+      "description_en": "Representation for transaction.",
+      "description_ar": "Representation for transaction.",
+      "description_ru": "Representation for transaction.",
+      "description_zh": "Representation for transaction.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Agent agit selon mandat.",
+          "content_en": "Agent agit selon mandat."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Révocation possible.",
+          "content_en": "Révocation possible."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le dépôt (Wadi'a)",
+      "title_en": "Deposit (Wadi'a)",
+      "title_ar": "الوديعة",
+      "title_ru": "Deposit (Wadi'a)",
+      "title_zh": "Deposit (Wadi'a)",
+      "description_fr": "Confier bien à gardien.",
+      "description_en": "Entrusting asset to keeper.",
+      "description_ar": "Entrusting asset to keeper.",
+      "description_ru": "Entrusting asset to keeper.",
+      "description_zh": "Entrusting asset to keeper.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Gratuit ; responsabilité si négligence.",
+          "content_en": "Gratuit ; responsabilité si négligence."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'usage sans permission.",
+          "content_en": "Pas d'usage sans permission."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le prêt (Qard)",
+      "title_en": "Loan Contract (Qard)",
+      "title_ar": "القرض",
+      "title_ru": "Loan Contract (Qard)",
+      "title_zh": "Loan Contract (Qard)",
+      "description_fr": "Prêt de bien fungible.",
+      "description_en": "Loan of fungible good.",
+      "description_ar": "Loan of fungible good.",
+      "description_ru": "Loan of fungible good.",
+      "description_zh": "Loan of fungible good.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Remboursement équivalent.",
+          "content_en": "Remboursement équivalent."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'intérêt.",
+          "content_en": "Pas d'intérêt."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le partenariat (Sharika)",
+      "title_en": "Partnership (Sharika)",
+      "title_ar": "الشركة",
+      "title_ru": "Partnership (Sharika)",
+      "title_zh": "Partnership (Sharika)",
+      "description_fr": "Association à but lucratif.",
+      "description_en": "Profit-seeking association.",
+      "description_ar": "Profit-seeking association.",
+      "description_ru": "Profit-seeking association.",
+      "description_zh": "Profit-seeking association.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Profits et pertes selon accord.",
+          "content_en": "Profits et pertes selon accord."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Chaque partenaire agent des autres.",
+          "content_en": "Chaque partenaire agent des autres."
+        }
+      ]
+    }
+  ]
+}

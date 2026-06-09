@@ -1129,6 +1129,480 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Full comparison'**
   String get fullComparison;
+
+  /// No description provided for @navHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get navHome;
+
+  /// No description provided for @navLearn.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn'**
+  String get navLearn;
+
+  /// No description provided for @navSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get navSearch;
+
+  /// No description provided for @navLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Library'**
+  String get navLibrary;
+
+  /// No description provided for @navProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get navProfile;
+
+  /// No description provided for @continueReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue reading'**
+  String get continueReading;
+
+  /// No description provided for @dailyQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Question of the day'**
+  String get dailyQuestion;
+
+  /// No description provided for @experienceLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Experience level'**
+  String get experienceLevel;
+
+  /// No description provided for @experienceLevelDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Adapt how topics are displayed'**
+  String get experienceLevelDesc;
+
+  /// No description provided for @beginnerMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Beginner mode'**
+  String get beginnerMode;
+
+  /// No description provided for @beginnerModeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Summary and one school at a time'**
+  String get beginnerModeDesc;
+
+  /// No description provided for @studentMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Student mode'**
+  String get studentMode;
+
+  /// No description provided for @studentModeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Full comparison and detailed sources'**
+  String get studentModeDesc;
+
+  /// No description provided for @beginnerModeActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Beginner mode active'**
+  String get beginnerModeActive;
+
+  /// No description provided for @showAllSchools.
+  ///
+  /// In en, this message translates to:
+  /// **'Show all schools'**
+  String get showAllSchools;
+
+  /// No description provided for @methodology.
+  ///
+  /// In en, this message translates to:
+  /// **'Methodology'**
+  String get methodology;
+
+  /// No description provided for @methodologyShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Sources, limits and guidance'**
+  String get methodologyShort;
+
+  /// No description provided for @methodologyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How we work'**
+  String get methodologyTitle;
+
+  /// No description provided for @methodologyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Positions are drawn from recognized manuals of the five madhhabs. Each topic cites sources (Quran, hadith, books) with authenticity grades when available. This app does not replace a qualified scholar for your personal case.'**
+  String get methodologyBody;
+
+  /// No description provided for @methodologySources.
+  ///
+  /// In en, this message translates to:
+  /// **'Sources and authenticity'**
+  String get methodologySources;
+
+  /// No description provided for @methodologySourcesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Hadiths are graded (sahih, hasan, daif, mawdu) when information is available. References allow verifying the original text.'**
+  String get methodologySourcesBody;
+
+  /// No description provided for @askScholar.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask a scholar'**
+  String get askScholar;
+
+  /// No description provided for @askScholarDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'For a personal fatwa, use a recognized platform:'**
+  String get askScholarDesc;
+
+  /// No description provided for @disclaimerGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'This app is educational. For complex cases (inheritance, divorce, finance), always consult a competent scholar.'**
+  String get disclaimerGeneral;
+
+  /// No description provided for @sensitiveTopicDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Sensitive topic — rules vary by situation. Consult a scholar before any decision.'**
+  String get sensitiveTopicDisclaimer;
+
+  /// No description provided for @sourceReference.
+  ///
+  /// In en, this message translates to:
+  /// **'Reference'**
+  String get sourceReference;
+
+  /// No description provided for @skillTree.
+  ///
+  /// In en, this message translates to:
+  /// **'Skill tree'**
+  String get skillTree;
+
+  /// No description provided for @skillProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{read}/{total} topics'**
+  String skillProgress(int read, int total);
+
+  /// No description provided for @srsMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Spaced repetition (due cards)'**
+  String get srsMode;
+
+  /// No description provided for @examMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Exam mode'**
+  String get examMode;
+
+  /// No description provided for @examModeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'No instant feedback — results at the end'**
+  String get examModeDesc;
+
+  /// No description provided for @consensusOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Consensus only'**
+  String get consensusOnly;
+
+  /// No description provided for @noConsensusFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No consensus found between schools'**
+  String get noConsensusFound;
+
+  /// No description provided for @scenarioFinder.
+  ///
+  /// In en, this message translates to:
+  /// **'Find a scenario'**
+  String get scenarioFinder;
+
+  /// No description provided for @scenarioFinderDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe your situation to find a practical case'**
+  String get scenarioFinderDesc;
+
+  /// No description provided for @scenarioFinderHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g. fasting, travel, marriage…'**
+  String get scenarioFinderHint;
+
+  /// No description provided for @noScenariosFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No scenarios found'**
+  String get noScenariosFound;
+
+  /// No description provided for @exportCertificate.
+  ///
+  /// In en, this message translates to:
+  /// **'Export certificate'**
+  String get exportCertificate;
+
+  /// No description provided for @certificateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Course certificate'**
+  String get certificateTitle;
+
+  /// No description provided for @certificateDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date:'**
+  String get certificateDate;
+
+  /// No description provided for @situationAdvisor.
+  ///
+  /// In en, this message translates to:
+  /// **'Situation advisor'**
+  String get situationAdvisor;
+
+  /// No description provided for @situationAdvisorDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe your case — suggested topics and scenarios'**
+  String get situationAdvisorDesc;
+
+  /// No description provided for @situationAdvisorHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g. I travel by plane during Ramadan and…'**
+  String get situationAdvisorHint;
+
+  /// No description provided for @situationAdvisorEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe your situation to get suggestions'**
+  String get situationAdvisorEmpty;
+
+  /// No description provided for @analyzeSituation.
+  ///
+  /// In en, this message translates to:
+  /// **'Analyze'**
+  String get analyzeSituation;
+
+  /// No description provided for @noSituationMatches.
+  ///
+  /// In en, this message translates to:
+  /// **'No suggestions — try other keywords'**
+  String get noSituationMatches;
+
+  /// No description provided for @encyclopediaExam.
+  ///
+  /// In en, this message translates to:
+  /// **'Encyclopedia exam'**
+  String get encyclopediaExam;
+
+  /// No description provided for @encyclopediaExamDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'10 topics, timer, self-assessment'**
+  String get encyclopediaExamDesc;
+
+  /// No description provided for @examTopicPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you know this topic?'**
+  String get examTopicPrompt;
+
+  /// No description provided for @revealAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal summary'**
+  String get revealAnswer;
+
+  /// No description provided for @readFullTopic.
+  ///
+  /// In en, this message translates to:
+  /// **'Read full topic'**
+  String get readFullTopic;
+
+  /// No description provided for @needStudy.
+  ///
+  /// In en, this message translates to:
+  /// **'Need study'**
+  String get needStudy;
+
+  /// No description provided for @examResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Exam results'**
+  String get examResults;
+
+  /// No description provided for @examKnownCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{known} / {total} mastered'**
+  String examKnownCount(int known, int total);
+
+  /// No description provided for @noExamTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough topics for the exam'**
+  String get noExamTopics;
+
+  /// No description provided for @exportComparisonPdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Export comparison as PDF'**
+  String get exportComparisonPdf;
+
+  /// No description provided for @encryptedSync.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypted sync'**
+  String get encryptedSync;
+
+  /// No description provided for @encryptedSyncDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'AES backup for iCloud, Drive, etc.'**
+  String get encryptedSyncDesc;
+
+  /// No description provided for @exportEncryptedBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Export encrypted backup'**
+  String get exportEncryptedBackup;
+
+  /// No description provided for @importEncryptedBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Import encrypted backup'**
+  String get importEncryptedBackup;
+
+  /// No description provided for @enterPassphrase.
+  ///
+  /// In en, this message translates to:
+  /// **'Passphrase'**
+  String get enterPassphrase;
+
+  /// No description provided for @passphrase.
+  ///
+  /// In en, this message translates to:
+  /// **'Password (8+ chars)'**
+  String get passphrase;
+
+  /// No description provided for @confirmPassphrase.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirmPassphrase;
+
+  /// No description provided for @encryptedSyncFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed — check your passphrase'**
+  String get encryptedSyncFailed;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @homeWidgetDescIos.
+  ///
+  /// In en, this message translates to:
+  /// **'iOS & Android widget — add Daily Topic from home screen'**
+  String get homeWidgetDescIos;
+
+  /// No description provided for @verifiedContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified content'**
+  String get verifiedContent;
+
+  /// No description provided for @isnadChain.
+  ///
+  /// In en, this message translates to:
+  /// **'Chain of transmission (isnād)'**
+  String get isnadChain;
+
+  /// No description provided for @disclaimerHomeBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Educational tool — does not replace a scholar\'s ruling. See methodology.'**
+  String get disclaimerHomeBanner;
+
+  /// No description provided for @liteMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Lite mode'**
+  String get liteMode;
+
+  /// No description provided for @liteModeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Reduces animations for slower devices or accessibility'**
+  String get liteModeDesc;
+
+  /// No description provided for @globalMadhhabFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Global madhhab filter'**
+  String get globalMadhhabFilter;
+
+  /// No description provided for @globalMadhhabFilterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide topics without a position from your preferred school'**
+  String get globalMadhhabFilterDesc;
+
+  /// No description provided for @ijmaSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Consensus (ijmāʿ)'**
+  String get ijmaSection;
+
+  /// No description provided for @ijmaSectionDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'The four main Sunni schools agree on this point.'**
+  String get ijmaSectionDesc;
+
+  /// No description provided for @divergenceTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Divergence timeline'**
+  String get divergenceTimeline;
+
+  /// No description provided for @contextualShortcuts.
+  ///
+  /// In en, this message translates to:
+  /// **'Shortcuts'**
+  String get contextualShortcuts;
+
+  /// No description provided for @shortcutZakat.
+  ///
+  /// In en, this message translates to:
+  /// **'Zakat calculator'**
+  String get shortcutZakat;
 }
 
 class _AppLocalizationsDelegate

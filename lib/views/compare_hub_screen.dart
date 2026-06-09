@@ -15,6 +15,7 @@ class CompareHubScreen extends StatefulWidget {
 
 class _CompareHubScreenState extends State<CompareHubScreen> {
   late Future<List<Topic>> _topicsFuture;
+  bool _consensusOnly = false;
 
   @override
   void initState() {
@@ -23,8 +24,10 @@ class _CompareHubScreenState extends State<CompareHubScreen> {
   }
 
   void _load() {
-    final locale = Provider.of<UserProvider>(context, listen: false).locale;
-    _topicsFuture = DatabaseHelper().getTopicsWithComparisons(locale: locale);
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    _topicsFuture = DatabaseHelper()
+        .getTopicsWithComparisons(locale: userProvider.locale, consensusOnly: _consensusOnly)
+        .then((topics) => userProvider.filterTopicsByMadhhab(topics));
   }
 
   @override
@@ -33,7 +36,21 @@ class _CompareHubScreenState extends State<CompareHubScreen> {
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.compareSchools)),
-      body: FutureBuilder<List<Topic>>(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+            child: FilterChip(
+              label: Text(l10n.consensusOnly),
+              selected: _consensusOnly,
+              onSelected: (v) => setState(() {
+                _consensusOnly = v;
+                _load();
+              }),
+            ),
+          ),
+          Expanded(
+            child: FutureBuilder<List<Topic>>(
         future: _topicsFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -67,6 +84,9 @@ class _CompareHubScreenState extends State<CompareHubScreen> {
             },
           );
         },
+            ),
+          ),
+        ],
       ),
     );
   }

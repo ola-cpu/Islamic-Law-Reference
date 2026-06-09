@@ -1,0 +1,880 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à l'alphabétisation religieuse",
+      "title_en": "Right to Religious Literacy",
+      "title_ar": "حق التعليم الديني",
+      "title_ru": "Right to Religious Literacy",
+      "title_zh": "Right to Religious Literacy",
+      "description_fr": "Apprendre les bases de la foi.",
+      "description_en": "Learning faith fundamentals.",
+      "description_ar": "Learning faith fundamentals.",
+      "description_ru": "Learning faith fundamentals.",
+      "description_zh": "Learning faith fundamentals.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Fard 'ayn pour chaque musulman.",
+          "content_en": "Fard 'ayn pour chaque musulman."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Accès égal hommes-femmes.",
+          "content_en": "Accès égal hommes-femmes."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "L'héritage des crypto-actifs",
+      "title_en": "Crypto Asset Inheritance",
+      "title_ar": "ميراث العملات الرقمية",
+      "title_ru": "Crypto Asset Inheritance",
+      "title_zh": "Crypto Asset Inheritance",
+      "description_fr": "Transmission de portefeuilles.",
+      "description_en": "Transferring wallets.",
+      "description_ar": "Transferring wallets.",
+      "description_ru": "Transferring wallets.",
+      "description_zh": "Transferring wallets.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Wasiyya avec clés et instructions.",
+          "content_en": "Wasiyya avec clés et instructions."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Valeur au jour du décès.",
+          "content_en": "Valeur au jour du décès."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du gardien de phare (cas isolé)",
+      "title_en": "Isolated Lighthouse Keeper Prayer",
+      "title_ar": "صلاة المنارة",
+      "title_ru": "Isolated Lighthouse Keeper Prayer",
+      "title_zh": "Isolated Lighthouse Keeper Prayer",
+      "description_fr": "Jama'a impossible en poste isolé.",
+      "description_en": "No jama'a in isolated post.",
+      "description_ar": "No jama'a in isolated post.",
+      "description_ru": "No jama'a in isolated post.",
+      "description_zh": "No jama'a in isolated post.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prière en congrégation virtuelle débattue.",
+          "content_en": "Prière en congrégation virtuelle débattue."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Qasr si voyageur.",
+          "content_en": "Qasr si voyageur."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le tamattu' et sacrifice combiné",
+      "title_en": "Tamattu and Combined Sacrifice",
+      "title_ar": "تمتع والهدي",
+      "title_ru": "Tamattu and Combined Sacrifice",
+      "title_zh": "Tamattu and Combined Sacrifice",
+      "description_fr": "Hady obligatoire en tamattu'.",
+      "description_en": "Mandatory hady in tamattu'.",
+      "description_ar": "Mandatory hady in tamattu'.",
+      "description_ru": "Mandatory hady in tamattu'.",
+      "description_zh": "Mandatory hady in tamattu'.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Un mouton ou part de chameau.",
+          "content_en": "Un mouton ou part de chameau."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Avant rasage tête.",
+          "content_en": "Avant rasage tête."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La garde partagée internationale",
+      "title_en": "International Shared Custody",
+      "title_ar": "الحضانة العابرة",
+      "title_ru": "International Shared Custody",
+      "title_zh": "International Shared Custody",
+      "description_fr": "Enfant entre deux pays.",
+      "description_en": "Child across two countries.",
+      "description_ar": "Child across two countries.",
+      "description_ru": "Child across two countries.",
+      "description_zh": "Child across two countries.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Intérêt supérieur et accord.",
+          "content_en": "Intérêt supérieur et accord."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Médiation et sharia locale.",
+          "content_en": "Médiation et sharia locale."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Les relations avec les colocataires",
+      "title_en": "Roommate Relations",
+      "title_ar": "حقوق الزميل",
+      "title_ru": "Roommate Relations",
+      "title_zh": "Roommate Relations",
+      "description_fr": "Cohabitation non familiale.",
+      "description_en": "Non-family cohabitation.",
+      "description_ar": "Non-family cohabitation.",
+      "description_ru": "Non-family cohabitation.",
+      "description_zh": "Non-family cohabitation.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Respect mutuel et partage charges.",
+          "content_en": "Respect mutuel et partage charges."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de mixte non mahram selon règles.",
+          "content_en": "Pas de mixte non mahram selon règles."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La compensation carbone et zakat",
+      "title_en": "Carbon Credits and Zakat",
+      "title_ar": "تعويض الكربون",
+      "title_ru": "Carbon Credits and Zakat",
+      "title_zh": "Carbon Credits and Zakat",
+      "description_fr": "Vente de crédits environnementaux.",
+      "description_en": "Environmental credit sales.",
+      "description_ar": "Environmental credit sales.",
+      "description_ru": "Environmental credit sales.",
+      "description_zh": "Environmental credit sales.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si actif réel.",
+          "content_en": "Permis si actif réel."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Zakat sur valeur si nisab.",
+          "content_en": "Zakat sur valeur si nisab."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La preuve vidéo en justice",
+      "title_en": "Video Evidence in Court",
+      "title_ar": "الفيديو كدليل",
+      "title_ru": "Video Evidence in Court",
+      "title_zh": "Video Evidence in Court",
+      "description_fr": "Enregistrements comme preuve.",
+      "description_en": "Recordings as evidence.",
+      "description_ar": "Recordings as evidence.",
+      "description_ru": "Recordings as evidence.",
+      "description_zh": "Recordings as evidence.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Admissible si authentifié.",
+          "content_en": "Admissible si authentifié."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de violation de privacy abusive.",
+          "content_en": "Pas de violation de privacy abusive."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La gratitude envers les professeurs",
+      "title_en": "Gratitude to Teachers",
+      "title_ar": "شكر المعلم",
+      "title_ru": "Gratitude to Teachers",
+      "title_zh": "Gratitude to Teachers",
+      "description_fr": "Reconnaissance envers enseignants.",
+      "description_en": "Thanking teachers.",
+      "description_ar": "Thanking teachers.",
+      "description_ru": "Thanking teachers.",
+      "description_zh": "Thanking teachers.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Du'a et respect.",
+          "content_en": "Du'a et respect."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Transmission du savoir récompensée.",
+          "content_en": "Transmission du savoir récompensée."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les repas des étudiants en campus",
+      "title_en": "Campus Student Meals",
+      "title_ar": "طعام الطلاب",
+      "title_ru": "Campus Student Meals",
+      "title_zh": "Campus Student Meals",
+      "description_fr": "Cantine et options halal.",
+      "description_en": "Canteen halal options.",
+      "description_ar": "Canteen halal options.",
+      "description_ru": "Canteen halal options.",
+      "description_zh": "Canteen halal options.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Vérifier sources viande.",
+          "content_en": "Vérifier sources viande."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Jeûneurs : horaires adaptés.",
+          "content_en": "Jeûneurs : horaires adaptés."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de prestation médicale",
+      "title_en": "Medical Service Contract",
+      "title_ar": "عقد الطبيب",
+      "title_ru": "Medical Service Contract",
+      "title_zh": "Medical Service Contract",
+      "description_fr": "Ijara pour soins.",
+      "description_en": "Ijara for medical care.",
+      "description_ar": "Ijara for medical care.",
+      "description_ru": "Ijara for medical care.",
+      "description_zh": "Ijara for medical care.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Honoraires connus.",
+          "content_en": "Honoraires connus."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Urgence sans refus si capable.",
+          "content_en": "Urgence sans refus si capable."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit au congé religieux",
+      "title_en": "Religious Leave Right",
+      "title_ar": "إجازة دينية",
+      "title_ru": "Religious Leave Right",
+      "title_zh": "Religious Leave Right",
+      "description_fr": "Absence pour fêtes ou Hajj.",
+      "description_en": "Leave for Eid or Hajj.",
+      "description_ar": "Leave for Eid or Hajj.",
+      "description_ru": "Leave for Eid or Hajj.",
+      "description_zh": "Leave for Eid or Hajj.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Négociation avec employeur.",
+          "content_en": "Négociation avec employeur."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Jumu'a : priorité culte.",
+          "content_en": "Jumu'a : priorité culte."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le legs à une fondation pieuse",
+      "title_en": "Bequest to Pious Foundation",
+      "title_ar": "وصية للوقف",
+      "title_ru": "Bequest to Pious Foundation",
+      "title_zh": "Bequest to Pious Foundation",
+      "description_fr": "Wasiyya pour waqf.",
+      "description_en": "Bequest for waqf.",
+      "description_ar": "Bequest for waqf.",
+      "description_ru": "Bequest for waqf.",
+      "description_zh": "Bequest for waqf.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Dans tiers si non-héritier.",
+          "content_en": "Dans tiers si non-héritier."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Gestion perpétuelle.",
+          "content_en": "Gestion perpétuelle."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du policier en service",
+      "title_en": "Police Officer on Duty Prayer",
+      "title_ar": "صلاة الشرطي",
+      "title_ru": "Police Officer on Duty Prayer",
+      "title_zh": "Police Officer on Duty Prayer",
+      "description_fr": "Salat pendant patrouille.",
+      "description_en": "Prayer while patrolling.",
+      "description_ar": "Prayer while patrolling.",
+      "description_ru": "Prayer while patrolling.",
+      "description_zh": "Prayer while patrolling.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Jam' ou qasr selon situation.",
+          "content_en": "Jam' ou qasr selon situation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sécurité publique prioritaire.",
+          "content_en": "Sécurité publique prioritaire."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne du soldat en garnison",
+      "title_en": "Soldier's Fast in Garrison",
+      "title_ar": "صوم الجندي",
+      "title_ru": "Soldier's Fast in Garrison",
+      "title_zh": "Soldier's Fast in Garrison",
+      "description_fr": "Jeûne en service armé.",
+      "description_en": "Fasting while in military service.",
+      "description_ar": "Fasting while in military service.",
+      "description_ru": "Fasting while in military service.",
+      "description_zh": "Fasting while in military service.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Rompre si combat imminent.",
+          "content_en": "Rompre si combat imminent."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Qada après mission.",
+          "content_en": "Qada après mission."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le mariage par vidéoconférence",
+      "title_en": "Marriage by Videoconference",
+      "title_ar": "النكاح عن بعد",
+      "title_ru": "Marriage by Videoconference",
+      "title_zh": "Marriage by Videoconference",
+      "description_fr": "Nikah à distance.",
+      "description_en": "Remote nikah.",
+      "description_ar": "Remote nikah.",
+      "description_ru": "Remote nikah.",
+      "description_zh": "Remote nikah.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Débattu ; témoins et wali présents physiquement ou en ligne selon savants.",
+          "content_en": "Débattu ; témoins et wali présents physiquement ou en ligne selon savants."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Consentement clair enregistré.",
+          "content_en": "Consentement clair enregistré."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "L'aide aux réfugiés dans la communauté",
+      "title_en": "Helping Refugees Locally",
+      "title_ar": "مساعدة اللاجئين",
+      "title_ru": "Helping Refugees Locally",
+      "title_zh": "Helping Refugees Locally",
+      "description_fr": "Accueil des déplacés.",
+      "description_en": "Welcoming displaced people.",
+      "description_ar": "Welcoming displaced people.",
+      "description_ru": "Welcoming displaced people.",
+      "description_zh": "Welcoming displaced people.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Zakat et sadaqa applicables.",
+          "content_en": "Zakat et sadaqa applicables."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dignité et intégration.",
+          "content_en": "Dignité et intégration."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La finance participative immobilière",
+      "title_en": "Participatory Real Estate",
+      "title_ar": "التمويل العقاري المشترك",
+      "title_ru": "Participatory Real Estate",
+      "title_zh": "Participatory Real Estate",
+      "description_fr": "Musharaka mutanaqisa détaillée.",
+      "description_en": "Diminishing musharaka.",
+      "description_ar": "Diminishing musharaka.",
+      "description_ru": "Diminishing musharaka.",
+      "description_zh": "Diminishing musharaka.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Parts décroissantes du bailleur.",
+          "content_en": "Parts décroissantes du bailleur."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Loyer + achat progressif.",
+          "content_en": "Loyer + achat progressif."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "L'arbitrage familial islamique",
+      "title_en": "Islamic Family Arbitration",
+      "title_ar": "تحكيم الأسرة",
+      "title_ru": "Islamic Family Arbitration",
+      "title_zh": "Islamic Family Arbitration",
+      "description_fr": "Tahkim pour conflits familiaux.",
+      "description_en": "Arbitration for family disputes.",
+      "description_ar": "Arbitration for family disputes.",
+      "description_ru": "Arbitration for family disputes.",
+      "description_zh": "Arbitration for family disputes.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Arbitre connaît fiqh.",
+          "content_en": "Arbitre connaît fiqh."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Décision contraignante si acceptée.",
+          "content_en": "Décision contraignante si acceptée."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La sincérité dans les relations",
+      "title_en": "Sincerity in Relationships",
+      "title_ar": "إخلاص المعاملة",
+      "title_ru": "Sincerity in Relationships",
+      "title_zh": "Sincerity in Relationships",
+      "description_fr": "Loyauté sans intérêt.",
+      "description_en": "Loyalty without ulterior motive.",
+      "description_ar": "Loyalty without ulterior motive.",
+      "description_ru": "Loyalty without ulterior motive.",
+      "description_zh": "Loyalty without ulterior motive.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas de hypocrisie sociale.",
+          "content_en": "Pas de hypocrisie sociale."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Conseil sincère entre amis.",
+          "content_en": "Conseil sincère entre amis."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les plats préparés par des non-musulmans",
+      "title_en": "Food by Non-Muslims",
+      "title_ar": "طبخ غير المسلم",
+      "title_ru": "Food by Non-Muslims",
+      "title_zh": "Food by Non-Muslims",
+      "description_fr": "Cuisine par non-musulman.",
+      "description_en": "Cooking by non-Muslim.",
+      "description_ar": "Cooking by non-Muslim.",
+      "description_ru": "Cooking by non-Muslim.",
+      "description_zh": "Cooking by non-Muslim.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Végétarien permis.",
+          "content_en": "Végétarien permis."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Viande : exiger halal certifié.",
+          "content_en": "Viande : exiger halal certifié."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de location saisonnière",
+      "title_en": "Seasonal Rental Contract",
+      "title_ar": "إيجار موسمي",
+      "title_ru": "Seasonal Rental Contract",
+      "title_zh": "Seasonal Rental Contract",
+      "description_fr": "Location courte durée.",
+      "description_en": "Short-term rental.",
+      "description_ar": "Short-term rental.",
+      "description_ru": "Short-term rental.",
+      "description_zh": "Short-term rental.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ijara avec durée fixe.",
+          "content_en": "Ijara avec durée fixe."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dépôt de garantie licite.",
+          "content_en": "Dépôt de garantie licite."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des patients en fin de vie",
+      "title_en": "End-of-Life Patient Rights",
+      "title_ar": "حقوق المريض المحتضر",
+      "title_ru": "End-of-Life Patient Rights",
+      "title_zh": "End-of-Life Patient Rights",
+      "description_fr": "Soins palliatifs.",
+      "description_en": "Palliative care.",
+      "description_ar": "Palliative care.",
+      "description_ru": "Palliative care.",
+      "description_zh": "Palliative care.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas d'euthanasie.",
+          "content_en": "Pas d'euthanasie."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Douleur soulagée ; rappel tawhid.",
+          "content_en": "Douleur soulagée ; rappel tawhid."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La succession des biens numériques",
+      "title_en": "Digital Asset Succession",
+      "title_ar": "ميراث الحسابات",
+      "title_ru": "Digital Asset Succession",
+      "title_zh": "Digital Asset Succession",
+      "description_fr": "Comptes cloud et abonnements.",
+      "description_en": "Cloud accounts and subscriptions.",
+      "description_ar": "Cloud accounts and subscriptions.",
+      "description_ru": "Cloud accounts and subscriptions.",
+      "description_zh": "Cloud accounts and subscriptions.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Wasiyya pour accès.",
+          "content_en": "Wasiyya pour accès."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'héritage automatique sans preuve.",
+          "content_en": "Pas d'héritage automatique sans preuve."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière dans un ascenseur bloqué",
+      "title_en": "Prayer in Stuck Elevator",
+      "title_ar": "الصلاة في المصعد",
+      "title_ru": "Prayer in Stuck Elevator",
+      "title_zh": "Prayer in Stuck Elevator",
+      "description_fr": "Qibla inconnue en urgence.",
+      "description_en": "Unknown qibla in emergency.",
+      "description_ar": "Unknown qibla in emergency.",
+      "description_ru": "Unknown qibla in emergency.",
+      "description_zh": "Unknown qibla in emergency.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prier selon meilleure estimation.",
+          "content_en": "Prier selon meilleure estimation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Qada si temps expiré.",
+          "content_en": "Qada si temps expiré."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne du donneur de sang",
+      "title_en": "Blood Donor Fasting",
+      "title_ar": "صوم المتبرع",
+      "title_ru": "Blood Donor Fasting",
+      "title_zh": "Blood Donor Fasting",
+      "description_fr": "Don de sang en Ramadan.",
+      "description_en": "Blood donation while fasting.",
+      "description_ar": "Blood donation while fasting.",
+      "description_ru": "Blood donation while fasting.",
+      "description_zh": "Blood donation while fasting.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Rompt selon avis médical.",
+          "content_en": "Rompt selon avis médical."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Reprendre qada.",
+          "content_en": "Reprendre qada."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La pension alimentaire de l'épouse divorcée",
+      "title_en": "Divorced Wife Maintenance",
+      "title_ar": "نفقة المطلقة",
+      "title_ru": "Divorced Wife Maintenance",
+      "title_zh": "Divorced Wife Maintenance",
+      "description_fr": "Nafaqah pendant iddah.",
+      "description_en": "Maintenance during iddah.",
+      "description_ar": "Maintenance during iddah.",
+      "description_ru": "Maintenance during iddah.",
+      "description_zh": "Maintenance during iddah.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Obligatoire si révocable.",
+          "content_en": "Obligatoire si révocable."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Logement pendant attente.",
+          "content_en": "Logement pendant attente."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Le médiateur communautaire (Hakam)",
+      "title_en": "Community Mediator",
+      "title_ar": "الحكم",
+      "title_ru": "Community Mediator",
+      "title_zh": "Community Mediator",
+      "description_fr": "Résolution de litiges locaux.",
+      "description_en": "Local dispute resolution.",
+      "description_ar": "Local dispute resolution.",
+      "description_ru": "Local dispute resolution.",
+      "description_zh": "Local dispute resolution.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Éviter tribunaux si possible.",
+          "content_en": "Éviter tribunaux si possible."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Juste et neutre.",
+          "content_en": "Juste et neutre."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les frais de scolarité islamiques",
+      "title_en": "Islamic School Fees",
+      "title_ar": "أجور المدارس",
+      "title_ru": "Islamic School Fees",
+      "title_zh": "Islamic School Fees",
+      "description_fr": "Paiement éducation privée.",
+      "description_en": "Private education payment.",
+      "description_ar": "Private education payment.",
+      "description_ru": "Private education payment.",
+      "description_zh": "Private education payment.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ijara ou service défini.",
+          "content_en": "Ijara ou service défini."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Bourse pour nécessiteux.",
+          "content_en": "Bourse pour nécessiteux."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La protection des témoins vulnérables",
+      "title_en": "Protecting Vulnerable Witnesses",
+      "title_ar": "حماية الشهود",
+      "title_ru": "Protecting Vulnerable Witnesses",
+      "title_zh": "Protecting Vulnerable Witnesses",
+      "description_fr": "Enfants et femmes témoins.",
+      "description_en": "Child and women witnesses.",
+      "description_ar": "Child and women witnesses.",
+      "description_ru": "Child and women witnesses.",
+      "description_zh": "Child and women witnesses.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Anonymat si nécessaire.",
+          "content_en": "Anonymat si nécessaire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'intimidation.",
+          "content_en": "Pas d'intimidation."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La modération dans les dépenses",
+      "title_en": "Moderation in Spending",
+      "title_ar": "الاقتصاد في النفقة",
+      "title_ru": "Moderation in Spending",
+      "title_zh": "Moderation in Spending",
+      "description_fr": "Éviter israf et tchir.",
+      "description_en": "Avoid waste and miserliness.",
+      "description_ar": "Avoid waste and miserliness.",
+      "description_ru": "Avoid waste and miserliness.",
+      "description_zh": "Avoid waste and miserliness.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Milieu recommandé.",
+          "content_en": "Milieu recommandé."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Priorité besoins puis aumône.",
+          "content_en": "Priorité besoins puis aumône."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les repas des prisonniers musulmans",
+      "title_en": "Muslim Prisoner Meals",
+      "title_ar": "طعام السجين",
+      "title_ru": "Muslim Prisoner Meals",
+      "title_zh": "Muslim Prisoner Meals",
+      "description_fr": "Halal en détention.",
+      "description_en": "Halal in detention.",
+      "description_ar": "Halal in detention.",
+      "description_ru": "Halal in detention.",
+      "description_zh": "Halal in detention.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Droit à nourriture licite.",
+          "content_en": "Droit à nourriture licite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Jeûneurs : horaires respectés.",
+          "content_en": "Jeûneurs : horaires respectés."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de traduction juridique",
+      "title_en": "Legal Translation Contract",
+      "title_ar": "ترجمة العقود",
+      "title_ru": "Legal Translation Contract",
+      "title_zh": "Legal Translation Contract",
+      "description_fr": "Service de traduction fidèle.",
+      "description_en": "Faithful translation service.",
+      "description_ar": "Faithful translation service.",
+      "description_ru": "Faithful translation service.",
+      "description_zh": "Faithful translation service.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas de dissimulation de clauses.",
+          "content_en": "Pas de dissimulation de clauses."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Honoraires définis.",
+          "content_en": "Honoraires définis."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à un procès rapide",
+      "title_en": "Right to Timely Trial",
+      "title_ar": "سرعة القضاء",
+      "title_ru": "Right to Timely Trial",
+      "title_zh": "Right to Timely Trial",
+      "description_fr": "Éviter détention arbitraire.",
+      "description_en": "Avoid arbitrary detention.",
+      "description_ar": "Avoid arbitrary detention.",
+      "description_ru": "Avoid arbitrary detention.",
+      "description_zh": "Avoid arbitrary detention.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Justice prompte.",
+          "content_en": "Justice prompte."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Présomption d'innocence.",
+          "content_en": "Présomption d'innocence."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "L'ajustement des parts après dette",
+      "title_en": "Adjusting Shares After Debt",
+      "title_ar": "تعديل الميراث",
+      "title_ru": "Adjusting Shares After Debt",
+      "title_zh": "Adjusting Shares After Debt",
+      "description_fr": "Recalcul après paiement dettes.",
+      "description_en": "Recalculation after debts.",
+      "description_ar": "Recalculation after debts.",
+      "description_ru": "Recalculation after debts.",
+      "description_zh": "Recalculation after debts.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Net avant partage.",
+          "content_en": "Net avant partage."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Transparence aux héritiers.",
+          "content_en": "Transparence aux héritiers."
+        }
+      ]
+    }
+  ]
+}

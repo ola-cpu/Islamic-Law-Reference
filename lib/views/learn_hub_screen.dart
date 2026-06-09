@@ -49,6 +49,34 @@ class LearnHubScreen extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 8),
             child: ListTile(
               leading: CircleAvatar(
+                backgroundColor: Colors.deepPurple.shade100,
+                child: Icon(Icons.auto_awesome, color: Colors.deepPurple.shade800),
+              ),
+              title: Text(l10n.situationAdvisor),
+              subtitle: Text(l10n.situationAdvisorDesc),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () => context.push(AppRoutes.situation),
+            ),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            margin: const EdgeInsets.only(bottom: 8),
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.deepPurple.shade50,
+                child: Icon(Icons.search, color: Colors.deepPurple.shade600),
+              ),
+              title: Text(l10n.scenarioFinder),
+              subtitle: Text(l10n.scenarioFinderDesc),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () => context.push(AppRoutes.scenarios),
+            ),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            margin: const EdgeInsets.only(bottom: 8),
+            child: ListTile(
+              leading: CircleAvatar(
                 backgroundColor: Colors.indigo.shade100,
                 child: Icon(Icons.psychology, color: Colors.indigo.shade800),
               ),
@@ -110,6 +138,7 @@ class LearnHubScreen extends StatelessWidget {
           _SectionHeader(title: l10n.quiz),
           Card(
             clipBehavior: Clip.antiAlias,
+            margin: const EdgeInsets.only(bottom: 8),
             child: ListTile(
               leading: CircleAvatar(
                 backgroundColor: theme.colorScheme.primaryContainer,
@@ -124,6 +153,38 @@ class LearnHubScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const QuizScreen()),
                 );
               },
+            ),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            margin: const EdgeInsets.only(bottom: 8),
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.red.shade100,
+                child: Icon(Icons.timer, color: Colors.red.shade800),
+              ),
+              title: Text(l10n.examMode),
+              subtitle: Text(l10n.examModeDesc),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const QuizScreen(examMode: true)),
+                );
+              },
+            ),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.brown.shade100,
+                child: Icon(Icons.library_books, color: Colors.brown.shade800),
+              ),
+              title: Text(l10n.encyclopediaExam),
+              subtitle: Text(l10n.encyclopediaExamDesc),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () => context.push(AppRoutes.encyclopediaExam),
             ),
           ),
         ],

@@ -40,6 +40,10 @@ class PreferencesService {
   static const _lastStreakDateKey = 'last_streak_date';
   static const _recentSearchesKey = 'recent_searches';
   static const _zenFontScaleKey = 'zen_font_scale';
+  static const _experienceLevelKey = 'experience_level';
+  static const _methodologyViewedKey = 'methodology_viewed';
+  static const _liteModeKey = 'lite_mode';
+  static const _globalMadhhabFilterKey = 'global_madhhab_filter';
   static const _maxHistory = 20;
   static const _maxRecentSearches = 8;
 
@@ -246,6 +250,30 @@ class PreferencesService {
 
   Future<void> saveZenFontScale(double scale) async {
     await _prefs?.setDouble(_zenFontScaleKey, scale);
+  }
+
+  String getExperienceLevel() => _prefs?.getString(_experienceLevelKey) ?? 'student';
+
+  Future<void> saveExperienceLevel(String level) async {
+    await _prefs?.setString(_experienceLevelKey, level);
+  }
+
+  bool hasViewedMethodology() => _prefs?.getBool(_methodologyViewedKey) ?? false;
+
+  Future<void> markMethodologyViewed() async {
+    await _prefs?.setBool(_methodologyViewedKey, true);
+  }
+
+  bool getLiteMode() => _prefs?.getBool(_liteModeKey) ?? false;
+
+  Future<void> setLiteMode(bool enabled) async {
+    await _prefs?.setBool(_liteModeKey, enabled);
+  }
+
+  bool getGlobalMadhhhabFilter() => _prefs?.getBool(_globalMadhhabFilterKey) ?? false;
+
+  Future<void> setGlobalMadhhhabFilter(bool enabled) async {
+    await _prefs?.setBool(_globalMadhhabFilterKey, enabled);
   }
 
   Future<void> restoreUserData({

@@ -1,5 +1,7 @@
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import '../models/topic.dart';
 import '../models/law.dart';
 import '../models/school.dart';
@@ -7,6 +9,8 @@ import '../services/database_helper.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/user_provider.dart';
 import '../data/school_constants.dart';
+import '../services/export_service.dart';
+import '../widgets/divergence_timeline_widget.dart';
 
 class SchoolComparisonScreen extends StatefulWidget {
   final Topic topic;
@@ -19,6 +23,7 @@ class SchoolComparisonScreen extends StatefulWidget {
 
 class _SchoolComparisonScreenState extends State<SchoolComparisonScreen> {
   late Future<List<Law>> _lawsFuture;
+  bool _consensusOnly = false;
 
   @override
   void initState() {
@@ -35,7 +40,22 @@ class _SchoolComparisonScreenState extends State<SchoolComparisonScreen> {
     final preferred = user.preferredSchool;
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.compareSchools)),
+      appBar: AppBar(
+        title: Text(l10n.compareSchools),
+        actions: [
+          FutureBuilder<List<Law>>(
+            future: _lawsFuture,
+            builder: (context, snap) {
+              if (!snap.hasData || snap.data!.length < 2) return const SizedBox.shrink();
+              return IconButton(
+                icon: const Icon(Icons.picture_as_pdf),
+                tooltip: l10n.exportComparisonPdf,
+                onPressed: () => _exportPdf(context, snap.data!, l10n, user.locale),
+              );
+            },
+          ),
+        ],
+      ),
       body: FutureBuilder<List<Law>>(
         future: _lawsFuture,
         builder: (context, snapshot) {
@@ -49,22 +69,68 @@ class _SchoolComparisonScreenState extends State<SchoolComparisonScreen> {
 
           laws.sort((a, b) {
             if (preferred == null) return 0;
-            return _isPreferred(b, preferred).compareTo(_isPreferred(a, preferred));
+            return (_isPreferred(b, preferred) ? 1 : 0).compareTo(_isPreferred(a, preferred) ? 1 : 0);
           });
+
+          final displayLaws = _consensusOnly ? _consensusLaws(laws) : laws;
 
           return ListView(
             padding: const EdgeInsets.all(16),
             children: [
+              FilterChip(
+                label: Text(l10n.consensusOnly),
+                selected: _consensusOnly,
+                onSelected: (v) => setState(() => _consensusOnly = v),
+              ),
+              const SizedBox(height: 8),
               Text(widget.topic.title, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               Text(widget.topic.description, style: TextStyle(color: Colors.grey.shade700)),
               const SizedBox(height: 20),
-              ...laws.map((law) => _LawCompareCard(law: law, l10n: l10n, preferredSlug: preferred)),
+              if (displayLaws.isEmpty)
+                Padding(padding: const EdgeInsets.all(24), child: Center(child: Text(l10n.noConsensusFound)))
+              else ...[
+                if (! _consensusOnly && displayLaws.length >= 2) ...[
+                  DivergenceTimelineWidget(laws: displayLaws),
+                  const SizedBox(height: 16),
+                ],
+                ...displayLaws.map((law) => _LawCompareCard(law: law, l10n: l10n, preferredSlug: preferred)),
+              ],
             ],
           );
         },
       ),
     );
+  }
+
+  Future<void> _exportPdf(BuildContext context, List<Law> laws, AppLocalizations l10n, Locale locale) async {
+    final schools = await DatabaseHelper().getAllSchools(locale: locale);
+    final names = {for (final s in schools) if (s.id != null) s.id!: s.name};
+    final bytes = await ExportService.buildComparisonPdfBytes(
+      topic: widget.topic,
+      laws: laws,
+      schoolNames: names,
+      titleLabel: l10n.compareSchools,
+      schoolsLabel: l10n.schoolPositions,
+    );
+    await Provider.of<UserProvider>(context, listen: false).recordComparisonExported();
+    if (!context.mounted) return;
+    await SharePlus.instance.share(
+      ShareParams(
+        files: [XFile.fromData(Uint8List.fromList(bytes), name: 'comparison_${widget.topic.id}.pdf', mimeType: 'application/pdf')],
+      ),
+    );
+  }
+
+  List<Law> _consensusLaws(List<Law> laws) {
+    if (laws.isEmpty) return laws;
+    final groups = <String, List<Law>>{};
+    for (final law in laws) {
+      final key = law.content.trim().toLowerCase();
+      groups.putIfAbsent(key, () => []).add(law);
+    }
+    final largest = groups.values.reduce((a, b) => a.length >= b.length ? a : b);
+    return largest.length >= 2 ? largest : [];
   }
 
   bool _isPreferred(Law law, String slug) {

@@ -567,4 +567,259 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fullComparison => 'Full comparison';
+
+  @override
+  String get navHome => 'Home';
+
+  @override
+  String get navLearn => 'Learn';
+
+  @override
+  String get navSearch => 'Search';
+
+  @override
+  String get navLibrary => 'Library';
+
+  @override
+  String get navProfile => 'Profile';
+
+  @override
+  String get continueReading => 'Continue reading';
+
+  @override
+  String get dailyQuestion => 'Question of the day';
+
+  @override
+  String get experienceLevel => 'Experience level';
+
+  @override
+  String get experienceLevelDesc => 'Adapt how topics are displayed';
+
+  @override
+  String get beginnerMode => 'Beginner mode';
+
+  @override
+  String get beginnerModeDesc => 'Summary and one school at a time';
+
+  @override
+  String get studentMode => 'Student mode';
+
+  @override
+  String get studentModeDesc => 'Full comparison and detailed sources';
+
+  @override
+  String get beginnerModeActive => 'Beginner mode active';
+
+  @override
+  String get showAllSchools => 'Show all schools';
+
+  @override
+  String get methodology => 'Methodology';
+
+  @override
+  String get methodologyShort => 'Sources, limits and guidance';
+
+  @override
+  String get methodologyTitle => 'How we work';
+
+  @override
+  String get methodologyBody =>
+      'Positions are drawn from recognized manuals of the five madhhabs. Each topic cites sources (Quran, hadith, books) with authenticity grades when available. This app does not replace a qualified scholar for your personal case.';
+
+  @override
+  String get methodologySources => 'Sources and authenticity';
+
+  @override
+  String get methodologySourcesBody =>
+      'Hadiths are graded (sahih, hasan, daif, mawdu) when information is available. References allow verifying the original text.';
+
+  @override
+  String get askScholar => 'Ask a scholar';
+
+  @override
+  String get askScholarDesc =>
+      'For a personal fatwa, use a recognized platform:';
+
+  @override
+  String get disclaimerGeneral =>
+      'This app is educational. For complex cases (inheritance, divorce, finance), always consult a competent scholar.';
+
+  @override
+  String get sensitiveTopicDisclaimer =>
+      'Sensitive topic — rules vary by situation. Consult a scholar before any decision.';
+
+  @override
+  String get sourceReference => 'Reference';
+
+  @override
+  String get skillTree => 'Skill tree';
+
+  @override
+  String skillProgress(int read, int total) {
+    return '$read/$total topics';
+  }
+
+  @override
+  String get srsMode => 'Spaced repetition (due cards)';
+
+  @override
+  String get examMode => 'Exam mode';
+
+  @override
+  String get examModeDesc => 'No instant feedback — results at the end';
+
+  @override
+  String get consensusOnly => 'Consensus only';
+
+  @override
+  String get noConsensusFound => 'No consensus found between schools';
+
+  @override
+  String get scenarioFinder => 'Find a scenario';
+
+  @override
+  String get scenarioFinderDesc =>
+      'Describe your situation to find a practical case';
+
+  @override
+  String get scenarioFinderHint => 'E.g. fasting, travel, marriage…';
+
+  @override
+  String get noScenariosFound => 'No scenarios found';
+
+  @override
+  String get exportCertificate => 'Export certificate';
+
+  @override
+  String get certificateTitle => 'Course certificate';
+
+  @override
+  String get certificateDate => 'Date:';
+
+  @override
+  String get situationAdvisor => 'Situation advisor';
+
+  @override
+  String get situationAdvisorDesc =>
+      'Describe your case — suggested topics and scenarios';
+
+  @override
+  String get situationAdvisorHint =>
+      'E.g. I travel by plane during Ramadan and…';
+
+  @override
+  String get situationAdvisorEmpty =>
+      'Describe your situation to get suggestions';
+
+  @override
+  String get analyzeSituation => 'Analyze';
+
+  @override
+  String get noSituationMatches => 'No suggestions — try other keywords';
+
+  @override
+  String get encyclopediaExam => 'Encyclopedia exam';
+
+  @override
+  String get encyclopediaExamDesc => '10 topics, timer, self-assessment';
+
+  @override
+  String get examTopicPrompt => 'Do you know this topic?';
+
+  @override
+  String get revealAnswer => 'Reveal summary';
+
+  @override
+  String get readFullTopic => 'Read full topic';
+
+  @override
+  String get needStudy => 'Need study';
+
+  @override
+  String get examResults => 'Exam results';
+
+  @override
+  String examKnownCount(int known, int total) {
+    return '$known / $total mastered';
+  }
+
+  @override
+  String get noExamTopics => 'Not enough topics for the exam';
+
+  @override
+  String get exportComparisonPdf => 'Export comparison as PDF';
+
+  @override
+  String get encryptedSync => 'Encrypted sync';
+
+  @override
+  String get encryptedSyncDesc => 'AES backup for iCloud, Drive, etc.';
+
+  @override
+  String get exportEncryptedBackup => 'Export encrypted backup';
+
+  @override
+  String get importEncryptedBackup => 'Import encrypted backup';
+
+  @override
+  String get enterPassphrase => 'Passphrase';
+
+  @override
+  String get passphrase => 'Password (8+ chars)';
+
+  @override
+  String get confirmPassphrase => 'Confirm';
+
+  @override
+  String get encryptedSyncFailed => 'Failed — check your passphrase';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get homeWidgetDescIos =>
+      'iOS & Android widget — add Daily Topic from home screen';
+
+  @override
+  String get verifiedContent => 'Verified content';
+
+  @override
+  String get isnadChain => 'Chain of transmission (isnād)';
+
+  @override
+  String get disclaimerHomeBanner =>
+      'Educational tool — does not replace a scholar\'s ruling. See methodology.';
+
+  @override
+  String get liteMode => 'Lite mode';
+
+  @override
+  String get liteModeDesc =>
+      'Reduces animations for slower devices or accessibility';
+
+  @override
+  String get globalMadhhabFilter => 'Global madhhab filter';
+
+  @override
+  String get globalMadhhabFilterDesc =>
+      'Hide topics without a position from your preferred school';
+
+  @override
+  String get ijmaSection => 'Consensus (ijmāʿ)';
+
+  @override
+  String get ijmaSectionDesc =>
+      'The four main Sunni schools agree on this point.';
+
+  @override
+  String get divergenceTimeline => 'Divergence timeline';
+
+  @override
+  String get contextualShortcuts => 'Shortcuts';
+
+  @override
+  String get shortcutZakat => 'Zakat calculator';
 }

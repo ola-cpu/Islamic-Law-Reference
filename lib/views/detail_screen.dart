@@ -18,6 +18,9 @@ import '../data/school_constants.dart';
 import 'hajj_timeline.dart';
 import 'zen_reader_screen.dart';
 import 'school_comparison_screen.dart';
+import '../services/sensitive_topics.dart';
+import '../widgets/contextual_shortcuts.dart';
+import '../widgets/ijma_banner.dart';
 
 class DetailScreen extends StatefulWidget {
   final Topic topic;
@@ -33,6 +36,7 @@ class _DetailScreenState extends State<DetailScreen> {
   late Future<List<Law>> _lawsFuture;
   late Future<List<MediaItem>> _mediaFuture;
   late Future<List<Topic>> _relatedTopicsFuture;
+  bool _showAllSchools = false;
 
   @override
   void initState() {
@@ -138,6 +142,39 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
               const SizedBox(height: 12),
             ],
+            FutureBuilder<bool>(
+              future: DatabaseHelper().topicHasConsensus(widget.topic.id!),
+              builder: (context, snap) {
+                if (snap.data == true) return const IjmaBanner();
+                return const SizedBox.shrink();
+              },
+            ),
+            FutureBuilder<bool>(
+              future: userProvider.isTopicVerified(widget.topic.id!),
+              builder: (context, snap) {
+                if (snap.data != true) return const SizedBox.shrink();
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Chip(
+                    avatar: const Icon(Icons.verified, size: 18, color: Colors.green),
+                    label: Text(l10n.verifiedContent),
+                    backgroundColor: Colors.green.shade50,
+                  ),
+                );
+              },
+            ),
+            ContextualShortcuts(topic: widget.topic),
+            if (SensitiveTopics.isSensitive(widget.topic.title, tags: widget.topic.tags))
+              _buildSensitiveDisclaimer(l10n),
+            if (userProvider.isBeginner)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: Chip(
+                  avatar: const Icon(Icons.school, size: 18),
+                  label: Text(l10n.beginnerModeActive),
+                  backgroundColor: Colors.blue.shade50,
+                ),
+              ),
             Card(
               color: theme.colorScheme.secondaryContainer.withOpacity(0.3),
               elevation: 0,
@@ -170,8 +207,10 @@ class _DetailScreenState extends State<DetailScreen> {
                const HajjTimeline(),
                const SizedBox(height: 20),
             ],
-            _buildComparisonToggle(l10n),
-            const SizedBox(height: 20),
+            if (!userProvider.isBeginner) ...[
+              _buildComparisonToggle(l10n),
+              const SizedBox(height: 20),
+            ],
             FutureBuilder<List<Law>>(
               future: _lawsFuture,
               builder: (context, snapshot) {
@@ -181,15 +220,26 @@ class _DetailScreenState extends State<DetailScreen> {
                 if (!snapshot.hasData || snapshot.data!.isEmpty) {
                   return Text(l10n.noLaws);
                 }
-                final laws = List<Law>.from(snapshot.data!);
+                final allLaws = List<Law>.from(snapshot.data!);
                 final preferred = userProvider.preferredSchool;
                 if (preferred != null) {
-                  laws.sort((a, b) {
+                  allLaws.sort((a, b) {
                     return _isPreferredLaw(b, preferred).compareTo(_isPreferredLaw(a, preferred));
                   });
                 }
+                final laws = userProvider.isBeginner && !_showAllSchools
+                    ? _beginnerLaws(allLaws, preferred)
+                    : allLaws;
                 return Column(
-                  children: laws.map((law) => _buildLawCard(law, l10n, userProvider)).toList(),
+                  children: [
+                    ...laws.map((law) => _buildLawCard(law, l10n, userProvider)),
+                    if (userProvider.isBeginner && allLaws.length > 1 && !_showAllSchools)
+                      TextButton.icon(
+                        onPressed: () => setState(() => _showAllSchools = true),
+                        icon: const Icon(Icons.compare_arrows),
+                        label: Text(l10n.showAllSchools),
+                      ),
+                  ],
                 );
               },
             ),
@@ -651,7 +701,10 @@ class _DetailScreenState extends State<DetailScreen> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: snapshot.data!.map((source) {
-            return Container(
+            return InkWell(
+              onTap: () => _showSourceDetail(context, source, l10n),
+              borderRadius: BorderRadius.circular(12),
+              child: Container(
               margin: const EdgeInsets.only(bottom: 12),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
@@ -707,10 +760,82 @@ class _DetailScreenState extends State<DetailScreen> {
                   ],
                 ],
               ),
+            ),
             );
           }).toList(),
         );
       },
+    );
+  }
+
+  List<Law> _beginnerLaws(List<Law> laws, String? preferred) {
+    if (laws.isEmpty) return laws;
+    if (preferred != null) {
+      for (final law in laws) {
+        if (_lawMatchesSchool(law, preferred)) return [law];
+      }
+    }
+    return [laws.first];
+  }
+
+  Widget _buildSensitiveDisclaimer(AppLocalizations l10n) {
+    return Card(
+      color: Colors.amber.shade50,
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(Icons.warning_amber, color: Colors.amber.shade800),
+            const SizedBox(width: 12),
+            Expanded(child: Text(l10n.sensitiveTopicDisclaimer, style: const TextStyle(height: 1.5))),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showSourceDetail(BuildContext context, Source source, AppLocalizations l10n) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+      builder: (context) => DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: 0.6,
+        minChildSize: 0.4,
+        maxChildSize: 0.92,
+        builder: (context, controller) => ListView(
+          controller: controller,
+          padding: const EdgeInsets.all(20),
+          children: [
+            Row(
+              children: [
+                _getAuthenticityBadge(source.authenticity),
+                const SizedBox(width: 8),
+                Expanded(child: Text(source.reference, style: const TextStyle(fontWeight: FontWeight.bold))),
+              ],
+            ),
+            const SizedBox(height: 16),
+            if (source.textAr != null)
+              Text(source.textAr!, textAlign: TextAlign.right, textDirection: TextDirection.rtl,
+                  style: const TextStyle(fontFamily: 'Amiri', fontSize: 22, height: 1.6)),
+            if (source.textAr != null) const SizedBox(height: 12),
+            Text(source.text, style: const TextStyle(fontSize: 16, height: 1.6)),
+            if (source.citation != null) ...[
+              const SizedBox(height: 16),
+              Text('${l10n.sourceReference}: ${source.citation}', style: TextStyle(color: Colors.grey.shade700)),
+            ],
+            if (source.isnad != null && source.isnad!.isNotEmpty) ...[
+              const SizedBox(height: 12),
+              Text(l10n.isnadChain, style: const TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 4),
+              Text(source.isnad!, style: TextStyle(color: Colors.grey.shade800, fontStyle: FontStyle.italic)),
+            ],
+          ],
+        ),
+      ),
     );
   }
 

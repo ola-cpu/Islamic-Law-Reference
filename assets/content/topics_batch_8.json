@@ -1,0 +1,1255 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "description",
+      "title_fr": "La société en commandite",
+      "title_en": "Limited Partnership",
+      "title_ar": "شركة العنان",
+      "title_ru": "Limited Partnership",
+      "title_zh": "Limited Partnership",
+      "description_fr": "Capital et travail combinés.",
+      "description_en": "Capital and labor combined.",
+      "description_ar": "Capital and labor combined.",
+      "description_ru": "Capital and labor combined.",
+      "description_zh": "Capital and labor combined.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mudaraba ou musharaka.",
+          "content_en": "Mudaraba ou musharaka."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Transparence des comptes.",
+          "content_en": "Transparence des comptes."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le bail agricole (Muzara'a)",
+      "title_en": "Crop-sharing Lease",
+      "title_ar": "المزارعة",
+      "title_ru": "Crop-sharing Lease",
+      "title_zh": "Crop-sharing Lease",
+      "description_fr": "Partage de récolte.",
+      "description_en": "Crop share agreement.",
+      "description_ar": "Crop share agreement.",
+      "description_ru": "Crop share agreement.",
+      "description_zh": "Crop share agreement.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Part du propriétaire et cultivateur fixée.",
+          "content_en": "Part du propriétaire et cultivateur fixée."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de revenu fixe incertain.",
+          "content_en": "Pas de revenu fixe incertain."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de construction",
+      "title_en": "Construction Contract",
+      "title_ar": "عقد المقاولة",
+      "title_ru": "Construction Contract",
+      "title_zh": "Construction Contract",
+      "description_fr": "Istisna pour bâtiment.",
+      "description_en": "Istisna for building.",
+      "description_ar": "Istisna for building.",
+      "description_ru": "Istisna for building.",
+      "description_zh": "Istisna for building.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prix et délai fixés.",
+          "content_en": "Prix et délai fixés."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pénalités de retard licites sans riba.",
+          "content_en": "Pénalités de retard licites sans riba."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente d'un bien non possédé",
+      "title_en": "Selling Unowned Property",
+      "title_ar": "بيع ما لا يملك",
+      "title_ru": "Selling Unowned Property",
+      "title_zh": "Selling Unowned Property",
+      "description_fr": "Bay' ma la yamlik.",
+      "description_en": "Selling what one does not own.",
+      "description_ar": "Selling what one does not own.",
+      "description_ru": "Selling what one does not own.",
+      "description_zh": "Selling what one does not own.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit (hadith).",
+          "content_en": "Interdit (hadith)."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Salam exception avec conditions.",
+          "content_en": "Salam exception avec conditions."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente avec droit de rétractation",
+      "title_en": "Right of Withdrawal",
+      "title_ar": "الخيار",
+      "title_ru": "Right of Withdrawal",
+      "title_zh": "Right of Withdrawal",
+      "description_fr": "Khiyar dans le contrat.",
+      "description_en": "Option in contract.",
+      "description_ar": "Option in contract.",
+      "description_ru": "Option in contract.",
+      "description_zh": "Option in contract.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Khiyar al-ru'ya, al-aib, al-shart.",
+          "content_en": "Khiyar al-ru'ya, al-aib, al-shart."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Délai pour inspection.",
+          "content_en": "Délai pour inspection."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Les vices cachés (Aib)",
+      "title_en": "Hidden Defects",
+      "title_ar": "العيب الخفي",
+      "title_ru": "Hidden Defects",
+      "title_zh": "Hidden Defects",
+      "description_fr": "Défaut non apparent.",
+      "description_en": "Non-apparent defect.",
+      "description_ar": "Non-apparent defect.",
+      "description_ru": "Non-apparent defect.",
+      "description_zh": "Non-apparent defect.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Option de résiliation ou réduction prix.",
+          "content_en": "Option de résiliation ou réduction prix."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Vendeur ignorait ou cachait.",
+          "content_en": "Vendeur ignorait ou cachait."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente d'esclave (historique)",
+      "title_en": "Historical Slave Sale",
+      "title_ar": "بيع الرقيق",
+      "title_ru": "Historical Slave Sale",
+      "title_zh": "Historical Slave Sale",
+      "description_fr": "Contexte classique.",
+      "description_en": "Classical context.",
+      "description_ar": "Classical context.",
+      "description_ru": "Classical context.",
+      "description_zh": "Classical context.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Affranchissement encouragé.",
+          "content_en": "Affranchissement encouragé."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Droits du captif en Islam.",
+          "content_en": "Droits du captif en Islam."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de mariage comme contrat",
+      "title_en": "Marriage as Contract",
+      "title_ar": "النكاح عقد",
+      "title_ru": "Marriage as Contract",
+      "title_zh": "Marriage as Contract",
+      "description_fr": "Nature juridique du nikah.",
+      "description_en": "Legal nature of nikah.",
+      "description_ar": "Legal nature of nikah.",
+      "description_ru": "Legal nature of nikah.",
+      "description_zh": "Legal nature of nikah.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Contrat civil et spirituel.",
+          "content_en": "Contrat civil et spirituel."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Consentement et Mahr.",
+          "content_en": "Consentement et Mahr."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de donation (Hiba)",
+      "title_en": "Gift Contract (Hiba)",
+      "title_ar": "الهبة",
+      "title_ru": "Gift Contract (Hiba)",
+      "title_zh": "Gift Contract (Hiba)",
+      "description_fr": "Don pendant la vie.",
+      "description_en": "Lifetime gift.",
+      "description_ar": "Lifetime gift.",
+      "description_ru": "Lifetime gift.",
+      "description_zh": "Lifetime gift.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Acceptation et livraison requises.",
+          "content_en": "Acceptation et livraison requises."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Révocation limitée selon écoles.",
+          "content_en": "Révocation limitée selon écoles."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le legs (Wasiyyah)",
+      "title_en": "Bequest (Wasiyyah)",
+      "title_ar": "الوصية",
+      "title_ru": "Bequest (Wasiyyah)",
+      "title_zh": "Bequest (Wasiyyah)",
+      "description_fr": "Disposition posthume.",
+      "description_en": "Posthumous disposition.",
+      "description_ar": "Posthumous disposition.",
+      "description_ru": "Posthumous disposition.",
+      "description_zh": "Posthumous disposition.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Max 1/3 pour non-héritier.",
+          "content_en": "Max 1/3 pour non-héritier."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Écrit et témoins recommandés.",
+          "content_en": "Écrit et témoins recommandés."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le pacte de non-agression",
+      "title_en": "Non-aggression Pact",
+      "title_ar": "عهود الأمان",
+      "title_ru": "Non-aggression Pact",
+      "title_zh": "Non-aggression Pact",
+      "description_fr": "Aman et trêve.",
+      "description_en": "Security and truce.",
+      "description_ar": "Security and truce.",
+      "description_ru": "Security and truce.",
+      "description_zh": "Security and truce.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Respecter même si ennemi.",
+          "content_en": "Respecter même si ennemi."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Violation grave.",
+          "content_en": "Violation grave."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de silence (Nuzul)",
+      "title_en": "Board and Lodging",
+      "title_ar": "النزل",
+      "title_ru": "Board and Lodging",
+      "title_zh": "Board and Lodging",
+      "description_fr": "Hébergement contre service.",
+      "description_en": "Lodging for service.",
+      "description_ar": "Lodging for service.",
+      "description_ru": "Lodging for service.",
+      "description_zh": "Lodging for service.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Hôtes et invités selon coutume.",
+          "content_en": "Hôtes et invités selon coutume."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Durée et charges définies.",
+          "content_en": "Durée et charges définies."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La promesse unilatérale (Wa'd)",
+      "title_en": "Unilateral Promise",
+      "title_ar": "الوعد",
+      "title_ru": "Unilateral Promise",
+      "title_zh": "Unilateral Promise",
+      "description_fr": "Engagement non synallagique.",
+      "description_en": "Non-mutual commitment.",
+      "description_ar": "Non-mutual commitment.",
+      "description_ru": "Non-mutual commitment.",
+      "description_zh": "Non-mutual commitment.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Moralement contraignant.",
+          "content_en": "Moralement contraignant."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mudaraba moderne utilise wa'd.",
+          "content_en": "Mudaraba moderne utilise wa'd."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de sous-traitance",
+      "title_en": "Subcontracting",
+      "title_ar": "المقاولة من الباطن",
+      "title_ru": "Subcontracting",
+      "title_zh": "Subcontracting",
+      "description_fr": "Délégation de travail.",
+      "description_en": "Delegating work.",
+      "description_ar": "Delegating work.",
+      "description_ru": "Delegating work.",
+      "description_zh": "Delegating work.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si contrat principal le permet.",
+          "content_en": "Permis si contrat principal le permet."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Responsabilité du contractant principal.",
+          "content_en": "Responsabilité du contractant principal."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Les frais cachés",
+      "title_en": "Hidden Fees",
+      "title_ar": "الرسوم الخفية",
+      "title_ru": "Hidden Fees",
+      "title_zh": "Hidden Fees",
+      "description_fr": "Transparence du prix.",
+      "description_en": "Price transparency.",
+      "description_ar": "Price transparency.",
+      "description_ru": "Price transparency.",
+      "description_zh": "Price transparency.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Gharar si frais inconnus.",
+          "content_en": "Gharar si frais inconnus."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Tout inclus au contrat.",
+          "content_en": "Tout inclus au contrat."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente en enchères",
+      "title_en": "Auction Sale",
+      "title_ar": "المزاد",
+      "title_ru": "Auction Sale",
+      "title_zh": "Auction Sale",
+      "description_fr": "Mazad et surenchère.",
+      "description_en": "Bidding and auction.",
+      "description_ar": "Bidding and auction.",
+      "description_ru": "Bidding and auction.",
+      "description_zh": "Bidding and auction.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis ; offre la plus haute.",
+          "content_en": "Permis ; offre la plus haute."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de collusion.",
+          "content_en": "Pas de collusion."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente sur catalogue",
+      "title_en": "Catalog Sale",
+      "title_ar": "البيع بالمراسلة",
+      "title_ru": "Catalog Sale",
+      "title_zh": "Catalog Sale",
+      "description_fr": "Bay' al-mail.",
+      "description_en": "Mail order sale.",
+      "description_ar": "Mail order sale.",
+      "description_ru": "Mail order sale.",
+      "description_zh": "Mail order sale.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Description exacte requise.",
+          "content_en": "Description exacte requise."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Droit de retour selon accord.",
+          "content_en": "Droit de retour selon accord."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat d'assurance classique",
+      "title_en": "Conventional Insurance",
+      "title_ar": "التأمين التجاري",
+      "title_ru": "Conventional Insurance",
+      "title_zh": "Conventional Insurance",
+      "description_fr": "Assurance commerciale.",
+      "description_en": "Commercial insurance.",
+      "description_ar": "Commercial insurance.",
+      "description_ru": "Commercial insurance.",
+      "description_zh": "Commercial insurance.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Gharar et maysir selon majorité.",
+          "content_en": "Gharar et maysir selon majorité."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Takaful alternative.",
+          "content_en": "Takaful alternative."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le crowdfunding et contrats",
+      "title_en": "Crowdfunding Contracts",
+      "title_ar": "عقود التمويل الجماعي",
+      "title_ru": "Crowdfunding Contracts",
+      "title_zh": "Crowdfunding Contracts",
+      "description_fr": "Financement participatif.",
+      "description_en": "Participatory financing.",
+      "description_ar": "Participatory financing.",
+      "description_ru": "Participatory financing.",
+      "description_zh": "Participatory financing.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Structure mudaraba ou don.",
+          "content_en": "Structure mudaraba ou don."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Clarté des risques.",
+          "content_en": "Clarté des risques."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Les NFT et propriété",
+      "title_en": "NFTs and Ownership",
+      "title_ar": "عقود الرموز الرقمية",
+      "title_ru": "NFTs and Ownership",
+      "title_zh": "NFTs and Ownership",
+      "description_fr": "Transfert de droits numériques.",
+      "description_en": "Transfer of digital rights.",
+      "description_ar": "Transfer of digital rights.",
+      "description_ru": "Transfer of digital rights.",
+      "description_zh": "Transfer of digital rights.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Contrat licite si objet halal.",
+          "content_en": "Contrat licite si objet halal."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de spéculation pure.",
+          "content_en": "Pas de spéculation pure."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de confidentialité",
+      "title_en": "Confidentiality Agreement",
+      "title_ar": "اتفاق السرية",
+      "title_ru": "Confidentiality Agreement",
+      "title_zh": "Confidentiality Agreement",
+      "description_fr": "NDA en contexte islamique.",
+      "description_en": "NDA in Islamic context.",
+      "description_ar": "NDA in Islamic context.",
+      "description_ru": "NDA in Islamic context.",
+      "description_zh": "NDA in Islamic context.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis pour protéger secrets.",
+          "content_en": "Permis pour protéger secrets."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de dissimulation de crime.",
+          "content_en": "Pas de dissimulation de crime."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La résiliation anticipée",
+      "title_en": "Early Termination",
+      "title_ar": "فسخ العقد",
+      "title_ru": "Early Termination",
+      "title_zh": "Early Termination",
+      "description_fr": "Rupture avant terme.",
+      "description_en": "Breaking before term.",
+      "description_ar": "Breaking before term.",
+      "description_ru": "Breaking before term.",
+      "description_zh": "Breaking before term.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Selon clause ou accord mutuel.",
+          "content_en": "Selon clause ou accord mutuel."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dommages si injustice.",
+          "content_en": "Dommages si injustice."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de franchise",
+      "title_en": "Franchise Contract",
+      "title_ar": "الامتياز التجاري",
+      "title_ru": "Franchise Contract",
+      "title_zh": "Franchise Contract",
+      "description_fr": "Licence de marque.",
+      "description_en": "Brand licensing.",
+      "description_ar": "Brand licensing.",
+      "description_ru": "Brand licensing.",
+      "description_zh": "Brand licensing.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si redevances pour service réel.",
+          "content_en": "Permis si redevances pour service réel."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de riba déguisée.",
+          "content_en": "Pas de riba déguisée."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente à perte abusive",
+      "title_en": "Abusive Loss Sale",
+      "title_ar": "بيع التلجئة",
+      "title_ru": "Abusive Loss Sale",
+      "title_zh": "Abusive Loss Sale",
+      "description_fr": "Vendre en dessous du coût pour ruiner.",
+      "description_en": "Selling below cost to ruin competitor.",
+      "description_ar": "Selling below cost to ruin competitor.",
+      "description_ru": "Selling below cost to ruin competitor.",
+      "description_zh": "Selling below cost to ruin competitor.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit si intention nuire.",
+          "content_en": "Interdit si intention nuire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Concurrence loyale permise.",
+          "content_en": "Concurrence loyale permise."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de parrainage",
+      "title_en": "Sponsorship Contract",
+      "title_ar": "عقد الرعاية",
+      "title_ru": "Sponsorship Contract",
+      "title_zh": "Sponsorship Contract",
+      "description_fr": "Financement contre visibilité.",
+      "description_en": "Funding for visibility.",
+      "description_ar": "Funding for visibility.",
+      "description_ru": "Funding for visibility.",
+      "description_zh": "Funding for visibility.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si échange clair.",
+          "content_en": "Permis si échange clair."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de contenu haram.",
+          "content_en": "Pas de contenu haram."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "L'arbitrage commercial",
+      "title_en": "Commercial Arbitration",
+      "title_ar": "التحكيم",
+      "title_ru": "Commercial Arbitration",
+      "title_zh": "Commercial Arbitration",
+      "description_fr": "Tahkim hors tribunaux.",
+      "description_en": "Arbitration outside courts.",
+      "description_ar": "Arbitration outside courts.",
+      "description_ru": "Arbitration outside courts.",
+      "description_zh": "Arbitration outside courts.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si arbitres justes.",
+          "content_en": "Permis si arbitres justes."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sentence contraignante si acceptée.",
+          "content_en": "Sentence contraignante si acceptée."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de jeu licite",
+      "title_en": "Permissible Competition",
+      "title_ar": "المسابقة",
+      "title_ru": "Permissible Competition",
+      "title_zh": "Permissible Competition",
+      "description_fr": "Course avec prix.",
+      "description_en": "Race with prize.",
+      "description_ar": "Race with prize.",
+      "description_ru": "Race with prize.",
+      "description_zh": "Race with prize.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si participants ne paient pas.",
+          "content_en": "Permis si participants ne paient pas."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Prix offert par tiers.",
+          "content_en": "Prix offert par tiers."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à la vie",
+      "title_en": "Right to Life",
+      "title_ar": "حق الحياة",
+      "title_ru": "Right to Life",
+      "title_zh": "Right to Life",
+      "description_fr": "Sanctité de la vie humaine.",
+      "description_en": "Sanctity of human life.",
+      "description_ar": "Sanctity of human life.",
+      "description_ru": "Sanctity of human life.",
+      "description_zh": "Sanctity of human life.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit de tuer sans droit.",
+          "content_en": "Interdit de tuer sans droit."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Qisas et hudud encadrés.",
+          "content_en": "Qisas et hudud encadrés."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à la dignité",
+      "title_en": "Right to Dignity",
+      "title_ar": "حق الكرامة",
+      "title_ru": "Right to Dignity",
+      "title_zh": "Right to Dignity",
+      "description_fr": "Respect de chaque personne.",
+      "description_en": "Respect for every person.",
+      "description_ar": "Respect for every person.",
+      "description_ru": "Respect for every person.",
+      "description_zh": "Respect for every person.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas d'humiliation.",
+          "content_en": "Pas d'humiliation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Islam abolit infériorité raciale.",
+          "content_en": "Islam abolit infériorité raciale."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à l'éducation",
+      "title_en": "Right to Education",
+      "title_ar": "حق التعليم",
+      "title_ru": "Right to Education",
+      "title_zh": "Right to Education",
+      "description_fr": "Apprentissage obligatoire des bases.",
+      "description_en": "Learning fundamentals obligatory.",
+      "description_ar": "Learning fundamentals obligatory.",
+      "description_ru": "Learning fundamentals obligatory.",
+      "description_zh": "Learning fundamentals obligatory.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Chercher science fard kifaya.",
+          "content_en": "Chercher science fard kifaya."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Hommes et femmes.",
+          "content_en": "Hommes et femmes."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à la santé",
+      "title_en": "Right to Health",
+      "title_ar": "حق الصحة",
+      "title_ru": "Right to Health",
+      "title_zh": "Right to Health",
+      "description_fr": "Accès aux soins.",
+      "description_en": "Access to healthcare.",
+      "description_ar": "Access to healthcare.",
+      "description_ru": "Access to healthcare.",
+      "description_zh": "Access to healthcare.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Chercher traitement obligatoire.",
+          "content_en": "Chercher traitement obligatoire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de négligence du corps.",
+          "content_en": "Pas de négligence du corps."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des femmes",
+      "title_en": "Women's Rights",
+      "title_ar": "حقوق المرأة",
+      "title_ru": "Women's Rights",
+      "title_zh": "Women's Rights",
+      "description_fr": "Statut juridique de la femme.",
+      "description_en": "Legal status of women.",
+      "description_ar": "Legal status of women.",
+      "description_ru": "Legal status of women.",
+      "description_zh": "Legal status of women.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Propriété, héritage, contrat, éducation.",
+          "content_en": "Propriété, héritage, contrat, éducation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Égalité en dignité, rôles complémentaires.",
+          "content_en": "Égalité en dignité, rôles complémentaires."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des enfants",
+      "title_en": "Children's Rights",
+      "title_ar": "حقوق الطفل",
+      "title_ru": "Children's Rights",
+      "title_zh": "Children's Rights",
+      "description_fr": "Protection et éducation.",
+      "description_en": "Protection and education.",
+      "description_ar": "Protection and education.",
+      "description_ru": "Protection and education.",
+      "description_zh": "Protection and education.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Nafaqah, justice entre enfants.",
+          "content_en": "Nafaqah, justice entre enfants."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de mutilation ni abus.",
+          "content_en": "Pas de mutilation ni abus."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des orphelins",
+      "title_en": "Orphans' Rights",
+      "title_ar": "حقوق اليتيم",
+      "title_ru": "Orphans' Rights",
+      "title_zh": "Orphans' Rights",
+      "description_fr": "Protection du yatim.",
+      "description_en": "Protecting orphans.",
+      "description_ar": "Protecting orphans.",
+      "description_ru": "Protecting orphans.",
+      "description_zh": "Protecting orphans.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Bon traitement du patrimoine.",
+          "content_en": "Bon traitement du patrimoine."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Interdit de dévorer leur bien.",
+          "content_en": "Interdit de dévorer leur bien."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des personnes âgées",
+      "title_en": "Elderly Rights",
+      "title_ar": "حقوق المسن",
+      "title_ru": "Elderly Rights",
+      "title_zh": "Elderly Rights",
+      "description_fr": "Soin et respect.",
+      "description_en": "Care and respect.",
+      "description_ar": "Care and respect.",
+      "description_ru": "Care and respect.",
+      "description_zh": "Care and respect.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Birr al-walidayn étendu.",
+          "content_en": "Birr al-walidayn étendu."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'abandon.",
+          "content_en": "Pas d'abandon."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des handicapés",
+      "title_en": "Disability Rights",
+      "title_ar": "حقوق ذوي الإعاقة",
+      "title_ru": "Disability Rights",
+      "title_zh": "Disability Rights",
+      "description_fr": "Accessibilité et inclusion.",
+      "description_en": "Accessibility and inclusion.",
+      "description_ar": "Accessibility and inclusion.",
+      "description_ru": "Accessibility and inclusion.",
+      "description_zh": "Accessibility and inclusion.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Faciliter mosquée et savoir.",
+          "content_en": "Faciliter mosquée et savoir."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de moquerie.",
+          "content_en": "Pas de moquerie."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit au travail",
+      "title_en": "Right to Work",
+      "title_ar": "حق العمل",
+      "title_ru": "Right to Work",
+      "title_zh": "Right to Work",
+      "description_fr": "Gagner sa vie licitement.",
+      "description_en": "Earning lawful livelihood.",
+      "description_ar": "Earning lawful livelihood.",
+      "description_ru": "Earning lawful livelihood.",
+      "description_zh": "Earning lawful livelihood.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Profession permise.",
+          "content_en": "Profession permise."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'exploitation.",
+          "content_en": "Pas d'exploitation."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à un logement",
+      "title_en": "Right to Housing",
+      "title_ar": "حق السكن",
+      "title_ru": "Right to Housing",
+      "title_zh": "Right to Housing",
+      "description_fr": "Dignité du logement.",
+      "description_en": "Housing dignity.",
+      "description_ar": "Housing dignity.",
+      "description_ru": "Housing dignity.",
+      "description_zh": "Housing dignity.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Nafaqah inclut logement pour famille.",
+          "content_en": "Nafaqah inclut logement pour famille."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "État aide les nécessiteux.",
+          "content_en": "État aide les nécessiteux."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "La liberté de conscience",
+      "title_en": "Freedom of Conscience",
+      "title_ar": "حرية الاعتقاد",
+      "title_ru": "Freedom of Conscience",
+      "title_zh": "Freedom of Conscience",
+      "description_fr": "Pas de contrainte en religion.",
+      "description_en": "No compulsion in religion.",
+      "description_ar": "No compulsion in religion.",
+      "description_ru": "No compulsion in religion.",
+      "description_zh": "No compulsion in religion.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Coran 2:256.",
+          "content_en": "Coran 2:256."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Apostasie : débattu en droit pénal.",
+          "content_en": "Apostasie : débattu en droit pénal."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "La liberté d'expression",
+      "title_en": "Freedom of Expression",
+      "title_ar": "حرية التعبير",
+      "title_ru": "Freedom of Expression",
+      "title_zh": "Freedom of Expression",
+      "description_fr": "Parole responsable.",
+      "description_en": "Responsible speech.",
+      "description_ar": "Responsible speech.",
+      "description_ru": "Responsible speech.",
+      "description_zh": "Responsible speech.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Vérité sans ghibah ni calomnie.",
+          "content_en": "Vérité sans ghibah ni calomnie."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Conseiller le dirigeant avec sagesse.",
+          "content_en": "Conseiller le dirigeant avec sagesse."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à la vie privée",
+      "title_en": "Right to Privacy",
+      "title_ar": "حق الخصوصية",
+      "title_ru": "Right to Privacy",
+      "title_zh": "Right to Privacy",
+      "description_fr": "Ne pas espionner.",
+      "description_en": "Do not spy.",
+      "description_ar": "Do not spy.",
+      "description_ru": "Do not spy.",
+      "description_zh": "Do not spy.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit d'entrer sans permission.",
+          "content_en": "Interdit d'entrer sans permission."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Protéger secrets d'autrui.",
+          "content_en": "Protéger secrets d'autrui."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit de propriété",
+      "title_en": "Right to Property",
+      "title_ar": "حق الملكية",
+      "title_ru": "Right to Property",
+      "title_zh": "Right to Property",
+      "description_fr": "Protection des biens.",
+      "description_en": "Protection of assets.",
+      "description_ar": "Protection of assets.",
+      "description_ru": "Protection of assets.",
+      "description_zh": "Protection of assets.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Vol et agression interdits.",
+          "content_en": "Vol et agression interdits."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Zakat sur excédent.",
+          "content_en": "Zakat sur excédent."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des travailleurs",
+      "title_en": "Workers' Rights",
+      "title_ar": "حقوق العمال",
+      "title_ru": "Workers' Rights",
+      "title_zh": "Workers' Rights",
+      "description_fr": "Salaire et conditions.",
+      "description_en": "Wages and conditions.",
+      "description_ar": "Wages and conditions.",
+      "description_ru": "Wages and conditions.",
+      "description_zh": "Wages and conditions.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Payer à temps ; repos.",
+          "content_en": "Payer à temps ; repos."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de charge au-delà de capacité.",
+          "content_en": "Pas de charge au-delà de capacité."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des employeurs",
+      "title_en": "Employers' Rights",
+      "title_ar": "حقوق أصحاب العمل",
+      "title_ru": "Employers' Rights",
+      "title_zh": "Employers' Rights",
+      "description_fr": "Loyauté du salarié.",
+      "description_en": "Employee loyalty.",
+      "description_ar": "Employee loyalty.",
+      "description_ru": "Employee loyalty.",
+      "description_zh": "Employee loyalty.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Travail convenu ; pas de trahison.",
+          "content_en": "Travail convenu ; pas de trahison."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Respect du contrat.",
+          "content_en": "Respect du contrat."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit au procès équitable",
+      "title_en": "Fair Trial Right",
+      "title_ar": "حق المحاكمة العادلة",
+      "title_ru": "Fair Trial Right",
+      "title_zh": "Fair Trial Right",
+      "description_fr": "Justice impartiale.",
+      "description_en": "Impartial justice.",
+      "description_ar": "Impartial justice.",
+      "description_ru": "Impartial justice.",
+      "description_zh": "Impartial justice.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Preuve et défense.",
+          "content_en": "Preuve et défense."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de condamnation sans preuve.",
+          "content_en": "Pas de condamnation sans preuve."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit d'asile",
+      "title_en": "Asylum Right",
+      "title_ar": "حق اللجوء",
+      "title_ru": "Asylum Right",
+      "title_zh": "Asylum Right",
+      "description_fr": "Protection du persécuté.",
+      "description_en": "Protection of persecuted.",
+      "description_ar": "Protection of persecuted.",
+      "description_ru": "Protection of persecuted.",
+      "description_zh": "Protection of persecuted.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Aman sacré.",
+          "content_en": "Aman sacré."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ne pas trahir l'asile.",
+          "content_en": "Ne pas trahir l'asile."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des réfugiés",
+      "title_en": "Refugee Rights",
+      "title_ar": "حقوق اللاجئ",
+      "title_ru": "Refugee Rights",
+      "title_zh": "Refugee Rights",
+      "description_fr": "Accueil et subsistance.",
+      "description_en": "Welcome and subsistence.",
+      "description_ar": "Welcome and subsistence.",
+      "description_ru": "Welcome and subsistence.",
+      "description_zh": "Welcome and subsistence.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sadaqa et zakat possibles.",
+          "content_en": "Sadaqa et zakat possibles."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dignité préservée.",
+          "content_en": "Dignité préservée."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à l'eau",
+      "title_en": "Right to Water",
+      "title_ar": "حق الماء",
+      "title_ru": "Right to Water",
+      "title_zh": "Right to Water",
+      "description_fr": "Accès à l'eau potable.",
+      "description_en": "Access to clean water.",
+      "description_ar": "Access to clean water.",
+      "description_ru": "Access to clean water.",
+      "description_zh": "Access to clean water.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Bien commun partagé.",
+          "content_en": "Bien commun partagé."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de monopole abusif.",
+          "content_en": "Pas de monopole abusif."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des animaux",
+      "title_en": "Animal Rights",
+      "title_ar": "حقوق الحيوان",
+      "title_ru": "Animal Rights",
+      "title_zh": "Animal Rights",
+      "description_fr": "Interdit de torturer.",
+      "description_en": "Forbidden to torture.",
+      "description_ar": "Forbidden to torture.",
+      "description_ru": "Forbidden to torture.",
+      "description_zh": "Forbidden to torture.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Nourrir et abattre avec miséricorde.",
+          "content_en": "Nourrir et abattre avec miséricorde."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de surcharges.",
+          "content_en": "Pas de surcharges."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "L'environnement et le fiqh",
+      "title_en": "Environment and Fiqh",
+      "title_ar": "حق البيئة",
+      "title_ru": "Environment and Fiqh",
+      "title_zh": "Environment and Fiqh",
+      "description_fr": "Ne pas corrompre la terre.",
+      "description_en": "Do not corrupt the earth.",
+      "description_ar": "Do not corrupt the earth.",
+      "description_ru": "Do not corrupt the earth.",
+      "description_zh": "Do not corrupt the earth.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Éviter gaspillage.",
+          "content_en": "Éviter gaspillage."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Planter et préserver.",
+          "content_en": "Planter et préserver."
+        }
+      ]
+    }
+  ]
+}

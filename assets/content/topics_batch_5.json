@@ -1,0 +1,1255 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La faillite et les dettes",
+      "title_en": "Bankruptcy and Debts",
+      "title_ar": "الإفلاس",
+      "title_ru": "Bankruptcy and Debts",
+      "title_zh": "Bankruptcy and Debts",
+      "description_fr": "Traitement du muflis.",
+      "description_en": "Treatment of insolvent debtor.",
+      "description_ar": "Treatment of insolvent debtor.",
+      "description_ru": "Treatment of insolvent debtor.",
+      "description_zh": "Treatment of insolvent debtor.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Délai au débiteur en difficulté.",
+          "content_en": "Délai au débiteur en difficulté."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Saisie après jugement équitable.",
+          "content_en": "Saisie après jugement équitable."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le report de dette",
+      "title_en": "Debt Rescheduling",
+      "title_ar": "جدولة الدين",
+      "title_ru": "Debt Rescheduling",
+      "title_zh": "Debt Rescheduling",
+      "description_fr": "Échelonnement pour le débiteur.",
+      "description_en": "Installments for debtor.",
+      "description_ar": "Installments for debtor.",
+      "description_ru": "Installments for debtor.",
+      "description_zh": "Installments for debtor.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis sans intérêt supplémentaire.",
+          "content_en": "Permis sans intérêt supplémentaire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Nouveau délai par bienveillance.",
+          "content_en": "Nouveau délai par bienveillance."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La garantie (Kafala)",
+      "title_en": "Financial Guarantee",
+      "title_ar": "الكفالة",
+      "title_ru": "Financial Guarantee",
+      "title_zh": "Financial Guarantee",
+      "description_fr": "Se porter garant pour autrui.",
+      "description_en": "Standing surety for another.",
+      "description_ar": "Standing surety for another.",
+      "description_ru": "Standing surety for another.",
+      "description_zh": "Standing surety for another.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permise ; responsabilité si défaut.",
+          "content_en": "Permise ; responsabilité si défaut."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Libération si créancier libère garant.",
+          "content_en": "Libération si créancier libère garant."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le gage (Rahn)",
+      "title_en": "Pledge (Rahn)",
+      "title_ar": "الرهن",
+      "title_ru": "Pledge (Rahn)",
+      "title_zh": "Pledge (Rahn)",
+      "description_fr": "Bien déposé en garantie.",
+      "description_en": "Asset deposited as security.",
+      "description_ar": "Asset deposited as security.",
+      "description_ru": "Asset deposited as security.",
+      "description_zh": "Asset deposited as security.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Créancier garde le bien ; frais à charge débiteur.",
+          "content_en": "Créancier garde le bien ; frais à charge débiteur."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Vente si défaut selon jugement.",
+          "content_en": "Vente si défaut selon jugement."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La vente à crédit",
+      "title_en": "Credit Sale",
+      "title_ar": "البيع بالأجل",
+      "title_ru": "Credit Sale",
+      "title_zh": "Credit Sale",
+      "description_fr": "Paiement différé du prix.",
+      "description_en": "Deferred payment of price.",
+      "description_ar": "Deferred payment of price.",
+      "description_ru": "Deferred payment of price.",
+      "description_zh": "Deferred payment of price.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si prix fixe sans majoration pour délai.",
+          "content_en": "Permis si prix fixe sans majoration pour délai."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Majoration = riba selon majorité.",
+          "content_en": "Majoration = riba selon majorité."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le commerce en ligne",
+      "title_en": "Online Commerce",
+      "title_ar": "التجارة الإلكترونية",
+      "title_ru": "Online Commerce",
+      "title_zh": "Online Commerce",
+      "description_fr": "Transactions numériques.",
+      "description_en": "Digital transactions.",
+      "description_ar": "Digital transactions.",
+      "description_ru": "Digital transactions.",
+      "description_zh": "Digital transactions.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mêmes règles : offre, acceptation, objet licite.",
+          "content_en": "Mêmes règles : offre, acceptation, objet licite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Droit de rétractation selon contrat.",
+          "content_en": "Droit de rétractation selon contrat."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le dropshipping",
+      "title_en": "Dropshipping",
+      "title_ar": "الدروب شيبينغ",
+      "title_ru": "Dropshipping",
+      "title_zh": "Dropshipping",
+      "description_fr": "Vente sans stock propre.",
+      "description_en": "Selling without own inventory.",
+      "description_ar": "Selling without own inventory.",
+      "description_ru": "Selling without own inventory.",
+      "description_zh": "Selling without own inventory.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si propriété ou mandat clair.",
+          "content_en": "Permis si propriété ou mandat clair."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Éviter gharar sur existence du bien.",
+          "content_en": "Éviter gharar sur existence du bien."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les frais bancaires",
+      "title_en": "Bank Fees",
+      "title_ar": "رسوم البنك",
+      "title_ru": "Bank Fees",
+      "title_zh": "Bank Fees",
+      "description_fr": "Commissions bancaires.",
+      "description_en": "Banking commissions.",
+      "description_ar": "Banking commissions.",
+      "description_ru": "Banking commissions.",
+      "description_zh": "Banking commissions.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Frais de service réel permis ; pas d'intérêt déguisé.",
+          "content_en": "Frais de service réel permis ; pas d'intérêt déguisé."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Compte gratuit ou frais connus.",
+          "content_en": "Compte gratuit ou frais connus."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "L'or et l'investissement",
+      "title_en": "Gold Investment",
+      "title_ar": "الاستثمار في الذهب",
+      "title_ru": "Gold Investment",
+      "title_zh": "Gold Investment",
+      "description_fr": "Détention et commerce de l'or.",
+      "description_en": "Holding and trading gold.",
+      "description_ar": "Holding and trading gold.",
+      "description_ru": "Holding and trading gold.",
+      "description_zh": "Holding and trading gold.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Zakat si nisab ; pas de riba.",
+          "content_en": "Zakat si nisab ; pas de riba."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Échange main à main si même métal.",
+          "content_en": "Échange main à main si même métal."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les œuvres caritatives et Waqf",
+      "title_en": "Charity and Waqf",
+      "title_ar": "الوقف",
+      "title_ru": "Charity and Waqf",
+      "title_zh": "Charity and Waqf",
+      "description_fr": "Fondation pieuse immobilisée.",
+      "description_en": "Immobilized pious endowment.",
+      "description_ar": "Immobilized pious endowment.",
+      "description_ru": "Immobilized pious endowment.",
+      "description_zh": "Immobilized pious endowment.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Revenus pour œuvre définie ; irrévocable.",
+          "content_en": "Revenus pour œuvre définie ; irrévocable."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Gestion transparente des biens waqf.",
+          "content_en": "Gestion transparente des biens waqf."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le salaire équitable",
+      "title_en": "Fair Wages",
+      "title_ar": "الأجر العادل",
+      "title_ru": "Fair Wages",
+      "title_zh": "Fair Wages",
+      "description_fr": "Rémunération du travailleur.",
+      "description_en": "Worker compensation.",
+      "description_ar": "Worker compensation.",
+      "description_ru": "Worker compensation.",
+      "description_zh": "Worker compensation.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Payer avant séchage de sueur (hadith).",
+          "content_en": "Payer avant séchage de sueur (hadith)."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Montant connu avant travail.",
+          "content_en": "Montant connu avant travail."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les pourboires",
+      "title_en": "Tips and Gratuities",
+      "title_ar": "البقشيش",
+      "title_ru": "Tips and Gratuities",
+      "title_zh": "Tips and Gratuities",
+      "description_fr": "Pourboire au serveur.",
+      "description_en": "Tips to service workers.",
+      "description_ar": "Tips to service workers.",
+      "description_ru": "Tips to service workers.",
+      "description_zh": "Tips to service workers.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis ; pas d'obligation cachée.",
+          "content_en": "Permis ; pas d'obligation cachée."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Propriété du bénéficiaire.",
+          "content_en": "Propriété du bénéficiaire."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le travail à la commission",
+      "title_en": "Commission-Based Work",
+      "title_ar": "العمل بالعمولة",
+      "title_ru": "Commission-Based Work",
+      "title_zh": "Commission-Based Work",
+      "description_fr": "Rémunération proportionnelle.",
+      "description_en": "Proportional compensation.",
+      "description_ar": "Proportional compensation.",
+      "description_ru": "Proportional compensation.",
+      "description_zh": "Proportional compensation.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si pourcentage défini.",
+          "content_en": "Permis si pourcentage défini."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de commission sur vente haram.",
+          "content_en": "Pas de commission sur vente haram."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le boycott économique",
+      "title_en": "Economic Boycott",
+      "title_ar": "المقاطعة",
+      "title_ru": "Economic Boycott",
+      "title_zh": "Economic Boycott",
+      "description_fr": "Refus d'acheter certaines entreprises.",
+      "description_en": "Refusing to buy from certain firms.",
+      "description_ar": "Refusing to buy from certain firms.",
+      "description_ru": "Refusing to buy from certain firms.",
+      "description_zh": "Refusing to buy from certain firms.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis pour injustice avérée.",
+          "content_en": "Permis pour injustice avérée."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ne pas nuire aux innocents.",
+          "content_en": "Ne pas nuire aux innocents."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La fraude fiscale",
+      "title_en": "Tax Evasion",
+      "title_ar": "التهرب الضريبي",
+      "title_ru": "Tax Evasion",
+      "title_zh": "Tax Evasion",
+      "description_fr": "Évasion des impôts.",
+      "description_en": "Evading taxes.",
+      "description_ar": "Evading taxes.",
+      "description_ru": "Evading taxes.",
+      "description_zh": "Evading taxes.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdite si légal et juste.",
+          "content_en": "Interdite si légal et juste."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Payer droits légitimes de l'État.",
+          "content_en": "Payer droits légitimes de l'État."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les subventions et aides",
+      "title_en": "Subsidies and Aid",
+      "title_ar": "الإعانات",
+      "title_ru": "Subsidies and Aid",
+      "title_zh": "Subsidies and Aid",
+      "description_fr": "Aides publiques ou privées.",
+      "description_en": "Public or private aid.",
+      "description_ar": "Public or private aid.",
+      "description_ru": "Public or private aid.",
+      "description_zh": "Public or private aid.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permises si conditions licites.",
+          "content_en": "Permises si conditions licites."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de fraude pour obtenir aide.",
+          "content_en": "Pas de fraude pour obtenir aide."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le commerce des armes",
+      "title_en": "Arms Trade",
+      "title_ar": "تجارة السلاح",
+      "title_ru": "Arms Trade",
+      "title_zh": "Arms Trade",
+      "description_fr": "Vente d'armes.",
+      "description_en": "Selling weapons.",
+      "description_ar": "Selling weapons.",
+      "description_ru": "Selling weapons.",
+      "description_zh": "Selling weapons.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis pour défense légitime.",
+          "content_en": "Permis pour défense légitime."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Interdit vers agresseurs ou oppresseurs.",
+          "content_en": "Interdit vers agresseurs ou oppresseurs."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le commerce du tabac",
+      "title_en": "Tobacco Trade",
+      "title_ar": "تجارة التبغ",
+      "title_ru": "Tobacco Trade",
+      "title_zh": "Tobacco Trade",
+      "description_fr": "Vente de tabac.",
+      "description_en": "Selling tobacco.",
+      "description_ar": "Selling tobacco.",
+      "description_ru": "Selling tobacco.",
+      "description_zh": "Selling tobacco.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Makruh à haram selon avis ; permis juridique chez certains.",
+          "content_en": "Makruh à haram selon avis ; permis juridique chez certains."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Éviter faciliter le péché.",
+          "content_en": "Éviter faciliter le péché."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les jeux de hasard (Maysir)",
+      "title_en": "Gambling (Maysir)",
+      "title_ar": "الميسر",
+      "title_ru": "Gambling (Maysir)",
+      "title_zh": "Gambling (Maysir)",
+      "description_fr": "Paris et loteries.",
+      "description_en": "Betting and lotteries.",
+      "description_ar": "Betting and lotteries.",
+      "description_ru": "Betting and lotteries.",
+      "description_zh": "Betting and lotteries.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Haram absolu.",
+          "content_en": "Haram absolu."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Perte et gain sans effort licite.",
+          "content_en": "Perte et gain sans effort licite."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La publicité mensongère",
+      "title_en": "False Advertising",
+      "title_ar": "الإعلان الكاذب",
+      "title_ru": "False Advertising",
+      "title_zh": "False Advertising",
+      "description_fr": "Marketing trompeur.",
+      "description_en": "Deceptive marketing.",
+      "description_ar": "Deceptive marketing.",
+      "description_ru": "Deceptive marketing.",
+      "description_zh": "Deceptive marketing.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit ; gharar et tromperie.",
+          "content_en": "Interdit ; gharar et tromperie."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Description exacte du produit.",
+          "content_en": "Description exacte du produit."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le monopole (Ihtikar)",
+      "title_en": "Hoarding and Monopoly",
+      "title_ar": "الاحتكار",
+      "title_ru": "Hoarding and Monopoly",
+      "title_zh": "Hoarding and Monopoly",
+      "description_fr": "Stockage pour faire monter les prix.",
+      "description_en": "Hoarding to raise prices.",
+      "description_ar": "Hoarding to raise prices.",
+      "description_ru": "Hoarding to raise prices.",
+      "description_zh": "Hoarding to raise prices.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit en temps de besoin.",
+          "content_en": "Interdit en temps de besoin."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Libre concurrence encouragée.",
+          "content_en": "Libre concurrence encouragée."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La vente sous évaluée par ignorance",
+      "title_en": "Sale Under Duress",
+      "title_ar": "البيع تحت الإكراه",
+      "title_ru": "Sale Under Duress",
+      "title_zh": "Sale Under Duress",
+      "description_fr": "Contrat sous contrainte.",
+      "description_en": "Contract under coercion.",
+      "description_ar": "Contract under coercion.",
+      "description_ru": "Contract under coercion.",
+      "description_zh": "Contract under coercion.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Annulable si injustice.",
+          "content_en": "Annulable si injustice."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Consentement libre requis.",
+          "content_en": "Consentement libre requis."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les dividendes",
+      "title_en": "Dividends",
+      "title_ar": "توزيع الأرباح",
+      "title_ru": "Dividends",
+      "title_zh": "Dividends",
+      "description_fr": "Part des bénéfices aux actionnaires.",
+      "description_en": "Share of profits to shareholders.",
+      "description_ar": "Share of profits to shareholders.",
+      "description_ru": "Share of profits to shareholders.",
+      "description_zh": "Share of profits to shareholders.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si société licite.",
+          "content_en": "Permis si société licite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Purifier part illicite si mixte.",
+          "content_en": "Purifier part illicite si mixte."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le crowdfunding",
+      "title_en": "Crowdfunding",
+      "title_ar": "التمويل الجماعي",
+      "title_ru": "Crowdfunding",
+      "title_zh": "Crowdfunding",
+      "description_fr": "Financement participatif.",
+      "description_en": "Participatory financing.",
+      "description_ar": "Participatory financing.",
+      "description_ru": "Participatory financing.",
+      "description_zh": "Participatory financing.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mudaraba ou don selon structure.",
+          "content_en": "Mudaraba ou don selon structure."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Transparence et objet licite.",
+          "content_en": "Transparence et objet licite."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les NFT et actifs numériques",
+      "title_en": "NFTs and Digital Assets",
+      "title_ar": "الرموز غير القابلة للاستبدال",
+      "title_ru": "NFTs and Digital Assets",
+      "title_zh": "NFTs and Digital Assets",
+      "description_fr": "Propriété numérique unique.",
+      "description_en": "Unique digital ownership.",
+      "description_ar": "Unique digital ownership.",
+      "description_ru": "Unique digital ownership.",
+      "description_zh": "Unique digital ownership.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si pas de riba ni contenu haram.",
+          "content_en": "Permis si pas de riba ni contenu haram."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Valeur réelle ou utilité licite.",
+          "content_en": "Valeur réelle ou utilité licite."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Les conditions du juge (Qadi)",
+      "title_en": "Qualifications of the Judge",
+      "title_ar": "شروط القاضي",
+      "title_ru": "Qualifications of the Judge",
+      "title_zh": "Qualifications of the Judge",
+      "description_fr": "Profil requis pour juger.",
+      "description_en": "Profile required to judge.",
+      "description_ar": "Profile required to judge.",
+      "description_ru": "Profile required to judge.",
+      "description_zh": "Profile required to judge.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Musulman, mâle (selon classiques), juste, compétent.",
+          "content_en": "Musulman, mâle (selon classiques), juste, compétent."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Indépendance et impartialité.",
+          "content_en": "Indépendance et impartialité."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le témoignage (Shahada)",
+      "title_en": "Testimony (Shahada)",
+      "title_ar": "الشهادة",
+      "title_ru": "Testimony (Shahada)",
+      "title_zh": "Testimony (Shahada)",
+      "description_fr": "Déposition en justice.",
+      "description_en": "Deposition in court.",
+      "description_ar": "Deposition in court.",
+      "description_ru": "Deposition in court.",
+      "description_zh": "Deposition in court.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Deux hommes ou homme et deux femmes pour certains cas.",
+          "content_en": "Deux hommes ou homme et deux femmes pour certains cas."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Témoin juste et lucide.",
+          "content_en": "Témoin juste et lucide."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le faux témoignage",
+      "title_en": "False Testimony",
+      "title_ar": "شهادة الزور",
+      "title_ru": "False Testimony",
+      "title_zh": "False Testimony",
+      "description_fr": "Mentir sous serment.",
+      "description_en": "Lying under oath.",
+      "description_ar": "Lying under oath.",
+      "description_ru": "Lying under oath.",
+      "description_zh": "Lying under oath.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Grand péché ; nullifie le témoignage.",
+          "content_en": "Grand péché ; nullifie le témoignage."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Peine sévère dans charia classique.",
+          "content_en": "Peine sévère dans charia classique."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le Qisas (talion)",
+      "title_en": "Retaliation (Qisas)",
+      "title_ar": "القصاص",
+      "title_ru": "Retaliation (Qisas)",
+      "title_zh": "Retaliation (Qisas)",
+      "description_fr": "Justice pour meurtre et blessures.",
+      "description_en": "Justice for murder and injury.",
+      "description_ar": "Justice for murder and injury.",
+      "description_ru": "Justice for murder and injury.",
+      "description_zh": "Justice for murder and injury.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Vie pour vie avec option de pardon.",
+          "content_en": "Vie pour vie avec option de pardon."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Diya si pardon des héritiers.",
+          "content_en": "Diya si pardon des héritiers."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La Diya (indemnité)",
+      "title_en": "Blood Money (Diya)",
+      "title_ar": "الدية",
+      "title_ru": "Blood Money (Diya)",
+      "title_zh": "Blood Money (Diya)",
+      "description_fr": "Compensation pour homicide involontaire.",
+      "description_en": "Compensation for involuntary killing.",
+      "description_ar": "Compensation for involuntary killing.",
+      "description_ru": "Compensation for involuntary killing.",
+      "description_zh": "Compensation for involuntary killing.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Montant fixé par sunna et coutume.",
+          "content_en": "Montant fixé par sunna et coutume."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Payée par clan ou responsable.",
+          "content_en": "Payée par clan ou responsable."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La médiation (Sulh)",
+      "title_en": "Mediation (Sulh)",
+      "title_ar": "الصلح",
+      "title_ru": "Mediation (Sulh)",
+      "title_zh": "Mediation (Sulh)",
+      "description_fr": "Règlement amiable.",
+      "description_en": "Amicable settlement.",
+      "description_ar": "Amicable settlement.",
+      "description_ru": "Amicable settlement.",
+      "description_zh": "Amicable settlement.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Fortement recommandée.",
+          "content_en": "Fortement recommandée."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Juge peut imposer compromis.",
+          "content_en": "Juge peut imposer compromis."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La peine du vol (Sariqa)",
+      "title_en": "Theft Punishment",
+      "title_ar": "عقوبة السرقة",
+      "title_ru": "Theft Punishment",
+      "title_zh": "Theft Punishment",
+      "description_fr": "Hadd du vol qualifié.",
+      "description_en": "Hadd for qualified theft.",
+      "description_ar": "Hadd for qualified theft.",
+      "description_ru": "Hadd for qualified theft.",
+      "description_zh": "Hadd for qualified theft.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Conditions strictes : seuil, lieu, récidive.",
+          "content_en": "Conditions strictes : seuil, lieu, récidive."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Application rare ; justice avant tout.",
+          "content_en": "Application rare ; justice avant tout."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La peine de l'adultère (Zina)",
+      "title_en": "Adultery Punishment",
+      "title_ar": "حد الزنا",
+      "title_ru": "Adultery Punishment",
+      "title_zh": "Adultery Punishment",
+      "description_fr": "Hadd pour relations illicites.",
+      "description_en": "Hadd for unlawful relations.",
+      "description_ar": "Hadd for unlawful relations.",
+      "description_ru": "Hadd for unlawful relations.",
+      "description_zh": "Hadd for unlawful relations.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Conditions de preuve très strictes.",
+          "content_en": "Conditions de preuve très strictes."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Quatre témoins ou aveu répété.",
+          "content_en": "Quatre témoins ou aveu répété."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La calomnie (Qadhf)",
+      "title_en": "Slander (Qadhf)",
+      "title_ar": "حد القذف",
+      "title_ru": "Slander (Qadhf)",
+      "title_zh": "Slander (Qadhf)",
+      "description_fr": "Accusation d'adultère sans preuve.",
+      "description_en": "Accusing adultery without proof.",
+      "description_ar": "Accusing adultery without proof.",
+      "description_ru": "Accusing adultery without proof.",
+      "description_zh": "Accusing adultery without proof.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Quatre-vingts coups si non prouvé.",
+          "content_en": "Quatre-vingts coups si non prouvé."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Protection de l'honneur.",
+          "content_en": "Protection de l'honneur."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La peine de l'apostasie",
+      "title_en": "Apostasy Ruling",
+      "title_ar": "ردة",
+      "title_ru": "Apostasy Ruling",
+      "title_zh": "Apostasy Ruling",
+      "description_fr": "Abandon de l'Islam.",
+      "description_en": "Leaving Islam.",
+      "description_ar": "Leaving Islam.",
+      "description_ru": "Leaving Islam.",
+      "description_zh": "Leaving Islam.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Débattu ; majorité : peine si rébellion.",
+          "content_en": "Débattu ; majorité : peine si rébellion."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Invitation au repentir d'abord.",
+          "content_en": "Invitation au repentir d'abord."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La rébellion (Baghy)",
+      "title_en": "Armed Rebellion",
+      "title_ar": "البغي",
+      "title_ru": "Armed Rebellion",
+      "title_zh": "Armed Rebellion",
+      "description_fr": "Combat entre musulmans.",
+      "description_en": "Fighting among Muslims.",
+      "description_ar": "Fighting among Muslims.",
+      "description_ru": "Fighting among Muslims.",
+      "description_zh": "Fighting among Muslims.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Réconciliation prioritaire.",
+          "content_en": "Réconciliation prioritaire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Punition si corruption manifeste.",
+          "content_en": "Punition si corruption manifeste."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La charia et les minorités",
+      "title_en": "Sharia and Minorities",
+      "title_ar": "أهل الذمة",
+      "title_ru": "Sharia and Minorities",
+      "title_zh": "Sharia and Minorities",
+      "description_fr": "Statut des non-musulmans.",
+      "description_en": "Status of non-Muslims.",
+      "description_ar": "Status of non-Muslims.",
+      "description_ru": "Status of non-Muslims.",
+      "description_zh": "Status of non-Muslims.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Protection et justice égale.",
+          "content_en": "Protection et justice égale."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Autonomie juridique personnelle.",
+          "content_en": "Autonomie juridique personnelle."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La gouvernance (Shura)",
+      "title_en": "Consultative Governance",
+      "title_ar": "الشورى",
+      "title_ru": "Consultative Governance",
+      "title_zh": "Consultative Governance",
+      "description_fr": "Décision collective.",
+      "description_en": "Collective decision-making.",
+      "description_ar": "Collective decision-making.",
+      "description_ru": "Collective decision-making.",
+      "description_zh": "Collective decision-making.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Principe coranique.",
+          "content_en": "Principe coranique."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Imam consulte les compétents.",
+          "content_en": "Imam consulte les compétents."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le bay'a (allégeance)",
+      "title_en": "Oath of Allegiance",
+      "title_ar": "البيعة",
+      "title_ru": "Oath of Allegiance",
+      "title_zh": "Oath of Allegiance",
+      "description_fr": "Loyauté au dirigeant.",
+      "description_en": "Loyalty to leader.",
+      "description_ar": "Loyalty to leader.",
+      "description_ru": "Loyalty to leader.",
+      "description_zh": "Loyalty to leader.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Tant que justice ; désobéissance si tyrannie.",
+          "content_en": "Tant que justice ; désobéissance si tyrannie."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Une seule bay'a active.",
+          "content_en": "Une seule bay'a active."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La désobéissance civile",
+      "title_en": "Civil Disobedience",
+      "title_ar": "العصيان المدني",
+      "title_ru": "Civil Disobedience",
+      "title_zh": "Civil Disobedience",
+      "description_fr": "Refus d'ordre injuste.",
+      "description_en": "Refusing unjust orders.",
+      "description_ar": "Refusing unjust orders.",
+      "description_ru": "Refusing unjust orders.",
+      "description_zh": "Refusing unjust orders.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas d'obéissance en péché.",
+          "content_en": "Pas d'obéissance en péché."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de trouble sans cause légitime.",
+          "content_en": "Pas de trouble sans cause légitime."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Les preuves en justice",
+      "title_en": "Evidence in Court",
+      "title_ar": "البينات",
+      "title_ru": "Evidence in Court",
+      "title_zh": "Evidence in Court",
+      "description_fr": "Types de preuve admissibles.",
+      "description_en": "Types of admissible evidence.",
+      "description_ar": "Types of admissible evidence.",
+      "description_ru": "Types of admissible evidence.",
+      "description_zh": "Types of admissible evidence.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Témoignage, aveu, serment, indices.",
+          "content_en": "Témoignage, aveu, serment, indices."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Oath de refutation (qasama).",
+          "content_en": "Oath de refutation (qasama)."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le serment judiciaire",
+      "title_en": "Judicial Oath",
+      "title_ar": "اليمين",
+      "title_ru": "Judicial Oath",
+      "title_zh": "Judicial Oath",
+      "description_fr": "Yamin pour trancher.",
+      "description_en": "Oath to decide case.",
+      "description_ar": "Oath to decide case.",
+      "description_ru": "Oath to decide case.",
+      "description_zh": "Oath to decide case.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Imposé à une partie si preuve insuffisante.",
+          "content_en": "Imposé à une partie si preuve insuffisante."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sur le Nom d'Allah.",
+          "content_en": "Sur le Nom d'Allah."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Les droits des prisonniers",
+      "title_en": "Prisoners' Rights",
+      "title_ar": "حقوق السجين",
+      "title_ru": "Prisoners' Rights",
+      "title_zh": "Prisoners' Rights",
+      "description_fr": "Traitement des détenus.",
+      "description_en": "Treatment of detainees.",
+      "description_ar": "Treatment of detainees.",
+      "description_ru": "Treatment of detainees.",
+      "description_zh": "Treatment of detainees.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Dignité, nourriture, pas de torture.",
+          "content_en": "Dignité, nourriture, pas de torture."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Jugement rapide et équitable.",
+          "content_en": "Jugement rapide et équitable."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La torture et la contrainte",
+      "title_en": "Torture and Coercion",
+      "title_ar": "التعذيب",
+      "title_ru": "Torture and Coercion",
+      "title_zh": "Torture and Coercion",
+      "description_fr": "Extraction de aveux.",
+      "description_en": "Extracting confessions.",
+      "description_ar": "Extracting confessions.",
+      "description_ru": "Extracting confessions.",
+      "description_zh": "Extracting confessions.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdite.",
+          "content_en": "Interdite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Aveu sous contrainte invalide.",
+          "content_en": "Aveu sous contrainte invalide."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La peine de mort",
+      "title_en": "Death Penalty",
+      "title_ar": "عقوبة الإعدام",
+      "title_ru": "Death Penalty",
+      "title_zh": "Death Penalty",
+      "description_fr": "Application des peines capitales.",
+      "description_en": "Application of capital punishment.",
+      "description_ar": "Application of capital punishment.",
+      "description_ru": "Application of capital punishment.",
+      "description_zh": "Application of capital punishment.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Hudud et qisas seulement avec preuves.",
+          "content_en": "Hudud et qisas seulement avec preuves."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Droits de pardon des héritiers.",
+          "content_en": "Droits de pardon des héritiers."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La flagellation",
+      "title_en": "Corporal Punishment",
+      "title_ar": "الجلد",
+      "title_ru": "Corporal Punishment",
+      "title_zh": "Corporal Punishment",
+      "description_fr": "Peine corporelle pour certains hadd.",
+      "description_en": "Corporal penalty for certain hadd.",
+      "description_ar": "Corporal penalty for certain hadd.",
+      "description_ru": "Corporal penalty for certain hadd.",
+      "description_zh": "Corporal penalty for certain hadd.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Nombre de coups défini.",
+          "content_en": "Nombre de coups défini."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sans blessure ni humiliation excessive.",
+          "content_en": "Sans blessure ni humiliation excessive."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "L'emprisonnement en Islam",
+      "title_en": "Imprisonment in Islam",
+      "title_ar": "السجن",
+      "title_ru": "Imprisonment in Islam",
+      "title_zh": "Imprisonment in Islam",
+      "description_fr": "Peine privative de liberté.",
+      "description_en": "Deprivation of liberty penalty.",
+      "description_ar": "Deprivation of liberty penalty.",
+      "description_ru": "Deprivation of liberty penalty.",
+      "description_zh": "Deprivation of liberty penalty.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ta'zir selon intérêt public.",
+          "content_en": "Ta'zir selon intérêt public."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Durée proportionnée au crime.",
+          "content_en": "Durée proportionnée au crime."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La diffamation publique",
+      "title_en": "Public Defamation",
+      "title_ar": "الافتراء",
+      "title_ru": "Public Defamation",
+      "title_zh": "Public Defamation",
+      "description_fr": "Atteinte à la réputation.",
+      "description_en": "Harm to reputation.",
+      "description_ar": "Harm to reputation.",
+      "description_ru": "Harm to reputation.",
+      "description_zh": "Harm to reputation.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Péché et réparation possible.",
+          "content_en": "Péché et réparation possible."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ta'zir ou compensation.",
+          "content_en": "Ta'zir ou compensation."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le droit de pétition",
+      "title_en": "Right to Petition",
+      "title_ar": "الشكوى",
+      "title_ru": "Right to Petition",
+      "title_zh": "Right to Petition",
+      "description_fr": "Plainte contre l'injustice.",
+      "description_en": "Complaint against injustice.",
+      "description_ar": "Complaint against injustice.",
+      "description_ru": "Complaint against injustice.",
+      "description_zh": "Complaint against injustice.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Même contre le dirigeant.",
+          "content_en": "Même contre le dirigeant."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Accès au juge encouragé.",
+          "content_en": "Accès au juge encouragé."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La corruption (Rishwa)",
+      "title_en": "Bribery",
+      "title_ar": "الرشوة",
+      "title_ru": "Bribery",
+      "title_zh": "Bribery",
+      "description_fr": "Pots-de-vin.",
+      "description_en": "Bribes.",
+      "description_ar": "Bribes.",
+      "description_ru": "Bribes.",
+      "description_zh": "Bribes.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdite pour les deux parties.",
+          "content_en": "Interdite pour les deux parties."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Annule décision injuste.",
+          "content_en": "Annule décision injuste."
+        }
+      ]
+    }
+  ]
+}

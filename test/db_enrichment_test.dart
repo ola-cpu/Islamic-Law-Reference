@@ -4,24 +4,28 @@ import 'package:islamic_law_reference/services/database_helper.dart';
 
 void main() {
   setUpAll(() {
+    TestWidgetsFlutterBinding.ensureInitialized();
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
   });
 
   setUp(() {
-    DatabaseHelper.setTestDatabaseName('test_enrichment.db');
+    DatabaseHelper.setTestDatabaseName('test_enrichment_${DateTime.now().microsecondsSinceEpoch}.db');
   });
 
   tearDown(() async {
     await DatabaseHelper().closeForTesting();
   });
 
-  test('Database enrichment verification v18', () async {
+  test('Database enrichment verification v21', () async {
     final dbHelper = DatabaseHelper();
     final db = await dbHelper.database;
 
     final version = await db.getVersion();
-    expect(version, 18);
+    expect(version, 21);
+
+    final fts = await db.rawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='topics_fts'");
+    expect(fts.isNotEmpty, true);
 
     final categories = await db.query('categories');
     expect(categories.length, greaterThan(11));
@@ -57,7 +61,7 @@ void main() {
     expect(dailyTopic, isNotNull);
 
     final topicCount = await dbHelper.getTopicCount();
-    expect(topicCount, greaterThanOrEqualTo(100));
+    expect(topicCount, greaterThanOrEqualTo(500));
 
     final itikaf = await dbHelper.getTopicByTitle('L\'I\'tikaf en Ramadan');
     expect(itikaf, isNotNull);

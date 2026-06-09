@@ -20,6 +20,10 @@ enum BadgeId {
   ethicsScholar,
   zenReader,
   inheritanceExpert,
+  methodologyReader,
+  examAce,
+  encyclopediaExam,
+  comparatorPro,
 }
 
 extension BadgeIdExt on BadgeId {
@@ -246,6 +250,46 @@ class BadgeCatalog {
       titleAr: 'خبير الميراث',
       descAr: 'إكمال مسار الميراث والفرائض',
       icon: Icons.account_tree,
+    ),
+    BadgeDefinition(
+      id: BadgeId.methodologyReader,
+      titleFr: 'Esprit critique',
+      descFr: 'Consulter la méthodologie de l\'application',
+      titleEn: 'Critical Mind',
+      descEn: 'Read the app methodology',
+      titleAr: 'العقل النقدي',
+      descAr: 'قراءة منهجية التطبيق',
+      icon: Icons.verified_user,
+    ),
+    BadgeDefinition(
+      id: BadgeId.examAce,
+      titleFr: 'As du examen',
+      descFr: 'Réussir un quiz en mode examen (≥ 80 %)',
+      titleEn: 'Exam Ace',
+      descEn: 'Pass an exam-mode quiz (≥ 80%)',
+      titleAr: 'نجم الاختبار',
+      descAr: 'النجاح في اختبار الوضع الامتحاني (≥ 80%)',
+      icon: Icons.military_tech,
+    ),
+    BadgeDefinition(
+      id: BadgeId.encyclopediaExam,
+      titleFr: 'Expert encyclopédique',
+      descFr: 'Réussir l\'examen encyclopédique (≥ 70 %)',
+      titleEn: 'Encyclopedia Expert',
+      descEn: 'Pass the encyclopedia exam (≥ 70%)',
+      titleAr: 'خبير الموسوعة',
+      descAr: 'النجاح في امتحان الموسوعة (≥ 70%)',
+      icon: Icons.library_books,
+    ),
+    BadgeDefinition(
+      id: BadgeId.comparatorPro,
+      titleFr: 'Comparateur pro',
+      descFr: 'Exporter une comparaison de madhhabs en PDF',
+      titleEn: 'Comparator Pro',
+      descEn: 'Export a madhhab comparison as PDF',
+      titleAr: 'محترف المقارنة',
+      descAr: 'تصدير مقارنة المذاهب بصيغة PDF',
+      icon: Icons.picture_as_pdf,
     ),
   ];
 

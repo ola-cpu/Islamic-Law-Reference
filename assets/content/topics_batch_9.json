@@ -1,0 +1,1255 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à la nationalité",
+      "title_en": "Right to Nationality",
+      "title_ar": "حق الجنسية",
+      "title_ru": "Right to Nationality",
+      "title_zh": "Right to Nationality",
+      "description_fr": "Appartenance et citoyenneté.",
+      "description_en": "Belonging and citizenship.",
+      "description_ar": "Belonging and citizenship.",
+      "description_ru": "Belonging and citizenship.",
+      "description_zh": "Belonging and citizenship.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Loyauté au contrat social.",
+          "content_en": "Loyauté au contrat social."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de trahison de la patrie.",
+          "content_en": "Pas de trahison de la patrie."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des minorités religieuses",
+      "title_en": "Religious Minority Rights",
+      "title_ar": "حقوق الأقليات",
+      "title_ru": "Religious Minority Rights",
+      "title_zh": "Religious Minority Rights",
+      "description_fr": "Dhimma et protection.",
+      "description_en": "Protection of minorities.",
+      "description_ar": "Protection of minorities.",
+      "description_ru": "Protection of minorities.",
+      "description_zh": "Protection of minorities.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Autonomie personnelle.",
+          "content_en": "Autonomie personnelle."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de persecution.",
+          "content_en": "Pas de persecution."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit de se marier",
+      "title_en": "Right to Marry",
+      "title_ar": "حق الزواج",
+      "title_ru": "Right to Marry",
+      "title_zh": "Right to Marry",
+      "description_fr": "Accès au mariage licite.",
+      "description_en": "Access to lawful marriage.",
+      "description_ar": "Access to lawful marriage.",
+      "description_ru": "Access to lawful marriage.",
+      "description_zh": "Access to lawful marriage.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Faciliter pour célibataires.",
+          "content_en": "Faciliter pour célibataires."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de contrainte.",
+          "content_en": "Pas de contrainte."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit au divorce",
+      "title_en": "Right to Divorce",
+      "title_ar": "حق الطلاق",
+      "title_ru": "Right to Divorce",
+      "title_zh": "Right to Divorce",
+      "description_fr": "Sortie d'union défaillante.",
+      "description_en": "Exit from failed union.",
+      "description_ar": "Exit from failed union.",
+      "description_ru": "Exit from failed union.",
+      "description_zh": "Exit from failed union.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Khula et talaq encadrés.",
+          "content_en": "Khula et talaq encadrés."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'oppression.",
+          "content_en": "Pas d'oppression."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des veuves",
+      "title_en": "Widows' Rights",
+      "title_ar": "حقوق الأرامل",
+      "title_ru": "Widows' Rights",
+      "title_zh": "Widows' Rights",
+      "description_fr": "Iddah et héritage.",
+      "description_en": "Waiting period and inheritance.",
+      "description_ar": "Waiting period and inheritance.",
+      "description_ru": "Waiting period and inheritance.",
+      "description_zh": "Waiting period and inheritance.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Entretien pendant iddah.",
+          "content_en": "Entretien pendant iddah."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de spoliation.",
+          "content_en": "Pas de spoliation."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à la succession",
+      "title_en": "Right to Inheritance",
+      "title_ar": "حق الميراث",
+      "title_ru": "Right to Inheritance",
+      "title_zh": "Right to Inheritance",
+      "description_fr": "Parts fixées par charia.",
+      "description_en": "Fixed shares in sharia.",
+      "description_ar": "Fixed shares in sharia.",
+      "description_ru": "Fixed shares in sharia.",
+      "description_zh": "Fixed shares in sharia.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas de déshéritement arbitraire.",
+          "content_en": "Pas de déshéritement arbitraire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Wasiyya limitée.",
+          "content_en": "Wasiyya limitée."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "La protection des données",
+      "title_en": "Data Protection",
+      "title_ar": "حماية البيانات",
+      "title_ru": "Data Protection",
+      "title_zh": "Data Protection",
+      "description_fr": "Vie privée numérique.",
+      "description_en": "Digital privacy.",
+      "description_ar": "Digital privacy.",
+      "description_ru": "Digital privacy.",
+      "description_zh": "Digital privacy.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ne pas divulguer secrets.",
+          "content_en": "Ne pas divulguer secrets."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Consentement pour partage.",
+          "content_en": "Consentement pour partage."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à la réparation",
+      "title_en": "Right to Remedy",
+      "title_ar": "حق التعويض",
+      "title_ru": "Right to Remedy",
+      "title_zh": "Right to Remedy",
+      "description_fr": "Dédommagement du préjudice.",
+      "description_en": "Compensation for harm.",
+      "description_ar": "Compensation for harm.",
+      "description_ru": "Compensation for harm.",
+      "description_zh": "Compensation for harm.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Diya et ta'zir.",
+          "content_en": "Diya et ta'zir."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Médiation encouragée.",
+          "content_en": "Médiation encouragée."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des prisonniers",
+      "title_en": "Prisoners' Rights",
+      "title_ar": "حقوق السجناء",
+      "title_ru": "Prisoners' Rights",
+      "title_zh": "Prisoners' Rights",
+      "description_fr": "Dignité en détention.",
+      "description_en": "Dignity in detention.",
+      "description_ar": "Dignity in detention.",
+      "description_ru": "Dignity in detention.",
+      "description_zh": "Dignity in detention.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Nourriture et soins.",
+          "content_en": "Nourriture et soins."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de torture.",
+          "content_en": "Pas de torture."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit de grève",
+      "title_en": "Right to Strike",
+      "title_ar": "حق الإضراب",
+      "title_ru": "Right to Strike",
+      "title_zh": "Right to Strike",
+      "description_fr": "Revendication ouvrière.",
+      "description_en": "Labor protest.",
+      "description_ar": "Labor protest.",
+      "description_ru": "Labor protest.",
+      "description_zh": "Labor protest.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Débattu ; éviter harm public excessif.",
+          "content_en": "Débattu ; éviter harm public excessif."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Négociation préférée.",
+          "content_en": "Négociation préférée."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des consommateurs",
+      "title_en": "Consumer Rights",
+      "title_ar": "حقوق المستهلك",
+      "title_ru": "Consumer Rights",
+      "title_zh": "Consumer Rights",
+      "description_fr": "Protection contre fraude.",
+      "description_en": "Protection from fraud.",
+      "description_ar": "Protection from fraud.",
+      "description_ru": "Protection from fraud.",
+      "description_zh": "Protection from fraud.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Gharar interdit.",
+          "content_en": "Gharar interdit."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Résiliation si vice caché.",
+          "content_en": "Résiliation si vice caché."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit au savoir",
+      "title_en": "Right to Knowledge",
+      "title_ar": "حق المعرفة",
+      "title_ru": "Right to Knowledge",
+      "title_zh": "Right to Knowledge",
+      "description_fr": "Accès au savoir utile.",
+      "description_en": "Access to beneficial knowledge.",
+      "description_ar": "Access to beneficial knowledge.",
+      "description_ru": "Access to beneficial knowledge.",
+      "description_zh": "Access to beneficial knowledge.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Enseigner et apprendre récompensés.",
+          "content_en": "Enseigner et apprendre récompensés."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de dissimulation de vérité.",
+          "content_en": "Pas de dissimulation de vérité."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Les fondements de la succession",
+      "title_en": "Foundations of Inheritance",
+      "title_ar": "أصول الفرائض",
+      "title_ru": "Foundations of Inheritance",
+      "title_zh": "Foundations of Inheritance",
+      "description_fr": "Base du système fara'id.",
+      "description_en": "Basis of fara'id system.",
+      "description_ar": "Basis of fara'id system.",
+      "description_ru": "Basis of fara'id system.",
+      "description_zh": "Basis of fara'id system.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Coran et sunna fixent parts.",
+          "content_en": "Coran et sunna fixent parts."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de testament au détriment des héritiers.",
+          "content_en": "Pas de testament au détriment des héritiers."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Les héritiers par lien de parenté",
+      "title_en": "Heirs by Blood",
+      "title_ar": "الورثة بالنسب",
+      "title_ru": "Heirs by Blood",
+      "title_zh": "Heirs by Blood",
+      "description_fr": "Ashab al-furud et asaba.",
+      "description_en": "Fixed sharers and residuaries.",
+      "description_ar": "Fixed sharers and residuaries.",
+      "description_ru": "Fixed sharers and residuaries.",
+      "description_zh": "Fixed sharers and residuaries.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Douze catégories classiques.",
+          "content_en": "Douze catégories classiques."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ordre de priorité défini.",
+          "content_en": "Ordre de priorité défini."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La part du fils",
+      "title_en": "Son's Share",
+      "title_ar": "نصيب الابن",
+      "title_ru": "Son's Share",
+      "title_zh": "Son's Share",
+      "description_fr": "Héritage masculin résiduaire.",
+      "description_en": "Male residuary inheritance.",
+      "description_ar": "Male residuary inheritance.",
+      "description_ru": "Male residuary inheritance.",
+      "description_zh": "Male residuary inheritance.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Deux fois la fille si ensemble.",
+          "content_en": "Deux fois la fille si ensemble."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Partagé entre fils.",
+          "content_en": "Partagé entre fils."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La part de la fille",
+      "title_en": "Daughter's Share",
+      "title_ar": "نصيب البنت",
+      "title_ru": "Daughter's Share",
+      "title_zh": "Daughter's Share",
+      "description_fr": "Moitié si fille unique.",
+      "description_en": "Half if sole daughter.",
+      "description_ar": "Half if sole daughter.",
+      "description_ru": "Half if sole daughter.",
+      "description_zh": "Half if sole daughter.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Deux tiers si plusieurs filles seules.",
+          "content_en": "Deux tiers si plusieurs filles seules."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Avec fils : part masculine double.",
+          "content_en": "Avec fils : part masculine double."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La part du père",
+      "title_en": "Father's Share",
+      "title_ar": "نصيب الأب",
+      "title_ru": "Father's Share",
+      "title_zh": "Father's Share",
+      "description_fr": "Sixième ou plus.",
+      "description_en": "One-sixth or more.",
+      "description_ar": "One-sixth or more.",
+      "description_ru": "One-sixth or more.",
+      "description_zh": "One-sixth or more.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sixième avec enfant ; reste si pas d'enfant.",
+          "content_en": "Sixième avec enfant ; reste si pas d'enfant."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Asaba possible.",
+          "content_en": "Asaba possible."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La part de la mère",
+      "title_en": "Mother's Share",
+      "title_ar": "نصيب الأم",
+      "title_ru": "Mother's Share",
+      "title_zh": "Mother's Share",
+      "description_fr": "Sixième ou tiers.",
+      "description_en": "One-sixth or one-third.",
+      "description_ar": "One-sixth or one-third.",
+      "description_ru": "One-sixth or one-third.",
+      "description_zh": "One-sixth or one-third.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Tiers sans enfant ni frères.",
+          "content_en": "Tiers sans enfant ni frères."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sixième avec enfant.",
+          "content_en": "Sixième avec enfant."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La part de l'épouse",
+      "title_en": "Wife's Share",
+      "title_ar": "نصيب الزوجة",
+      "title_ru": "Wife's Share",
+      "title_zh": "Wife's Share",
+      "description_fr": "Huitième ou quart.",
+      "description_en": "One-eighth or one-quarter.",
+      "description_ar": "One-eighth or one-quarter.",
+      "description_ru": "One-eighth or one-quarter.",
+      "description_zh": "One-eighth or one-quarter.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Quart sans enfant ; huitième avec enfant.",
+          "content_en": "Quart sans enfant ; huitième avec enfant."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Plusieurs épouses partagent.",
+          "content_en": "Plusieurs épouses partagent."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La part du mari",
+      "title_en": "Husband's Share",
+      "title_ar": "نصيب الزوج",
+      "title_ru": "Husband's Share",
+      "title_zh": "Husband's Share",
+      "description_fr": "Moitié ou quart.",
+      "description_en": "Half or quarter.",
+      "description_ar": "Half or quarter.",
+      "description_ru": "Half or quarter.",
+      "description_zh": "Half or quarter.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Moitié sans enfant ; quart avec enfant.",
+          "content_en": "Moitié sans enfant ; quart avec enfant."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Résiduaire si pas d'asaba.",
+          "content_en": "Résiduaire si pas d'asaba."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La part des frères et sœurs",
+      "title_en": "Siblings' Shares",
+      "title_ar": "نصيب الإخوة",
+      "title_ru": "Siblings' Shares",
+      "title_zh": "Siblings' Shares",
+      "description_fr": "Uterins, germains, consanguins.",
+      "description_en": "Maternal, full, paternal siblings.",
+      "description_ar": "Maternal, full, paternal siblings.",
+      "description_ru": "Maternal, full, paternal siblings.",
+      "description_zh": "Maternal, full, paternal siblings.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Varie selon présence d'enfants ou père.",
+          "content_en": "Varie selon présence d'enfants ou père."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sixième pour germains sous conditions.",
+          "content_en": "Sixième pour germains sous conditions."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le blocage (Hajb)",
+      "title_en": "Blocking (Hajb)",
+      "title_ar": "الحجب",
+      "title_ru": "Blocking (Hajb)",
+      "title_zh": "Blocking (Hajb)",
+      "description_fr": "Exclusion partielle ou totale.",
+      "description_en": "Partial or total exclusion.",
+      "description_ar": "Partial or total exclusion.",
+      "description_ru": "Partial or total exclusion.",
+      "description_zh": "Partial or total exclusion.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Héritier proche bloque lointain.",
+          "content_en": "Héritier proche bloque lointain."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Hajb nuqsan ou hijb.",
+          "content_en": "Hajb nuqsan ou hijb."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le retour (Radd)",
+      "title_en": "Return (Radd)",
+      "title_ar": "الرد",
+      "title_ru": "Return (Radd)",
+      "title_zh": "Return (Radd)",
+      "description_fr": "Redistribution du surplus.",
+      "description_en": "Redistribution of surplus.",
+      "description_ar": "Redistribution of surplus.",
+      "description_ru": "Redistribution of surplus.",
+      "description_zh": "Redistribution of surplus.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Si parts fixes < total.",
+          "content_en": "Si parts fixes < total."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Aux furud sauf époux dans certains cas.",
+          "content_en": "Aux furud sauf époux dans certains cas."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le testament (Wasiyyah)",
+      "title_en": "Will (Wasiyyah)",
+      "title_ar": "الوصية",
+      "title_ru": "Will (Wasiyyah)",
+      "title_zh": "Will (Wasiyyah)",
+      "description_fr": "Disposition jusqu'à un tiers.",
+      "description_en": "Disposition up to one-third.",
+      "description_ar": "Disposition up to one-third.",
+      "description_ru": "Disposition up to one-third.",
+      "description_zh": "Disposition up to one-third.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pour non-héritier uniquement.",
+          "content_en": "Pour non-héritier uniquement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Écrit et témoins.",
+          "content_en": "Écrit et témoins."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le legs à un héritier",
+      "title_en": "Bequest to an Heir",
+      "title_ar": "الوصية للوارث",
+      "title_ru": "Bequest to an Heir",
+      "title_zh": "Bequest to an Heir",
+      "description_fr": "Interdit sans accord des héritiers.",
+      "description_en": "Forbidden without heirs' consent.",
+      "description_ar": "Forbidden without heirs' consent.",
+      "description_ru": "Forbidden without heirs' consent.",
+      "description_zh": "Forbidden without heirs' consent.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna du Prophète ﷺ.",
+          "content_en": "Sunna du Prophète ﷺ."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Consentement de tous requis.",
+          "content_en": "Consentement de tous requis."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Les dettes avant succession",
+      "title_en": "Debts Before Estate",
+      "title_ar": "الديون",
+      "title_ru": "Debts Before Estate",
+      "title_zh": "Debts Before Estate",
+      "description_fr": "Dettes payées en premier.",
+      "description_en": "Debts paid first.",
+      "description_ar": "Debts paid first.",
+      "description_ru": "Debts paid first.",
+      "description_zh": "Debts paid first.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Avant frais funéraires et legs.",
+          "content_en": "Avant frais funéraires et legs."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Héritiers ne reçoivent qu'après.",
+          "content_en": "Héritiers ne reçoivent qu'après."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Les frais funéraires",
+      "title_en": "Funeral Expenses",
+      "title_ar": "مصاريف الجنازة",
+      "title_ru": "Funeral Expenses",
+      "title_zh": "Funeral Expenses",
+      "description_fr": "Pris sur la succession.",
+      "description_en": "Taken from estate.",
+      "description_ar": "Taken from estate.",
+      "description_ru": "Taken from estate.",
+      "description_zh": "Taken from estate.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Modération requise.",
+          "content_en": "Modération requise."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de gaspillage.",
+          "content_en": "Pas de gaspillage."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "L'héritage du martyr",
+      "title_en": "Martyr's Estate",
+      "title_ar": "ميراث الشهيد",
+      "title_ru": "Martyr's Estate",
+      "title_zh": "Martyr's Estate",
+      "description_fr": "Disposition du shahid.",
+      "description_en": "Disposition of martyr's assets.",
+      "description_ar": "Disposition of martyr's assets.",
+      "description_ru": "Disposition of martyr's assets.",
+      "description_zh": "Disposition of martyr's assets.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mêmes règles fara'id.",
+          "content_en": "Mêmes règles fara'id."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dettes et legs d'abord.",
+          "content_en": "Dettes et legs d'abord."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "L'héritage de l'apostat",
+      "title_en": "Apostate's Estate",
+      "title_ar": "ميراث المرتد",
+      "title_ru": "Apostate's Estate",
+      "title_zh": "Apostate's Estate",
+      "description_fr": "Statut débattu.",
+      "description_en": "Debated status.",
+      "description_ar": "Debated status.",
+      "description_ru": "Debated status.",
+      "description_zh": "Debated status.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Majorité : pas d'héritage mutuel.",
+          "content_en": "Majorité : pas d'héritage mutuel."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Biens selon jugement.",
+          "content_en": "Biens selon jugement."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "L'héritage entre musulman et non-musulman",
+      "title_en": "Muslim and Non-Muslim Inheritance",
+      "title_ar": "الميراث بين المسلم وغيره",
+      "title_ru": "Muslim and Non-Muslim Inheritance",
+      "title_zh": "Muslim and Non-Muslim Inheritance",
+      "description_fr": "Pas d'héritage croisé.",
+      "description_en": "No cross-religion inheritance.",
+      "description_ar": "No cross-religion inheritance.",
+      "description_ru": "No cross-religion inheritance.",
+      "description_zh": "No cross-religion inheritance.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Hadith explicite.",
+          "content_en": "Hadith explicite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Wasiyya permise dans tiers.",
+          "content_en": "Wasiyya permise dans tiers."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le fœtus héritier",
+      "title_en": "Fetus as Heir",
+      "title_ar": "الحمل",
+      "title_ru": "Fetus as Heir",
+      "title_zh": "Fetus as Heir",
+      "description_fr": "Gestation au décès.",
+      "description_en": "Pregnancy at death.",
+      "description_ar": "Pregnancy at death.",
+      "description_ru": "Pregnancy at death.",
+      "description_zh": "Pregnancy at death.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Attendre accouchement pour partager.",
+          "content_en": "Attendre accouchement pour partager."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Part réservée si vivant.",
+          "content_en": "Part réservée si vivant."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La disparition (Gha'ib)",
+      "title_en": "Missing Person",
+      "title_ar": "الغائب",
+      "title_ru": "Missing Person",
+      "title_zh": "Missing Person",
+      "description_fr": "Absent sans nouvelles.",
+      "description_en": "Absent without news.",
+      "description_ar": "Absent without news.",
+      "description_ru": "Absent without news.",
+      "description_zh": "Absent without news.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Attendre durée avant partage.",
+          "content_en": "Attendre durée avant partage."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Quatre ans selon certains avis.",
+          "content_en": "Quatre ans selon certains avis."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le meurtrier et l'héritage",
+      "title_en": "Killer and Inheritance",
+      "title_ar": "قاتل الوارث",
+      "title_ru": "Killer and Inheritance",
+      "title_zh": "Killer and Inheritance",
+      "description_fr": "Le meurtrier n'hérite pas.",
+      "description_en": "Killer does not inherit.",
+      "description_ar": "Killer does not inherit.",
+      "description_ru": "Killer does not inherit.",
+      "description_zh": "Killer does not inherit.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Consensus.",
+          "content_en": "Consensus."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ni homicide ni complicité.",
+          "content_en": "Ni homicide ni complicité."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "L'esclave historique et héritage",
+      "title_en": "Historical Slave Inheritance",
+      "title_ar": "ميراث الرقيق",
+      "title_ru": "Historical Slave Inheritance",
+      "title_zh": "Historical Slave Inheritance",
+      "description_fr": "Contexte classique.",
+      "description_en": "Classical context.",
+      "description_ar": "Classical context.",
+      "description_ru": "Classical context.",
+      "description_zh": "Classical context.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Affranchissement prioritaire.",
+          "content_en": "Affranchissement prioritaire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Umm walad règles spécifiques.",
+          "content_en": "Umm walad règles spécifiques."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La donation en vie (Hiba)",
+      "title_en": "Lifetime Gift",
+      "title_ar": "الهبة",
+      "title_ru": "Lifetime Gift",
+      "title_zh": "Lifetime Gift",
+      "description_fr": "Impact sur succession.",
+      "description_en": "Impact on inheritance.",
+      "description_ar": "Impact on inheritance.",
+      "description_ru": "Impact on inheritance.",
+      "description_zh": "Impact on inheritance.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Don aux enfants : équité recommandée.",
+          "content_en": "Don aux enfants : équité recommandée."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de déshéritage déguisé.",
+          "content_en": "Pas de déshéritage déguisé."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La donation inégale entre enfants",
+      "title_en": "Unequal Gifts to Children",
+      "title_ar": "التفضيل في الهبة",
+      "title_ru": "Unequal Gifts to Children",
+      "title_zh": "Unequal Gifts to Children",
+      "description_fr": "Justice entre enfants.",
+      "description_en": "Justice among children.",
+      "description_ar": "Justice among children.",
+      "description_ru": "Justice among children.",
+      "description_zh": "Justice among children.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Déconseillé fortement.",
+          "content_en": "Déconseillé fortement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Égalité sauf besoin spécifique.",
+          "content_en": "Égalité sauf besoin spécifique."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le Waqf et succession",
+      "title_en": "Waqf and Inheritance",
+      "title_ar": "الوقف والميراث",
+      "title_ru": "Waqf and Inheritance",
+      "title_zh": "Waqf and Inheritance",
+      "description_fr": "Biens en waqf exclus.",
+      "description_en": "Waqf assets excluded.",
+      "description_ar": "Waqf assets excluded.",
+      "description_ru": "Waqf assets excluded.",
+      "description_zh": "Waqf assets excluded.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Revenus selon statut waqf.",
+          "content_en": "Revenus selon statut waqf."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Irrévocable en général.",
+          "content_en": "Irrévocable en général."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Les biens indivis",
+      "title_en": "Indivisible Assets",
+      "title_ar": "العقار غير القابل للقسمة",
+      "title_ru": "Indivisible Assets",
+      "title_zh": "Indivisible Assets",
+      "description_fr": "Partage difficile.",
+      "description_en": "Hard-to-divide property.",
+      "description_ar": "Hard-to-divide property.",
+      "description_ru": "Hard-to-divide property.",
+      "description_zh": "Hard-to-divide property.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Vente et partage du prix.",
+          "content_en": "Vente et partage du prix."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Attribution à un héritier avec compensation.",
+          "content_en": "Attribution à un héritier avec compensation."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le pacte successoral",
+      "title_en": "Inheritance Agreement",
+      "title_ar": "اتفاق التوارث",
+      "title_ru": "Inheritance Agreement",
+      "title_zh": "Inheritance Agreement",
+      "description_fr": "Accord avant décès.",
+      "description_en": "Agreement before death.",
+      "description_ar": "Agreement before death.",
+      "description_ru": "Agreement before death.",
+      "description_zh": "Agreement before death.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Généralement invalide si déshéritement.",
+          "content_en": "Généralement invalide si déshéritement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Consentement libre requis.",
+          "content_en": "Consentement libre requis."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "L'héritage numérique",
+      "title_en": "Digital Inheritance",
+      "title_ar": "الميراث الرقمي",
+      "title_ru": "Digital Inheritance",
+      "title_zh": "Digital Inheritance",
+      "description_fr": "Comptes et crypto.",
+      "description_en": "Accounts and crypto.",
+      "description_ar": "Accounts and crypto.",
+      "description_ru": "Accounts and crypto.",
+      "description_zh": "Accounts and crypto.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Wasiyya pour accès.",
+          "content_en": "Wasiyya pour accès."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Loi locale + wasiyya.",
+          "content_en": "Loi locale + wasiyya."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Les assurances-vie",
+      "title_en": "Life Insurance",
+      "title_ar": "تأمين الحياة",
+      "title_ru": "Life Insurance",
+      "title_zh": "Life Insurance",
+      "description_fr": "Bénéficiaire désigné.",
+      "description_en": "Designated beneficiary.",
+      "description_ar": "Designated beneficiary.",
+      "description_ru": "Designated beneficiary.",
+      "description_zh": "Designated beneficiary.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Éviter riba ; structure takaful.",
+          "content_en": "Éviter riba ; structure takaful."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Wasiyya complémentaire.",
+          "content_en": "Wasiyya complémentaire."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La réclamation tardive",
+      "title_en": "Late Claim",
+      "title_ar": "الادعاء المتأخر",
+      "title_ru": "Late Claim",
+      "title_zh": "Late Claim",
+      "description_fr": "Héritier oublié.",
+      "description_en": "Forgotten heir.",
+      "description_ar": "Forgotten heir.",
+      "description_ru": "Forgotten heir.",
+      "description_zh": "Forgotten heir.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Preuve et prescription.",
+          "content_en": "Preuve et prescription."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Part non distribuée récupérable.",
+          "content_en": "Part non distribuée récupérable."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le tuteur des mineurs héritiers",
+      "title_en": "Guardian of Minor Heirs",
+      "title_ar": "ولي القاصر",
+      "title_ru": "Guardian of Minor Heirs",
+      "title_zh": "Guardian of Minor Heirs",
+      "description_fr": "Gestion du patrimoine des enfants.",
+      "description_en": "Managing children's estate.",
+      "description_ar": "Managing children's estate.",
+      "description_ru": "Managing children's estate.",
+      "description_zh": "Managing children's estate.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Intérêt de l'enfant.",
+          "content_en": "Intérêt de l'enfant."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Comptes transparents.",
+          "content_en": "Comptes transparents."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "La curatelle de l'incapable",
+      "title_en": "Guardianship of Incapable",
+      "title_ar": "ولاية المجنون",
+      "title_ru": "Guardianship of Incapable",
+      "title_zh": "Guardianship of Incapable",
+      "description_fr": "Protection des biens.",
+      "description_en": "Asset protection.",
+      "description_ar": "Asset protection.",
+      "description_ru": "Asset protection.",
+      "description_zh": "Asset protection.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Juge ou proche désigné.",
+          "content_en": "Juge ou proche désigné."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'exploitation.",
+          "content_en": "Pas d'exploitation."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le partage par arbitrage",
+      "title_en": "Partition by Arbitration",
+      "title_ar": "القسمة بالتحكيم",
+      "title_ru": "Partition by Arbitration",
+      "title_zh": "Partition by Arbitration",
+      "description_fr": "Tahkim pour partage.",
+      "description_en": "Arbitration for division.",
+      "description_ar": "Arbitration for division.",
+      "description_ru": "Arbitration for division.",
+      "description_zh": "Arbitration for division.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Si désaccord entre héritiers.",
+          "content_en": "Si désaccord entre héritiers."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Arbitre juste.",
+          "content_en": "Arbitre juste."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Les biens communs du couple",
+      "title_en": "Marital Common Property",
+      "title_ar": "المال المشترك",
+      "title_ru": "Marital Common Property",
+      "title_zh": "Marital Common Property",
+      "description_fr": "Ce qui appartient à qui.",
+      "description_en": "What belongs to whom.",
+      "description_ar": "What belongs to whom.",
+      "description_ru": "What belongs to whom.",
+      "description_zh": "What belongs to whom.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Séparation des biens par défaut.",
+          "content_en": "Séparation des biens par défaut."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mahr et biens personnels.",
+          "content_en": "Mahr et biens personnels."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "L'héritage des convertis récents",
+      "title_en": "New Convert's Inheritance",
+      "title_ar": "ميراث المسلم الجديد",
+      "title_ru": "New Convert's Inheritance",
+      "title_zh": "New Convert's Inheritance",
+      "description_fr": "Liens avant Islam.",
+      "description_en": "Ties before Islam.",
+      "description_ar": "Ties before Islam.",
+      "description_ru": "Ties before Islam.",
+      "description_zh": "Ties before Islam.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas d'héritage avec non-musulmans parents.",
+          "content_en": "Pas d'héritage avec non-musulmans parents."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Birr sans héritage.",
+          "content_en": "Birr sans héritage."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le calcul des parts (Fara'id)",
+      "title_en": "Calculating Shares",
+      "title_ar": "حساب الفرائض",
+      "title_ru": "Calculating Shares",
+      "title_zh": "Calculating Shares",
+      "description_fr": "Méthode de calcul.",
+      "description_en": "Calculation method.",
+      "description_ar": "Calculation method.",
+      "description_ru": "Calculation method.",
+      "description_zh": "Calculation method.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Tables et exemples classiques.",
+          "content_en": "Tables et exemples classiques."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Vérification par savant si complexe.",
+          "content_en": "Vérification par savant si complexe."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du milieu de la nuit (Tahajjud avancé)",
+      "title_en": "Late Night Prayer",
+      "title_ar": "قيام الليل المتأخر",
+      "title_ru": "Late Night Prayer",
+      "title_zh": "Late Night Prayer",
+      "description_fr": "Station debout prolongée après minuit.",
+      "description_en": "Extended standing after midnight.",
+      "description_ar": "Extended standing after midnight.",
+      "description_ru": "Extended standing after midnight.",
+      "description_zh": "Extended standing after midnight.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna des pieux ; récitation longue.",
+          "content_en": "Sunna des pieux ; récitation longue."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Meilleur moment pour les invocations.",
+          "content_en": "Meilleur moment pour les invocations."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La récitation à haute voix (Jahr)",
+      "title_en": "Audible Recitation",
+      "title_ar": "الجهر بالقراءة",
+      "title_ru": "Audible Recitation",
+      "title_zh": "Audible Recitation",
+      "description_fr": "Quand lire à voix haute en prière.",
+      "description_en": "When to recite aloud.",
+      "description_ar": "When to recite aloud.",
+      "description_ru": "When to recite aloud.",
+      "description_zh": "When to recite aloud.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Fajr, Maghrib, Isha en prière seul.",
+          "content_en": "Fajr, Maghrib, Isha en prière seul."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Jama'a : imam suit règles de la prière.",
+          "content_en": "Jama'a : imam suit règles de la prière."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1255 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne du six de Shawwal isolé",
+      "title_en": "Single Shawwal Fast",
+      "title_ar": "صيام يوم من شوال",
+      "title_ru": "Single Shawwal Fast",
+      "title_zh": "Single Shawwal Fast",
+      "description_fr": "Un jour seul après Ramadan.",
+      "description_en": "Single day after Ramadan.",
+      "description_ar": "Single day after Ramadan.",
+      "description_ru": "Single day after Ramadan.",
+      "description_zh": "Single day after Ramadan.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Récompense même sans les six jours.",
+          "content_en": "Récompense même sans les six jours."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mieux six jours consécutifs ou séparés.",
+          "content_en": "Mieux six jours consécutifs ou séparés."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le jeûne du lundi et jeudi",
+      "title_en": "Monday and Thursday Fasts",
+      "title_ar": "صيام الاثنين والخميس",
+      "title_ru": "Monday and Thursday Fasts",
+      "title_zh": "Monday and Thursday Fasts",
+      "description_fr": "Jeûnes hebdomadaires surérogatoires.",
+      "description_en": "Weekly supererogatory fasts.",
+      "description_ar": "Weekly supererogatory fasts.",
+      "description_ru": "Weekly supererogatory fasts.",
+      "description_zh": "Weekly supererogatory fasts.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna du Prophète ﷺ.",
+          "content_en": "Sunna du Prophète ﷺ."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Les œuvres présentées ces jours.",
+          "content_en": "Les œuvres présentées ces jours."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "La visite de la mosquée sacrée (Umra)",
+      "title_en": "Visiting the Sacred Mosque",
+      "title_ar": "زيارة المسجد الحرام",
+      "title_ru": "Visiting the Sacred Mosque",
+      "title_zh": "Visiting the Sacred Mosque",
+      "description_fr": "Mérites de la prière à La Mecque.",
+      "description_en": "Merit of prayer in Mecca.",
+      "description_ar": "Merit of prayer in Mecca.",
+      "description_ru": "Merit of prayer in Mecca.",
+      "description_zh": "Merit of prayer in Mecca.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Cent mille fois prière ailleurs.",
+          "content_en": "Cent mille fois prière ailleurs."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Tawaf et sa'y pour Umra.",
+          "content_en": "Tawaf et sa'y pour Umra."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le pèlerinage des femmes sans mahram",
+      "title_en": "Women's Hajj Without Mahram",
+      "title_ar": "حج المرأة بلا محرم",
+      "title_ru": "Women's Hajj Without Mahram",
+      "title_zh": "Women's Hajj Without Mahram",
+      "description_fr": "Condition du mahram pour la femme.",
+      "description_en": "Mahram condition for women.",
+      "description_ar": "Mahram condition for women.",
+      "description_ru": "Mahram condition for women.",
+      "description_zh": "Mahram condition for women.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Débattu ; sécurité et intégrité requises.",
+          "content_en": "Débattu ; sécurité et intégrité requises."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Avis modernes : groupe sûr suffisant selon savants.",
+          "content_en": "Avis modernes : groupe sûr suffisant selon savants."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le mariage par procuration (Nikah bil-Wakala)",
+      "title_en": "Proxy Marriage",
+      "title_ar": "النكاح بالوكالة",
+      "title_ru": "Proxy Marriage",
+      "title_zh": "Proxy Marriage",
+      "description_fr": "Contrat par représentant.",
+      "description_en": "Contract via representative.",
+      "description_ar": "Contract via representative.",
+      "description_ru": "Contract via representative.",
+      "description_zh": "Contract via representative.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis avec conditions strictes.",
+          "content_en": "Permis avec conditions strictes."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Présence ou mandat explicite des deux parties.",
+          "content_en": "Présence ou mandat explicite des deux parties."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La dot différée (Mahr mu'ajjal)",
+      "title_en": "Deferred Dowry",
+      "title_ar": "المهر المؤجل",
+      "title_ru": "Deferred Dowry",
+      "title_zh": "Deferred Dowry",
+      "description_fr": "Paiement du Mahr à terme.",
+      "description_en": "Deferred mahr payment.",
+      "description_ar": "Deferred mahr payment.",
+      "description_ru": "Deferred mahr payment.",
+      "description_zh": "Deferred mahr payment.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Valide si montant et délai connus.",
+          "content_en": "Valide si montant et délai connus."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dette envers l'épouse.",
+          "content_en": "Dette envers l'épouse."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le droit de la femme au divorce judiciaire",
+      "title_en": "Judicial Divorce for Wife",
+      "title_ar": "الطلاق القضائي",
+      "title_ru": "Judicial Divorce for Wife",
+      "title_zh": "Judicial Divorce for Wife",
+      "description_fr": "Faskh pour cause légitime.",
+      "description_en": "Dissolution for legitimate cause.",
+      "description_ar": "Dissolution for legitimate cause.",
+      "description_ru": "Dissolution for legitimate cause.",
+      "description_zh": "Dissolution for legitimate cause.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Harcèlement, absence, impuissance, etc.",
+          "content_en": "Harcèlement, absence, impuissance, etc."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Juge tranche après preuve.",
+          "content_en": "Juge tranche après preuve."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Le conseil familial avant divorce",
+      "title_en": "Family Mediation Before Divorce",
+      "title_ar": "التحكيم الأسري",
+      "title_ru": "Family Mediation Before Divorce",
+      "title_zh": "Family Mediation Before Divorce",
+      "description_fr": "Arbitrage des proches.",
+      "description_en": "Arbitration by relatives.",
+      "description_ar": "Arbitration by relatives.",
+      "description_ru": "Arbitration by relatives.",
+      "description_zh": "Arbitration by relatives.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Coran 4:35 avant séparation.",
+          "content_en": "Coran 4:35 avant séparation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Réconciliation prioritaire.",
+          "content_en": "Réconciliation prioritaire."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Les frères et sœurs en religion",
+      "title_en": "Brotherhood in Faith",
+      "title_ar": "الأخوة في الله",
+      "title_ru": "Brotherhood in Faith",
+      "title_zh": "Brotherhood in Faith",
+      "description_fr": "Liens spirituels entre croyants.",
+      "description_en": "Spiritual bonds among believers.",
+      "description_ar": "Spiritual bonds among believers.",
+      "description_ru": "Spiritual bonds among believers.",
+      "description_zh": "Spiritual bonds among believers.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Droits mutuels de respect.",
+          "content_en": "Droits mutuels de respect."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de discrimination tribale.",
+          "content_en": "Pas de discrimination tribale."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La Sukuk (obligations islamiques)",
+      "title_en": "Sukuk Bonds",
+      "title_ar": "الصكوك",
+      "title_ru": "Sukuk Bonds",
+      "title_zh": "Sukuk Bonds",
+      "description_fr": "Titres de créance conformes.",
+      "description_en": "Sharia-compliant bonds.",
+      "description_ar": "Sharia-compliant bonds.",
+      "description_ru": "Sharia-compliant bonds.",
+      "description_zh": "Sharia-compliant bonds.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Propriété d'actif réel.",
+          "content_en": "Propriété d'actif réel."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de riba.",
+          "content_en": "Pas de riba."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le microcrédit sans intérêt",
+      "title_en": "Interest-free Microcredit",
+      "title_ar": "القرض الأصغر",
+      "title_ru": "Interest-free Microcredit",
+      "title_zh": "Interest-free Microcredit",
+      "description_fr": "Prêts solidaires.",
+      "description_en": "Solidarity loans.",
+      "description_ar": "Solidarity loans.",
+      "description_ru": "Solidarity loans.",
+      "description_zh": "Solidarity loans.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Qard hassan ou mudaraba.",
+          "content_en": "Qard hassan ou mudaraba."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Remboursement capital seul.",
+          "content_en": "Remboursement capital seul."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La vente à tempérament islamique",
+      "title_en": "Islamic Installment Sale",
+      "title_ar": "البيع بالتقسيط",
+      "title_ru": "Islamic Installment Sale",
+      "title_zh": "Islamic Installment Sale",
+      "description_fr": "Paiements échelonnés sans riba.",
+      "description_en": "Installments without interest.",
+      "description_ar": "Installments without interest.",
+      "description_ru": "Installments without interest.",
+      "description_zh": "Installments without interest.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prix total fixé à l'avance.",
+          "content_en": "Prix total fixé à l'avance."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de majoration pour délai.",
+          "content_en": "Pas de majoration pour délai."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La peine du bandit de grand chemin",
+      "title_en": "Highway Robbery Penalty",
+      "title_ar": "حد قطع الطريق",
+      "title_ru": "Highway Robbery Penalty",
+      "title_zh": "Highway Robbery Penalty",
+      "description_fr": "Hiraba et terreur publique.",
+      "description_en": "Hiraba and public terror.",
+      "description_ar": "Hiraba and public terror.",
+      "description_ru": "Hiraba and public terror.",
+      "description_zh": "Hiraba and public terror.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Peines graduées selon gravité.",
+          "content_en": "Peines graduées selon gravité."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Protection des voyageurs.",
+          "content_en": "Protection des voyageurs."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le droit de recours (Tazir)",
+      "title_en": "Discretionary Punishment",
+      "title_ar": "التعزير",
+      "title_ru": "Discretionary Punishment",
+      "title_zh": "Discretionary Punishment",
+      "description_fr": "Peine non fixée par texte.",
+      "description_en": "Unfixed statutory penalty.",
+      "description_ar": "Unfixed statutory penalty.",
+      "description_ru": "Unfixed statutory penalty.",
+      "description_zh": "Unfixed statutory penalty.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Juge selon intérêt public.",
+          "content_en": "Juge selon intérêt public."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Proportionnée au délit.",
+          "content_en": "Proportionnée au délit."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La sincérité dans les paroles",
+      "title_en": "Sincerity in Speech",
+      "title_ar": "صدق اللسان",
+      "title_ru": "Sincerity in Speech",
+      "title_zh": "Sincerity in Speech",
+      "description_fr": "Aligner parole et cœur.",
+      "description_en": "Aligning speech and heart.",
+      "description_ar": "Aligning speech and heart.",
+      "description_ru": "Aligning speech and heart.",
+      "description_zh": "Aligning speech and heart.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Parole douce et vraie.",
+          "content_en": "Parole douce et vraie."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de flatterie mensongère.",
+          "content_en": "Pas de flatterie mensongère."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La discrétion (Sitr)",
+      "title_en": "Concealing Faults",
+      "title_ar": "ستر العورة",
+      "title_ru": "Concealing Faults",
+      "title_zh": "Concealing Faults",
+      "description_fr": "Cacher les fautes d'autrui.",
+      "description_en": "Concealing others' faults.",
+      "description_ar": "Concealing others' faults.",
+      "description_ru": "Concealing others' faults.",
+      "description_zh": "Concealing others' faults.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Allah voile nos défauts.",
+          "content_en": "Allah voile nos défauts."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Conseiller en privé.",
+          "content_en": "Conseiller en privé."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les produits de la mer morte",
+      "title_en": "Dead Sea Products",
+      "title_ar": "ما أخرجه البحر",
+      "title_ru": "Dead Sea Products",
+      "title_zh": "Dead Sea Products",
+      "description_fr": "Poisson mort rejeté par la mer.",
+      "description_en": "Fish dead on shore.",
+      "description_ar": "Fish dead on shore.",
+      "description_ru": "Fish dead on shore.",
+      "description_zh": "Fish dead on shore.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis selon hadith.",
+          "content_en": "Permis selon hadith."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sans égorgement requis.",
+          "content_en": "Sans égorgement requis."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le jeûne et l'anesthésie",
+      "title_en": "Fasting and Anesthesia",
+      "title_ar": "التخدير في الصوم",
+      "title_ru": "Fasting and Anesthesia",
+      "title_zh": "Fasting and Anesthesia",
+      "description_fr": "Chirurgie programmée en Ramadan.",
+      "description_en": "Scheduled surgery in Ramadan.",
+      "description_ar": "Scheduled surgery in Ramadan.",
+      "description_ru": "Scheduled surgery in Ramadan.",
+      "description_zh": "Scheduled surgery in Ramadan.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Rompre recommandé si affaiblissement.",
+          "content_en": "Rompre recommandé si affaiblissement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Reprendre qada après.",
+          "content_en": "Reprendre qada après."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de distribution commerciale",
+      "title_en": "Distribution Agreement",
+      "title_ar": "عقد التوزيع",
+      "title_ru": "Distribution Agreement",
+      "title_zh": "Distribution Agreement",
+      "description_fr": "Mandat pour vendre produits.",
+      "description_en": "Mandate to sell products.",
+      "description_ar": "Mandate to sell products.",
+      "description_ru": "Mandate to sell products.",
+      "description_zh": "Mandate to sell products.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Commission définie.",
+          "content_en": "Commission définie."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Propriété du fournisseur jusqu'à vente.",
+          "content_en": "Propriété du fournisseur jusqu'à vente."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "La vente avec réserve de propriété",
+      "title_en": "Retention of Title Sale",
+      "title_ar": "البيع مع حبس الملكية",
+      "title_ru": "Retention of Title Sale",
+      "title_zh": "Retention of Title Sale",
+      "description_fr": "Propriété jusqu'au paiement complet.",
+      "description_en": "Ownership until full payment.",
+      "description_ar": "Ownership until full payment.",
+      "description_ru": "Ownership until full payment.",
+      "description_zh": "Ownership until full payment.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si transparent.",
+          "content_en": "Permis si transparent."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Récupération si défaut selon droit local.",
+          "content_en": "Récupération si défaut selon droit local."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Le droit à un nom honorable",
+      "title_en": "Right to Honorable Name",
+      "title_ar": "حق الاسم الحسن",
+      "title_ru": "Right to Honorable Name",
+      "title_zh": "Right to Honorable Name",
+      "description_fr": "Éviter surnoms blessants.",
+      "description_en": "Avoiding hurtful nicknames.",
+      "description_ar": "Avoiding hurtful nicknames.",
+      "description_ru": "Avoiding hurtful nicknames.",
+      "description_zh": "Avoiding hurtful nicknames.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Changer nom honteux permis.",
+          "content_en": "Changer nom honteux permis."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de moquerie des noms.",
+          "content_en": "Pas de moquerie des noms."
+        }
+      ]
+    },
+    {
+      "category_icon": "accessibility",
+      "title_fr": "Les droits des nouveaux musulmans",
+      "title_en": "New Muslims' Rights",
+      "title_ar": "حقوق المسلم الجديد",
+      "title_ru": "New Muslims' Rights",
+      "title_zh": "New Muslims' Rights",
+      "description_fr": "Accompagnement après shahada.",
+      "description_en": "Support after shahada.",
+      "description_ar": "Support after shahada.",
+      "description_ru": "Support after shahada.",
+      "description_zh": "Support after shahada.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Enseignement progressif.",
+          "content_en": "Enseignement progressif."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de surcharge.",
+          "content_en": "Pas de surcharge."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "L'héritage des dettes fiscales",
+      "title_en": "Inheritance of Tax Debts",
+      "title_ar": "ديون الضرائب",
+      "title_ru": "Inheritance of Tax Debts",
+      "title_zh": "Inheritance of Tax Debts",
+      "description_fr": "Dettes publiques sur succession.",
+      "description_en": "Public debts on estate.",
+      "description_ar": "Public debts on estate.",
+      "description_ru": "Public debts on estate.",
+      "description_zh": "Public debts on estate.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Payées avant partage.",
+          "content_en": "Payées avant partage."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Transparence aux héritiers.",
+          "content_en": "Transparence aux héritiers."
+        }
+      ]
+    },
+    {
+      "category_icon": "account_balance",
+      "title_fr": "Le legs à une œuvre de bienfaisance",
+      "title_en": "Charitable Bequest",
+      "title_ar": "الوصية للخير",
+      "title_ru": "Charitable Bequest",
+      "title_zh": "Charitable Bequest",
+      "description_fr": "Wasiyya pour mosquée ou pauvres.",
+      "description_en": "Bequest for mosque or poor.",
+      "description_ar": "Bequest for mosque or poor.",
+      "description_ru": "Bequest for mosque or poor.",
+      "description_zh": "Bequest for mosque or poor.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Dans limite du tiers.",
+          "content_en": "Dans limite du tiers."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Gestion par mutawalli.",
+          "content_en": "Gestion par mutawalli."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière sur un animal",
+      "title_en": "Prayer on Animal Mount",
+      "title_ar": "الصلاة على الدابة",
+      "title_ru": "Prayer on Animal Mount",
+      "title_zh": "Prayer on Animal Mount",
+      "description_fr": "Direction en chevauchant.",
+      "description_en": "Facing qibla while riding.",
+      "description_ar": "Facing qibla while riding.",
+      "description_ru": "Facing qibla while riding.",
+      "description_zh": "Facing qibla while riding.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Gestes par signes ; prière réduite.",
+          "content_en": "Gestes par signes ; prière réduite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Voyageur en mouvement.",
+          "content_en": "Voyageur en mouvement."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le Hajj Badal (par substitution)",
+      "title_en": "Hajj Badal",
+      "title_ar": "الحج البدل",
+      "title_ru": "Hajj Badal",
+      "title_zh": "Hajj Badal",
+      "description_fr": "Accomplir Hajj pour un défunt ou incapable.",
+      "description_en": "Performing Hajj for deceased or unable.",
+      "description_ar": "Performing Hajj for deceased or unable.",
+      "description_ru": "Performing Hajj for deceased or unable.",
+      "description_zh": "Performing Hajj for deceased or unable.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis une fois le mandant ne peut plus.",
+          "content_en": "Permis une fois le mandant ne peut plus."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même récompense pour le mandant.",
+          "content_en": "Même récompense pour le mandant."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La négociation du Mahr",
+      "title_en": "Negotiating the Dowry",
+      "title_ar": "تفاوض المهر",
+      "title_ru": "Negotiating the Dowry",
+      "title_zh": "Negotiating the Dowry",
+      "description_fr": "Montant convenu entre époux.",
+      "description_en": "Amount agreed between spouses.",
+      "description_ar": "Amount agreed between spouses.",
+      "description_ru": "Amount agreed between spouses.",
+      "description_zh": "Amount agreed between spouses.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mahr mithl si non fixé.",
+          "content_en": "Mahr mithl si non fixé."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Modeste ou généreux selon capacité.",
+          "content_en": "Modeste ou généreux selon capacité."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le partage de pertes en Musharaka",
+      "title_en": "Loss Sharing in Musharaka",
+      "title_ar": "تقاسم الخسارة",
+      "title_ru": "Loss Sharing in Musharaka",
+      "title_zh": "Loss Sharing in Musharaka",
+      "description_fr": "Répartition des pertes.",
+      "description_en": "Distribution of losses.",
+      "description_ar": "Distribution of losses.",
+      "description_ru": "Distribution of losses.",
+      "description_zh": "Distribution of losses.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Au prorata des apports.",
+          "content_en": "Au prorata des apports."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de clause exonérant injustement.",
+          "content_en": "Pas de clause exonérant injustement."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La preuve par reconnaissance",
+      "title_en": "Proof by Confession",
+      "title_ar": "الإقرار",
+      "title_ru": "Proof by Confession",
+      "title_zh": "Proof by Confession",
+      "description_fr": "Aveu devant juge.",
+      "description_en": "Confession before judge.",
+      "description_ar": "Confession before judge.",
+      "description_ru": "Confession before judge.",
+      "description_zh": "Confession before judge.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Preuve forte si lucide et volontaire.",
+          "content_en": "Preuve forte si lucide et volontaire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Rétractation limitée.",
+          "content_en": "Rétractation limitée."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La modération dans la vie",
+      "title_en": "Moderation in Life",
+      "title_ar": "الاعتدال",
+      "title_ru": "Moderation in Life",
+      "title_zh": "Moderation in Life",
+      "description_fr": "Éviter extrêmes.",
+      "description_en": "Avoiding extremes.",
+      "description_ar": "Avoiding extremes.",
+      "description_ru": "Avoiding extremes.",
+      "description_zh": "Avoiding extremes.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ni ascétisme excessif ni gaspillage.",
+          "content_en": "Ni ascétisme excessif ni gaspillage."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Milieu de la communauté.",
+          "content_en": "Milieu de la communauté."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Les repas collectifs et partage",
+      "title_en": "Communal Meals",
+      "title_ar": "الإفطار الجماعي",
+      "title_ru": "Communal Meals",
+      "title_zh": "Communal Meals",
+      "description_fr": "Iftar en communauté.",
+      "description_en": "Community iftar.",
+      "description_ar": "Community iftar.",
+      "description_ru": "Community iftar.",
+      "description_zh": "Community iftar.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna renforcer liens.",
+          "content_en": "Sunna renforcer liens."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Chacun contribue selon moyen.",
+          "content_en": "Chacun contribue selon moyen."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de maintenance logicielle",
+      "title_en": "Software Maintenance Contract",
+      "title_ar": "عقد صيانة البرمجيات",
+      "title_ru": "Software Maintenance Contract",
+      "title_zh": "Software Maintenance Contract",
+      "description_fr": "Ijara pour service numérique.",
+      "description_en": "Ijara for digital service.",
+      "description_ar": "Ijara for digital service.",
+      "description_ru": "Ijara for digital service.",
+      "description_zh": "Ijara for digital service.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Frais pour service réel.",
+          "content_en": "Frais pour service réel."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de vente de dette.",
+          "content_en": "Pas de vente de dette."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Les voisins en litige",
+      "title_en": "Disputing Neighbors",
+      "title_ar": "جيران الخصومة",
+      "title_ru": "Disputing Neighbors",
+      "title_zh": "Disputing Neighbors",
+      "description_fr": "Résolution des conflits de voisinage.",
+      "description_en": "Resolving neighborhood conflicts.",
+      "description_ar": "Resolving neighborhood conflicts.",
+      "description_ru": "Resolving neighborhood conflicts.",
+      "description_zh": "Resolving neighborhood conflicts.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Médiation avant tribunal.",
+          "content_en": "Médiation avant tribunal."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de nuisance volontaire.",
+          "content_en": "Pas de nuisance volontaire."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "La Zakat sur les bijoux portés",
+      "title_en": "Zakat on Worn Jewelry",
+      "title_ar": "زكاة الحلي الملبوس",
+      "title_ru": "Zakat on Worn Jewelry",
+      "title_zh": "Zakat on Worn Jewelry",
+      "description_fr": "Débat sur bijoux en usage.",
+      "description_en": "Debate on jewelry in use.",
+      "description_ar": "Debate on jewelry in use.",
+      "description_ru": "Debate on jewelry in use.",
+      "description_zh": "Debate on jewelry in use.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Hanafi : pas de zakat si portés.",
+          "content_en": "Hanafi : pas de zakat si portés."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Autres : zakat si nisab atteint.",
+          "content_en": "Autres : zakat si nisab atteint."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière du voyageur en avion (Qibla)",
+      "title_en": "Qibla on Airplane",
+      "title_ar": "القبلة في الطائرة",
+      "title_ru": "Qibla on Airplane",
+      "title_zh": "Qibla on Airplane",
+      "description_fr": "Orientation en vol.",
+      "description_en": "Orientation in flight.",
+      "description_ar": "Orientation in flight.",
+      "description_ru": "Orientation in flight.",
+      "description_zh": "Orientation in flight.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Suivre direction connue au départ.",
+          "content_en": "Suivre direction connue au départ."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Réajuster si possible.",
+          "content_en": "Réajuster si possible."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La bienveillance envers les serviteurs",
+      "title_en": "Kindness to Workers",
+      "title_ar": "معاملة الخدم",
+      "title_ru": "Kindness to Workers",
+      "title_zh": "Kindness to Workers",
+      "description_fr": "Droits des employés domestiques.",
+      "description_en": "Rights of domestic workers.",
+      "description_ar": "Rights of domestic workers.",
+      "description_ru": "Rights of domestic workers.",
+      "description_zh": "Rights of domestic workers.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Nourriture et salaire justes.",
+          "content_en": "Nourriture et salaire justes."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'humiliation.",
+          "content_en": "Pas d'humiliation."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "Le qunut du witr en hiver",
+      "title_en": "Winter Witr Qunut",
+      "title_ar": "قنوت الوتر في الشتاء",
+      "title_ru": "Winter Witr Qunut",
+      "title_zh": "Winter Witr Qunut",
+      "description_fr": "Invocation spécifique en période froide.",
+      "description_en": "Specific supplication in cold season.",
+      "description_ar": "Specific supplication in cold season.",
+      "description_ru": "Specific supplication in cold season.",
+      "description_zh": "Specific supplication in cold season.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Hanafites : qunut avant ruku du witr.",
+          "content_en": "Hanafites : qunut avant ruku du witr."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Malikites : qunut variable selon mosquée.",
+          "content_en": "Malikites : qunut variable selon mosquée."
+        }
+      ]
+    },
+    {
+      "category_icon": "mosque",
+      "title_fr": "La prière sur la plage (sable impur)",
+      "title_en": "Prayer on Sandy Beach",
+      "title_ar": "الصلاة على الشاطئ",
+      "title_ru": "Prayer on Sandy Beach",
+      "title_zh": "Prayer on Sandy Beach",
+      "description_fr": "Pureté du sol sablonneux.",
+      "description_en": "Purity of sandy ground.",
+      "description_ar": "Purity of sandy ground.",
+      "description_ru": "Purity of sandy ground.",
+      "description_zh": "Purity of sandy ground.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prier sur natte si humidité douteuse.",
+          "content_en": "Prier sur natte si humidité douteuse."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Tayammum si pas d'eau après effort.",
+          "content_en": "Tayammum si pas d'eau après effort."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "Le fidya du jeûne par repas",
+      "title_en": "Fidya by Feeding",
+      "title_ar": "فدية الإطعام",
+      "title_ru": "Fidya by Feeding",
+      "title_zh": "Fidya by Feeding",
+      "description_fr": "Remplacer jeûne par nourriture.",
+      "description_en": "Replacing fast with food.",
+      "description_ar": "Replacing fast with food.",
+      "description_ru": "Replacing fast with food.",
+      "description_zh": "Replacing fast with food.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Un repas par jour manqué.",
+          "content_en": "Un repas par jour manqué."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Équivalent miskin pour chaque jour.",
+          "content_en": "Équivalent miskin pour chaque jour."
+        }
+      ]
+    },
+    {
+      "category_icon": "volunteer_activism",
+      "title_fr": "La zakat sur les troupeaux mixtes",
+      "title_en": "Zakat on Mixed Herds",
+      "title_ar": "زكاة الأنعام المختلطة",
+      "title_ru": "Zakat on Mixed Herds",
+      "title_zh": "Zakat on Mixed Herds",
+      "description_fr": "Calcul sur mélange d'espèces.",
+      "description_en": "Calculation on mixed species.",
+      "description_ar": "Calculation on mixed species.",
+      "description_ru": "Calculation on mixed species.",
+      "description_zh": "Calculation on mixed species.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Séparer par espèce pour seuils.",
+          "content_en": "Séparer par espèce pour seuils."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Chaque espèce a nisab propre.",
+          "content_en": "Chaque espèce a nisab propre."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le contrat de fiancailles rompu",
+      "title_en": "Broken Engagement",
+      "title_ar": "فسخ الخطبة",
+      "title_ru": "Broken Engagement",
+      "title_zh": "Broken Engagement",
+      "description_fr": "Conséquences de rupture avant nikah.",
+      "description_en": "Consequences before nikah.",
+      "description_ar": "Consequences before nikah.",
+      "description_ru": "Consequences before nikah.",
+      "description_zh": "Consequences before nikah.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Cadeaux restitués sauf usage.",
+          "content_en": "Cadeaux restitués sauf usage."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de Mahr car pas de mariage.",
+          "content_en": "Pas de Mahr car pas de mariage."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le mariage avec une esclave affranchie (historique)",
+      "title_en": "Marriage to Freed Slave",
+      "title_ar": "النكاح على المعتقة",
+      "title_ru": "Marriage to Freed Slave",
+      "title_zh": "Marriage to Freed Slave",
+      "description_fr": "Contexte fiqh classique.",
+      "description_en": "Classical fiqh context.",
+      "description_ar": "Classical fiqh context.",
+      "description_ru": "Classical fiqh context.",
+      "description_zh": "Classical fiqh context.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Égalité en dignité après affranchissement.",
+          "content_en": "Égalité en dignité après affranchissement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'empêchement résiduel.",
+          "content_en": "Pas d'empêchement résiduel."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Le soutien aux veuves et orphelins",
+      "title_en": "Supporting Widows and Orphans",
+      "title_ar": "كفالة الأرامل والأيتام",
+      "title_ru": "Supporting Widows and Orphans",
+      "title_zh": "Supporting Widows and Orphans",
+      "description_fr": "Responsabilité communautaire.",
+      "description_en": "Community responsibility.",
+      "description_ar": "Community responsibility.",
+      "description_ru": "Community responsibility.",
+      "description_zh": "Community responsibility.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sadaqa et protection sociale.",
+          "content_en": "Sadaqa et protection sociale."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Droits sur biens des orphelins protégés.",
+          "content_en": "Droits sur biens des orphelins protégés."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La vente d'or contre or différé",
+      "title_en": "Deferred Gold-for-Gold Sale",
+      "title_ar": "بيع الذهب بالأجل",
+      "title_ru": "Deferred Gold-for-Gold Sale",
+      "title_zh": "Deferred Gold-for-Gold Sale",
+      "description_fr": "Règles du sarf sur métaux.",
+      "description_en": "Sarf rules on metals.",
+      "description_ar": "Sarf rules on metals.",
+      "description_ru": "Sarf rules on metals.",
+      "description_zh": "Sarf rules on metals.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Échange immédiat requis hanafite.",
+          "content_en": "Échange immédiat requis hanafite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même quantité et qualité si échange.",
+          "content_en": "Même quantité et qualité si échange."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le crédit-bail automobile (ijara)",
+      "title_en": "Car Ijara Leasing",
+      "title_ar": "إجارة السيارات",
+      "title_ru": "Car Ijara Leasing",
+      "title_zh": "Car Ijara Leasing",
+      "description_fr": "Location-vente de véhicule.",
+      "description_en": "Vehicle lease-to-own.",
+      "description_ar": "Vehicle lease-to-own.",
+      "description_ru": "Vehicle lease-to-own.",
+      "description_zh": "Vehicle lease-to-own.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Propriété progressive licite.",
+          "content_en": "Propriété progressive licite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Entretien selon contrat.",
+          "content_en": "Entretien selon contrat."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La peine pour fausse monnaie",
+      "title_en": "Counterfeiting Penalty",
+      "title_ar": "عقوبة تزييف العملة",
+      "title_ru": "Counterfeiting Penalty",
+      "title_zh": "Counterfeiting Penalty",
+      "description_fr": "Falsification monétaire.",
+      "description_en": "Monetary forgery.",
+      "description_ar": "Monetary forgery.",
+      "description_ru": "Monetary forgery.",
+      "description_zh": "Monetary forgery.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Ta'zir sévère et réparation.",
+          "content_en": "Ta'zir sévère et réparation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Atteinte à la confiance publique.",
+          "content_en": "Atteinte à la confiance publique."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le droit de rétractation du témoin",
+      "title_en": "Witness Retraction",
+      "title_ar": "رجوع الشاهد",
+      "title_ru": "Witness Retraction",
+      "title_zh": "Witness Retraction",
+      "description_fr": "Retrait d'un témoignage.",
+      "description_en": "Withdrawing testimony.",
+      "description_ar": "Withdrawing testimony.",
+      "description_ru": "Withdrawing testimony.",
+      "description_zh": "Withdrawing testimony.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Avant jugement si erreur sincère.",
+          "content_en": "Avant jugement si erreur sincère."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pénalité si fausse accusation.",
+          "content_en": "Pénalité si fausse accusation."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La retenue (Sabr) face à la pauvreté",
+      "title_en": "Patience in Poverty",
+      "title_ar": "الصبر على الفقر",
+      "title_ru": "Patience in Poverty",
+      "title_zh": "Patience in Poverty",
+      "description_fr": "Endurance sans plainte.",
+      "description_en": "Endurance without complaint.",
+      "description_ar": "Endurance without complaint.",
+      "description_ru": "Endurance without complaint.",
+      "description_zh": "Endurance without complaint.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Récompense et ouverture.",
+          "content_en": "Récompense et ouverture."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Demander aide sans mendicité honteuse.",
+          "content_en": "Demander aide sans mendicité honteuse."
+        }
+      ]
+    },
+    {
+      "category_icon": "restaurant",
+      "title_fr": "Le jeûneur et l'injection nutritive",
+      "title_en": "Nutritive Injection While Fasting",
+      "title_ar": "الحقن المغذي",
+      "title_ru": "Nutritive Injection While Fasting",
+      "title_zh": "Nutritive Injection While Fasting",
+      "description_fr": "Perfusions en Ramadan.",
+      "description_en": "IV nutrition in Ramadan.",
+      "description_ar": "IV nutrition in Ramadan.",
+      "description_ru": "IV nutrition in Ramadan.",
+      "description_zh": "IV nutrition in Ramadan.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Rompt le jeûne selon majorité contemporaine.",
+          "content_en": "Rompt le jeûne selon majorité contemporaine."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Eau saline simple : débattu.",
+          "content_en": "Eau saline simple : débattu."
+        }
+      ]
+    },
+    {
+      "category_icon": "description",
+      "title_fr": "Le contrat de coentreprise tech",
+      "title_en": "Tech Startup Partnership",
+      "title_ar": "شركة تقنية",
+      "title_ru": "Tech Startup Partnership",
+      "title_zh": "Tech Startup Partnership",
+      "description_fr": "Musharaka pour startup.",
+      "description_en": "Partnership for startup.",
+      "description_ar": "Partnership for startup.",
+      "description_ru": "Partnership for startup.",
+      "description_zh": "Partnership for startup.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Parts intellectuelles et capital.",
+          "content_en": "Parts intellectuelles et capital."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Clauses de sortie licites.",
+          "content_en": "Clauses de sortie licites."
+        }
+      ]
+    }
+  ]
+}

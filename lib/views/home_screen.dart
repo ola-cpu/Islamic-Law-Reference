@@ -10,6 +10,9 @@ import '../services/season_service.dart';
 import '../providers/user_provider.dart';
 import '../router/app_router.dart';
 import '../services/widget_service.dart';
+import '../services/daily_question_service.dart';
+import '../widgets/skeleton_loader.dart';
+import 'quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final int? parentCategoryId;
@@ -25,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final DatabaseHelper _dbHelper = DatabaseHelper();
   List<Category> _categories = [];
   Topic? _dailyTopic;
+  Topic? _continueTopic;
   List<Topic> _seasonTopics = [];
   SeasonInfo? _seasonInfo;
   bool _isLoading = true;
@@ -42,10 +46,12 @@ class _HomeScreenState extends State<HomeScreen> {
       locale: userProvider.locale,
     );
     Topic? dailyTopic;
+    Topic? continueTopic;
     List<Topic> seasonTopics = [];
     SeasonInfo? seasonInfo;
     if (widget.parentCategoryId == null) {
       dailyTopic = await _dbHelper.getDailyTopic(locale: userProvider.locale);
+      continueTopic = await userProvider.getLastReadTopic();
       if (dailyTopic != null) {
         await WidgetService.updateDailyTopic(dailyTopic);
         await userProvider.syncDailyReminder();
@@ -62,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         _categories = categories;
         _dailyTopic = dailyTopic;
+        _continueTopic = continueTopic;
         _seasonTopics = seasonTopics;
         _seasonInfo = seasonInfo;
         _isLoading = false;
@@ -131,45 +138,32 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             IconButton(
-              icon: const Icon(Icons.insights),
-              tooltip: l10n.dashboard,
-              onPressed: () => context.push(AppRoutes.dashboard),
-            ),
-            IconButton(
-              icon: const Icon(Icons.school),
-              tooltip: l10n.learnHub,
-              onPressed: () => context.push(AppRoutes.learn),
-            ),
-            IconButton(
-              icon: const Icon(Icons.bookmark),
-              tooltip: l10n.myLibrary,
-              onPressed: () => context.push(AppRoutes.library),
-            ),
-            IconButton(
               icon: const Icon(Icons.photo_library),
               tooltip: l10n.mediaLibrary,
               onPressed: () => context.push(AppRoutes.media),
-            ),
-            IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () => context.push(AppRoutes.search),
             ),
             IconButton(
               icon: const Icon(Icons.settings),
               tooltip: l10n.settings,
               onPressed: () => context.push(AppRoutes.settings),
             ),
-          ]
+          ],
         ],
       ),
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? const HomeSkeleton()
           : _categories.isEmpty
               ? _buildTopicList()
               : CustomScrollView(
                   slivers: [
+                    if (widget.parentCategoryId == null)
+                      SliverToBoxAdapter(child: _buildDisclaimerBanner(context, l10n)),
+                    if (widget.parentCategoryId == null && _continueTopic != null)
+                      SliverToBoxAdapter(child: _buildContinueReadingCard(context, _continueTopic!, l10n)),
                     if (widget.parentCategoryId == null && _dailyTopic != null)
                       SliverToBoxAdapter(child: _buildDailyTopicCard(context, _dailyTopic!, l10n, userProvider)),
+                    if (widget.parentCategoryId == null)
+                      SliverToBoxAdapter(child: _buildDailyQuestionCard(context, l10n)),
                     if (widget.parentCategoryId == null && _seasonInfo != null && _seasonTopics.isNotEmpty)
                       SliverToBoxAdapter(child: _buildSeasonBanner(context, l10n, userProvider)),
                     SliverPadding(
@@ -279,6 +273,68 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildDisclaimerBanner(BuildContext context, AppLocalizations l10n) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+      child: Material(
+        color: Colors.blue.shade50,
+        borderRadius: BorderRadius.circular(8),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          onTap: () => context.push(AppRoutes.methodology),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            child: Row(
+              children: [
+                Icon(Icons.info_outline, size: 20, color: Colors.blue.shade800),
+                const SizedBox(width: 10),
+                Expanded(child: Text(l10n.disclaimerHomeBanner, style: const TextStyle(fontSize: 12, height: 1.3))),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildContinueReadingCard(BuildContext context, Topic topic, AppLocalizations l10n) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+      child: Card(
+        child: ListTile(
+          leading: const Icon(Icons.play_circle_outline),
+          title: Text(l10n.continueReading),
+          subtitle: Text(topic.title, maxLines: 1, overflow: TextOverflow.ellipsis),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+          onTap: () => context.push(AppRoutes.topic(topic.id!)),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDailyQuestionCard(BuildContext context, AppLocalizations l10n) {
+    final locale = Localizations.localeOf(context);
+    final q = DailyQuestionService.questionForToday();
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+      child: Card(
+        color: Colors.indigo.shade50,
+        child: ListTile(
+          leading: Icon(Icons.quiz, color: Colors.indigo.shade700),
+          title: Text(l10n.dailyQuestion, style: const TextStyle(fontWeight: FontWeight.bold)),
+          subtitle: Text(q.question(locale), maxLines: 2, overflow: TextOverflow.ellipsis),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => QuizScreen(singleQuestion: q)),
+            );
+          },
+        ),
       ),
     );
   }

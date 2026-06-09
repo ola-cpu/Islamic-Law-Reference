@@ -1,12 +1,16 @@
 import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import '../models/experience_level.dart';
+import '../router/app_router.dart';
 import 'package:share_plus/share_plus.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/user_provider.dart';
 import '../services/hijri_calendar.dart';
 import '../services/backup_service.dart';
+import '../services/encrypted_sync_service.dart';
 import '../data/school_constants.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -72,7 +76,7 @@ class SettingsScreen extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.widgets),
             title: Text(l10n.homeWidget),
-            subtitle: Text(l10n.homeWidgetDesc),
+            subtitle: Text(l10n.homeWidgetDescIos),
           ),
           const Divider(),
           ListTile(
@@ -97,6 +101,24 @@ class SettingsScreen extends StatelessWidget {
             title: Text(l10n.importBackup),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => _importBackup(context, userProvider, l10n),
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.lock),
+            title: Text(l10n.encryptedSync),
+            subtitle: Text(l10n.encryptedSyncDesc),
+          ),
+          ListTile(
+            leading: const Icon(Icons.cloud_upload),
+            title: Text(l10n.exportEncryptedBackup),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => _exportEncrypted(context, userProvider, l10n),
+          ),
+          ListTile(
+            leading: const Icon(Icons.cloud_download),
+            title: Text(l10n.importEncryptedBackup),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => _importEncrypted(context, userProvider, l10n),
           ),
           const Divider(),
           ListTile(
@@ -127,6 +149,52 @@ class SettingsScreen extends StatelessWidget {
               if (mode != null) userProvider.setThemeMode(mode);
             },
           ),
+          SwitchListTile(
+            secondary: const Icon(Icons.speed),
+            title: Text(l10n.liteMode),
+            subtitle: Text(l10n.liteModeDesc),
+            value: userProvider.liteMode,
+            onChanged: userProvider.setLiteMode,
+          ),
+          SwitchListTile(
+            secondary: const Icon(Icons.filter_alt),
+            title: Text(l10n.globalMadhhabFilter),
+            subtitle: Text(l10n.globalMadhhabFilterDesc),
+            value: userProvider.globalMadhhhabFilter,
+            onChanged: userProvider.preferredSchool == null ? null : userProvider.setGlobalMadhhhabFilter,
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.school_outlined),
+            title: Text(l10n.experienceLevel),
+            subtitle: Text(l10n.experienceLevelDesc),
+          ),
+          RadioListTile<ExperienceLevel>(
+            title: Text(l10n.beginnerMode),
+            subtitle: Text(l10n.beginnerModeDesc),
+            value: ExperienceLevel.beginner,
+            groupValue: userProvider.experienceLevel,
+            onChanged: (v) {
+              if (v != null) userProvider.setExperienceLevel(v);
+            },
+          ),
+          RadioListTile<ExperienceLevel>(
+            title: Text(l10n.studentMode),
+            subtitle: Text(l10n.studentModeDesc),
+            value: ExperienceLevel.student,
+            groupValue: userProvider.experienceLevel,
+            onChanged: (v) {
+              if (v != null) userProvider.setExperienceLevel(v);
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.verified_user),
+            title: Text(l10n.methodology),
+            subtitle: Text(l10n.methodologyShort),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => context.push(AppRoutes.methodology),
+          ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.info_outline),
@@ -136,6 +204,86 @@ class SettingsScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<String?> _askPassphrase(BuildContext context, AppLocalizations l10n, {required bool confirm}) async {
+    final controller = TextEditingController();
+    final confirmController = TextEditingController();
+    return showDialog<String>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l10n.enterPassphrase),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: controller,
+              obscureText: true,
+              decoration: InputDecoration(labelText: l10n.passphrase),
+            ),
+            if (confirm) ...[
+              const SizedBox(height: 8),
+              TextField(
+                controller: confirmController,
+                obscureText: true,
+                decoration: InputDecoration(labelText: l10n.confirmPassphrase),
+              ),
+            ],
+          ],
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.cancel)),
+          FilledButton(
+            onPressed: () {
+              if (controller.text.length < 8) return;
+              if (confirm && controller.text != confirmController.text) return;
+              Navigator.pop(ctx, controller.text);
+            },
+            child: Text(l10n.confirm),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _exportEncrypted(BuildContext context, UserProvider user, AppLocalizations l10n) async {
+    final passphrase = await _askPassphrase(context, l10n, confirm: true);
+    if (passphrase == null || !context.mounted) return;
+    try {
+      final json = BackupService.buildBackupJson(user);
+      final encrypted = EncryptedSyncService.encrypt(json, passphrase);
+      await SharePlus.instance.share(ShareParams(text: encrypted, subject: l10n.exportEncryptedBackup));
+    } catch (_) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.encryptedSyncFailed)));
+      }
+    }
+  }
+
+  Future<void> _importEncrypted(BuildContext context, UserProvider user, AppLocalizations l10n) async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['json', 'txt', 'enc'],
+      withData: true,
+    );
+    if (result == null || result.files.isEmpty || !context.mounted) return;
+    final bytes = result.files.first.bytes;
+    if (bytes == null) return;
+    final passphrase = await _askPassphrase(context, l10n, confirm: false);
+    if (passphrase == null || !context.mounted) return;
+    try {
+      final raw = utf8.decode(bytes);
+      final json = EncryptedSyncService.decrypt(raw, passphrase);
+      final backupResult = await BackupService.restoreFromJson(json, user);
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(backupResult.ok ? l10n.backupRestored : (backupResult.error ?? l10n.backupFailed))),
+      );
+    } catch (_) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.encryptedSyncFailed)));
+      }
+    }
   }
 
   Future<void> _importBackup(

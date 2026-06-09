@@ -18,6 +18,7 @@ class Source {
   final String? citationAr;
   final String? citationRu;
   final String? citationZh;
+  final String? isnad;
 
   Source({
     this.id,
@@ -39,6 +40,7 @@ class Source {
     this.citationAr,
     this.citationRu,
     this.citationZh,
+    this.isnad,
   });
 
   Map<String, dynamic> toMap() {
@@ -62,6 +64,7 @@ class Source {
       'citation_ar': citationAr,
       'citation_ru': citationRu,
       'citation_zh': citationZh,
+      'isnad': isnad,
     };
   }
 
@@ -86,6 +89,7 @@ class Source {
       citationAr: map['citation_ar'],
       citationRu: map['citation_ru'],
       citationZh: map['citation_zh'],
+      isnad: map['isnad'],
     );
   }
 }

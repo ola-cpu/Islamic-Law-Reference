@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/badge.dart';
+import '../models/experience_level.dart';
 import '../models/topic.dart';
 import '../services/database_helper.dart';
 import '../services/preferences_service.dart';
@@ -22,6 +23,9 @@ class UserProvider with ChangeNotifier {
   Set<String> _practicalCasesDone = {};
   int _readingStreak = 0;
   double _zenFontScale = 1.0;
+  ExperienceLevel _experienceLevel = ExperienceLevel.student;
+  bool _liteMode = false;
+  bool _globalMadhhhabFilter = false;
   bool _initialized = false;
 
   List<int> get favorites => List.unmodifiable(_favorites);
@@ -38,7 +42,11 @@ class UserProvider with ChangeNotifier {
   bool get hasReadDailyTopicToday => _prefs.hasReadDailyTopicToday();
   int get readingStreak => _readingStreak;
   double get zenFontScale => _zenFontScale;
+  ExperienceLevel get experienceLevel => _experienceLevel;
+  bool get isBeginner => _experienceLevel == ExperienceLevel.beginner;
   Map<String, List<int>> get courseProgressMap => Map.unmodifiable(_courseProgress);
+  bool get liteMode => _liteMode;
+  bool get globalMadhhhabFilter => _globalMadhhhabFilter;
   bool get isInitialized => _initialized;
   List<String> get recentSearches => _prefs.getRecentSearches();
 
@@ -60,6 +68,9 @@ class UserProvider with ChangeNotifier {
     _practicalCasesDone = _prefs.getCompletedPracticalCases();
     _readingStreak = _prefs.getReadingStreak();
     _zenFontScale = _prefs.getZenFontScale();
+    _experienceLevel = ExperienceLevel.fromKey(_prefs.getExperienceLevel());
+    _liteMode = _prefs.getLiteMode();
+    _globalMadhhhabFilter = _prefs.getGlobalMadhhhabFilter();
     _favorites = await _dbHelper.getFavorites();
     _notes = await _dbHelper.getAllNotes();
     _readingHistory = _prefs.getReadingHistory();
@@ -113,6 +124,27 @@ class UserProvider with ChangeNotifier {
 
   Future<void> recordZenModeUsed() async {
     await unlockBadge(BadgeId.zenReader);
+  }
+
+  Future<void> setExperienceLevel(ExperienceLevel level) async {
+    _experienceLevel = level;
+    await _prefs.saveExperienceLevel(level.storageKey);
+    notifyListeners();
+  }
+
+  Future<void> recordMethodologyViewed() async {
+    if (_prefs.hasViewedMethodology()) return;
+    await _prefs.markMethodologyViewed();
+    await unlockBadge(BadgeId.methodologyReader);
+  }
+
+  ReadingHistoryEntry? get lastReadEntry =>
+      _readingHistory.isEmpty ? null : _readingHistory.first;
+
+  Future<Topic?> getLastReadTopic() async {
+    final entry = lastReadEntry;
+    if (entry == null) return null;
+    return _dbHelper.getTopicById(entry.topicId, locale: _locale);
   }
 
   Future<void> completeOnboarding() async {
@@ -226,6 +258,43 @@ class UserProvider with ChangeNotifier {
   Future<void> recordQuizScore(int percent) async {
     if (percent >= 70) await unlockBadge(BadgeId.quizMaster);
   }
+
+  Future<void> recordExamScore(int percent) async {
+    if (percent >= 80) await unlockBadge(BadgeId.examAce);
+  }
+
+  Future<void> recordEncyclopediaExamScore(int percent) async {
+    if (percent >= 70) await unlockBadge(BadgeId.encyclopediaExam);
+  }
+
+  Future<void> recordComparisonExported() async {
+    await unlockBadge(BadgeId.comparatorPro);
+  }
+
+  Future<void> setLiteMode(bool enabled) async {
+    _liteMode = enabled;
+    await _prefs.setLiteMode(enabled);
+    notifyListeners();
+  }
+
+  Future<void> setGlobalMadhhhabFilter(bool enabled) async {
+    _globalMadhhhabFilter = enabled;
+    await _prefs.setGlobalMadhhhabFilter(enabled);
+    notifyListeners();
+  }
+
+  Future<List<Topic>> filterTopicsByMadhhab(List<Topic> topics) async {
+    if (!_globalMadhhhabFilter || _preferredSchool == null) return topics;
+    final out = <Topic>[];
+    for (final t in topics) {
+      if (t.id != null && await _dbHelper.topicMatchesSchool(t.id!, _preferredSchool!)) {
+        out.add(t);
+      }
+    }
+    return out;
+  }
+
+  Future<bool> isTopicVerified(int topicId) => _dbHelper.isTopicVerified(topicId);
 
   Future<void> markCourseDayComplete(String courseId, int dayIndex, {required int totalDays}) async {
     _courseProgress = await _prefs.markCourseDay(courseId, dayIndex);

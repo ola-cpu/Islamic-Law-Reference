@@ -7,6 +7,9 @@ import '../models/topic.dart';
 import '../providers/user_provider.dart';
 import '../services/database_helper.dart';
 import '../l10n/app_localizations.dart';
+import 'dart:typed_data';
+import 'package:share_plus/share_plus.dart';
+import '../services/export_service.dart';
 
 class CourseDetailScreen extends StatefulWidget {
   final GuidedCourse course;
@@ -78,11 +81,35 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               color: Colors.amber.withValues(alpha: 0.15),
               child: Padding(
                 padding: const EdgeInsets.all(12),
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const Icon(Icons.emoji_events, color: Colors.amber),
-                    const SizedBox(width: 12),
-                    Expanded(child: Text(l10n.courseComplete, style: const TextStyle(fontWeight: FontWeight.bold))),
+                    Row(
+                      children: [
+                        const Icon(Icons.emoji_events, color: Colors.amber),
+                        const SizedBox(width: 12),
+                        Expanded(child: Text(l10n.courseComplete, style: const TextStyle(fontWeight: FontWeight.bold))),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    OutlinedButton.icon(
+                      icon: const Icon(Icons.workspace_premium),
+                      label: Text(l10n.exportCertificate),
+                      onPressed: () async {
+                        final bytes = await ExportService.buildCourseCertificateBytes(
+                          course: widget.course,
+                          locale: locale,
+                          certificateTitle: l10n.certificateTitle,
+                          completedLabel: l10n.courseComplete,
+                          dateLabel: l10n.certificateDate,
+                        );
+                        await SharePlus.instance.share(
+                          ShareParams(
+                            files: [XFile.fromData(Uint8List.fromList(bytes), name: 'certificate_${widget.course.id}.pdf', mimeType: 'application/pdf')],
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),

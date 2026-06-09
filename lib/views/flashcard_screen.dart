@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../data/learning_content.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/user_provider.dart';
+import '../services/srs_service.dart';
 
 class FlashcardScreen extends StatefulWidget {
   final FlashcardDeck deck;
@@ -14,10 +15,14 @@ class FlashcardScreen extends StatefulWidget {
 }
 
 class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProviderStateMixin {
-  int _index = 0;
+  List<int> _order = [];
+  int _pos = 0;
   bool _showAnswer = false;
+  bool _loading = true;
   late AnimationController _flipController;
   late Animation<double> _flipAnimation;
+
+  int get _index => _order.isEmpty ? 0 : _order[_pos];
 
   @override
   void initState() {
@@ -26,6 +31,17 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
     _flipAnimation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(parent: _flipController, curve: Curves.easeInOut),
     );
+    _loadOrder();
+  }
+
+  Future<void> _loadOrder() async {
+    final due = await SrsService.dueIndices(widget.deck.id, widget.deck.cards.length);
+    if (mounted) {
+      setState(() {
+        _order = due;
+        _loading = false;
+      });
+    }
   }
 
   @override
@@ -43,14 +59,16 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
     setState(() => _showAnswer = !_showAnswer);
   }
 
-  void _next() {
-    if (_index >= widget.deck.cards.length - 1) {
-      _finish();
+  Future<void> _review(bool good) async {
+    final key = SrsService.cardKey(widget.deck.id, _index);
+    await SrsService.review(key, good: good);
+    if (_pos >= _order.length - 1) {
+      await _finish();
       return;
     }
     _flipController.reset();
     setState(() {
-      _index++;
+      _pos++;
       _showAnswer = false;
     });
   }
@@ -63,7 +81,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
       context: context,
       builder: (context) => AlertDialog(
         title: Text(l10n.deckComplete),
-        content: Text(l10n.deckCompleteMessage(widget.deck.cards.length)),
+        content: Text(l10n.deckCompleteMessage(_order.length)),
         actions: [
           TextButton(
             onPressed: () {
@@ -81,9 +99,17 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final locale = Localizations.localeOf(context);
-    final card = widget.deck.cards[_index];
     final theme = Theme.of(context);
-    final progress = (_index + 1) / widget.deck.cards.length;
+
+    if (_loading || _order.isEmpty) {
+      return Scaffold(
+        appBar: AppBar(title: Text(widget.deck.title(locale))),
+        body: const Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    final card = widget.deck.cards[_index];
+    final progress = (_pos + 1) / _order.length;
 
     return Scaffold(
       appBar: AppBar(
@@ -91,7 +117,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16),
-            child: Center(child: Text('${_index + 1}/${widget.deck.cards.length}')),
+            child: Center(child: Text('${_pos + 1}/${_order.length}')),
           ),
         ],
       ),
@@ -100,7 +126,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
         child: Column(
           children: [
             LinearProgressIndicator(value: progress, minHeight: 6, borderRadius: BorderRadius.circular(3)),
-            const SizedBox(height: 24),
+            const SizedBox(height: 8),
+            Text(l10n.srsMode, style: TextStyle(fontSize: 12, color: Colors.grey.shade600)),
+            const SizedBox(height: 16),
             Expanded(
               child: GestureDetector(
                 onTap: _flip,
@@ -137,25 +165,26 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
             const SizedBox(height: 12),
             Text(l10n.tapToFlip, style: TextStyle(color: Colors.grey.shade600, fontSize: 13)),
             const SizedBox(height: 16),
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: _next,
-                    icon: const Icon(Icons.replay),
-                    label: Text(l10n.reviewAgain),
+            if (_showAnswer)
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: () => _review(false),
+                      icon: const Icon(Icons.replay),
+                      label: Text(l10n.reviewAgain),
+                    ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: FilledButton.icon(
-                    onPressed: _next,
-                    icon: const Icon(Icons.check),
-                    label: Text(_index >= widget.deck.cards.length - 1 ? l10n.finish : l10n.knewIt),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: FilledButton.icon(
+                      onPressed: () => _review(true),
+                      icon: const Icon(Icons.check),
+                      label: Text(l10n.knewIt),
+                    ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
           ],
         ),
       ),

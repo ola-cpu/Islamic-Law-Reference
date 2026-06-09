@@ -1,7 +1,9 @@
+import 'dart:ui';
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import '../models/topic.dart';
+import '../models/law.dart';
 import '../providers/user_provider.dart';
 import '../data/guided_courses.dart';
 import '../models/badge.dart';
@@ -123,6 +125,95 @@ class ExportService {
     }
 
     doc.addPage(pw.MultiPage(build: (context) => sections));
+    return doc.save();
+  }
+
+  static Future<List<int>> buildCourseCertificateBytes({
+    required GuidedCourse course,
+    required Locale locale,
+    required String certificateTitle,
+    required String completedLabel,
+    required String dateLabel,
+  }) async {
+    final fontData = await rootBundle.load('assets/fonts/Amiri-Regular.ttf');
+    final font = pw.Font.ttf(fontData);
+    final boldData = await rootBundle.load('assets/fonts/Amiri-Bold.ttf');
+    final bold = pw.Font.ttf(boldData);
+    final now = DateTime.now();
+    final doc = pw.Document();
+    doc.addPage(
+      pw.Page(
+        build: (context) => pw.Column(
+          crossAxisAlignment: pw.CrossAxisAlignment.center,
+          children: [
+            pw.SizedBox(height: 40),
+            pw.Text(certificateTitle, style: pw.TextStyle(font: bold, fontSize: 24)),
+            pw.SizedBox(height: 24),
+            pw.Text(course.title(locale), style: pw.TextStyle(font: bold, fontSize: 20)),
+            pw.SizedBox(height: 16),
+            pw.Text(completedLabel, style: pw.TextStyle(font: font, fontSize: 14)),
+            pw.SizedBox(height: 32),
+            pw.Text('$dateLabel ${now.day}/${now.month}/${now.year}', style: pw.TextStyle(font: font, fontSize: 12)),
+          ],
+        ),
+      ),
+    );
+    return doc.save();
+  }
+
+  static Future<List<int>> buildComparisonPdfBytes({
+    required Topic topic,
+    required List<Law> laws,
+    required Map<int, String> schoolNames,
+    required String titleLabel,
+    required String schoolsLabel,
+  }) async {
+    pw.Font font;
+    pw.Font bold;
+    try {
+      final fontData = await rootBundle.load('assets/fonts/Amiri-Regular.ttf');
+      font = pw.Font.ttf(fontData);
+      final boldData = await rootBundle.load('assets/fonts/Amiri-Bold.ttf');
+      bold = pw.Font.ttf(boldData);
+    } catch (_) {
+      font = pw.Font.helvetica();
+      bold = pw.Font.helveticaBold();
+    }
+
+    final doc = pw.Document();
+    final blocks = <pw.Widget>[
+      pw.Header(level: 0, child: pw.Text(titleLabel, style: pw.TextStyle(font: bold, fontSize: 20))),
+      pw.Text(topic.title, style: pw.TextStyle(font: bold, fontSize: 16)),
+      pw.SizedBox(height: 8),
+      pw.Text(topic.description, style: pw.TextStyle(font: font, fontSize: 11)),
+      pw.SizedBox(height: 16),
+      pw.Text(schoolsLabel, style: pw.TextStyle(font: bold, fontSize: 14)),
+      pw.SizedBox(height: 8),
+    ];
+
+    for (final law in laws) {
+      final school = schoolNames[law.schoolId] ?? law.title;
+      blocks.addAll([
+        pw.Container(
+          margin: const pw.EdgeInsets.only(bottom: 10),
+          padding: const pw.EdgeInsets.all(10),
+          decoration: pw.BoxDecoration(
+            border: pw.Border.all(color: PdfColors.grey400),
+            borderRadius: pw.BorderRadius.circular(6),
+          ),
+          child: pw.Column(
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            children: [
+              pw.Text(school, style: pw.TextStyle(font: bold, fontSize: 12, color: PdfColors.blue800)),
+              pw.SizedBox(height: 6),
+              pw.Text(law.content, style: pw.TextStyle(font: font, fontSize: 10)),
+            ],
+          ),
+        ),
+      ]);
+    }
+
+    doc.addPage(pw.MultiPage(build: (context) => blocks));
     return doc.save();
   }
 }

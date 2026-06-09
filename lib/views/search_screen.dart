@@ -66,8 +66,9 @@ class _SearchScreenState extends State<SearchScreen> {
       await userProvider.recordRecentSearch(query);
     }
 
+    final filtered = await userProvider.filterTopicsByMadhhab(results);
     setState(() {
-      _searchResults = results;
+      _searchResults = filtered;
       _isSearching = false;
     });
   }

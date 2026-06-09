@@ -10,6 +10,7 @@ import 'package:islamic_law_reference/services/backup_service.dart';
 
 void main() {
   setUpAll(() {
+    TestWidgetsFlutterBinding.ensureInitialized();
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
   });

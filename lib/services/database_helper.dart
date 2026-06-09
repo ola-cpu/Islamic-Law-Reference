@@ -9,6 +9,9 @@ import '../models/source.dart';
 import '../models/school.dart';
 import '../models/media_item.dart';
 import '../data/extra_topics_seed.dart';
+import 'search_synonyms.dart';
+import 'content_json_loader.dart';
+import 'content_locale_service.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
@@ -48,12 +51,16 @@ class DatabaseHelper {
     }
     return await openDatabase(
       path,
-      version: 18,
+      version: 21,
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 18) {
           await _dropTables(db, dropUserData: false);
           await _onCreate(db, newVersion);
+        } else {
+          if (oldVersion < 19) await _rebuildTopicsFts(db);
+          if (oldVersion < 20) await _migrateToV20(db);
+          if (oldVersion < 21) await _migrateToV21(db);
         }
       },
     );
@@ -167,6 +174,7 @@ class DatabaseHelper {
         citation_ar TEXT,
         citation_ru TEXT,
         citation_zh TEXT,
+        isnad TEXT,
         FOREIGN KEY (law_id) REFERENCES laws (id)
       )
     ''');
@@ -222,21 +230,72 @@ class DatabaseHelper {
     ''');
 
     await _seedDatabase(db);
+    await ContentJsonLoader.loadAllRegisteredBatches(db);
+    await _rebuildTopicsFts(db);
+  }
+
+  Future<void> _migrateToV20(Database db) async {
+    try {
+      await db.execute('ALTER TABLE sources ADD COLUMN isnad TEXT');
+    } catch (_) {
+      // Colonne déjà présente.
+    }
+    await ContentJsonLoader.loadAssetBatch(db, 'assets/content/topics_batch_1.json', metaKey: 'batch_1');
+    await _rebuildTopicsFts(db);
+  }
+
+  Future<void> _migrateToV21(Database db) async {
+    await ContentJsonLoader.loadAllRegisteredBatches(db);
+    await _rebuildTopicsFts(db);
+  }
+
+  Future<void> _ensureFtsTable(Database db) async {
+    await db.execute('''
+      CREATE VIRTUAL TABLE IF NOT EXISTS topics_fts USING fts5(
+        topic_id UNINDEXED,
+        search_text,
+        tokenize='unicode61 remove_diacritics 2'
+      );
+    ''');
+  }
+
+  Future<void> _rebuildTopicsFts(Database db) async {
+    await _ensureFtsTable(db);
+    await db.execute('DELETE FROM topics_fts');
+    final topics = await db.query('topics');
+    for (final row in topics) {
+      final parts = <String>[
+        row['title'] as String? ?? '',
+        row['description'] as String? ?? '',
+        row['title_en'] as String? ?? '',
+        row['description_en'] as String? ?? '',
+        row['title_ar'] as String? ?? '',
+        row['description_ar'] as String? ?? '',
+        row['title_ru'] as String? ?? '',
+        row['description_ru'] as String? ?? '',
+        row['title_zh'] as String? ?? '',
+        row['description_zh'] as String? ?? '',
+      ];
+      await db.insert('topics_fts', {
+        'topic_id': row['id'],
+        'search_text': parts.where((p) => p.isNotEmpty).join(' '),
+      });
+    }
   }
 
   Future _seedDatabase(Database db) async {
-    // Reliable images
-    const String imgPrayer = 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80&w=1000';
-    const String imgFasting = 'https://images.unsplash.com/photo-1564121211835-e88c852648ab?auto=format&fit=crop&q=80&w=1000';
-    const String imgFamily = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1000';
-    const String imgMarriage = 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=1000';
-    const String imgEconomy = 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=1000';
-    const String imgJustice = 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1000';
-    const String imgEthics = 'https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&q=80&w=1000';
-    const String imgFood = 'https://images.unsplash.com/photo-1547573854-74d2a71d0826?auto=format&fit=crop&q=80&w=1000';
-    const String imgContracts = 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1000';
-    const String imgRights = 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000';
-    const String imgInheritance = 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000';
+    // Images locales via gradients UI — pas d'URL externes (100 % offline).
+    const String imgPrayer = '';
+    const String imgFasting = '';
+    const String imgFamily = '';
+    const String imgMarriage = '';
+    const String imgEconomy = '';
+    const String imgJustice = '';
+    const String imgEthics = '';
+    const String imgFood = '';
+    const String imgContracts = '';
+    const String imgRights = '';
+    const String imgInheritance = '';
 
     // Schools
     int shHanafi = await db.insert('schools', {
@@ -1362,37 +1421,81 @@ class DatabaseHelper {
 
   Future<List<Topic>> searchTopics(String query, {Locale? locale, int? schoolId, int? categoryId}) async {
     Database db = await database;
-    String whereClause = '(title LIKE ? OR description LIKE ? OR title_en LIKE ? OR description_en LIKE ? OR title_ar LIKE ? OR description_ar LIKE ? OR title_ru LIKE ? OR description_ru LIKE ? OR title_zh LIKE ? OR description_zh LIKE ?)';
-    List<dynamic> whereArgs = List.filled(10, '%$query%');
+    final trimmed = query.trim();
 
-    if (schoolId != null) {
-      whereClause += ' AND id IN (SELECT topic_id FROM laws WHERE school_id = ?)';
-      whereArgs.add(schoolId);
+    List<Map<String, dynamic>> results = [];
+    if (trimmed.isNotEmpty) {
+      try {
+        final ftsQuery = SearchSynonyms.ftsQuery(trimmed);
+        final ftsRows = await db.rawQuery('''
+          SELECT topic_id FROM topics_fts
+          WHERE topics_fts MATCH ?
+          ORDER BY rank
+          LIMIT 80
+        ''', [ftsQuery]);
+        if (ftsRows.isNotEmpty) {
+          final ids = ftsRows.map((r) => r['topic_id'] as int).toList();
+          final placeholders = List.filled(ids.length, '?').join(',');
+          var sql = 'SELECT * FROM topics WHERE id IN ($placeholders)';
+          final args = <dynamic>[...ids];
+          if (schoolId != null) {
+            sql += ' AND id IN (SELECT topic_id FROM laws WHERE school_id = ?)';
+            args.add(schoolId);
+          }
+          if (categoryId != null) {
+            sql += ' AND category_id = ?';
+            args.add(categoryId);
+          }
+          results = await db.rawQuery(sql, args);
+        }
+      } catch (_) {
+        // Fallback to LIKE below.
+      }
     }
-    if (categoryId != null) {
-      whereClause += ' AND category_id = ?';
-      whereArgs.add(categoryId);
+
+    if (results.isEmpty && (trimmed.isNotEmpty || schoolId != null || categoryId != null)) {
+      final terms = trimmed.isEmpty ? [''] : SearchSynonyms.expand(trimmed);
+      final likeParts = <String>[];
+      final likeArgs = <dynamic>[];
+      for (final term in terms) {
+        likeParts.add(
+          '(title LIKE ? OR description LIKE ? OR title_en LIKE ? OR description_en LIKE ? OR title_ar LIKE ? OR description_ar LIKE ? OR title_ru LIKE ? OR description_ru LIKE ? OR title_zh LIKE ? OR description_zh LIKE ?)',
+        );
+        likeArgs.addAll(List.filled(10, '%$term%'));
+      }
+      var whereClause = trimmed.isEmpty ? '1=1' : '(${likeParts.join(' OR ')})';
+      if (schoolId != null) {
+        whereClause += ' AND id IN (SELECT topic_id FROM laws WHERE school_id = ?)';
+        likeArgs.add(schoolId);
+      }
+      if (categoryId != null) {
+        whereClause += ' AND category_id = ?';
+        likeArgs.add(categoryId);
+      }
+      results = await db.query('topics', where: whereClause, whereArgs: likeArgs);
     }
 
-    var results = await db.query('topics',
-      where: whereClause,
-      whereArgs: whereArgs
-    );
-
-    List<Topic> topics = [];
-    for (var r in results) {
-      Map<String, dynamic> map = Map.from(r);
+    final topics = <Topic>[];
+    for (final r in results) {
+      final map = Map<String, dynamic>.from(r);
       if (locale != null) {
-        String lang = locale.languageCode;
+        final lang = locale.languageCode;
         if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
         if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
       }
-      int topicId = map['id'];
-      List<String> tags = await getTagsForTopic(topicId);
-      List<int> related = await _getRelatedTopicIds(topicId);
+      final topicId = map['id'] as int;
+      final tags = await getTagsForTopic(topicId);
+      final related = await _getRelatedTopicIds(topicId);
       topics.add(Topic.fromMap(map, tags: tags, relatedTopicIds: related));
     }
     return topics;
+  }
+
+  Future<bool> topicHasConsensus(int topicId) async {
+    final laws = await getLawsByTopic(topicId);
+    if (laws.length < 2) return false;
+    final contents = laws.map((l) => l.content.trim().toLowerCase()).toSet();
+    return contents.length == 1;
   }
 
   // Favorites
@@ -1502,16 +1605,41 @@ class DatabaseHelper {
     var results = await db.query('topics', where: 'id = ?', whereArgs: [topicId]);
     if (results.isNotEmpty) {
       Map<String, dynamic> map = Map.from(results.first);
-      if (locale != null) {
-        String lang = locale.languageCode;
-        if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
-        if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
-      }
+      if (locale != null) ContentLocaleService.applyTopicLocale(map, locale);
       List<String> tags = await getTagsForTopic(topicId);
       List<int> related = await _getRelatedTopicIds(topicId);
       return Topic.fromMap(map, tags: tags, relatedTopicIds: related);
     }
     return null;
+  }
+
+  Future<bool> isTopicVerified(int topicId) async {
+    final laws = await getLawsByTopic(topicId);
+    if (laws.isEmpty) return false;
+    for (final law in laws) {
+      if (law.id == null) continue;
+      final sources = await getSourcesByLaw(law.id!);
+      if (sources.any((s) => s.authenticity == Authenticity.sahih || s.authenticity == Authenticity.hasan)) {
+        return true;
+      }
+      if (law.scholarComments != null && law.scholarComments!.isNotEmpty) return true;
+    }
+    return false;
+  }
+
+  Future<bool> topicMatchesSchool(int topicId, String schoolSlug) async {
+    final laws = await getLawsByTopic(topicId);
+    final slug = schoolSlug.toLowerCase();
+    for (final law in laws) {
+      final school = await getSchoolById(law.schoolId);
+      final name = (school?.name ?? law.title).toLowerCase();
+      if (slug == 'hanafi' && name.contains('hanafi')) return true;
+      if (slug == 'maliki' && name.contains('maliki')) return true;
+      if (slug == 'shafii' && name.contains('shafi')) return true;
+      if (slug == 'hanbali' && name.contains('hanbali')) return true;
+      if (slug == 'jafari' && (name.contains('jafari') || name.contains("ja'fari"))) return true;
+    }
+    return false;
   }
 
   Future<List<Topic>> getRelatedTopics(int topicId, {Locale? locale}) async {
@@ -1549,7 +1677,7 @@ class DatabaseHelper {
     return topics;
   }
 
-  Future<List<Topic>> getTopicsWithComparisons({Locale? locale}) async {
+  Future<List<Topic>> getTopicsWithComparisons({Locale? locale, bool consensusOnly = false}) async {
     Database db = await database;
     final results = await db.rawQuery('''
       SELECT t.* FROM topics t
@@ -1562,12 +1690,13 @@ class DatabaseHelper {
     final topics = <Topic>[];
     for (final row in results) {
       final map = Map<String, dynamic>.from(row);
+      final topicId = map['id'] as int;
+      if (consensusOnly && !await topicHasConsensus(topicId)) continue;
       if (locale != null) {
         final lang = locale.languageCode;
         if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
         if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
       }
-      final topicId = map['id'] as int;
       final tags = await getTagsForTopic(topicId);
       final related = await _getRelatedTopicIds(topicId);
       topics.add(Topic.fromMap(map, tags: tags, relatedTopicIds: related));
@@ -1638,6 +1767,30 @@ class DatabaseHelper {
     for (final id in ids) {
       final topic = await getTopicById(id, locale: locale);
       if (topic != null) topics.add(topic);
+    }
+    return topics;
+  }
+
+  Future<List<Topic>> getRandomTopics(int count, {Locale? locale, Set<int> excludeIds = const {}}) async {
+    Database db = await database;
+    final results = await db.rawQuery(
+      'SELECT * FROM topics ORDER BY RANDOM() LIMIT ?',
+      [count + excludeIds.length + 5],
+    );
+    final topics = <Topic>[];
+    for (final row in results) {
+      final map = Map<String, dynamic>.from(row);
+      final id = map['id'] as int;
+      if (excludeIds.contains(id)) continue;
+      if (locale != null) {
+        final lang = locale.languageCode;
+        if (map['title_$lang'] != null) map['title'] = map['title_$lang'];
+        if (map['description_$lang'] != null) map['description'] = map['description_$lang'];
+      }
+      final tags = await getTagsForTopic(id);
+      final related = await _getRelatedTopicIds(id);
+      topics.add(Topic.fromMap(map, tags: tags, relatedTopicIds: related));
+      if (topics.length >= count) break;
     }
     return topics;
   }

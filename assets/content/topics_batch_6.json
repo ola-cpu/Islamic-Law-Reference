@@ -1,0 +1,1255 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le népotisme",
+      "title_en": "Nepotism",
+      "title_ar": "المحسوبية",
+      "title_ru": "Nepotism",
+      "title_zh": "Nepotism",
+      "description_fr": "Favoritisme familial.",
+      "description_en": "Family favoritism.",
+      "description_ar": "Family favoritism.",
+      "description_ru": "Family favoritism.",
+      "description_zh": "Family favoritism.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Injustice interdite.",
+          "content_en": "Injustice interdite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mérite et compétence requis.",
+          "content_en": "Mérite et compétence requis."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La justice distributive",
+      "title_en": "Distributive Justice",
+      "title_ar": "العدل في التوزيع",
+      "title_ru": "Distributive Justice",
+      "title_zh": "Distributive Justice",
+      "description_fr": "Équité dans les ressources.",
+      "description_en": "Fairness in resources.",
+      "description_ar": "Fairness in resources.",
+      "description_ru": "Fairness in resources.",
+      "description_zh": "Fairness in resources.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Zakat et sadaqa institutionnelles.",
+          "content_en": "Zakat et sadaqa institutionnelles."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "État protège les faibles.",
+          "content_en": "État protège les faibles."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le droit d'asile",
+      "title_en": "Right of Asylum",
+      "title_ar": "اللجوء",
+      "title_ru": "Right of Asylum",
+      "title_zh": "Right of Asylum",
+      "description_fr": "Protection des réfugiés.",
+      "description_en": "Protection of refugees.",
+      "description_ar": "Protection of refugees.",
+      "description_ru": "Protection of refugees.",
+      "description_zh": "Protection of refugees.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Accueil du musulman persécuté.",
+          "content_en": "Accueil du musulman persécuté."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Aman (sécurité) inviolable.",
+          "content_en": "Aman (sécurité) inviolable."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Les traités internationaux",
+      "title_en": "International Treaties",
+      "title_ar": "العهود",
+      "title_ru": "International Treaties",
+      "title_zh": "International Treaties",
+      "description_fr": "Engagements entre États.",
+      "description_en": "State agreements.",
+      "description_ar": "State agreements.",
+      "description_ru": "State agreements.",
+      "description_zh": "State agreements.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Tenir les pactes (Coran).",
+          "content_en": "Tenir les pactes (Coran)."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de trahison des accords.",
+          "content_en": "Pas de trahison des accords."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La guerre et les règles du combat",
+      "title_en": "Rules of Warfare",
+      "title_ar": "أحكام القتال",
+      "title_ru": "Rules of Warfare",
+      "title_zh": "Rules of Warfare",
+      "description_fr": "Éthique du combat.",
+      "description_en": "Ethics of combat.",
+      "description_ar": "Ethics of combat.",
+      "description_ru": "Ethics of combat.",
+      "description_zh": "Ethics of combat.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas de civils, arbres, ni mutilation.",
+          "content_en": "Pas de civils, arbres, ni mutilation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Invitation à l'Islam ou paix d'abord.",
+          "content_en": "Invitation à l'Islam ou paix d'abord."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le butin de guerre",
+      "title_en": "War Spoils (Ghanima)",
+      "title_ar": "الغنيمة",
+      "title_ru": "War Spoils (Ghanima)",
+      "title_zh": "War Spoils (Ghanima)",
+      "description_fr": "Distribution du butin.",
+      "description_en": "Distribution of spoils.",
+      "description_ar": "Distribution of spoils.",
+      "description_ru": "Distribution of spoils.",
+      "description_zh": "Distribution of spoils.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Cinquième au trésor public.",
+          "content_en": "Cinquième au trésor public."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Reste aux combattants.",
+          "content_en": "Reste aux combattants."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Les esclaves affranchis",
+      "title_en": "Emancipation of Slaves",
+      "title_ar": "العقوبة بالرق",
+      "title_ru": "Emancipation of Slaves",
+      "title_zh": "Emancipation of Slaves",
+      "description_fr": "Kaffara par affranchissement.",
+      "description_en": "Expiation by freeing slaves.",
+      "description_ar": "Expiation by freeing slaves.",
+      "description_ru": "Expiation by freeing slaves.",
+      "description_zh": "Expiation by freeing slaves.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Encouragement à libérer.",
+          "content_en": "Encouragement à libérer."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mukataba (contrat d'affranchissement).",
+          "content_en": "Mukataba (contrat d'affranchissement)."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La peine du banditisme",
+      "title_en": "Highway Robbery",
+      "title_ar": "حد الحرابة",
+      "title_ru": "Highway Robbery",
+      "title_zh": "Highway Robbery",
+      "description_fr": "Hiraba et terrorisme routier.",
+      "description_en": "Hiraba and highway robbery.",
+      "description_ar": "Hiraba and highway robbery.",
+      "description_ru": "Hiraba and highway robbery.",
+      "description_zh": "Hiraba and highway robbery.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Peine sévère si terreur.",
+          "content_en": "Peine sévère si terreur."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Crucifixion, mort ou exile selon cas.",
+          "content_en": "Crucifixion, mort ou exile selon cas."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "La lune et le témoin",
+      "title_en": "Moon Sighting Witness",
+      "title_ar": "شهادة الرؤية",
+      "title_ru": "Moon Sighting Witness",
+      "title_zh": "Moon Sighting Witness",
+      "description_fr": "Témoignage pour le mois lunaire.",
+      "description_en": "Testimony for lunar month.",
+      "description_ar": "Testimony for lunar month.",
+      "description_ru": "Testimony for lunar month.",
+      "description_zh": "Testimony for lunar month.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Un témoin juste peut suffire selon Malik.",
+          "content_en": "Un témoin juste peut suffire selon Malik."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Deux pour début Ramadan hanafite.",
+          "content_en": "Deux pour début Ramadan hanafite."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le ijma des savants",
+      "title_en": "Scholarly Consensus (Ijma)",
+      "title_ar": "الإجماع",
+      "title_ru": "Scholarly Consensus (Ijma)",
+      "title_zh": "Scholarly Consensus (Ijma)",
+      "description_fr": "Source législative.",
+      "description_en": "Legislative source.",
+      "description_ar": "Legislative source.",
+      "description_ru": "Legislative source.",
+      "description_zh": "Legislative source.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Consensus des mujtahids.",
+          "content_en": "Consensus des mujtahids."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Preuve après Coran et Sunna.",
+          "content_en": "Preuve après Coran et Sunna."
+        }
+      ]
+    },
+    {
+      "category_icon": "gavel",
+      "title_fr": "Le qiyas (analogie)",
+      "title_en": "Analogical Reasoning (Qiyas)",
+      "title_ar": "القياس",
+      "title_ru": "Analogical Reasoning (Qiyas)",
+      "title_zh": "Analogical Reasoning (Qiyas)",
+      "description_fr": "Déduction juridique.",
+      "description_en": "Legal deduction.",
+      "description_ar": "Legal deduction.",
+      "description_ru": "Legal deduction.",
+      "description_zh": "Legal deduction.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Cause efficace (illa) identifiée.",
+          "content_en": "Cause efficace (illa) identifiée."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Outil des quatre écoles sunnites.",
+          "content_en": "Outil des quatre écoles sunnites."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La sincérité (Ikhlas)",
+      "title_en": "Sincerity (Ikhlas)",
+      "title_ar": "الإخلاص",
+      "title_ru": "Sincerity (Ikhlas)",
+      "title_zh": "Sincerity (Ikhlas)",
+      "description_fr": "Purifier l'intention.",
+      "description_en": "Purifying intention.",
+      "description_ar": "Purifying intention.",
+      "description_ru": "Purifying intention.",
+      "description_zh": "Purifying intention.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Agir uniquement pour Allah.",
+          "content_en": "Agir uniquement pour Allah."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Niyyah avant chaque acte.",
+          "content_en": "Niyyah avant chaque acte."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La patience (Sabr)",
+      "title_en": "Patience (Sabr)",
+      "title_ar": "الصبر",
+      "title_ru": "Patience (Sabr)",
+      "title_zh": "Patience (Sabr)",
+      "description_fr": "Endurance face aux épreuves.",
+      "description_en": "Endurance in trials.",
+      "description_ar": "Endurance in trials.",
+      "description_ru": "Endurance in trials.",
+      "description_zh": "Endurance in trials.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sur décret, obéissance et péché.",
+          "content_en": "Sur décret, obéissance et péché."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Récompense sans limite.",
+          "content_en": "Récompense sans limite."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La gratitude (Shukr)",
+      "title_en": "Gratitude (Shukr)",
+      "title_ar": "الشكر",
+      "title_ru": "Gratitude (Shukr)",
+      "title_zh": "Gratitude (Shukr)",
+      "description_fr": "Reconnaissance envers Allah.",
+      "description_en": "Thankfulness to Allah.",
+      "description_ar": "Thankfulness to Allah.",
+      "description_ru": "Thankfulness to Allah.",
+      "description_zh": "Thankfulness to Allah.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Cœur, langue et actes.",
+          "content_en": "Cœur, langue et actes."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Plus de bienfait si shukr.",
+          "content_en": "Plus de bienfait si shukr."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "L'humilité (Tawadu)",
+      "title_en": "Humility (Tawadu)",
+      "title_ar": "التواضع",
+      "title_ru": "Humility (Tawadu)",
+      "title_zh": "Humility (Tawadu)",
+      "description_fr": "Éviter l'arrogance.",
+      "description_en": "Avoiding arrogance.",
+      "description_ar": "Avoiding arrogance.",
+      "description_ru": "Avoiding arrogance.",
+      "description_zh": "Avoiding arrogance.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Modèle du Prophète ﷺ.",
+          "content_en": "Modèle du Prophète ﷺ."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ne pas mépriser autrui.",
+          "content_en": "Ne pas mépriser autrui."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "L'orgueil (Kibr)",
+      "title_en": "Pride (Kibr)",
+      "title_ar": "الكبر",
+      "title_ru": "Pride (Kibr)",
+      "title_zh": "Pride (Kibr)",
+      "description_fr": "Rejet de la vérité et mépris.",
+      "description_en": "Rejecting truth and despising others.",
+      "description_ar": "Rejecting truth and despising others.",
+      "description_ru": "Rejecting truth and despising others.",
+      "description_zh": "Rejecting truth and despising others.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Grain de moutarde suffit.",
+          "content_en": "Grain de moutarde suffit."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Entrave au Paradis.",
+          "content_en": "Entrave au Paradis."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La bienveillance (Ihsan)",
+      "title_en": "Excellence (Ihsan)",
+      "title_ar": "الإحسان",
+      "title_ru": "Excellence (Ihsan)",
+      "title_zh": "Excellence (Ihsan)",
+      "description_fr": "Faire le bien avec excellence.",
+      "description_en": "Doing good excellently.",
+      "description_ar": "Doing good excellently.",
+      "description_ru": "Doing good excellently.",
+      "description_zh": "Doing good excellently.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Adorer comme si tu vois Allah.",
+          "content_en": "Adorer comme si tu vois Allah."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Envers parents, voisins, création.",
+          "content_en": "Envers parents, voisins, création."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La miséricorde (Rahma)",
+      "title_en": "Mercy (Rahma)",
+      "title_ar": "الرحمة",
+      "title_ru": "Mercy (Rahma)",
+      "title_zh": "Mercy (Rahma)",
+      "description_fr": "Compassion envers les créatures.",
+      "description_en": "Compassion toward creation.",
+      "description_ar": "Compassion toward creation.",
+      "description_ru": "Compassion toward creation.",
+      "description_zh": "Compassion toward creation.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Les miséricordieux sont pardonnés.",
+          "content_en": "Les miséricordieux sont pardonnés."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Commence par soi et famille.",
+          "content_en": "Commence par soi et famille."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "Le pardon (Afw)",
+      "title_en": "Forgiveness (Afw)",
+      "title_ar": "العفو",
+      "title_ru": "Forgiveness (Afw)",
+      "title_zh": "Forgiveness (Afw)",
+      "description_fr": "Pardonner les offenses.",
+      "description_en": "Forgiving offenses.",
+      "description_ar": "Forgiving offenses.",
+      "description_ru": "Forgiving offenses.",
+      "description_zh": "Forgiving offenses.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Allah aime les cléments.",
+          "content_en": "Allah aime les cléments."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ne pas garder rancune.",
+          "content_en": "Ne pas garder rancune."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La véridicité (Sidq)",
+      "title_en": "Truthfulness (Sidq)",
+      "title_ar": "الصدق",
+      "title_ru": "Truthfulness (Sidq)",
+      "title_zh": "Truthfulness (Sidq)",
+      "description_fr": "Dire la vérité.",
+      "description_en": "Speaking truth.",
+      "description_ar": "Speaking truth.",
+      "description_ru": "Speaking truth.",
+      "description_zh": "Speaking truth.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mène à la droiture puis Paradis.",
+          "content_en": "Mène à la droiture puis Paradis."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Même si contre soi.",
+          "content_en": "Même si contre soi."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "Le mensonge (Kidhb)",
+      "title_en": "Lying",
+      "title_ar": "الكذب",
+      "title_ru": "Lying",
+      "title_zh": "Lying",
+      "description_fr": "Interdiction du mensonge.",
+      "description_en": "Prohibition of lying.",
+      "description_ar": "Prohibition of lying.",
+      "description_ru": "Prohibition of lying.",
+      "description_zh": "Prohibition of lying.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sauf trois cas exceptionnels (hadith débattu).",
+          "content_en": "Sauf trois cas exceptionnels (hadith débattu)."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de mensonge en justice.",
+          "content_en": "Pas de mensonge en justice."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La médisance (Ghibah)",
+      "title_en": "Backbiting (Ghibah)",
+      "title_ar": "الغيبة",
+      "title_ru": "Backbiting (Ghibah)",
+      "title_zh": "Backbiting (Ghibah)",
+      "description_fr": "Parler mal en absence.",
+      "description_en": "Speaking ill in absence.",
+      "description_ar": "Speaking ill in absence.",
+      "description_ru": "Speaking ill in absence.",
+      "description_zh": "Speaking ill in absence.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Comme manger chair du mort.",
+          "content_en": "Comme manger chair du mort."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Défense permise en cas injustice.",
+          "content_en": "Défense permise en cas injustice."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La calomnie (Nameema)",
+      "title_en": "Tale-bearing",
+      "title_ar": "النميمة",
+      "title_ru": "Tale-bearing",
+      "title_zh": "Tale-bearing",
+      "description_fr": "Rapporter propos pour semer discorde.",
+      "description_en": "Carrying tales to sow discord.",
+      "description_ar": "Carrying tales to sow discord.",
+      "description_ru": "Carrying tales to sow discord.",
+      "description_zh": "Carrying tales to sow discord.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Péché majeur.",
+          "content_en": "Péché majeur."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Réconcilier plutôt que diviser.",
+          "content_en": "Réconcilier plutôt que diviser."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La colère (Ghadab)",
+      "title_en": "Anger (Ghadab)",
+      "title_ar": "الغضب",
+      "title_ru": "Anger (Ghadab)",
+      "title_zh": "Anger (Ghadab)",
+      "description_fr": "Maîtriser la colère.",
+      "description_en": "Controlling anger.",
+      "description_ar": "Controlling anger.",
+      "description_ru": "Controlling anger.",
+      "description_zh": "Controlling anger.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Fort n'est pas celui qui terrasse mais se retient.",
+          "content_en": "Fort n'est pas celui qui terrasse mais se retient."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Wudu et changement de position.",
+          "content_en": "Wudu et changement de position."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La jalousie (Hasad)",
+      "title_en": "Envy (Hasad)",
+      "title_ar": "الحسد",
+      "title_ru": "Envy (Hasad)",
+      "title_zh": "Envy (Hasad)",
+      "description_fr": "Souhaiter perte du bien d'autrui.",
+      "description_en": "Wishing loss of others' good.",
+      "description_ar": "Wishing loss of others' good.",
+      "description_ru": "Wishing loss of others' good.",
+      "description_zh": "Wishing loss of others' good.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Détruira les œuvres comme le feu le bois.",
+          "content_en": "Détruira les œuvres comme le feu le bois."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Envier seulement deux (hadith).",
+          "content_en": "Envier seulement deux (hadith)."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "L'espérance (Raja)",
+      "title_en": "Hope in Allah",
+      "title_ar": "الرجاء",
+      "title_ru": "Hope in Allah",
+      "title_zh": "Hope in Allah",
+      "description_fr": "Espérer miséricorde divine.",
+      "description_en": "Hoping in divine mercy.",
+      "description_ar": "Hoping in divine mercy.",
+      "description_ru": "Hoping in divine mercy.",
+      "description_zh": "Hoping in divine mercy.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Entre crainte et espoir.",
+          "content_en": "Entre crainte et espoir."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ne pas désespérer du pardon.",
+          "content_en": "Ne pas désespérer du pardon."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La crainte révérencielle (Khawf)",
+      "title_en": "Fear of Allah",
+      "title_ar": "الخوف من الله",
+      "title_ru": "Fear of Allah",
+      "title_zh": "Fear of Allah",
+      "description_fr": "Taqwa et crainte.",
+      "description_en": "God-consciousness.",
+      "description_ar": "God-consciousness.",
+      "description_ru": "God-consciousness.",
+      "description_zh": "God-consciousness.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Empêche du péché.",
+          "content_en": "Empêche du péché."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Équilibre avec espoir.",
+          "content_en": "Équilibre avec espoir."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La pudeur (Haya)",
+      "title_en": "Modesty (Haya)",
+      "title_ar": "الحياء",
+      "title_ru": "Modesty (Haya)",
+      "title_zh": "Modesty (Haya)",
+      "description_fr": "Pudeur naturelle.",
+      "description_en": "Natural modesty.",
+      "description_ar": "Natural modesty.",
+      "description_ru": "Natural modesty.",
+      "description_zh": "Natural modesty.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Branche de la foi.",
+          "content_en": "Branche de la foi."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "En comportement et tenue.",
+          "content_en": "En comportement et tenue."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La générosité (Jud)",
+      "title_en": "Generosity (Jud)",
+      "title_ar": "الجود",
+      "title_ru": "Generosity (Jud)",
+      "title_zh": "Generosity (Jud)",
+      "description_fr": "Donner avec largesse.",
+      "description_en": "Giving generously.",
+      "description_ar": "Giving generously.",
+      "description_ru": "Giving generously.",
+      "description_zh": "Giving generously.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Main supérieure meilleure.",
+          "content_en": "Main supérieure meilleure."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sans rappel ni humiliation.",
+          "content_en": "Sans rappel ni humiliation."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "L'avarice (Bukhl)",
+      "title_en": "Stinginess (Bukhl)",
+      "title_ar": "البخل",
+      "title_ru": "Stinginess (Bukhl)",
+      "title_zh": "Stinginess (Bukhl)",
+      "description_fr": "Refus de donner.",
+      "description_en": "Refusing to give.",
+      "description_ar": "Refusing to give.",
+      "description_ru": "Refusing to give.",
+      "description_zh": "Refusing to give.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Blâmé dans Coran.",
+          "content_en": "Blâmé dans Coran."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Zakat combat l'avarice.",
+          "content_en": "Zakat combat l'avarice."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La confiance (Tawakkul)",
+      "title_en": "Reliance on Allah",
+      "title_ar": "التوكل",
+      "title_ru": "Reliance on Allah",
+      "title_zh": "Reliance on Allah",
+      "description_fr": "S'en remettre à Allah après effort.",
+      "description_en": "Trusting Allah after effort.",
+      "description_ar": "Trusting Allah after effort.",
+      "description_ru": "Trusting Allah after effort.",
+      "description_zh": "Trusting Allah after effort.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Comme l'oiseau : part faim, revient rassasié.",
+          "content_en": "Comme l'oiseau : part faim, revient rassasié."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de passivité.",
+          "content_en": "Pas de passivité."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "Le repentir (Tawba)",
+      "title_en": "Repentance (Tawba)",
+      "title_ar": "التوبة",
+      "title_ru": "Repentance (Tawba)",
+      "title_zh": "Repentance (Tawba)",
+      "description_fr": "Retour vers Allah.",
+      "description_en": "Returning to Allah.",
+      "description_ar": "Returning to Allah.",
+      "description_ru": "Returning to Allah.",
+      "description_zh": "Returning to Allah.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Arrêt, regret, résolution de ne pas répéter.",
+          "content_en": "Arrêt, regret, résolution de ne pas répéter."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Allah accepte tant que l'âme n'arrive pas à la gorge.",
+          "content_en": "Allah accepte tant que l'âme n'arrive pas à la gorge."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La jalousie conjugale (Ghirah)",
+      "title_en": "Protective Jealousy",
+      "title_ar": "الغيرة",
+      "title_ru": "Protective Jealousy",
+      "title_zh": "Protective Jealousy",
+      "description_fr": "Protection de la famille.",
+      "description_en": "Protecting family honor.",
+      "description_ar": "Protecting family honor.",
+      "description_ru": "Protecting family honor.",
+      "description_zh": "Protecting family honor.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Louée pour l'époux avec modération.",
+          "content_en": "Louée pour l'époux avec modération."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Sans oppression ni suspicion excessive.",
+          "content_en": "Sans oppression ni suspicion excessive."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La jalousie des femmes",
+      "title_en": "Women's Protective Jealousy",
+      "title_ar": "غيرة المرأة",
+      "title_ru": "Women's Protective Jealousy",
+      "title_zh": "Women's Protective Jealousy",
+      "description_fr": "Dignité et limites.",
+      "description_en": "Dignity and boundaries.",
+      "description_ar": "Dignity and boundaries.",
+      "description_ru": "Dignity and boundaries.",
+      "description_zh": "Dignity and boundaries.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Exprimer inquiétude sans injustice.",
+          "content_en": "Exprimer inquiétude sans injustice."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dialogue et confiance mutuelle.",
+          "content_en": "Dialogue et confiance mutuelle."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "Le respect du Prophète ﷺ",
+      "title_en": "Respect for the Prophet",
+      "title_ar": "حب النبي",
+      "title_ru": "Respect for the Prophet",
+      "title_zh": "Respect for the Prophet",
+      "description_fr": "Amour et défense de la sunna.",
+      "description_en": "Love and defense of sunna.",
+      "description_ar": "Love and defense of sunna.",
+      "description_ru": "Love and defense of sunna.",
+      "description_zh": "Love and defense of sunna.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas de blasphème.",
+          "content_en": "Pas de blasphème."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Envoyer salawat.",
+          "content_en": "Envoyer salawat."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "L'amitié pour Allah",
+      "title_en": "Friendship for Allah",
+      "title_ar": "الحب في الله",
+      "title_ru": "Friendship for Allah",
+      "title_zh": "Friendship for Allah",
+      "description_fr": "Amitié basée sur foi.",
+      "description_en": "Faith-based friendship.",
+      "description_ar": "Faith-based friendship.",
+      "description_ru": "Faith-based friendship.",
+      "description_zh": "Faith-based friendship.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Se visiter pour Allah.",
+          "content_en": "Se visiter pour Allah."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Avertir avec sagesse.",
+          "content_en": "Avertir avec sagesse."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La haine pour Allah",
+      "title_en": "Aversion for Allah's Sake",
+      "title_ar": "البغض في الله",
+      "title_ru": "Aversion for Allah's Sake",
+      "title_zh": "Aversion for Allah's Sake",
+      "description_fr": "Rejeter le péché, pas la personne.",
+      "description_en": "Reject sin, not person.",
+      "description_ar": "Reject sin, not person.",
+      "description_ru": "Reject sin, not person.",
+      "description_zh": "Reject sin, not person.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Haïr actes, inviter au bien.",
+          "content_en": "Haïr actes, inviter au bien."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'injustice même aux pécheurs.",
+          "content_en": "Pas d'injustice même aux pécheurs."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "Le bon conseil (Nasiha)",
+      "title_en": "Sincere Counsel",
+      "title_ar": "النصيحة",
+      "title_ru": "Sincere Counsel",
+      "title_zh": "Sincere Counsel",
+      "description_fr": "Conseiller avec bienveillance.",
+      "description_en": "Advising kindly.",
+      "description_ar": "Advising kindly.",
+      "description_ru": "Advising kindly.",
+      "description_zh": "Advising kindly.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pour Allah, le Livre, le Prophète, les dirigeants.",
+          "content_en": "Pour Allah, le Livre, le Prophète, les dirigeants."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "En privé si possible.",
+          "content_en": "En privé si possible."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La loyauté (Wafa)",
+      "title_en": "Loyalty and Fidelity",
+      "title_ar": "الوفاء",
+      "title_ru": "Loyalty and Fidelity",
+      "title_zh": "Loyalty and Fidelity",
+      "description_fr": "Tenir ses engagements.",
+      "description_en": "Keeping commitments.",
+      "description_ar": "Keeping commitments.",
+      "description_ru": "Keeping commitments.",
+      "description_zh": "Keeping commitments.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Contrats et promesses.",
+          "content_en": "Contrats et promesses."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Trahison condamnée.",
+          "content_en": "Trahison condamnée."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La traîtrise (Khiana)",
+      "title_en": "Betrayal",
+      "title_ar": "الخيانة",
+      "title_ru": "Betrayal",
+      "title_zh": "Betrayal",
+      "description_fr": "Manquer à la confiance.",
+      "description_en": "Breaching trust.",
+      "description_ar": "Breaching trust.",
+      "description_ru": "Breaching trust.",
+      "description_zh": "Breaching trust.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Signe de l'hypocrite.",
+          "content_en": "Signe de l'hypocrite."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Rendre les dépôts.",
+          "content_en": "Rendre les dépôts."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "Le sourire (Tabassum)",
+      "title_en": "Smiling",
+      "title_ar": "التبسم",
+      "title_ru": "Smiling",
+      "title_zh": "Smiling",
+      "description_fr": "Sourire en aumône.",
+      "description_en": "Smiling as charity.",
+      "description_ar": "Smiling as charity.",
+      "description_ru": "Smiling as charity.",
+      "description_zh": "Smiling as charity.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna du Prophète ﷺ.",
+          "content_en": "Sunna du Prophète ﷺ."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas d'hypocrisie.",
+          "content_en": "Pas d'hypocrisie."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La douceur (Hilm)",
+      "title_en": "Gentleness (Hilm)",
+      "title_ar": "الحلم",
+      "title_ru": "Gentleness (Hilm)",
+      "title_zh": "Gentleness (Hilm)",
+      "description_fr": "Douceur dans le comportement.",
+      "description_en": "Gentleness in conduct.",
+      "description_ar": "Gentleness in conduct.",
+      "description_ru": "Gentleness in conduct.",
+      "description_zh": "Gentleness in conduct.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Allah est doux et aime la douceur.",
+          "content_en": "Allah est doux et aime la douceur."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "En éducation et da'wa.",
+          "content_en": "En éducation et da'wa."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La dureté blâmable",
+      "title_en": "Blameworthy Harshness",
+      "title_ar": "الغلظة",
+      "title_ru": "Blameworthy Harshness",
+      "title_zh": "Blameworthy Harshness",
+      "description_fr": "Rudesse inutile.",
+      "description_en": "Unnecessary harshness.",
+      "description_ar": "Unnecessary harshness.",
+      "description_ru": "Unnecessary harshness.",
+      "description_zh": "Unnecessary harshness.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Éloigne des gens.",
+          "content_en": "Éloigne des gens."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Fermeté sans violence.",
+          "content_en": "Fermeté sans violence."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La jalousie bien placée",
+      "title_en": "Positive Emulation",
+      "title_ar": "المباهاة",
+      "title_ru": "Positive Emulation",
+      "title_zh": "Positive Emulation",
+      "description_fr": "Rivaliser dans le bien.",
+      "description_en": "Competing in good deeds.",
+      "description_ar": "Competing in good deeds.",
+      "description_ru": "Competing in good deeds.",
+      "description_zh": "Competing in good deeds.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Biens, enfants pieux.",
+          "content_en": "Biens, enfants pieux."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de vantardise orgueilleuse.",
+          "content_en": "Pas de vantardise orgueilleuse."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "L'ostentation (Riya)",
+      "title_en": "Showing Off (Riya)",
+      "title_ar": "الرياء",
+      "title_ru": "Showing Off (Riya)",
+      "title_zh": "Showing Off (Riya)",
+      "description_fr": "Agir pour être vu.",
+      "description_en": "Acting to be seen.",
+      "description_ar": "Acting to be seen.",
+      "description_ru": "Acting to be seen.",
+      "description_zh": "Acting to be seen.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Annule les œuvres.",
+          "content_en": "Annule les œuvres."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ikhlas purifie l'intention.",
+          "content_en": "Ikhlas purifie l'intention."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "L'intention cachée",
+      "title_en": "Hidden Intentions",
+      "title_ar": "السرائر",
+      "title_ru": "Hidden Intentions",
+      "title_zh": "Hidden Intentions",
+      "description_fr": "Ce que Allah voit.",
+      "description_en": "What Allah sees.",
+      "description_ar": "What Allah sees.",
+      "description_ru": "What Allah sees.",
+      "description_zh": "What Allah sees.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Cœur sincère requis.",
+          "content_en": "Cœur sincère requis."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Actes extérieurs avec intérieur.",
+          "content_en": "Actes extérieurs avec intérieur."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "Le dhikr et le cœur",
+      "title_en": "Remembrance and Heart",
+      "title_ar": "ذكر القلب",
+      "title_ru": "Remembrance and Heart",
+      "title_zh": "Remembrance and Heart",
+      "description_fr": "Invocation constante.",
+      "description_en": "Constant remembrance.",
+      "description_ar": "Constant remembrance.",
+      "description_ru": "Constant remembrance.",
+      "description_zh": "Constant remembrance.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Cœurs trouvent repos dans dhikr.",
+          "content_en": "Cœurs trouvent repos dans dhikr."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Langue et présence du cœur.",
+          "content_en": "Langue et présence du cœur."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La purification du cœur (Tazkiya)",
+      "title_en": "Heart Purification",
+      "title_ar": "تزكية النفس",
+      "title_ru": "Heart Purification",
+      "title_zh": "Heart Purification",
+      "description_fr": "Combat du ego.",
+      "description_en": "Fighting ego.",
+      "description_ar": "Fighting ego.",
+      "description_ru": "Fighting ego.",
+      "description_zh": "Fighting ego.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Tazkiya al-nafs.",
+          "content_en": "Tazkiya al-nafs."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Compagnie des pieux.",
+          "content_en": "Compagnie des pieux."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La jalousie du Coran",
+      "title_en": "Love of the Quran",
+      "title_ar": "حب القرآن",
+      "title_ru": "Love of the Quran",
+      "title_zh": "Love of the Quran",
+      "description_fr": "Attachement au Livre.",
+      "description_en": "Attachment to the Book.",
+      "description_ar": "Attachment to the Book.",
+      "description_ru": "Attachment to the Book.",
+      "description_zh": "Attachment to the Book.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Lire, comprendre, appliquer.",
+          "content_en": "Lire, comprendre, appliquer."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Intercession au Jour J.",
+          "content_en": "Intercession au Jour J."
+        }
+      ]
+    },
+    {
+      "category_icon": "favorite",
+      "title_fr": "La bienveillance envers animaux",
+      "title_en": "Kindness to Animals",
+      "title_ar": "الرفق بالحيوان",
+      "title_ru": "Kindness to Animals",
+      "title_zh": "Kindness to Animals",
+      "description_fr": "Miséricorde envers bêtes.",
+      "description_en": "Mercy to animals.",
+      "description_ar": "Mercy to animals.",
+      "description_ru": "Mercy to animals.",
+      "description_zh": "Mercy to animals.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit de torturer.",
+          "content_en": "Interdit de torturer."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Nourrir animal = récompense.",
+          "content_en": "Nourrir animal = récompense."
+        }
+      ]
+    }
+  ]
+}

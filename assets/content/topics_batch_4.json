@@ -1,0 +1,1255 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La polygamie",
+      "title_en": "Polygamy",
+      "title_ar": "التعدد",
+      "title_ru": "Polygamy",
+      "title_zh": "Polygamy",
+      "description_fr": "Pluralité d'épouses.",
+      "description_en": "Multiple wives.",
+      "description_ar": "Multiple wives.",
+      "description_ru": "Multiple wives.",
+      "description_zh": "Multiple wives.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Max quatre ; justice obligatoire.",
+          "content_en": "Max quatre ; justice obligatoire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Équité matérielle et temps requise.",
+          "content_en": "Équité matérielle et temps requise."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Les droits conjugaux réciproques",
+      "title_en": "Mutual Spousal Rights",
+      "title_ar": "الحقوق الزوجية",
+      "title_ru": "Mutual Spousal Rights",
+      "title_zh": "Mutual Spousal Rights",
+      "description_fr": "Devoirs de l'époux et de l'épouse.",
+      "description_en": "Duties of husband and wife.",
+      "description_ar": "Duties of husband and wife.",
+      "description_ru": "Duties of husband and wife.",
+      "description_zh": "Duties of husband and wife.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Entretien, logement, affection ; obéissance dans le bien.",
+          "content_en": "Entretien, logement, affection ; obéissance dans le bien."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Nafaqah obligatoire pour l'époux.",
+          "content_en": "Nafaqah obligatoire pour l'époux."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le divorce révocable (Raj'i)",
+      "title_en": "Revocable Divorce",
+      "title_ar": "الطلاق الرجعي",
+      "title_ru": "Revocable Divorce",
+      "title_zh": "Revocable Divorce",
+      "description_fr": "Talaq avec possibilité de reprise.",
+      "description_en": "Divorce with possibility of reunion.",
+      "description_ar": "Divorce with possibility of reunion.",
+      "description_ru": "Divorce with possibility of reunion.",
+      "description_zh": "Divorce with possibility of reunion.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Une ou deux répudiations : retour sans nouveau contrat.",
+          "content_en": "Une ou deux répudiations : retour sans nouveau contrat."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Iddah sous toit conjugal possible.",
+          "content_en": "Iddah sous toit conjugal possible."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le divorce irrévocable (Ba'in)",
+      "title_en": "Irrevocable Divorce",
+      "title_ar": "الطلاق البائن",
+      "title_ru": "Irrevocable Divorce",
+      "title_zh": "Irrevocable Divorce",
+      "description_fr": "Rupture définitive du mariage.",
+      "description_en": "Definitive marital dissolution.",
+      "description_ar": "Definitive marital dissolution.",
+      "description_ru": "Definitive marital dissolution.",
+      "description_zh": "Definitive marital dissolution.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Troisième talaq : nouveau contrat nécessaire.",
+          "content_en": "Troisième talaq : nouveau contrat nécessaire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Khula et talaq ba'in similaires.",
+          "content_en": "Khula et talaq ba'in similaires."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le Khula",
+      "title_en": "Khula Divorce",
+      "title_ar": "الخلع",
+      "title_ru": "Khula Divorce",
+      "title_zh": "Khula Divorce",
+      "description_fr": "Divorce initié par la femme.",
+      "description_en": "Divorce initiated by wife.",
+      "description_ar": "Divorce initiated by wife.",
+      "description_ru": "Divorce initiated by wife.",
+      "description_zh": "Divorce initiated by wife.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Contre restitution du Mahr ou compensation.",
+          "content_en": "Contre restitution du Mahr ou compensation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Validité si accord des deux parties.",
+          "content_en": "Validité si accord des deux parties."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La période d'attente (Iddah)",
+      "title_en": "Waiting Period (Iddah)",
+      "title_ar": "العدة",
+      "title_ru": "Waiting Period (Iddah)",
+      "title_zh": "Waiting Period (Iddah)",
+      "description_fr": "Délai après divorce ou veuvage.",
+      "description_en": "Waiting period after divorce or widowhood.",
+      "description_ar": "Waiting period after divorce or widowhood.",
+      "description_ru": "Waiting period after divorce or widowhood.",
+      "description_zh": "Waiting period after divorce or widowhood.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Trois cycles ou trois mois ; quatre mois dix jours si veuve.",
+          "content_en": "Trois cycles ou trois mois ; quatre mois dix jours si veuve."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de mariage pendant l'iddah.",
+          "content_en": "Pas de mariage pendant l'iddah."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La garde des enfants (Hadana)",
+      "title_en": "Child Custody (Hadana)",
+      "title_ar": "الحضانة",
+      "title_ru": "Child Custody (Hadana)",
+      "title_zh": "Child Custody (Hadana)",
+      "description_fr": "Droit de garde après séparation.",
+      "description_en": "Custody after separation.",
+      "description_ar": "Custody after separation.",
+      "description_ru": "Custody after separation.",
+      "description_zh": "Custody after separation.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Mère prioritaire pour le jeune enfant.",
+          "content_en": "Mère prioritaire pour le jeune enfant."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Intérêt supérieur de l'enfant prime.",
+          "content_en": "Intérêt supérieur de l'enfant prime."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La pension alimentaire des enfants",
+      "title_en": "Child Maintenance (Nafaqah)",
+      "title_ar": "نفقة الأولاد",
+      "title_ru": "Child Maintenance (Nafaqah)",
+      "title_zh": "Child Maintenance (Nafaqah)",
+      "description_fr": "Entretien obligatoire des enfants.",
+      "description_en": "Mandatory child support.",
+      "description_ar": "Mandatory child support.",
+      "description_ru": "Mandatory child support.",
+      "description_zh": "Mandatory child support.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "À charge du père selon besoins.",
+          "content_en": "À charge du père selon besoins."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Logement, nourriture, éducation, soins.",
+          "content_en": "Logement, nourriture, éducation, soins."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "L'allaitement et la filiation (Rada'a)",
+      "title_en": "Breastfeeding Kinship",
+      "title_ar": "الرضاعة",
+      "title_ru": "Breastfeeding Kinship",
+      "title_zh": "Breastfeeding Kinship",
+      "description_fr": "Liens créés par l'allaitement.",
+      "description_en": "Kinship created by nursing.",
+      "description_ar": "Kinship created by nursing.",
+      "description_ru": "Kinship created by nursing.",
+      "description_zh": "Kinship created by nursing.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Cinq tétées nourricières établissent empêchement.",
+          "content_en": "Cinq tétées nourricières établissent empêchement."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mêmes empêchements que consanguinité.",
+          "content_en": "Mêmes empêchements que consanguinité."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "L'adoption en Islam",
+      "title_en": "Adoption in Islam",
+      "title_ar": "التبني",
+      "title_ru": "Adoption in Islam",
+      "title_zh": "Adoption in Islam",
+      "description_fr": "Statut de l'enfant adopté.",
+      "description_en": "Status of adopted child.",
+      "description_ar": "Status of adopted child.",
+      "description_ru": "Status of adopted child.",
+      "description_zh": "Status of adopted child.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Pas de changement de nom ni héritage ; bonne éducation.",
+          "content_en": "Pas de changement de nom ni héritage ; bonne éducation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Kafala (prise en charge) permise.",
+          "content_en": "Kafala (prise en charge) permise."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le contrat de fiancailles",
+      "title_en": "Engagement Contract",
+      "title_ar": "الخطبة",
+      "title_ru": "Engagement Contract",
+      "title_zh": "Engagement Contract",
+      "description_fr": "Promesse de mariage avant le nikah.",
+      "description_en": "Promise of marriage before nikah.",
+      "description_ar": "Promise of marriage before nikah.",
+      "description_ru": "Promise of marriage before nikah.",
+      "description_zh": "Promise of marriage before nikah.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna ; pas de rapports avant mariage.",
+          "content_en": "Sunna ; pas de rapports avant mariage."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Rupture sans pénalité sauf dépenses.",
+          "content_en": "Rupture sans pénalité sauf dépenses."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Les conditions stipulées au contrat",
+      "title_en": "Stipulated Marriage Conditions",
+      "title_ar": "الشروط في العقد",
+      "title_ru": "Stipulated Marriage Conditions",
+      "title_zh": "Stipulated Marriage Conditions",
+      "description_fr": "Clauses ajoutées au mariage.",
+      "description_en": "Clauses added to marriage.",
+      "description_ar": "Clauses added to marriage.",
+      "description_ru": "Clauses added to marriage.",
+      "description_zh": "Clauses added to marriage.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Conditions licites valides ; contraires à la loi nulles.",
+          "content_en": "Conditions licites valides ; contraires à la loi nulles."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Droit de divorce si condition non remplie.",
+          "content_en": "Droit de divorce si condition non remplie."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le mariage forcé",
+      "title_en": "Forced Marriage",
+      "title_ar": "الزواج بالإكراه",
+      "title_ru": "Forced Marriage",
+      "title_zh": "Forced Marriage",
+      "description_fr": "Consentement libre des époux.",
+      "description_en": "Free consent of spouses.",
+      "description_ar": "Free consent of spouses.",
+      "description_ru": "Free consent of spouses.",
+      "description_zh": "Free consent of spouses.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit ; contrat annulable si contrainte.",
+          "content_en": "Interdit ; contrat annulable si contrainte."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Silence de la vierge n'est pas consentement suffisant malikite.",
+          "content_en": "Silence de la vierge n'est pas consentement suffisant malikite."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le mariage secret",
+      "title_en": "Secret Marriage",
+      "title_ar": "النكاح السري",
+      "title_ru": "Secret Marriage",
+      "title_zh": "Secret Marriage",
+      "description_fr": "Mariage non annoncé publiquement.",
+      "description_en": "Undisclosed marriage.",
+      "description_ar": "Undisclosed marriage.",
+      "description_ru": "Undisclosed marriage.",
+      "description_zh": "Undisclosed marriage.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Déconseillé ; annonce (ishhar) recommandée.",
+          "content_en": "Déconseillé ; annonce (ishhar) recommandée."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Témoins requis malgré secret.",
+          "content_en": "Témoins requis malgré secret."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le mariage temporaire (Muta)",
+      "title_en": "Temporary Marriage (Mut'a)",
+      "title_ar": "النكاح المتعة",
+      "title_ru": "Temporary Marriage (Mut'a)",
+      "title_zh": "Temporary Marriage (Mut'a)",
+      "description_fr": "Union à durée limitée.",
+      "description_en": "Time-limited union.",
+      "description_ar": "Time-limited union.",
+      "description_ru": "Time-limited union.",
+      "description_zh": "Time-limited union.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Interdit unanimement chez les sunnites.",
+          "content_en": "Interdit unanimement chez les sunnites."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Nul et péché selon consensus sunnite.",
+          "content_en": "Nul et péché selon consensus sunnite."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La justice entre épouses",
+      "title_en": "Justice Between Wives",
+      "title_ar": "العدل بين الزوجات",
+      "title_ru": "Justice Between Wives",
+      "title_zh": "Justice Between Wives",
+      "description_fr": "Équité en polygamie.",
+      "description_en": "Fairness in polygamy.",
+      "description_ar": "Fairness in polygamy.",
+      "description_ru": "Fairness in polygamy.",
+      "description_zh": "Fairness in polygamy.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Nuits, logement, dépenses égales.",
+          "content_en": "Nuits, logement, dépenses égales."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Cœur non exigible ; matériel obligatoire.",
+          "content_en": "Cœur non exigible ; matériel obligatoire."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Les droits des parents",
+      "title_en": "Rights of Parents",
+      "title_ar": "حقوق الوالدين",
+      "title_ru": "Rights of Parents",
+      "title_zh": "Rights of Parents",
+      "description_fr": "Birr al-walidayn.",
+      "description_en": "Honoring parents.",
+      "description_ar": "Honoring parents.",
+      "description_ru": "Honoring parents.",
+      "description_zh": "Honoring parents.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Obéissance sauf désobéissance à Allah.",
+          "content_en": "Obéissance sauf désobéissance à Allah."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Bienveillance et soin à la vieillesse.",
+          "content_en": "Bienveillance et soin à la vieillesse."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Les liens de parenté (Silat ar-Rahim)",
+      "title_en": "Maintaining Kinship",
+      "title_ar": "صلة الرحم",
+      "title_ru": "Maintaining Kinship",
+      "title_zh": "Maintaining Kinship",
+      "description_fr": "Préserver les liens familiaux.",
+      "description_en": "Preserving family bonds.",
+      "description_ar": "Preserving family bonds.",
+      "description_ru": "Preserving family bonds.",
+      "description_zh": "Preserving family bonds.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Rompre la parenté est péché majeur.",
+          "content_en": "Rompre la parenté est péché majeur."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Visites, aide, invocation pour les proches.",
+          "content_en": "Visites, aide, invocation pour les proches."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Les voisins en Islam",
+      "title_en": "Neighbors in Islam",
+      "title_ar": "حق الجار",
+      "title_ru": "Neighbors in Islam",
+      "title_zh": "Neighbors in Islam",
+      "description_fr": "Droits du voisin.",
+      "description_en": "Rights of the neighbor.",
+      "description_ar": "Rights of the neighbor.",
+      "description_ru": "Rights of the neighbor.",
+      "description_zh": "Rights of the neighbor.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Bon comportement ; ne pas nuire.",
+          "content_en": "Bon comportement ; ne pas nuire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Quarante maisons de chaque côté selon hadith.",
+          "content_en": "Quarante maisons de chaque côté selon hadith."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "L'hospitalité (Diyafa)",
+      "title_en": "Hospitality",
+      "title_ar": "الضيافة",
+      "title_ru": "Hospitality",
+      "title_zh": "Hospitality",
+      "description_fr": "Accueil des invités.",
+      "description_en": "Welcoming guests.",
+      "description_ar": "Welcoming guests.",
+      "description_ru": "Welcoming guests.",
+      "description_zh": "Welcoming guests.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna trois jours ; plus est aumône.",
+          "content_en": "Sunna trois jours ; plus est aumône."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Honorer l'invité sans gêne excessive.",
+          "content_en": "Honorer l'invité sans gêne excessive."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "La visite des malades",
+      "title_en": "Visiting the Sick",
+      "title_ar": "عيادة المريض",
+      "title_ru": "Visiting the Sick",
+      "title_zh": "Visiting the Sick",
+      "description_fr": "Visite et réconfort du malade.",
+      "description_en": "Visiting and comforting the ill.",
+      "description_ar": "Visiting and comforting the ill.",
+      "description_ru": "Visiting and comforting the ill.",
+      "description_zh": "Visiting and comforting the ill.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna ; invocation de guérison.",
+          "content_en": "Sunna ; invocation de guérison."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Ne pas prolonger si fatigue le malade.",
+          "content_en": "Ne pas prolonger si fatigue le malade."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Les funérailles et le deuil",
+      "title_en": "Funerals and Mourning",
+      "title_ar": "العزاء",
+      "title_ru": "Funerals and Mourning",
+      "title_zh": "Funerals and Mourning",
+      "description_fr": "Accompagnement des défunts.",
+      "description_en": "Accompanying the deceased.",
+      "description_ar": "Accompanying the deceased.",
+      "description_ru": "Accompanying the deceased.",
+      "description_zh": "Accompanying the deceased.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prière janaza, enterrement, consolation aux vivants.",
+          "content_en": "Prière janaza, enterrement, consolation aux vivants."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Deuil modéré trois jours sauf veuve.",
+          "content_en": "Deuil modéré trois jours sauf veuve."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "L'éducation des enfants",
+      "title_en": "Raising Children",
+      "title_ar": "تربية الأطفال",
+      "title_ru": "Raising Children",
+      "title_zh": "Raising Children",
+      "description_fr": "Responsabilité parentale.",
+      "description_en": "Parental responsibility.",
+      "description_ar": "Parental responsibility.",
+      "description_ru": "Parental responsibility.",
+      "description_zh": "Parental responsibility.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Enseigner prière à sept ans ; bon caractère.",
+          "content_en": "Enseigner prière à sept ans ; bon caractère."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Équité entre enfants dans les cadeaux.",
+          "content_en": "Équité entre enfants dans les cadeaux."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Le choix du prénom",
+      "title_en": "Naming the Child",
+      "title_ar": "تسمية المولود",
+      "title_ru": "Naming the Child",
+      "title_zh": "Naming the Child",
+      "description_fr": "Règles du nom en Islam.",
+      "description_en": "Rules for naming in Islam.",
+      "description_ar": "Rules for naming in Islam.",
+      "description_ru": "Rules for naming in Islam.",
+      "description_zh": "Rules for naming in Islam.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Noms beaux et significatifs ; pas de honte.",
+          "content_en": "Noms beaux et significatifs ; pas de honte."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Aqîqa le septième jour recommandée.",
+          "content_en": "Aqîqa le septième jour recommandée."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "L'Aqîqa",
+      "title_en": "Aqīqa Sacrifice",
+      "title_ar": "العقيقة",
+      "title_ru": "Aqīqa Sacrifice",
+      "title_zh": "Aqīqa Sacrifice",
+      "description_fr": "Sacrifice à la naissance.",
+      "description_en": "Sacrifice at birth.",
+      "description_ar": "Sacrifice at birth.",
+      "description_ru": "Sacrifice at birth.",
+      "description_zh": "Sacrifice at birth.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Deux moutons pour garçon, une pour fille (sunna).",
+          "content_en": "Deux moutons pour garçon, une pour fille (sunna)."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Distribuer viande ; raser tête enfant.",
+          "content_en": "Distribuer viande ; raser tête enfant."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "La circoncision (Khitan)",
+      "title_en": "Circumcision",
+      "title_ar": "الختان",
+      "title_ru": "Circumcision",
+      "title_zh": "Circumcision",
+      "description_fr": "Pureté et sunna pour le garçon.",
+      "description_en": "Purity and sunna for boys.",
+      "description_ar": "Purity and sunna for boys.",
+      "description_ru": "Purity and sunna for boys.",
+      "description_zh": "Purity and sunna for boys.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Sunna recommandée ; hygiène.",
+          "content_en": "Sunna recommandée ; hygiène."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "À faire avant puberté idéalement.",
+          "content_en": "À faire avant puberté idéalement."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le mariage des mineurs",
+      "title_en": "Marriage of Minors",
+      "title_ar": "زواج القاصر",
+      "title_ru": "Marriage of Minors",
+      "title_zh": "Marriage of Minors",
+      "description_fr": "Mariage avant puberté.",
+      "description_en": "Marriage before puberty.",
+      "description_ar": "Marriage before puberty.",
+      "description_ru": "Marriage before puberty.",
+      "description_zh": "Marriage before puberty.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis avec wali ; consommation après puberté.",
+          "content_en": "Permis avec wali ; consommation après puberté."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Intérêt de l'enfant et consentement ultérieur.",
+          "content_en": "Intérêt de l'enfant et consentement ultérieur."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La séparation de lit (Zihar)",
+      "title_en": "Zihar Declaration",
+      "title_ar": "الظهار",
+      "title_ru": "Zihar Declaration",
+      "title_zh": "Zihar Declaration",
+      "description_fr": "Comparaison interdite de l'épouse.",
+      "description_en": "Forbidden comparison of wife.",
+      "description_ar": "Forbidden comparison of wife.",
+      "description_ru": "Forbidden comparison of wife.",
+      "description_zh": "Forbidden comparison of wife.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Péché majeur ; kaffara avant rapports.",
+          "content_en": "Péché majeur ; kaffara avant rapports."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Jeûne ou nourrir soixante pauvres.",
+          "content_en": "Jeûne ou nourrir soixante pauvres."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le serment d'éloignement (Ila)",
+      "title_en": "Ila Oath",
+      "title_ar": "الإيلاء",
+      "title_ru": "Ila Oath",
+      "title_zh": "Ila Oath",
+      "description_fr": "Jurer de s'abstenir de l'épouse.",
+      "description_en": "Swearing to abstain from wife.",
+      "description_ar": "Swearing to abstain from wife.",
+      "description_ru": "Swearing to abstain from wife.",
+      "description_zh": "Swearing to abstain from wife.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Quatre mois max ; divorce si non reprise.",
+          "content_en": "Quatre mois max ; divorce si non reprise."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Kaffara ou reprise conjugale.",
+          "content_en": "Kaffara ou reprise conjugale."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La fausse accusation (Li'an)",
+      "title_en": "Mutual Cursing (Li'an)",
+      "title_ar": "اللاعان",
+      "title_ru": "Mutual Cursing (Li'an)",
+      "title_zh": "Mutual Cursing (Li'an)",
+      "description_fr": "Accusation d'adultère sans preuves.",
+      "description_en": "Adultery accusation without proof.",
+      "description_ar": "Adultery accusation without proof.",
+      "description_ru": "Adultery accusation without proof.",
+      "description_zh": "Adultery accusation without proof.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Procédure judiciaire avec serments.",
+          "content_en": "Procédure judiciaire avec serments."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Séparation définitive et falsité de filiation.",
+          "content_en": "Séparation définitive et falsité de filiation."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le droit de la femme au logement",
+      "title_en": "Wife's Housing Right",
+      "title_ar": "سكن الزوجة",
+      "title_ru": "Wife's Housing Right",
+      "title_zh": "Wife's Housing Right",
+      "description_fr": "Logement convenable pour l'épouse.",
+      "description_en": "Suitable housing for wife.",
+      "description_ar": "Suitable housing for wife.",
+      "description_ru": "Suitable housing for wife.",
+      "description_zh": "Suitable housing for wife.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Séparé ou partie privée si cohabitation.",
+          "content_en": "Séparé ou partie privée si cohabitation."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dignité et intimité requises.",
+          "content_en": "Dignité et intimité requises."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "Le travail de la femme mariée",
+      "title_en": "Married Woman's Work",
+      "title_ar": "عمل الزوجة",
+      "title_ru": "Married Woman's Work",
+      "title_zh": "Married Woman's Work",
+      "description_fr": "Activité professionnelle de l'épouse.",
+      "description_en": "Professional activity of wife.",
+      "description_ar": "Professional activity of wife.",
+      "description_ru": "Professional activity of wife.",
+      "description_zh": "Professional activity of wife.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permise si accord et sans négligence des droits.",
+          "content_en": "Permise si accord et sans négligence des droits."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Revenus lui appartiennent sauf accord.",
+          "content_en": "Revenus lui appartiennent sauf accord."
+        }
+      ]
+    },
+    {
+      "category_icon": "family_restroom",
+      "title_fr": "La cohabitation harmonieuse",
+      "title_en": "Harmonious Cohabitation",
+      "title_ar": "المعاشرة بالمعروف",
+      "title_ru": "Harmonious Cohabitation",
+      "title_zh": "Harmonious Cohabitation",
+      "description_fr": "Bonne conduite entre époux.",
+      "description_en": "Good conduct between spouses.",
+      "description_ar": "Good conduct between spouses.",
+      "description_ru": "Good conduct between spouses.",
+      "description_zh": "Good conduct between spouses.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Coran 4:19 : en bien ou séparation honorable.",
+          "content_en": "Coran 4:19 : en bien ou séparation honorable."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Patience, dialogue, médiation familiale.",
+          "content_en": "Patience, dialogue, médiation familiale."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Le respect des aînés",
+      "title_en": "Respect for Elders",
+      "title_ar": "احترام الكبير",
+      "title_ru": "Respect for Elders",
+      "title_zh": "Respect for Elders",
+      "description_fr": "Honorer les personnes âgées.",
+      "description_en": "Honoring the elderly.",
+      "description_ar": "Honoring the elderly.",
+      "description_ru": "Honoring the elderly.",
+      "description_zh": "Honoring the elderly.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Céder place, écouter, assister.",
+          "content_en": "Céder place, écouter, assister."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Vertu sociale fortement recommandée.",
+          "content_en": "Vertu sociale fortement recommandée."
+        }
+      ]
+    },
+    {
+      "category_icon": "people",
+      "title_fr": "Les relations interreligieuses",
+      "title_en": "Interfaith Relations",
+      "title_ar": "معاملة غير المسلم",
+      "title_ru": "Interfaith Relations",
+      "title_zh": "Interfaith Relations",
+      "description_fr": "Traitement des non-musulmans.",
+      "description_en": "Treatment of non-Muslims.",
+      "description_ar": "Treatment of non-Muslims.",
+      "description_ru": "Treatment of non-Muslims.",
+      "description_zh": "Treatment of non-Muslims.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Justice et bienveillance ; pas d'injustice.",
+          "content_en": "Justice et bienveillance ; pas d'injustice."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Dîme et protection des dhimmis historiques.",
+          "content_en": "Dîme et protection des dhimmis historiques."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les types de Riba",
+      "title_en": "Types of Riba",
+      "title_ar": "أنواع الربا",
+      "title_ru": "Types of Riba",
+      "title_zh": "Types of Riba",
+      "description_fr": "Intérêt et usure interdits.",
+      "description_en": "Interest and usury forbidden.",
+      "description_ar": "Interest and usury forbidden.",
+      "description_ru": "Interest and usury forbidden.",
+      "description_zh": "Interest and usury forbidden.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Riba al-fadl et riba al-nasi'a.",
+          "content_en": "Riba al-fadl et riba al-nasi'a."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Toute augmentation sans contrepartie licite.",
+          "content_en": "Toute augmentation sans contrepartie licite."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La Murabaha",
+      "title_en": "Murabaha Sale",
+      "title_ar": "المرابحة",
+      "title_ru": "Murabaha Sale",
+      "title_zh": "Murabaha Sale",
+      "description_fr": "Vente à marge connue.",
+      "description_en": "Cost-plus sale.",
+      "description_ar": "Cost-plus sale.",
+      "description_ru": "Cost-plus sale.",
+      "description_zh": "Cost-plus sale.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prix d'achat + profit convenu.",
+          "content_en": "Prix d'achat + profit convenu."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Propriété du vendeur avant revente.",
+          "content_en": "Propriété du vendeur avant revente."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La Mudaraba",
+      "title_en": "Mudaraba Partnership",
+      "title_ar": "المضاربة",
+      "title_ru": "Mudaraba Partnership",
+      "title_zh": "Mudaraba Partnership",
+      "description_fr": "Capital et travail partagés.",
+      "description_en": "Capital and labor partnership.",
+      "description_ar": "Capital and labor partnership.",
+      "description_ru": "Capital and labor partnership.",
+      "description_zh": "Capital and labor partnership.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Un apporte fonds, l'autre expertise ; profits partagés.",
+          "content_en": "Un apporte fonds, l'autre expertise ; profits partagés."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pertes pour le capital sauf négligence.",
+          "content_en": "Pertes pour le capital sauf négligence."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La Musharaka",
+      "title_en": "Musharaka Partnership",
+      "title_ar": "المشاركة",
+      "title_ru": "Musharaka Partnership",
+      "title_zh": "Musharaka Partnership",
+      "description_fr": "Association où tous investissent.",
+      "description_en": "Partnership where all invest.",
+      "description_ar": "Partnership where all invest.",
+      "description_ru": "Partnership where all invest.",
+      "description_zh": "Partnership where all invest.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Profits selon accord ; pertes au prorata.",
+          "content_en": "Profits selon accord ; pertes au prorata."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Gestion conjointe ou déléguée.",
+          "content_en": "Gestion conjointe ou déléguée."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "L'Ijara (leasing)",
+      "title_en": "Ijara Leasing",
+      "title_ar": "الإجارة",
+      "title_ru": "Ijara Leasing",
+      "title_zh": "Ijara Leasing",
+      "description_fr": "Location d'un bien avec option.",
+      "description_en": "Leasing with possible ownership.",
+      "description_ar": "Leasing with possible ownership.",
+      "description_ru": "Leasing with possible ownership.",
+      "description_zh": "Leasing with possible ownership.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Loyer pour usage ; ijara wa iqtina permise.",
+          "content_en": "Loyer pour usage ; ijara wa iqtina permise."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Entretien à charge du bailleur.",
+          "content_en": "Entretien à charge du bailleur."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La Salam (vente à terme)",
+      "title_en": "Salam Forward Sale",
+      "title_ar": "السلم",
+      "title_ru": "Salam Forward Sale",
+      "title_zh": "Salam Forward Sale",
+      "description_fr": "Paiement anticipé, livraison future.",
+      "description_en": "Advance payment, future delivery.",
+      "description_ar": "Advance payment, future delivery.",
+      "description_ru": "Advance payment, future delivery.",
+      "description_zh": "Advance payment, future delivery.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prix et délai connus ; marchandise définie.",
+          "content_en": "Prix et délai connus ; marchandise définie."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Interdit sur l'or et l'argent en salam.",
+          "content_en": "Interdit sur l'or et l'argent en salam."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "L'Istisna (fabrication)",
+      "title_en": "Istisna Manufacturing",
+      "title_ar": "الاستصناع",
+      "title_ru": "Istisna Manufacturing",
+      "title_zh": "Istisna Manufacturing",
+      "description_fr": "Commande de fabrication.",
+      "description_en": "Manufacturing order contract.",
+      "description_ar": "Manufacturing order contract.",
+      "description_ru": "Manufacturing order contract.",
+      "description_zh": "Manufacturing order contract.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Prix fixé pour bien à produire.",
+          "content_en": "Prix fixé pour bien à produire."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Utilisé en finance islamique moderne.",
+          "content_en": "Utilisé en finance islamique moderne."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La monnaie fiduciaire",
+      "title_en": "Fiat Currency",
+      "title_ar": "النقود الورقية",
+      "title_ru": "Fiat Currency",
+      "title_zh": "Fiat Currency",
+      "description_fr": "Statut de la monnaie papier.",
+      "description_en": "Status of paper money.",
+      "description_ar": "Status of paper money.",
+      "description_ru": "Status of paper money.",
+      "description_zh": "Status of paper money.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Thamaniyya par usage et décret.",
+          "content_en": "Thamaniyya par usage et décret."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Échange immédiat à parité si même nature.",
+          "content_en": "Échange immédiat à parité si même nature."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le change (Sarf)",
+      "title_en": "Currency Exchange",
+      "title_ar": "الصرف",
+      "title_ru": "Currency Exchange",
+      "title_zh": "Currency Exchange",
+      "description_fr": "Échange de monnaies.",
+      "description_en": "Exchange of currencies.",
+      "description_ar": "Exchange of currencies.",
+      "description_ru": "Exchange of currencies.",
+      "description_zh": "Exchange of currencies.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Hand-to-hand pour or/argent ; délai pour devises différentes selon avis.",
+          "content_en": "Hand-to-hand pour or/argent ; délai pour devises différentes selon avis."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Pas de crédit dans l'échange immédiat.",
+          "content_en": "Pas de crédit dans l'échange immédiat."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les actions et parts sociales",
+      "title_en": "Stocks and Shares",
+      "title_ar": "الأسهم",
+      "title_ru": "Stocks and Shares",
+      "title_zh": "Stocks and Shares",
+      "description_fr": "Investissement en capital.",
+      "description_en": "Equity investment.",
+      "description_ar": "Equity investment.",
+      "description_ru": "Equity investment.",
+      "description_zh": "Equity investment.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Permis si activité licite ; éviter riba et haram.",
+          "content_en": "Permis si activité licite ; éviter riba et haram."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Purification des revenus illicites.",
+          "content_en": "Purification des revenus illicites."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les assurances (Takaful)",
+      "title_en": "Islamic Insurance (Takaful)",
+      "title_ar": "التكافل",
+      "title_ru": "Islamic Insurance (Takaful)",
+      "title_zh": "Islamic Insurance (Takaful)",
+      "description_fr": "Assurance cooperative.",
+      "description_en": "Cooperative insurance.",
+      "description_ar": "Cooperative insurance.",
+      "description_ru": "Cooperative insurance.",
+      "description_zh": "Cooperative insurance.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Fond mutuel ; pas de vente de risque pur.",
+          "content_en": "Fond mutuel ; pas de vente de risque pur."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Contribution volontaire et solidarité.",
+          "content_en": "Contribution volontaire et solidarité."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Les cryptomonnaies",
+      "title_en": "Cryptocurrencies",
+      "title_ar": "العملات الرقمية",
+      "title_ru": "Cryptocurrencies",
+      "title_zh": "Cryptocurrencies",
+      "description_fr": "Statut des actifs numériques.",
+      "description_en": "Status of digital assets.",
+      "description_ar": "Status of digital assets.",
+      "description_ru": "Status of digital assets.",
+      "description_zh": "Status of digital assets.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Débattu ; éviter spéculation et incertitude.",
+          "content_en": "Débattu ; éviter spéculation et incertitude."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Échange comme marchandise si licite.",
+          "content_en": "Échange comme marchandise si licite."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le crédit immobilier islamique",
+      "title_en": "Islamic Home Finance",
+      "title_ar": "التمويل العقاري",
+      "title_ru": "Islamic Home Finance",
+      "title_zh": "Islamic Home Finance",
+      "description_fr": "Achat de logement sans riba.",
+      "description_en": "Home purchase without interest.",
+      "description_ar": "Home purchase without interest.",
+      "description_ru": "Home purchase without interest.",
+      "description_zh": "Home purchase without interest.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Murabaha ou musharaka mutanaqisa.",
+          "content_en": "Murabaha ou musharaka mutanaqisa."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Propriété progressive pour le client.",
+          "content_en": "Propriété progressive pour le client."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "La carte bancaire et le crédit",
+      "title_en": "Bank Cards and Credit",
+      "title_ar": "البطاقات الائتمانية",
+      "title_ru": "Bank Cards and Credit",
+      "title_zh": "Bank Cards and Credit",
+      "description_fr": "Usage des cartes à crédit.",
+      "description_en": "Use of credit cards.",
+      "description_ar": "Use of credit cards.",
+      "description_ru": "Use of credit cards.",
+      "description_zh": "Use of credit cards.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Éviter intérêts ; payer solde complet.",
+          "content_en": "Éviter intérêts ; payer solde complet."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Débit immédiat préférable.",
+          "content_en": "Débit immédiat préférable."
+        }
+      ]
+    },
+    {
+      "category_icon": "monetization_on",
+      "title_fr": "Le prêt sans intérêt (Qard Hassan)",
+      "title_en": "Benevolent Loan",
+      "title_ar": "القرض الحسن",
+      "title_ru": "Benevolent Loan",
+      "title_zh": "Benevolent Loan",
+      "description_fr": "Prêt gratuit exigé par charité.",
+      "description_en": "Interest-free benevolent loan.",
+      "description_ar": "Interest-free benevolent loan.",
+      "description_ru": "Interest-free benevolent loan.",
+      "description_zh": "Interest-free benevolent loan.",
+      "laws": [
+        {
+          "school": "Hanafi",
+          "content_fr": "Remboursement du capital seul.",
+          "content_en": "Remboursement du capital seul."
+        },
+        {
+          "school": "Maliki",
+          "content_fr": "Mérite élevé pour le prêteur.",
+          "content_en": "Mérite élevé pour le prêteur."
+        }
+      ]
+    }
+  ]
+}

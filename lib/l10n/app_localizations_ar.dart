@@ -559,4 +559,252 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get fullComparison => 'مقارنة كاملة';
+
+  @override
+  String get navHome => 'الرئيسية';
+
+  @override
+  String get navLearn => 'تعلّم';
+
+  @override
+  String get navSearch => 'بحث';
+
+  @override
+  String get navLibrary => 'المكتبة';
+
+  @override
+  String get navProfile => 'الملف';
+
+  @override
+  String get continueReading => 'متابعة القراءة';
+
+  @override
+  String get dailyQuestion => 'سؤال اليوم';
+
+  @override
+  String get experienceLevel => 'مستوى الخبرة';
+
+  @override
+  String get experienceLevelDesc => 'تخصيص عرض المواضيع';
+
+  @override
+  String get beginnerMode => 'وضع المبتدئ';
+
+  @override
+  String get beginnerModeDesc => 'ملخص ومذهب واحد في كل مرة';
+
+  @override
+  String get studentMode => 'وضع الطالب';
+
+  @override
+  String get studentModeDesc => 'مقارنة كاملة ومصادر مفصلة';
+
+  @override
+  String get beginnerModeActive => 'وضع المبتدئ مفعّل';
+
+  @override
+  String get showAllSchools => 'عرض جميع المذاهب';
+
+  @override
+  String get methodology => 'المنهجية';
+
+  @override
+  String get methodologyShort => 'المصادر والحدود والإرشاد';
+
+  @override
+  String get methodologyTitle => 'كيف نعمل';
+
+  @override
+  String get methodologyBody =>
+      'المواقف مأخوذة من كتب معترف بها للمذاهب الخمسة. كل موضوع يذكر المصادر مع درجة الأصالة عند توفرها. التطبيق لا يغني عن استشارة عالم مؤهل.';
+
+  @override
+  String get methodologySources => 'المصادر والأصالة';
+
+  @override
+  String get methodologySourcesBody =>
+      'الأحاديث مصنفة (صحيح، حسن، ضعيف، موضوع) عند توفر المعلومة.';
+
+  @override
+  String get askScholar => 'اسأل عالماً';
+
+  @override
+  String get askScholarDesc => 'للفتوى الشخصية، استخدم منصة معترف بها:';
+
+  @override
+  String get disclaimerGeneral =>
+      'هذا التطبيق تعليمي. للحالات المعقدة، استشر عالماً مختصاً.';
+
+  @override
+  String get sensitiveTopicDisclaimer =>
+      'موضوع حساس — استشر عالماً قبل أي قرار.';
+
+  @override
+  String get sourceReference => 'المرجع';
+
+  @override
+  String get skillTree => 'شجرة المهارات';
+
+  @override
+  String skillProgress(int read, int total) {
+    return '$read/$total مواضيع';
+  }
+
+  @override
+  String get srsMode => 'التكرار المتباعد';
+
+  @override
+  String get examMode => 'وضع الامتحان';
+
+  @override
+  String get examModeDesc => 'بدون تصحيح فوري';
+
+  @override
+  String get consensusOnly => 'الإجماع فقط';
+
+  @override
+  String get noConsensusFound => 'لم يُعثر على إجماع';
+
+  @override
+  String get scenarioFinder => 'إيجاد سيناريو';
+
+  @override
+  String get scenarioFinderDesc => 'صف حالتك للعثور على حالة عملية';
+
+  @override
+  String get scenarioFinderHint => 'مثال: صيام، سفر، زواج…';
+
+  @override
+  String get noScenariosFound => 'لا سيناريوهات';
+
+  @override
+  String get exportCertificate => 'تصدير الشهادة';
+
+  @override
+  String get certificateTitle => 'شهادة إتمام المسار';
+
+  @override
+  String get certificateDate => 'التاريخ:';
+
+  @override
+  String get situationAdvisor => 'مستشار الحالة';
+
+  @override
+  String get situationAdvisorDesc => 'صف حالتك — مواضيع وسيناريوهات مقترحة';
+
+  @override
+  String get situationAdvisorHint => 'مثال: أسافر بالطائرة في رمضان و…';
+
+  @override
+  String get situationAdvisorEmpty => 'صف حالتك للحصول على اقتراحات';
+
+  @override
+  String get analyzeSituation => 'تحليل';
+
+  @override
+  String get noSituationMatches => 'لا اقتراحات — جرّب كلمات أخرى';
+
+  @override
+  String get encyclopediaExam => 'امتحان الموسوعة';
+
+  @override
+  String get encyclopediaExamDesc => '10 مواضيع، مؤقت، تقييم ذاتي';
+
+  @override
+  String get examTopicPrompt => 'هل تعرف هذا الموضوع؟';
+
+  @override
+  String get revealAnswer => 'إظهار الملخص';
+
+  @override
+  String get readFullTopic => 'قراءة الموضوع كاملاً';
+
+  @override
+  String get needStudy => 'يحتاج مراجعة';
+
+  @override
+  String get examResults => 'نتائج الامتحان';
+
+  @override
+  String examKnownCount(int known, int total) {
+    return '$known / $total متقن';
+  }
+
+  @override
+  String get noExamTopics => 'لا توجد مواضيع كافية';
+
+  @override
+  String get exportComparisonPdf => 'تصدير المقارنة PDF';
+
+  @override
+  String get encryptedSync => 'مزامنة مشفرة';
+
+  @override
+  String get encryptedSyncDesc => 'نسخة AES لـ iCloud وDrive';
+
+  @override
+  String get exportEncryptedBackup => 'تصدير نسخة مشفرة';
+
+  @override
+  String get importEncryptedBackup => 'استيراد نسخة مشفرة';
+
+  @override
+  String get enterPassphrase => 'كلمة المرور';
+
+  @override
+  String get passphrase => 'كلمة المرور (8+ أحرف)';
+
+  @override
+  String get confirmPassphrase => 'تأكيد';
+
+  @override
+  String get encryptedSyncFailed => 'فشل — تحقق من كلمة المرور';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get confirm => 'تأكيد';
+
+  @override
+  String get homeWidgetDescIos => 'ودجت iOS وAndroid — أضف «موضوع اليوم»';
+
+  @override
+  String get verifiedContent => 'محتوى موثّق';
+
+  @override
+  String get isnadChain => 'سلسلة الرواة (الإسناد)';
+
+  @override
+  String get disclaimerHomeBanner =>
+      'أداة تعليمية — لا تغني عن استشارة عالم. راجع المنهجية.';
+
+  @override
+  String get liteMode => 'الوضع الخفيف';
+
+  @override
+  String get liteModeDesc => 'يقلل الحركات للأجهزة البطيئة أو لسهولة الوصول';
+
+  @override
+  String get globalMadhhabFilter => 'تصفية المذهب العامة';
+
+  @override
+  String get globalMadhhabFilterDesc =>
+      'إخفاء المواضيع بلا موقف من مذهبك المفضل';
+
+  @override
+  String get ijmaSection => 'إجماع';
+
+  @override
+  String get ijmaSectionDesc =>
+      'تتفق المذاهب السنية الأربعة الرئيسية على هذا النقطة.';
+
+  @override
+  String get divergenceTimeline => 'جدول الاختلافات';
+
+  @override
+  String get contextualShortcuts => 'اختصارات';
+
+  @override
+  String get shortcutZakat => 'حاسبة الزكاة';
 }

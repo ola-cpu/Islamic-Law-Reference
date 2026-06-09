@@ -10,6 +10,7 @@ import 'providers/user_provider.dart';
 import 'l10n/app_localizations.dart';
 import 'router/app_router.dart';
 import 'services/notification_service.dart';
+import 'services/preload_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +20,7 @@ void main() async {
 
   final userProvider = UserProvider();
   await userProvider.init();
+  await PreloadService.warmUp(userProvider);
   await userProvider.syncDailyReminder();
 
   final router = createAppRouter(userProvider);
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<UserProvider>(
       builder: (context, userProvider, child) {
-        return MaterialApp.router(
+        final app = MaterialApp.router(
           routerConfig: router,
           locale: userProvider.locale,
           themeMode: userProvider.themeMode,
@@ -56,6 +58,14 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: AppLocalizations.supportedLocales,
+        );
+        if (!userProvider.liteMode) return app;
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(
+            disableAnimations: true,
+            accessibleNavigation: true,
+          ),
+          child: app,
         );
       },
     );

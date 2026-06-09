@@ -553,4 +553,245 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get fullComparison => '完整对比';
+
+  @override
+  String get navHome => '首页';
+
+  @override
+  String get navLearn => '学习';
+
+  @override
+  String get navSearch => '搜索';
+
+  @override
+  String get navLibrary => '书库';
+
+  @override
+  String get navProfile => '我的';
+
+  @override
+  String get continueReading => '继续阅读';
+
+  @override
+  String get dailyQuestion => '每日一题';
+
+  @override
+  String get experienceLevel => '经验等级';
+
+  @override
+  String get experienceLevelDesc => '调整主题显示方式';
+
+  @override
+  String get beginnerMode => '初学者模式';
+
+  @override
+  String get beginnerModeDesc => '摘要，每次一个学派';
+
+  @override
+  String get studentMode => '学生模式';
+
+  @override
+  String get studentModeDesc => '完整对比与详细来源';
+
+  @override
+  String get beginnerModeActive => '初学者模式已启用';
+
+  @override
+  String get showAllSchools => '显示所有学派';
+
+  @override
+  String get methodology => '方法论';
+
+  @override
+  String get methodologyShort => '来源、限制与建议';
+
+  @override
+  String get methodologyTitle => '我们的工作方式';
+
+  @override
+  String get methodologyBody => '观点来自五大教法学派公认著作。本应用不能替代合格学者的个人指导。';
+
+  @override
+  String get methodologySources => '来源与真实性';
+
+  @override
+  String get methodologySourcesBody => '圣训在可能时标注等级。';
+
+  @override
+  String get askScholar => '咨询学者';
+
+  @override
+  String get askScholarDesc => '个人法特瓦请咨询认可平台：';
+
+  @override
+  String get disclaimerGeneral => '本应用仅供教育。复杂情况请咨询学者。';
+
+  @override
+  String get sensitiveTopicDisclaimer => '敏感主题——请先咨询学者。';
+
+  @override
+  String get sourceReference => '参考';
+
+  @override
+  String get skillTree => '技能树';
+
+  @override
+  String skillProgress(int read, int total) {
+    return '$read/$total 主题';
+  }
+
+  @override
+  String get srsMode => '间隔重复复习';
+
+  @override
+  String get examMode => '考试模式';
+
+  @override
+  String get examModeDesc => '无即时反馈，最后公布结果';
+
+  @override
+  String get consensusOnly => '仅共识';
+
+  @override
+  String get noConsensusFound => '未发现学派共识';
+
+  @override
+  String get scenarioFinder => '查找情景';
+
+  @override
+  String get scenarioFinderDesc => '描述您的情况以找到案例';
+
+  @override
+  String get scenarioFinderHint => '如：斋戒、旅行、婚姻…';
+
+  @override
+  String get noScenariosFound => '未找到情景';
+
+  @override
+  String get exportCertificate => '导出证书';
+
+  @override
+  String get certificateTitle => '课程证书';
+
+  @override
+  String get certificateDate => '日期：';
+
+  @override
+  String get situationAdvisor => '情景顾问';
+
+  @override
+  String get situationAdvisorDesc => '描述您的情况—推荐主题和案例';
+
+  @override
+  String get situationAdvisorHint => '例：斋月期间乘飞机旅行…';
+
+  @override
+  String get situationAdvisorEmpty => '描述您的情况以获取建议';
+
+  @override
+  String get analyzeSituation => '分析';
+
+  @override
+  String get noSituationMatches => '无匹配建议';
+
+  @override
+  String get encyclopediaExam => '百科考试';
+
+  @override
+  String get encyclopediaExamDesc => '10个主题，计时，自评';
+
+  @override
+  String get examTopicPrompt => '您了解这个主题吗？';
+
+  @override
+  String get revealAnswer => '显示摘要';
+
+  @override
+  String get readFullTopic => '阅读完整主题';
+
+  @override
+  String get needStudy => '需复习';
+
+  @override
+  String get examResults => '考试结果';
+
+  @override
+  String examKnownCount(int known, int total) {
+    return '掌握 $known/$total';
+  }
+
+  @override
+  String get noExamTopics => '主题不足';
+
+  @override
+  String get exportComparisonPdf => '导出对比PDF';
+
+  @override
+  String get encryptedSync => '加密同步';
+
+  @override
+  String get encryptedSyncDesc => 'AES备份至iCloud/Drive';
+
+  @override
+  String get exportEncryptedBackup => '导出加密备份';
+
+  @override
+  String get importEncryptedBackup => '导入加密备份';
+
+  @override
+  String get enterPassphrase => '密码短语';
+
+  @override
+  String get passphrase => '密码（至少8位）';
+
+  @override
+  String get confirmPassphrase => '确认';
+
+  @override
+  String get encryptedSyncFailed => '失败—请检查密码';
+
+  @override
+  String get cancel => '取消';
+
+  @override
+  String get confirm => '确认';
+
+  @override
+  String get homeWidgetDescIos => 'iOS和Android小组件';
+
+  @override
+  String get verifiedContent => '已验证内容';
+
+  @override
+  String get isnadChain => '传述链（伊斯纳德）';
+
+  @override
+  String get disclaimerHomeBanner => '教育工具——不能替代学者裁决。请参阅方法论。';
+
+  @override
+  String get liteMode => '轻量模式';
+
+  @override
+  String get liteModeDesc => '减少动画，适合较慢设备或无障碍需求';
+
+  @override
+  String get globalMadhhabFilter => '全局教法学派筛选';
+
+  @override
+  String get globalMadhhabFilterDesc => '隐藏您偏好学派无立场的话题';
+
+  @override
+  String get ijmaSection => '公议（伊智玛）';
+
+  @override
+  String get ijmaSectionDesc => '四大逊尼学派在此问题上意见一致。';
+
+  @override
+  String get divergenceTimeline => '分歧时间线';
+
+  @override
+  String get contextualShortcuts => '快捷入口';
+
+  @override
+  String get shortcutZakat => '天课计算器';
 }
